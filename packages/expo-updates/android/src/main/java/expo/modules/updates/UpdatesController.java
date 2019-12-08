@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.util.Log;
 
 import expo.modules.updates.db.UpdatesDatabase;
+import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
 import expo.modules.updates.loader.EmbeddedLoader;
 import expo.modules.updates.loader.RemoteLoader;
@@ -19,9 +20,12 @@ public class UpdatesController {
 
   private static final String TAG = UpdatesController.class.getSimpleName();
 
+  private static String UPDATES_DIRECTORY_NAME = ".expo";
+
   private static UpdatesController sInstance;
 
   private Context mContext;
+  private Uri mManifestUrl;
   private File mUpdatesDirectory;
   private UpdatesDatabase mDatabase;
   private RemoteLoader mRemoteLoader;
@@ -32,15 +36,16 @@ public class UpdatesController {
     return sInstance;
   }
 
-  public static void initialize(Context context) {
+  public static void initialize(Context context, Uri url) {
     if (sInstance == null) {
-      new UpdatesController(context);
+      new UpdatesController(context, url);
     }
   }
 
-  private UpdatesController(Context context) {
+  private UpdatesController(Context context, Uri url) {
     sInstance = this;
     mContext = context;
+    mManifestUrl = url;
     mUpdatesDirectory = getOrCreateUpdatesDirectory();
     mDatabase = UpdatesDatabase.getInstance(context);
   }
@@ -50,7 +55,7 @@ public class UpdatesController {
     mLaunchedUpdate = launchUpdate();
     if (mRemoteLoader == null) {
       mRemoteLoader = new RemoteLoader(mContext, mDatabase, mUpdatesDirectory);
-      mRemoteLoader.start(Uri.parse("http://192.168.1.196:3000/@esamelson/updatesRNAndroid"), new RemoteLoader.LoaderCallback() {
+      mRemoteLoader.start(mManifestUrl, new RemoteLoader.LoaderCallback() {
         @Override
         public void onFailure(Exception e) {
           Log.e("erictest", "failure", e);
@@ -65,7 +70,7 @@ public class UpdatesController {
   }
 
   private File getOrCreateUpdatesDirectory() {
-    File updatesDirectory = new File(mContext.getFilesDir(), ".expo");
+    File updatesDirectory = new File(mContext.getFilesDir(), UPDATES_DIRECTORY_NAME);
     boolean exists = updatesDirectory.exists();
     boolean isFile = updatesDirectory.isFile();
     if (!exists || isFile) {
@@ -107,12 +112,31 @@ public class UpdatesController {
     return new SelectionPolicyNewest().selectUpdateToLaunch(launchableUpdates);
   }
 
-  public File getLaunchAssetFile() {
+  public String getLaunchAssetFile() {
     if (mLaunchedUpdate == null) {
       return null;
     }
 
     String relativePath = mDatabase.updateDao().loadLaunchAssetUrl(mLaunchedUpdate.id);
-    return relativePath != null ? new File(mUpdatesDirectory, relativePath) : null;
+    return relativePath != null ? new File(mUpdatesDirectory, relativePath).toString() : null;
+  }
+
+  public String[] getLocalAssetFiles() {
+    if (mLaunchedUpdate == null) {
+      return null;
+    }
+
+    List<AssetEntity> assetEntities = mDatabase.assetDao().loadAssetsForUpdate(mLaunchedUpdate.id);
+    if (assetEntities == null) {
+      return null;
+    }
+    String[] localAssetFiles = new String[assetEntities.size()];
+    for (int i = 0; i < assetEntities.size(); i++) {
+      String filename = assetEntities.get(i).relativePath;
+      if (filename != null) {
+        localAssetFiles[i] = new File(UPDATES_DIRECTORY_NAME, filename).toString();
+      }
+    }
+    return localAssetFiles;
   }
 }

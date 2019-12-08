@@ -1,7 +1,9 @@
 package expo.modules.updates;
 
 import android.content.Context;
+import android.net.Uri;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.unimodules.core.ExportedModule;
@@ -27,6 +29,14 @@ public class UpdatesModule extends ExportedModule {
   @Override
   public void onCreate(ModuleRegistry moduleRegistry) {
     mModuleRegistry = moduleRegistry;
+  }
+
+  @Override
+  public Map<String, Object> getConstants() {
+    Map<String, Object> constants = new HashMap<>();
+    constants.put("localAssets", UpdatesController.getInstance().getLocalAssetFiles());
+
+    return constants;
   }
 
   @ExpoMethod

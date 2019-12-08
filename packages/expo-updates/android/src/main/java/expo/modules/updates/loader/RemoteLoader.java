@@ -89,7 +89,7 @@ public class RemoteLoader {
           String manifestString = response.body().string();
           JSONObject manifestJson = new JSONObject(manifestString);
           if (manifestJson.has("manifestString") && manifestJson.has("signature")) {
-            String innerManifestString = manifestJson.getString("manifestString");
+            final String innerManifestString = manifestJson.getString("manifestString");
             Crypto.verifyPublicRSASignature(
                     innerManifestString,
                     manifestJson.getString("signature"),
@@ -181,7 +181,7 @@ public class RemoteLoader {
     }
   }
 
-  private void downloadAssetAndContinueLoop(AssetEntity asset, final boolean isRetry) {
+  private void downloadAssetAndContinueLoop(final AssetEntity asset, final boolean isRetry) {
     final String filename = UpdateUtils.sha1(asset.url.toString()) + "." + asset.type;
     File path = new File(mUpdatesDirectory, filename);
 

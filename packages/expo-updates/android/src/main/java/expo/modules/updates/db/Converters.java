@@ -43,6 +43,9 @@ public class Converters {
 
   @TypeConverter
   public static JSONObject stringToJsonObject(String string) {
+    if (string == null) {
+      return null;
+    }
     JSONObject jsonObject;
     try {
       jsonObject = new JSONObject(string);
