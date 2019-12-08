@@ -60,8 +60,10 @@ public abstract class UpdateDao {
   @Insert
   public abstract void insertUpdate(UpdateEntity update);
 
+  @Transaction
   public void markUpdateReady(UpdateEntity update) {
     _markUpdateWithStatus(UpdateStatus.READY, update.id);
+    _keepUpdate(update.id);
   }
 
   @Transaction

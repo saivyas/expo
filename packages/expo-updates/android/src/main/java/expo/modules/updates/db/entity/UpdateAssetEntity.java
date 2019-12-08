@@ -8,15 +8,19 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 
+import static androidx.room.ForeignKey.CASCADE;
+
 @Entity(tableName = "updates_assets",
         primaryKeys = {"update_id", "asset_id"},
         foreignKeys = {
           @ForeignKey(entity = UpdateEntity.class,
                       parentColumns = "id",
-                      childColumns = "update_id"),
+                      childColumns = "update_id",
+                      onDelete = CASCADE),
           @ForeignKey(entity = AssetEntity.class,
                       parentColumns = "id",
-                      childColumns = "asset_id")},
+                      childColumns = "asset_id",
+                      onDelete = CASCADE)},
         indices = {@Index(value = "asset_id")})
 public class UpdateAssetEntity {
   @ColumnInfo(name = "update_id")

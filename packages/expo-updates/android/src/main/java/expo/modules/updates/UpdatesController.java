@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.util.Log;
 
+import expo.modules.updates.db.Reaper;
 import expo.modules.updates.db.UpdatesDatabase;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
@@ -66,6 +67,7 @@ public class UpdatesController {
         @Override
         public void onSuccess(UpdateEntity update) {
           Log.d("erictest", "success");
+          Reaper.reapUnusedUpdates(mDatabase, mUpdatesDirectory, mLaunchedUpdate);
         }
       });
     }
