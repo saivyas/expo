@@ -24,6 +24,7 @@ public class UpdatesController {
   private static final String TAG = UpdatesController.class.getSimpleName();
 
   private static String UPDATES_DIRECTORY_NAME = ".expo";
+  private static String URL_PLACEHOLDER = "EXPO_APP_URL";
 
   private static UpdatesController sInstance;
 
@@ -39,8 +40,10 @@ public class UpdatesController {
     return sInstance;
   }
 
-  public static void initialize(Context context, Uri url) {
+  public static void initialize(Context context) {
     if (sInstance == null) {
+      String urlString = context.getString(R.string.expo_app_url);
+      Uri url = URL_PLACEHOLDER.equals(urlString) ? null : Uri.parse(urlString);
       new UpdatesController(context, url);
     }
   }
@@ -56,7 +59,7 @@ public class UpdatesController {
   public void start() {
     new EmbeddedLoader(mContext, mDatabase, mUpdatesDirectory).loadEmbeddedUpdate();
     mLaunchedUpdate = launchUpdate();
-    if (mRemoteLoader == null) {
+    if (mRemoteLoader == null && mManifestUrl != null) {
       mRemoteLoader = new RemoteLoader(mContext, mDatabase, mUpdatesDirectory);
       mRemoteLoader.start(mManifestUrl, new RemoteLoader.LoaderCallback() {
         @Override
