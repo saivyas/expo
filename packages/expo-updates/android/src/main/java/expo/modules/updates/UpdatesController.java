@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ArrayBlockingQueue;
 
 public class UpdatesController {
 
@@ -60,6 +61,7 @@ public class UpdatesController {
     new EmbeddedLoader(mContext, mDatabase, mUpdatesDirectory).loadEmbeddedUpdate();
     mLaunchedUpdate = launchUpdate();
     if (mRemoteLoader == null && mManifestUrl != null) {
+      // TODO: run in an async task, wait until after launched
       mRemoteLoader = new RemoteLoader(mContext, mDatabase, mUpdatesDirectory);
       mRemoteLoader.start(mManifestUrl, new RemoteLoader.LoaderCallback() {
         @Override
@@ -121,11 +123,45 @@ public class UpdatesController {
 
   public String getLaunchAssetFile() {
     if (mLaunchedUpdate == null) {
+      Log.d("erictest", "Could not find an update to launch");
       return null;
     }
 
-    String relativePath = mDatabase.updateDao().loadLaunchAssetUrl(mLaunchedUpdate.id);
-    return relativePath != null ? new File(mUpdatesDirectory, relativePath).toString() : null;
+    AssetEntity launchAsset = mDatabase.updateDao().loadLaunchAsset(mLaunchedUpdate.id);
+    if (launchAsset.relativePath != null) {
+      File launchAssetFile = new File(mUpdatesDirectory, launchAsset.relativePath);
+      if (launchAssetFile.exists()) {
+        return launchAssetFile.toString();
+      }
+    }
+
+    // something has gone wrong, we're missing the launch asset
+    // try to redownload
+    // TODO: check embedded assets for this first!
+
+    final ArrayBlockingQueue<AssetEntity> blockingQueue = new ArrayBlockingQueue<>(1);
+    if (mRemoteLoader != null) {
+      mRemoteLoader.downloadAsset(launchAsset, new RemoteLoader.AssetDownloadCallback() {
+        @Override
+        public void onFailure(Exception e, AssetEntity assetEntity) {
+          Log.d("erictest", "Failed to load update from disk or network");
+        }
+
+        @Override
+        public void onSuccess(AssetEntity assetEntity, boolean isNew) {
+          blockingQueue.add(assetEntity);
+        }
+      });
+    }
+
+    try {
+      AssetEntity downloadedLaunchAsset = blockingQueue.take();
+      mDatabase.assetDao().updateAsset(downloadedLaunchAsset);
+      return new File(mUpdatesDirectory, downloadedLaunchAsset.relativePath).toString();
+    } catch (Exception e) {
+      Log.d("erictest", "exception while waiting for blocking queue", e);
+      return null;
+    }
   }
 
   public Map<String, String> getLocalAssetFiles() {

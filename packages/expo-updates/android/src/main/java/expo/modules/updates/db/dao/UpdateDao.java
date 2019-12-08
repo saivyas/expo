@@ -1,6 +1,7 @@
 package expo.modules.updates.db.dao;
 
 import expo.modules.updates.UpdateStatus;
+import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
 
 import java.util.Arrays;
@@ -54,8 +55,8 @@ public abstract class UpdateDao {
     return updateEntities.size() > 0 ? updateEntities.get(0) : null;
   }
 
-  @Query("SELECT relative_path FROM updates INNER JOIN assets ON updates.launch_asset_id = assets.id WHERE updates.id = :id;")
-  public abstract String loadLaunchAssetUrl(UUID id);
+  @Query("SELECT * FROM updates INNER JOIN assets ON updates.launch_asset_id = assets.id WHERE updates.id = :id;")
+  public abstract AssetEntity loadLaunchAsset(UUID id);
 
   @Insert
   public abstract void insertUpdate(UpdateEntity update);

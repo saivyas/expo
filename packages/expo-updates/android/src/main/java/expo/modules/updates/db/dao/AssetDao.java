@@ -2,6 +2,7 @@ package expo.modules.updates.db.dao;
 
 import android.net.Uri;
 
+import androidx.room.Update;
 import expo.modules.updates.UpdateStatus;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateAssetEntity;
@@ -59,6 +60,9 @@ public abstract class AssetDao {
           " INNER JOIN updates ON updates_assets.update_id = updates.id" +
           " WHERE updates.id = :id;")
   public abstract List<AssetEntity> loadAssetsForUpdate(UUID id);
+
+  @Update
+  public abstract void updateAsset(AssetEntity assetEntity);
 
   @Transaction
   public void insertAssets(List<AssetEntity> assets, UpdateEntity update) {

@@ -166,9 +166,43 @@ public class RemoteLoader {
 
   private void assetDownloadLoop() {
     if (mAssetQueue.size() > 0) {
-      downloadAssetAndContinueLoop(mAssetQueue.poll(), false);
+      downloadAsset(mAssetQueue.poll(), new AssetDownloadCallback() {
+        @Override
+        public void onFailure(Exception e, AssetEntity assetEntity) {
+          Log.e(TAG, "Failed to download asset, retrying from " + assetEntity.url, e);
+          mRetryAssetQueue.add(assetEntity);
+          assetDownloadLoop();
+        }
+
+        @Override
+        public void onSuccess(AssetEntity assetEntity, boolean isNew) {
+          if (isNew) {
+            mFinishedAssetQueue.add(assetEntity);
+          } else {
+            mExistingAssetQueue.add(assetEntity);
+          }
+          assetDownloadLoop();
+        }
+      });
     } else if (mRetryAssetQueue.size() > 0) {
-      downloadAssetAndContinueLoop(mRetryAssetQueue.poll(), true);
+      downloadAsset(mRetryAssetQueue.poll(), new AssetDownloadCallback() {
+        @Override
+        public void onFailure(Exception e, AssetEntity assetEntity) {
+          Log.e(TAG, "Failed to download asset from " + assetEntity.url, e);
+          mErroredAssetQueue.add(assetEntity);
+          assetDownloadLoop();
+        }
+
+        @Override
+        public void onSuccess(AssetEntity assetEntity, boolean isNew) {
+          if (isNew) {
+            mFinishedAssetQueue.add(assetEntity);
+          } else {
+            mExistingAssetQueue.add(assetEntity);
+          }
+          assetDownloadLoop();
+        }
+      });
     } else {
       mDatabase.assetDao().insertAssets(Arrays.asList(mFinishedAssetQueue.toArray(new AssetEntity[0])), mUpdateEntity);
       for (AssetEntity asset : mExistingAssetQueue) {
@@ -181,25 +215,22 @@ public class RemoteLoader {
     }
   }
 
-  private void downloadAssetAndContinueLoop(final AssetEntity asset, final boolean isRetry) {
+  public interface AssetDownloadCallback {
+    void onFailure(Exception e, AssetEntity assetEntity);
+    void onSuccess(AssetEntity assetEntity, boolean isNew);
+  }
+
+  public void downloadAsset(final AssetEntity asset, final AssetDownloadCallback callback) {
     final String filename = UpdateUtils.sha1(asset.url.toString()) + "." + asset.type;
     File path = new File(mUpdatesDirectory, filename);
 
     if (path.exists()) {
-      mExistingAssetQueue.add(asset);
-      assetDownloadLoop();
+      callback.onSuccess(asset, false);
     } else {
       Network.downloadFileToPath(Network.addHeadersToUrl(asset.url, mContext), path, new Network.FileDownloadCallback() {
         @Override
         public void onFailure(Exception e) {
-          // retry once, otherwise log an error
-          if (!isRetry) {
-            mRetryAssetQueue.add(asset);
-          } else {
-            Log.e(TAG, "Failed to download asset at " + asset.url, e);
-            mErroredAssetQueue.add(asset);
-            assetDownloadLoop();
-          }
+          callback.onFailure(e, asset);
         }
 
         @Override
@@ -207,8 +238,7 @@ public class RemoteLoader {
           asset.downloadTime = new Date();
           asset.relativePath = filename;
           asset.hash = hash;
-          mFinishedAssetQueue.add(asset);
-          assetDownloadLoop();
+          callback.onSuccess(asset, true);
         }
       });
     }
