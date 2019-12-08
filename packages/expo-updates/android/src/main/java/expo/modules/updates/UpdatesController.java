@@ -14,7 +14,9 @@ import expo.modules.updates.loader.RemoteLoader;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class UpdatesController {
 
@@ -121,7 +123,7 @@ public class UpdatesController {
     return relativePath != null ? new File(mUpdatesDirectory, relativePath).toString() : null;
   }
 
-  public String[] getLocalAssetFiles() {
+  public Map<String, String> getLocalAssetFiles() {
     if (mLaunchedUpdate == null) {
       return null;
     }
@@ -130,11 +132,14 @@ public class UpdatesController {
     if (assetEntities == null) {
       return null;
     }
-    String[] localAssetFiles = new String[assetEntities.size()];
+    Map<String, String> localAssetFiles = new HashMap<>();
     for (int i = 0; i < assetEntities.size(); i++) {
       String filename = assetEntities.get(i).relativePath;
       if (filename != null) {
-        localAssetFiles[i] = new File(UPDATES_DIRECTORY_NAME, filename).toString();
+        localAssetFiles.put(
+            assetEntities.get(i).url.toString(),
+            new File(mUpdatesDirectory, filename).toString()
+        );
       }
     }
     return localAssetFiles;
