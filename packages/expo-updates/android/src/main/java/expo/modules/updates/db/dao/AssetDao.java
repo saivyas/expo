@@ -78,6 +78,7 @@ public abstract class AssetDao {
   @Transaction
   public void addExistingAssetToUpdate(UpdateEntity update, Uri url, boolean isLaunchAsset) {
     List<Long> assetIdList = _loadAssetWithUrl(url);
+    // TODO: figure out why this is sometimes null
     long assetId = assetIdList.get(0);
     _insertUpdateAsset(new UpdateAssetEntity(update.id, assetId));
     if (isLaunchAsset) {
