@@ -1,5 +1,6 @@
 package expo.modules.updates.db.dao;
 
+import androidx.room.RoomWarnings;
 import expo.modules.updates.UpdateStatus;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
@@ -56,6 +57,7 @@ public abstract class UpdateDao {
   }
 
   @Query("SELECT * FROM updates INNER JOIN assets ON updates.launch_asset_id = assets.id WHERE updates.id = :id;")
+  @SuppressWarnings(RoomWarnings.CURSOR_MISMATCH)
   public abstract AssetEntity loadLaunchAsset(UUID id);
 
   @Insert
