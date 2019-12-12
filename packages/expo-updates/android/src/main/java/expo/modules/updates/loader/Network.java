@@ -88,7 +88,7 @@ public class Network {
     String binaryVersion = UpdateUtils.getBinaryVersion(context);
     if (binaryVersion != null) {
       requestBuilder = requestBuilder.header("Expo-Binary-Version", binaryVersion)
-              .header("Expo-SDK-Version", binaryVersion);
+              .header("Expo-SDK-Version", "36.0.0");
     }
     return requestBuilder.build();
   }
