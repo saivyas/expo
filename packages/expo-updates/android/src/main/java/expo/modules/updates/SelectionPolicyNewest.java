@@ -8,6 +8,10 @@ import java.util.List;
  * Simple Update selection policy which chooses
  * the newest update (based on commit time) out
  * of all the possible stored updates.
+ *
+ * If multiple updates have the same (most
+ * recent) commit time, this class will return
+ * the earliest one in the list.
  */
 public class SelectionPolicyNewest implements SelectionPolicy {
 

@@ -41,6 +41,8 @@ public class RemoteLoader {
 
   public interface LoaderCallback {
     void onFailure(Exception e);
+    // TODO: change to onManifestDownloaded(UpdateEntity update);
+    void onManifestDownloaded(Manifest manifest);
     void onSuccess(UpdateEntity update);
   }
 
@@ -68,20 +70,36 @@ public class RemoteLoader {
 
     mCallback = callback;
 
-    downloadManifest(url);
+    downloadManifest(url, new ManifestDownloadCallback() {
+      @Override
+      public void onFailure(String message, Exception e) {
+        finishWithError(message, e);
+      }
+
+      @Override
+      public void onSuccess(Manifest manifest) {
+        mCallback.onManifestDownloaded(manifest);
+        processManifest(manifest);
+      }
+    });
   }
 
-  private void downloadManifest(final Uri url) {
+  public interface ManifestDownloadCallback {
+    void onFailure(String message, Exception e);
+    void onSuccess(Manifest manifest);
+  }
+
+  public void downloadManifest(final Uri url, final ManifestDownloadCallback callback) {
     Network.downloadData(Network.addHeadersToManifestUrl(url, mContext), new Callback() {
       @Override
       public void onFailure(Call call, IOException e) {
-        Log.e(TAG, e.getMessage(), e);
+        callback.onFailure("Failed to download manifest from uri: " + url, e);
       }
 
       @Override
       public void onResponse(Call call, Response response) throws IOException {
         if (!response.isSuccessful()) {
-          finishWithError("Failed to download manifest from uri: " + url, new Exception(response.body().string()));
+          callback.onFailure("Failed to download manifest from uri: " + url, new Exception(response.body().string()));
           return;
         }
 
@@ -96,7 +114,7 @@ public class RemoteLoader {
                     new Crypto.RSASignatureListener() {
                       @Override
                       public void onError(Exception e, boolean isNetworkError) {
-                        finishWithError("Could not validate signed manifest", e);
+                        callback.onFailure("Could not validate signed manifest", e);
                       }
 
                       @Override
@@ -104,22 +122,22 @@ public class RemoteLoader {
                         if (isValid) {
                           try {
                             Manifest manifest = Manifest.fromManagedManifestJson(new JSONObject(innerManifestString));
-                            processManifest(manifest);
+                            callback.onSuccess(manifest);
                           } catch (JSONException e) {
-                            finishWithError("Failed to parse manifest data", e);
+                            callback.onFailure("Failed to parse manifest data", e);
                           }
                         } else {
-                          finishWithError("Manifest signature is invalid; aborting", new Exception("Manifest signature is invalid"));
+                          callback.onFailure("Manifest signature is invalid; aborting", new Exception("Manifest signature is invalid"));
                         }
                       }
                     }
             );
           } else {
             Manifest manifest = Manifest.fromManagedManifestJson(manifestJson);
-            processManifest(manifest);
+            callback.onSuccess(manifest);
           }
         } catch (Exception e) {
-          finishWithError("Failed to parse manifest data", e);
+          callback.onFailure("Failed to parse manifest data", e);
         }
       }
     });

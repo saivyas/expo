@@ -14,6 +14,11 @@ public class Reaper {
   private static String TAG = Reaper.class.getSimpleName();
 
   public static void reapUnusedUpdates(UpdatesDatabase database, File updatesDirectory, UpdateEntity launchedUpdate) {
+    if (launchedUpdate == null) {
+      Log.d(TAG, "Tried to reap while no update was launched; aborting");
+      return;
+    }
+
     database.updateDao().markUpdatesForDeletion(launchedUpdate);
     List<AssetEntity> assetsToDelete = database.assetDao().markAndLoadAssetsForDeletion();
 

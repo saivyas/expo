@@ -4,13 +4,19 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+
+import com.facebook.react.ReactApplication;
+import com.facebook.react.ReactInstanceManager;
 
 import expo.modules.updates.db.Reaper;
 import expo.modules.updates.db.UpdatesDatabase;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
 import expo.modules.updates.loader.EmbeddedLoader;
+import expo.modules.updates.loader.Manifest;
 import expo.modules.updates.loader.RemoteLoader;
 
 import java.io.File;
@@ -57,6 +63,26 @@ public class UpdatesController {
     mDatabase = UpdatesDatabase.getInstance(context);
   }
 
+  public boolean isEnabled() {
+//    return !BuildConfig.DEBUG;
+    return true;
+  }
+
+  public void reload() {
+    if (mContext instanceof ReactApplication) {
+      // TODO: wait for database lock
+      mLaunchedUpdate = launchUpdate();
+      final ReactInstanceManager instanceManager = ((ReactApplication) mContext).getReactNativeHost().getReactInstanceManager();
+      Handler handler = new Handler(Looper.getMainLooper());
+      handler.post(new Runnable() {
+        @Override
+        public void run() {
+          instanceManager.recreateReactContextInBackground();
+        }
+      });
+    }
+  }
+
   public void start() {
     new EmbeddedLoader(mContext, mDatabase, mUpdatesDirectory).loadEmbeddedUpdate();
     mLaunchedUpdate = launchUpdate();
@@ -67,6 +93,11 @@ public class UpdatesController {
         @Override
         public void onFailure(Exception e) {
           Log.e("erictest", "failure", e);
+        }
+
+        @Override
+        public void onManifestDownloaded(Manifest manifest) {
+          Log.d("erictest", "new manifest downloaded");
         }
 
         @Override
@@ -121,7 +152,28 @@ public class UpdatesController {
     return new SelectionPolicyNewest().selectUpdateToLaunch(launchableUpdates);
   }
 
+  public Uri getManifestUrl() {
+    return mManifestUrl;
+  }
+
+  public File getUpdatesDirectory() {
+    return mUpdatesDirectory;
+  }
+
+  public UpdatesDatabase getDatabase() {
+    // TODO: use lock
+    return mDatabase;
+  }
+
+  public UpdateEntity getLaunchedUpdate() {
+    return mLaunchedUpdate;
+  }
+
   public String getLaunchAssetFile() {
+    if (!isEnabled()) {
+      return null;
+    }
+
     if (mLaunchedUpdate == null) {
       Log.d("erictest", "Could not find an update to launch");
       return null;

@@ -32,7 +32,10 @@ public class Manifest {
   private Uri mBundleUrl;
   private JSONArray mAssets;
 
-  private Manifest(UUID id, Date commitTime, String binaryVersions, JSONObject metadata, Uri bundleUrl, JSONArray assets) {
+  private JSONObject mManifestJson;
+
+  private Manifest(JSONObject manifestJson, UUID id, Date commitTime, String binaryVersions, JSONObject metadata, Uri bundleUrl, JSONArray assets) {
+    mManifestJson = manifestJson;
     mId = id;
     mCommitTime = commitTime;
     mBinaryVersions = binaryVersions;
@@ -49,7 +52,7 @@ public class Manifest {
     Uri bundleUrl = Uri.parse(manifestJson.getString("bundleUrl"));
     JSONArray assets = manifestJson.optJSONArray("assets");
 
-    return new Manifest(id, commitTime, binaryVersions, metadata, bundleUrl, assets);
+    return new Manifest(manifestJson, id, commitTime, binaryVersions, metadata, bundleUrl, assets);
   }
 
   public static Manifest fromManagedManifestJson(JSONObject manifestJson) throws JSONException {
@@ -87,7 +90,11 @@ public class Manifest {
       }
     }
 
-    return new Manifest(id, commitTime, binaryVersions, manifestJson, bundleUrl, bundledAssets);
+    return new Manifest(manifestJson, id, commitTime, binaryVersions, manifestJson, bundleUrl, bundledAssets);
+  }
+
+  public JSONObject getRawManifestJson() {
+    return mManifestJson;
   }
 
   public UpdateEntity getUpdateEntity() {
