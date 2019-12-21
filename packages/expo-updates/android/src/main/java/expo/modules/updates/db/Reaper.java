@@ -19,7 +19,7 @@ public class Reaper {
       return;
     }
 
-    database.updateDao().markUpdatesForDeletion(launchedUpdate);
+    database.updateDao().markUpdatesForDeletion(launchedUpdate); // TODO: this should use the selection policy
     List<AssetEntity> assetsToDelete = database.assetDao().markAndLoadAssetsForDeletion();
 
     LinkedList<AssetEntity> deletedAssets = new LinkedList<>();

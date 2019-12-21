@@ -15,9 +15,8 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -33,15 +32,13 @@ public class RemoteLoader {
 
   private UpdateEntity mUpdateEntity;
   private LoaderCallback mCallback;
-  private ConcurrentLinkedQueue<AssetEntity> mAssetQueue = new ConcurrentLinkedQueue<>();
-  private ConcurrentLinkedQueue<AssetEntity> mRetryAssetQueue = new ConcurrentLinkedQueue<>();
-  private ConcurrentLinkedQueue<AssetEntity> mErroredAssetQueue = new ConcurrentLinkedQueue<>();
-  private ConcurrentLinkedQueue<AssetEntity> mExistingAssetQueue = new ConcurrentLinkedQueue<>();
-  private ConcurrentLinkedQueue<AssetEntity> mFinishedAssetQueue = new ConcurrentLinkedQueue<>();
+  private int mAssetTotal = 0;
+  private ArrayList<AssetEntity> mErroredAssetList = new ArrayList<>();
+  private ArrayList<AssetEntity> mExistingAssetList = new ArrayList<>();
+  private ArrayList<AssetEntity> mFinishedAssetList = new ArrayList<>();
 
   public interface LoaderCallback {
     void onFailure(Exception e);
-    // TODO: change to onManifestDownloaded(UpdateEntity update);
     void onManifestDownloaded(Manifest manifest);
     void onSuccess(UpdateEntity update);
   }
@@ -52,15 +49,7 @@ public class RemoteLoader {
     mUpdatesDirectory = updatesDirectory;
   }
 
-  public void reset() {
-    mUpdateEntity = null;
-    mCallback = null;
-    mAssetQueue = new ConcurrentLinkedQueue<>();
-    mRetryAssetQueue = new ConcurrentLinkedQueue<>();
-    mErroredAssetQueue = new ConcurrentLinkedQueue<>();
-    mExistingAssetQueue = new ConcurrentLinkedQueue<>();
-    mFinishedAssetQueue = new ConcurrentLinkedQueue<>();
-  }
+  // lifecycle methods for class
 
   public void start(Uri url, LoaderCallback callback) {
     if (mCallback != null) {
@@ -84,9 +73,47 @@ public class RemoteLoader {
     });
   }
 
+  private void reset() {
+    mUpdateEntity = null;
+    mCallback = null;
+    mAssetTotal = 0;
+    mErroredAssetList = new ArrayList<>();
+    mExistingAssetList = new ArrayList<>();
+    mFinishedAssetList = new ArrayList<>();
+  }
+
+  private void finishWithSuccess() {
+    if (mCallback == null) {
+      Log.e(TAG, "RemoteLoader tried to finish but it already finished or was never initialized.");
+      return;
+    }
+
+    mCallback.onSuccess(mUpdateEntity);
+    reset();
+  }
+
+  private void finishWithError(String message, Exception e) {
+    Log.e(TAG, message, e);
+
+    if (mCallback == null) {
+      Log.e(TAG, "RemoteLoader tried to finish but it already finished or was never initialized.");
+      return;
+    }
+
+    mCallback.onFailure(e);
+    reset();
+  }
+
+  // public helper methods and interfaces for downloading individual files
+
   public interface ManifestDownloadCallback {
     void onFailure(String message, Exception e);
     void onSuccess(Manifest manifest);
+  }
+
+  public interface AssetDownloadCallback {
+    void onFailure(Exception e, AssetEntity assetEntity);
+    void onSuccess(AssetEntity assetEntity, boolean isNew);
   }
 
   public void downloadManifest(final Uri url, final ManifestDownloadCallback callback) {
@@ -143,101 +170,6 @@ public class RemoteLoader {
     });
   }
 
-  private void processManifest(Manifest manifest) {
-    try {
-      UpdateEntity newUpdateEntity = manifest.getUpdateEntity();
-      UpdateEntity existingUpdateEntity = mDatabase.updateDao().loadUpdateWithId(newUpdateEntity.id);
-      if (existingUpdateEntity != null && existingUpdateEntity.status == UpdateStatus.READY) {
-        // hooray, we already have this update downloaded and ready to go!
-        mUpdateEntity = existingUpdateEntity;
-        finishWithSuccess();
-      } else {
-        if (existingUpdateEntity == null) {
-          // no update already exists with this ID, so we need to insert it and download everything.
-          mUpdateEntity = newUpdateEntity;
-          mDatabase.updateDao().insertUpdate(mUpdateEntity);
-        } else {
-          // we've already partially downloaded the update, so we should use the existing entity.
-          // however, it's not ready, so we should try to download all the assets again.
-          mUpdateEntity = existingUpdateEntity;
-        }
-        mAssetQueue = manifest.getAssetEntityQueue();
-        assetDownloadLoop();
-      }
-    } catch (Exception e) {
-      finishWithError("Failed to parse manifest data", e);
-    }
-  }
-
-  private void finishWithSuccess() {
-    mCallback.onSuccess(mUpdateEntity);
-    reset();
-  }
-
-  private void finishWithError(String message, Exception e) {
-    Log.e(TAG, message, e);
-    mCallback.onFailure(e);
-    reset();
-  }
-
-  // asset download loop
-
-  private void assetDownloadLoop() {
-    if (mAssetQueue.size() > 0) {
-      downloadAsset(mAssetQueue.poll(), new AssetDownloadCallback() {
-        @Override
-        public void onFailure(Exception e, AssetEntity assetEntity) {
-          Log.e(TAG, "Failed to download asset, retrying from " + assetEntity.url, e);
-          mRetryAssetQueue.add(assetEntity);
-          assetDownloadLoop();
-        }
-
-        @Override
-        public void onSuccess(AssetEntity assetEntity, boolean isNew) {
-          if (isNew) {
-            mFinishedAssetQueue.add(assetEntity);
-          } else {
-            mExistingAssetQueue.add(assetEntity);
-          }
-          assetDownloadLoop();
-        }
-      });
-    } else if (mRetryAssetQueue.size() > 0) {
-      downloadAsset(mRetryAssetQueue.poll(), new AssetDownloadCallback() {
-        @Override
-        public void onFailure(Exception e, AssetEntity assetEntity) {
-          Log.e(TAG, "Failed to download asset from " + assetEntity.url, e);
-          mErroredAssetQueue.add(assetEntity);
-          assetDownloadLoop();
-        }
-
-        @Override
-        public void onSuccess(AssetEntity assetEntity, boolean isNew) {
-          if (isNew) {
-            mFinishedAssetQueue.add(assetEntity);
-          } else {
-            mExistingAssetQueue.add(assetEntity);
-          }
-          assetDownloadLoop();
-        }
-      });
-    } else {
-      mDatabase.assetDao().insertAssets(Arrays.asList(mFinishedAssetQueue.toArray(new AssetEntity[0])), mUpdateEntity);
-      for (AssetEntity asset : mExistingAssetQueue) {
-        mDatabase.assetDao().addExistingAssetToUpdate(mUpdateEntity, asset.url, asset.isLaunchAsset);
-      }
-      if (mErroredAssetQueue.size() == 0) {
-        mDatabase.updateDao().markUpdateReady(mUpdateEntity);
-      }
-      finishWithSuccess();
-    }
-  }
-
-  public interface AssetDownloadCallback {
-    void onFailure(Exception e, AssetEntity assetEntity);
-    void onSuccess(AssetEntity assetEntity, boolean isNew);
-  }
-
   public void downloadAsset(final AssetEntity asset, final AssetDownloadCallback callback) {
     final String filename = UpdateUtils.sha1(asset.url.toString()) + "." + asset.type;
     File path = new File(mUpdatesDirectory, filename);
@@ -259,6 +191,74 @@ public class RemoteLoader {
           callback.onSuccess(asset, true);
         }
       });
+    }
+  }
+
+  // private helper methods
+
+  private void processManifest(Manifest manifest) {
+    try {
+      UpdateEntity newUpdateEntity = manifest.getUpdateEntity();
+      UpdateEntity existingUpdateEntity = mDatabase.updateDao().loadUpdateWithId(newUpdateEntity.id);
+      if (existingUpdateEntity != null && existingUpdateEntity.status == UpdateStatus.READY) {
+        // hooray, we already have this update downloaded and ready to go!
+        mUpdateEntity = existingUpdateEntity;
+        finishWithSuccess();
+      } else {
+        if (existingUpdateEntity == null) {
+          // no update already exists with this ID, so we need to insert it and download everything.
+          mUpdateEntity = newUpdateEntity;
+          mDatabase.updateDao().insertUpdate(mUpdateEntity);
+        } else {
+          // we've already partially downloaded the update, so we should use the existing entity.
+          // however, it's not ready, so we should try to download all the assets again.
+          mUpdateEntity = existingUpdateEntity;
+        }
+        downloadAllAssets(manifest.getAssetEntityList());
+      }
+    } catch (Exception e) {
+      finishWithError("Failed to parse manifest data", e);
+    }
+  }
+
+  private void downloadAllAssets(ArrayList<AssetEntity> assetList) {
+    mAssetTotal = assetList.size();
+    for (AssetEntity assetEntity : assetList) {
+      downloadAsset(assetEntity, new AssetDownloadCallback() {
+        @Override
+        public void onFailure(Exception e, AssetEntity assetEntity) {
+          Log.e(TAG, "Failed to download asset from " + assetEntity.url, e);
+          handleAssetDownloadCompleted(assetEntity, false, false);
+        }
+
+        @Override
+        public void onSuccess(AssetEntity assetEntity, boolean isNew) {
+          handleAssetDownloadCompleted(assetEntity, true, isNew);
+        }
+      });
+    }
+  }
+
+  private synchronized void handleAssetDownloadCompleted(AssetEntity assetEntity, boolean success, boolean isNew) {
+    if (success) {
+      if (isNew) {
+        mFinishedAssetList.add(assetEntity);
+      } else {
+        mExistingAssetList.add(assetEntity);
+      }
+    } else {
+      mErroredAssetList.add(assetEntity);
+    }
+
+    if (mFinishedAssetList.size() + mErroredAssetList.size() == mAssetTotal) {
+      mDatabase.assetDao().insertAssets(mFinishedAssetList, mUpdateEntity);
+      for (AssetEntity asset : mExistingAssetList) {
+        mDatabase.assetDao().addExistingAssetToUpdate(mUpdateEntity, asset.url, asset.isLaunchAsset);
+      }
+      if (mErroredAssetList.size() == 0) {
+        mDatabase.updateDao().markUpdateReady(mUpdateEntity);
+      }
+      finishWithSuccess();
     }
   }
 }

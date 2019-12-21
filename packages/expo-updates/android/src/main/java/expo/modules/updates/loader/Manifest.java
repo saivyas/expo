@@ -13,6 +13,7 @@ import org.json.JSONObject;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 import java.util.UUID;
@@ -106,13 +107,13 @@ public class Manifest {
     return updateEntity;
   }
 
-  public ConcurrentLinkedQueue<AssetEntity> getAssetEntityQueue() {
-    ConcurrentLinkedQueue<AssetEntity> assetQueue = new ConcurrentLinkedQueue<>();
+  public ArrayList<AssetEntity> getAssetEntityList() {
+    ArrayList<AssetEntity> assetList = new ArrayList<>();
 
     AssetEntity bundleAssetEntity = new AssetEntity(mBundleUrl, "js");
     bundleAssetEntity.isLaunchAsset = true;
     bundleAssetEntity.assetsFilename = BUNDLE_FILENAME;
-    assetQueue.add(bundleAssetEntity);
+    assetList.add(bundleAssetEntity);
 
     if (mAssets != null && mAssets.length() > 0) {
       if (mAssets.opt(0) instanceof String) {
@@ -129,7 +130,7 @@ public class Manifest {
 
             AssetEntity assetEntity = new AssetEntity(Uri.parse(EXPO_ASSETS_URL_BASE + hash), type);
             assetEntity.assetsFilename = bundledAsset;
-            assetQueue.add(assetEntity);
+            assetList.add(assetEntity);
           } catch (JSONException e) {
             Log.e(TAG, "Could not read asset from manifest", e);
           }
@@ -143,7 +144,7 @@ public class Manifest {
                 assetObject.getString("type")
             );
             assetEntity.assetsFilename = assetObject.optString("assetsFilename");
-            assetQueue.add(assetEntity);
+            assetList.add(assetEntity);
           } catch (JSONException e) {
             Log.e(TAG, "Could not read asset from manifest", e);
           }
@@ -152,6 +153,6 @@ public class Manifest {
       }
     }
 
-    return assetQueue;
+    return assetList;
   }
 }

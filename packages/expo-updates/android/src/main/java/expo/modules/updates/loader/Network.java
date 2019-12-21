@@ -60,7 +60,25 @@ public class Network {
   }
 
   public static void downloadData(Request request, Callback callback) {
-    sClient.newCall(request).enqueue(callback);
+    downloadData(request, callback, false);
+  }
+
+  private static void downloadData(final Request request, final Callback callback, final boolean isRetry) {
+    sClient.newCall(request).enqueue(new Callback() {
+      @Override
+      public void onFailure(Call call, IOException e) {
+        if (isRetry) {
+          callback.onFailure(call, e);
+        } else {
+          downloadData(request, callback, true);
+        }
+      }
+
+      @Override
+      public void onResponse(Call call, Response response) throws IOException {
+        callback.onResponse(call, response);
+      }
+    });
   }
 
   public static Request addHeadersToUrl(Uri url, Context context) {

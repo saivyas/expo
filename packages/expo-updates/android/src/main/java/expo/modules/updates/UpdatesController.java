@@ -40,8 +40,7 @@ public class UpdatesController {
   private File mUpdatesDirectory;
   private UpdatesDatabase mDatabase;
   private RemoteLoader mRemoteLoader;
-
-  private UpdateEntity mLaunchedUpdate;
+  private Launcher mLauncher;
 
   public static UpdatesController getInstance() {
     return sInstance;
@@ -63,15 +62,10 @@ public class UpdatesController {
     mDatabase = UpdatesDatabase.getInstance(context);
   }
 
-  public boolean isEnabled() {
-//    return !BuildConfig.DEBUG;
-    return true;
-  }
-
-  public void reload() {
+  public boolean reloadReactApplication() {
     if (mContext instanceof ReactApplication) {
       // TODO: wait for database lock
-      mLaunchedUpdate = launchUpdate();
+      mLauncher.launch();
       final ReactInstanceManager instanceManager = ((ReactApplication) mContext).getReactNativeHost().getReactInstanceManager();
       Handler handler = new Handler(Looper.getMainLooper());
       handler.post(new Runnable() {
@@ -80,12 +74,16 @@ public class UpdatesController {
           instanceManager.recreateReactContextInBackground();
         }
       });
+      return true;
+    } else {
+      return false;
     }
   }
 
   public void start() {
     new EmbeddedLoader(mContext, mDatabase, mUpdatesDirectory).loadEmbeddedUpdate();
-    mLaunchedUpdate = launchUpdate();
+    mLauncher = new Launcher(mContext, mDatabase, mUpdatesDirectory);
+    mLauncher.launch();
     if (mRemoteLoader == null && mManifestUrl != null) {
       // TODO: run in an async task, wait until after launched
       mRemoteLoader = new RemoteLoader(mContext, mDatabase, mUpdatesDirectory);
@@ -103,10 +101,41 @@ public class UpdatesController {
         @Override
         public void onSuccess(UpdateEntity update) {
           Log.d("erictest", "success");
-          Reaper.reapUnusedUpdates(mDatabase, mUpdatesDirectory, mLaunchedUpdate);
+          Reaper.reapUnusedUpdates(mDatabase, mUpdatesDirectory, mLauncher.getLaunchedUpdate());
         }
       });
     }
+  }
+
+  public Uri getManifestUrl() {
+    return mManifestUrl;
+  }
+
+  public File getUpdatesDirectory() {
+    return mUpdatesDirectory;
+  }
+
+  public UpdatesDatabase getDatabase() {
+    // TODO: use lock
+    return mDatabase;
+  }
+
+  public UpdateEntity getLaunchedUpdate() {
+    return mLauncher.getLaunchedUpdate();
+  }
+
+  public String getLaunchAssetFile() {
+    if (mLauncher == null) {
+      return null;
+    }
+    return mLauncher.getLaunchAssetFile();
+  }
+
+  public Map<String, String> getLocalAssetFiles() {
+    if (mLauncher == null) {
+      return null;
+    }
+    return mLauncher.getLocalAssetFiles();
   }
 
   private File getOrCreateUpdatesDirectory() {
@@ -125,116 +154,5 @@ public class UpdatesController {
       }
     }
     return updatesDirectory;
-  }
-
-  private UpdateEntity launchUpdate() {
-    List<UpdateEntity> launchableUpdates = mDatabase.updateDao().loadLaunchableUpdates();
-
-    String versionName = UpdateUtils.getBinaryVersion(mContext);
-
-    if (versionName != null) {
-      List<UpdateEntity> launchableUpdatesCopy = new ArrayList<>(launchableUpdates);
-      for (UpdateEntity update : launchableUpdatesCopy) {
-        String[] binaryVersions = update.binaryVersions.split(",");
-        boolean matches = false;
-        for (String version : binaryVersions) {
-          if (version.equals(versionName)) {
-            matches = true;
-            break;
-          }
-        }
-        if (!matches) {
-          launchableUpdates.remove(update);
-        }
-      }
-    }
-
-    return new SelectionPolicyNewest().selectUpdateToLaunch(launchableUpdates);
-  }
-
-  public Uri getManifestUrl() {
-    return mManifestUrl;
-  }
-
-  public File getUpdatesDirectory() {
-    return mUpdatesDirectory;
-  }
-
-  public UpdatesDatabase getDatabase() {
-    // TODO: use lock
-    return mDatabase;
-  }
-
-  public UpdateEntity getLaunchedUpdate() {
-    return mLaunchedUpdate;
-  }
-
-  public String getLaunchAssetFile() {
-    if (!isEnabled()) {
-      return null;
-    }
-
-    if (mLaunchedUpdate == null) {
-      Log.d("erictest", "Could not find an update to launch");
-      return null;
-    }
-
-    AssetEntity launchAsset = mDatabase.updateDao().loadLaunchAsset(mLaunchedUpdate.id);
-    if (launchAsset.relativePath != null) {
-      File launchAssetFile = new File(mUpdatesDirectory, launchAsset.relativePath);
-      if (launchAssetFile.exists()) {
-        return launchAssetFile.toString();
-      }
-    }
-
-    // something has gone wrong, we're missing the launch asset
-    // try to redownload
-    // TODO: check embedded assets for this first!
-
-    final ArrayBlockingQueue<AssetEntity> blockingQueue = new ArrayBlockingQueue<>(1);
-    if (mRemoteLoader != null) {
-      mRemoteLoader.downloadAsset(launchAsset, new RemoteLoader.AssetDownloadCallback() {
-        @Override
-        public void onFailure(Exception e, AssetEntity assetEntity) {
-          Log.d("erictest", "Failed to load update from disk or network");
-        }
-
-        @Override
-        public void onSuccess(AssetEntity assetEntity, boolean isNew) {
-          blockingQueue.add(assetEntity);
-        }
-      });
-    }
-
-    try {
-      AssetEntity downloadedLaunchAsset = blockingQueue.take();
-      mDatabase.assetDao().updateAsset(downloadedLaunchAsset);
-      return new File(mUpdatesDirectory, downloadedLaunchAsset.relativePath).toString();
-    } catch (Exception e) {
-      Log.d("erictest", "exception while waiting for blocking queue", e);
-      return null;
-    }
-  }
-
-  public Map<String, String> getLocalAssetFiles() {
-    if (mLaunchedUpdate == null) {
-      return null;
-    }
-
-    List<AssetEntity> assetEntities = mDatabase.assetDao().loadAssetsForUpdate(mLaunchedUpdate.id);
-    if (assetEntities == null) {
-      return null;
-    }
-    Map<String, String> localAssetFiles = new HashMap<>();
-    for (int i = 0; i < assetEntities.size(); i++) {
-      String filename = assetEntities.get(i).relativePath;
-      if (filename != null) {
-        localAssetFiles.put(
-            assetEntities.get(i).url.toString(),
-            new File(mUpdatesDirectory, filename).toString()
-        );
-      }
-    }
-    return localAssetFiles;
   }
 }

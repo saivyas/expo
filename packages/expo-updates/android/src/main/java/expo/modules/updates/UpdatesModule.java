@@ -58,15 +58,25 @@ public class UpdatesModule extends ExportedModule {
 
   @ExpoMethod
   public void reload(final Promise promise) {
-    UpdatesController.getInstance().reload();
+    if (UpdatesController.getInstance().reloadReactApplication()) {
+      promise.resolve(null);
+    } else {
+      promise.reject(
+          "ERR_UPDATES_RELOAD",
+          "Could not reload application. Ensure you have passed an instance of ReactApplication into UpdatesController.initialize()."
+      );
+    }
   }
 
   @ExpoMethod
   public void checkForUpdateAsync(final Promise promise) {
     final UpdatesController controller = UpdatesController.getInstance();
 
-    if (!controller.isEnabled()) {
-      promise.reject("ERR_UPDATES_CHECK", "Cannot check for updates in development mode");
+    if (controller == null) {
+      promise.reject(
+          "ERR_UPDATES_CHECK",
+          "The updates module controller has not been properly initialized. If you're in development mode, you cannot check for updates. Otherwise, make sure you have called UpdatesController.initialize()."
+      );
       return;
     }
 
@@ -109,8 +119,11 @@ public class UpdatesModule extends ExportedModule {
   public void fetchUpdateAsync(final Promise promise) {
     final UpdatesController controller = UpdatesController.getInstance();
 
-    if (!controller.isEnabled()) {
-      promise.reject("ERR_UPDATES_FETCH", "Cannot fetch updates in development mode");
+    if (controller == null) {
+      promise.reject(
+          "ERR_UPDATES_FETCH",
+          "The updates module controller has not been properly initialized. If you're in development mode, you cannot fetch updates. Otherwise, make sure you have called UpdatesController.initialize()."
+      );
       return;
     }
 

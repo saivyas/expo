@@ -1,7 +1,6 @@
 package expo.modules.updates.loader;
 
 import android.content.Context;
-import android.net.Uri;
 import android.util.Log;
 
 import expo.modules.updates.UpdateStatus;
@@ -12,8 +11,6 @@ import expo.modules.updates.db.entity.UpdateEntity;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -68,7 +65,7 @@ public class EmbeddedLoader {
           // however, it's not ready, so we should try to download all the assets again.
           mUpdateEntity = existingUpdateEntity;
         }
-        mAssetQueue = manifest.getAssetEntityQueue();
+        mAssetQueue = manifest.getAssetEntityList();
         copyAssetsFromQueue();
         success = true;
       }
