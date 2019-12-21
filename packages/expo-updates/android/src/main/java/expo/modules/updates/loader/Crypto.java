@@ -49,7 +49,7 @@ public class Crypto {
             .cacheControl(cacheControl)
             .build();
 
-    Network.downloadData(request, new Callback() {
+    FileDownloader.downloadData(request, new Callback() {
       @Override
       public void onFailure(Call call, IOException e) {
         listener.onError(e, true);

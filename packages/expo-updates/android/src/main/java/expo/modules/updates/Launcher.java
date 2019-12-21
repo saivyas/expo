@@ -13,7 +13,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import expo.modules.updates.db.UpdatesDatabase;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
-import expo.modules.updates.loader.RemoteLoader;
+import expo.modules.updates.loader.FileDownloader;
 
 public class Launcher {
 
@@ -78,9 +78,9 @@ public class Launcher {
     // try to redownload
     // TODO: check embedded assets for this first!
 
+    // TODO: urg. should use okhttp sync method for this :(
     final ArrayBlockingQueue<AssetEntity> blockingQueue = new ArrayBlockingQueue<>(1);
-    RemoteLoader remoteLoader = new RemoteLoader(mContext, mDatabase, mUpdatesDirectory);
-    remoteLoader.downloadAsset(launchAsset, new RemoteLoader.AssetDownloadCallback() {
+    FileDownloader.downloadAsset(launchAsset, mUpdatesDirectory, mContext, new FileDownloader.AssetDownloadCallback() {
       @Override
       public void onFailure(Exception e, AssetEntity assetEntity) {
         Log.d("erictest", "Failed to load update from disk or network");

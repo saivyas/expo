@@ -5,22 +5,12 @@ import android.net.Uri;
 import android.util.Log;
 
 import expo.modules.updates.UpdateStatus;
-import expo.modules.updates.UpdateUtils;
 import expo.modules.updates.db.UpdatesDatabase;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
 
 public class RemoteLoader {
 
@@ -59,7 +49,7 @@ public class RemoteLoader {
 
     mCallback = callback;
 
-    downloadManifest(url, new ManifestDownloadCallback() {
+    FileDownloader.downloadManifest(url, mContext, new FileDownloader.ManifestDownloadCallback() {
       @Override
       public void onFailure(String message, Exception e) {
         finishWithError(message, e);
@@ -104,96 +94,6 @@ public class RemoteLoader {
     reset();
   }
 
-  // public helper methods and interfaces for downloading individual files
-
-  public interface ManifestDownloadCallback {
-    void onFailure(String message, Exception e);
-    void onSuccess(Manifest manifest);
-  }
-
-  public interface AssetDownloadCallback {
-    void onFailure(Exception e, AssetEntity assetEntity);
-    void onSuccess(AssetEntity assetEntity, boolean isNew);
-  }
-
-  public void downloadManifest(final Uri url, final ManifestDownloadCallback callback) {
-    Network.downloadData(Network.addHeadersToManifestUrl(url, mContext), new Callback() {
-      @Override
-      public void onFailure(Call call, IOException e) {
-        callback.onFailure("Failed to download manifest from uri: " + url, e);
-      }
-
-      @Override
-      public void onResponse(Call call, Response response) throws IOException {
-        if (!response.isSuccessful()) {
-          callback.onFailure("Failed to download manifest from uri: " + url, new Exception(response.body().string()));
-          return;
-        }
-
-        try {
-          String manifestString = response.body().string();
-          JSONObject manifestJson = new JSONObject(manifestString);
-          if (manifestJson.has("manifestString") && manifestJson.has("signature")) {
-            final String innerManifestString = manifestJson.getString("manifestString");
-            Crypto.verifyPublicRSASignature(
-                    innerManifestString,
-                    manifestJson.getString("signature"),
-                    new Crypto.RSASignatureListener() {
-                      @Override
-                      public void onError(Exception e, boolean isNetworkError) {
-                        callback.onFailure("Could not validate signed manifest", e);
-                      }
-
-                      @Override
-                      public void onCompleted(boolean isValid) {
-                        if (isValid) {
-                          try {
-                            Manifest manifest = Manifest.fromManagedManifestJson(new JSONObject(innerManifestString));
-                            callback.onSuccess(manifest);
-                          } catch (JSONException e) {
-                            callback.onFailure("Failed to parse manifest data", e);
-                          }
-                        } else {
-                          callback.onFailure("Manifest signature is invalid; aborting", new Exception("Manifest signature is invalid"));
-                        }
-                      }
-                    }
-            );
-          } else {
-            Manifest manifest = Manifest.fromManagedManifestJson(manifestJson);
-            callback.onSuccess(manifest);
-          }
-        } catch (Exception e) {
-          callback.onFailure("Failed to parse manifest data", e);
-        }
-      }
-    });
-  }
-
-  public void downloadAsset(final AssetEntity asset, final AssetDownloadCallback callback) {
-    final String filename = UpdateUtils.sha1(asset.url.toString()) + "." + asset.type;
-    File path = new File(mUpdatesDirectory, filename);
-
-    if (path.exists()) {
-      callback.onSuccess(asset, false);
-    } else {
-      Network.downloadFileToPath(Network.addHeadersToUrl(asset.url, mContext), path, new Network.FileDownloadCallback() {
-        @Override
-        public void onFailure(Exception e) {
-          callback.onFailure(e, asset);
-        }
-
-        @Override
-        public void onSuccess(File file, byte[] hash) {
-          asset.downloadTime = new Date();
-          asset.relativePath = filename;
-          asset.hash = hash;
-          callback.onSuccess(asset, true);
-        }
-      });
-    }
-  }
-
   // private helper methods
 
   private void processManifest(Manifest manifest) {
@@ -224,7 +124,7 @@ public class RemoteLoader {
   private void downloadAllAssets(ArrayList<AssetEntity> assetList) {
     mAssetTotal = assetList.size();
     for (AssetEntity assetEntity : assetList) {
-      downloadAsset(assetEntity, new AssetDownloadCallback() {
+      FileDownloader.downloadAsset(assetEntity, mUpdatesDirectory, mContext, new FileDownloader.AssetDownloadCallback() {
         @Override
         public void onFailure(Exception e, AssetEntity assetEntity) {
           Log.e(TAG, "Failed to download asset from " + assetEntity.url, e);
