@@ -1,11 +1,9 @@
 package expo.modules.updates;
 
 import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
@@ -19,25 +17,18 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import expo.modules.updates.db.Reaper;
 import expo.modules.updates.db.UpdatesDatabase;
-import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
 import expo.modules.updates.loader.EmbeddedLoader;
 import expo.modules.updates.loader.Manifest;
 import expo.modules.updates.loader.RemoteLoader;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class UpdatesController {
 
   private static final String TAG = UpdatesController.class.getSimpleName();
 
-  private static String UPDATES_DIRECTORY_NAME = ".expo-internal";
   private static String URL_PLACEHOLDER = "EXPO_APP_URL";
 
   public static final String UPDATES_EVENT_NAME = "Expo.nativeUpdatesEvent";
@@ -52,8 +43,19 @@ public class UpdatesController {
   private File mUpdatesDirectory;
   private Launcher mLauncher;
 
-  private UpdatesDatabase mDatabase;
-  private ReentrantLock mDatabaseLock = new ReentrantLock();
+  // launch conditions
+  private boolean mIsReadyToLaunch = false;
+  private boolean mTimeoutFinished = false;
+
+  private DatabaseHolder mDatabaseHolder;
+
+  private UpdatesController(Context context, Uri url) {
+    sInstance = this;
+    mContext = context;
+    mManifestUrl = url;
+    mUpdatesDirectory = UpdateUtils.getOrCreateUpdatesDirectory(context);
+    mDatabaseHolder = new DatabaseHolder(UpdatesDatabase.getInstance(context));
+  }
 
   public static UpdatesController getInstance() {
     return sInstance;
@@ -67,40 +69,25 @@ public class UpdatesController {
     }
   }
 
-  private UpdatesController(Context context, Uri url) {
-    sInstance = this;
-    mContext = context;
-    mManifestUrl = url;
-    mUpdatesDirectory = getOrCreateUpdatesDirectory();
-    mDatabase = UpdatesDatabase.getInstance(context);
-  }
-
-  public boolean reloadReactApplication() {
-    if (mContext instanceof ReactApplication) {
-      UpdatesDatabase database = getDatabase();
-      mLauncher = new Launcher(mContext,  mUpdatesDirectory);
-      mLauncher.launch(database);
-      releaseDatabase();
-
-      final ReactInstanceManager instanceManager = ((ReactApplication) mContext).getReactNativeHost().getReactInstanceManager();
-      Handler handler = new Handler(Looper.getMainLooper());
-      handler.post(() -> {
-        instanceManager.recreateReactContextInBackground();
-      });
-      return true;
-    } else {
-      return false;
+  public synchronized void start() {
+    int delay = 0;
+    try {
+      delay = Integer.parseInt(mContext.getString(R.string.expo_updates_launch_wait_ms));
+    } catch (NumberFormatException e) {
+      Log.e(TAG, "Could not parse expo_updates_launch_wait_ms; defaulting to 0", e);
     }
-  }
+    new Handler().postDelayed(() -> this.finishTimeout(false), delay);
 
-  public void start() {
     UpdatesDatabase database = getDatabase();
     new EmbeddedLoader(mContext, database, mUpdatesDirectory).loadEmbeddedUpdate();
     mLauncher = new Launcher(mContext, mUpdatesDirectory);
     mLauncher.launch(database);
     releaseDatabase();
 
-    if (mManifestUrl != null) {
+    mIsReadyToLaunch = true;
+    notify();
+
+    if (shouldCheckForUpdateOnLaunch()) {
       AsyncTask.execute(() -> {
         UpdatesDatabase db = getDatabase();
         new RemoteLoader(mContext, db, mUpdatesDirectory)
@@ -112,7 +99,7 @@ public class UpdatesController {
 
                 WritableMap params = Arguments.createMap();
                 params.putString("message", e.getMessage());
-                sendEvent(UPDATE_ERROR_EVENT, params);
+                sendEventToReactContext(UPDATE_ERROR_EVENT, params);
 
                 runReaper();
               }
@@ -130,12 +117,14 @@ public class UpdatesController {
               public void onSuccess(UpdateEntity update) {
                 releaseDatabase();
 
+                finishTimeout(true);
+
                 if (update == null) {
-                  sendEvent(UPDATE_NO_UPDATE_AVAILABLE_EVENT, null);
+                  sendEventToReactContext(UPDATE_NO_UPDATE_AVAILABLE_EVENT, null);
                 } else {
                   WritableMap params = Arguments.createMap();
                   params.putString("manifestString", update.metadata.toString());
-                  sendEvent(UPDATE_AVAILABLE_EVENT, params);
+                  sendEventToReactContext(UPDATE_AVAILABLE_EVENT, params);
                 }
 
                 runReaper();
@@ -145,29 +134,31 @@ public class UpdatesController {
     }
   }
 
-  public Uri getManifestUrl() {
-    return mManifestUrl;
+  public boolean reloadReactApplication() {
+    if (mContext instanceof ReactApplication) {
+      UpdatesDatabase database = getDatabase();
+      mLauncher = new Launcher(mContext, mUpdatesDirectory);
+      mLauncher.launch(database);
+      releaseDatabase();
+
+      final ReactInstanceManager instanceManager = ((ReactApplication) mContext).getReactNativeHost().getReactInstanceManager();
+      Handler handler = new Handler(Looper.getMainLooper());
+      handler.post(instanceManager::recreateReactContextInBackground);
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  public File getUpdatesDirectory() {
-    return mUpdatesDirectory;
-  }
+  public synchronized String getLaunchAssetFile() {
+    while (!mIsReadyToLaunch || !mTimeoutFinished) {
+      try {
+        wait();
+      } catch (InterruptedException e) {
+        Log.e(TAG, "Interrupted while waiting for launch asset file", e);
+      }
+    }
 
-  public UpdatesDatabase getDatabase() {
-    // mDatabaseLock.lock();
-    return mDatabase;
-  }
-
-  public void releaseDatabase() {
-    // TODO: fix. this won't work because it might be called from a different thread :(
-    // mDatabaseLock.unlock();
-  }
-
-  public UpdateEntity getLaunchedUpdate() {
-    return mLauncher.getLaunchedUpdate();
-  }
-
-  public String getLaunchAssetFile() {
     if (mLauncher == null) {
       return null;
     }
@@ -181,31 +172,102 @@ public class UpdatesController {
     return mLauncher.getLocalAssetFiles();
   }
 
+  public Uri getManifestUrl() {
+    return mManifestUrl;
+  }
+
+  public File getUpdatesDirectory() {
+    return mUpdatesDirectory;
+  }
+
+  public UpdateEntity getLaunchedUpdate() {
+    return mLauncher.getLaunchedUpdate();
+  }
+
+  private class DatabaseHolder {
+    private UpdatesDatabase mDatabase;
+    private boolean isInUse = false;
+
+    public DatabaseHolder(UpdatesDatabase database) {
+      mDatabase = database;
+    }
+
+    public synchronized UpdatesDatabase getDatabase() {
+      while (isInUse) {
+        try {
+          wait();
+        } catch (InterruptedException e) {
+          Log.e(TAG, "Interrupted while waiting for database", e);
+        }
+      }
+
+      isInUse = true;
+      return mDatabase;
+    }
+
+    public synchronized void releaseDatabase() {
+      isInUse = false;
+      notify();
+    }
+  }
+
+  public UpdatesDatabase getDatabase() {
+    return mDatabaseHolder.getDatabase();
+  }
+
+  public void releaseDatabase() {
+    mDatabaseHolder.releaseDatabase();
+  }
+
+  private boolean shouldCheckForUpdateOnLaunch() {
+    if (mManifestUrl == null) {
+      return false;
+    }
+
+    String developerSetting = mContext.getString(R.string.expo_updates_check_on_launch);
+    if ("ALWAYS".equals(developerSetting)) {
+      return true;
+    } else if ("NEVER".equals(developerSetting)) {
+      return false;
+    } else if ("WIFI_ONLY".equals(developerSetting)) {
+      ConnectivityManager cm = (ConnectivityManager)mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+      if (cm == null) {
+        Log.e(TAG, "Could not determine active network connection is metered; not checking for updates");
+        return false;
+      }
+      return !cm.isActiveNetworkMetered();
+    } else {
+      Log.e(TAG, "Invalid value for expo_updates_check_on_launch; defaulting to ALWAYS");
+      return true;
+    }
+  }
+
+  private synchronized void finishTimeout(boolean relaunch) {
+    if (mTimeoutFinished) {
+      // already finished, do nothing
+      return;
+    }
+
+    if (relaunch) {
+      UpdatesDatabase database = getDatabase();
+      Launcher newLauncher = new Launcher(mContext, mUpdatesDirectory);
+      newLauncher.launch(database);
+      releaseDatabase();
+
+      mLauncher = newLauncher;
+    }
+
+    mTimeoutFinished = true;
+    notify();
+  }
+
   private void runReaper() {
     UpdatesDatabase database = getDatabase();
     Reaper.reapUnusedUpdates(database, mUpdatesDirectory, mLauncher.getLaunchedUpdate());
     releaseDatabase();
   }
 
-  private File getOrCreateUpdatesDirectory() {
-    File updatesDirectory = new File(mContext.getFilesDir(), UPDATES_DIRECTORY_NAME);
-    boolean exists = updatesDirectory.exists();
-    boolean isFile = updatesDirectory.isFile();
-    if (!exists || isFile) {
-      if (isFile) {
-        if (!updatesDirectory.delete()) {
-          throw new AssertionError("Updates directory should not be a file");
-        }
-      }
-
-      if (!updatesDirectory.mkdir()) {
-        throw new AssertionError("Updates directory must exist or be able to be created");
-      }
-    }
-    return updatesDirectory;
-  }
-
-  private void sendEvent(final String eventName, final WritableMap params) {
+  private void sendEventToReactContext(final String eventName, final WritableMap params) {
     if (mContext instanceof ReactApplication) {
       final ReactInstanceManager instanceManager = ((ReactApplication) mContext).getReactNativeHost().getReactInstanceManager();
       AsyncTask.execute(() -> {

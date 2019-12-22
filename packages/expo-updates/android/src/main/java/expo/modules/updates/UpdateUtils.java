@@ -6,11 +6,13 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.util.Log;
 
+import java.io.File;
 import java.security.MessageDigest;
 
 public class UpdateUtils {
 
-  private static String TAG = UpdateUtils.class.getSimpleName();
+  private static final String TAG = UpdateUtils.class.getSimpleName();
+  private static final String UPDATES_DIRECTORY_NAME = ".expo-internal";
 
   public static String getBinaryVersion(Context context) {
     String versionName = null;
@@ -21,6 +23,24 @@ public class UpdateUtils {
       Log.e(TAG, "Could not determine binary version", e);
     }
     return versionName;
+  }
+
+  public static File getOrCreateUpdatesDirectory(Context context) {
+    File updatesDirectory = new File(context.getFilesDir(), UPDATES_DIRECTORY_NAME);
+    boolean exists = updatesDirectory.exists();
+    boolean isFile = updatesDirectory.isFile();
+    if (!exists || isFile) {
+      if (isFile) {
+        if (!updatesDirectory.delete()) {
+          throw new AssertionError("Updates directory should not be a file");
+        }
+      }
+
+      if (!updatesDirectory.mkdir()) {
+        throw new AssertionError("Updates directory must exist or be able to be created");
+      }
+    }
+    return updatesDirectory;
   }
 
   public static String sha1(String string) {

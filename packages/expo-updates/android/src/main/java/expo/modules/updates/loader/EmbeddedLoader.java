@@ -26,9 +26,11 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class EmbeddedLoader {
 
-  private static String TAG = EmbeddedLoader.class.getSimpleName();
+  private static final String TAG = EmbeddedLoader.class.getSimpleName();
 
-  private static String MANIFEST_FILENAME = "shell-app-manifest.json";
+  private static final String MANIFEST_FILENAME = "shell-app-manifest.json";
+
+  private static Manifest sEmbeddedManifest = null;
 
   private Context mContext;
   private UpdatesDatabase mDatabase;
@@ -63,13 +65,16 @@ public class EmbeddedLoader {
   }
 
   public static Manifest readEmbeddedManifest(Context context) {
-    try (InputStream stream = context.getAssets().open(MANIFEST_FILENAME)) {
-      String manifestString = IOUtils.toString(stream, "UTF-8");
-      return Manifest.fromManagedManifestJson(new JSONObject(manifestString));
-    } catch (Exception e) {
-      Log.e(TAG, "Could not read embedded manifest", e);
-      return null;
+    if (sEmbeddedManifest == null) {
+      try (InputStream stream = context.getAssets().open(MANIFEST_FILENAME)) {
+        String manifestString = IOUtils.toString(stream, "UTF-8");
+        sEmbeddedManifest = Manifest.fromManagedManifestJson(new JSONObject(manifestString));
+      } catch (Exception e) {
+        Log.e(TAG, "Could not read embedded manifest", e);
+      }
     }
+
+    return sEmbeddedManifest;
   }
 
   public static byte[] copyAssetAndGetHash(AssetEntity asset, File destination, Context context) throws NoSuchAlgorithmException, IOException {
