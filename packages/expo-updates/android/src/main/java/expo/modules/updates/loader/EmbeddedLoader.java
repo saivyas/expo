@@ -14,9 +14,12 @@ import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -32,10 +35,9 @@ public class EmbeddedLoader {
   private File mUpdatesDirectory;
 
   private UpdateEntity mUpdateEntity;
-  private ConcurrentLinkedQueue<AssetEntity> mAssetQueue = new ConcurrentLinkedQueue<>();
-  private ConcurrentLinkedQueue<AssetEntity> mErroredAssetQueue = new ConcurrentLinkedQueue<>();
-  private ConcurrentLinkedQueue<AssetEntity> mExistingAssetQueue = new ConcurrentLinkedQueue<>();
-  private ConcurrentLinkedQueue<AssetEntity> mFinishedAssetQueue = new ConcurrentLinkedQueue<>();
+  private ArrayList<AssetEntity> mErroredAssetList = new ArrayList<>();
+  private ArrayList<AssetEntity> mExistingAssetList = new ArrayList<>();
+  private ArrayList<AssetEntity> mFinishedAssetList = new ArrayList<>();
 
   public EmbeddedLoader(Context context, UpdatesDatabase database, File updatesDirectory) {
     mContext = context;
@@ -45,80 +47,96 @@ public class EmbeddedLoader {
 
   public boolean loadEmbeddedUpdate() {
     boolean success = false;
-    try (InputStream stream = mContext.getAssets().open(MANIFEST_FILENAME)) {
-      String manifestString = IOUtils.toString(stream, "UTF-8");
-      Manifest manifest = Manifest.fromManagedManifestJson(new JSONObject(manifestString));
-
-      UpdateEntity newUpdateEntity = manifest.getUpdateEntity();
-      UpdateEntity existingUpdateEntity = mDatabase.updateDao().loadUpdateWithId(newUpdateEntity.id);
-      if (existingUpdateEntity != null && existingUpdateEntity.status == UpdateStatus.READY) {
-        // hooray, we already have this update downloaded and ready to go!
-        mUpdateEntity = existingUpdateEntity;
-        success = true;
-      } else {
-        if (existingUpdateEntity == null) {
-          // no update already exists with this ID, so we need to insert it and download everything.
-          mUpdateEntity = newUpdateEntity;
-          mDatabase.updateDao().insertUpdate(mUpdateEntity);
-        } else {
-          // we've already partially downloaded the update, so we should use the existing entity.
-          // however, it's not ready, so we should try to download all the assets again.
-          mUpdateEntity = existingUpdateEntity;
-        }
-        mAssetQueue = manifest.getAssetEntityList();
-        copyAssetsFromQueue();
-        success = true;
-      }
-    } catch (Exception e) {
-      Log.e(TAG, "Could not load embedded update", e);
+    Manifest manifest = readEmbeddedManifest(mContext);
+    if (manifest != null) {
+      success = processManifest(manifest);
+      reset();
     }
-    reset();
     return success;
   }
 
   public void reset() {
     mUpdateEntity = null;
-    mAssetQueue = new ConcurrentLinkedQueue<>();
-    mErroredAssetQueue = new ConcurrentLinkedQueue<>();
-    mFinishedAssetQueue = new ConcurrentLinkedQueue<>();
+    mErroredAssetList = new ArrayList<>();
+    mExistingAssetList = new ArrayList<>();
+    mFinishedAssetList = new ArrayList<>();
   }
 
-  private void copyAssetsFromQueue() {
-    while (mAssetQueue.size() > 0) {
-      AssetEntity asset = mAssetQueue.poll();
+  public static Manifest readEmbeddedManifest(Context context) {
+    try (InputStream stream = context.getAssets().open(MANIFEST_FILENAME)) {
+      String manifestString = IOUtils.toString(stream, "UTF-8");
+      return Manifest.fromManagedManifestJson(new JSONObject(manifestString));
+    } catch (Exception e) {
+      Log.e(TAG, "Could not read embedded manifest", e);
+      return null;
+    }
+  }
 
+  public static byte[] copyAssetAndGetHash(AssetEntity asset, File destination, Context context) throws NoSuchAlgorithmException, IOException {
+    try (
+        InputStream inputStream = context.getAssets().open(asset.assetsFilename);
+        DigestInputStream digestInputStream = new DigestInputStream(inputStream, MessageDigest.getInstance("SHA-1"))
+    ) {
+      FileUtils.copyInputStreamToFile(digestInputStream, destination);
+      MessageDigest md = digestInputStream.getMessageDigest();
+      return md.digest();
+    } catch (NoSuchAlgorithmException | IOException e) {
+      Log.e(TAG, "Failed to copy asset " + asset.assetsFilename, e);
+      throw e;
+    }
+  }
+
+  // private helper methods
+
+  private boolean processManifest(Manifest manifest) {
+    UpdateEntity newUpdateEntity = manifest.getUpdateEntity();
+    UpdateEntity existingUpdateEntity = mDatabase.updateDao().loadUpdateWithId(newUpdateEntity.id);
+    if (existingUpdateEntity != null && existingUpdateEntity.status == UpdateStatus.READY) {
+      // hooray, we already have this update downloaded and ready to go!
+      mUpdateEntity = existingUpdateEntity;
+      return true;
+    } else {
+      if (existingUpdateEntity == null) {
+        // no update already exists with this ID, so we need to insert it and download everything.
+        mUpdateEntity = newUpdateEntity;
+        mDatabase.updateDao().insertUpdate(mUpdateEntity);
+      } else {
+        // we've already partially downloaded the update, so we should use the existing entity.
+        // however, it's not ready, so we should try to download all the assets again.
+        mUpdateEntity = existingUpdateEntity;
+      }
+      copyAllAssets(manifest.getAssetEntityList());
+      return true;
+    }
+  }
+
+  private void copyAllAssets(ArrayList<AssetEntity> assetList) {
+    for (AssetEntity asset : assetList) {
       String filename = UpdateUtils.sha1(asset.url.toString()) + "." + asset.type;
       File destination = new File(mUpdatesDirectory, filename);
 
       if (destination.exists()) {
-        mExistingAssetQueue.add(asset);
+        mExistingAssetList.add(asset);
       } else {
-        try (
-          InputStream inputStream = mContext.getAssets().open(asset.assetsFilename);
-          DigestInputStream digestInputStream = new DigestInputStream(inputStream, MessageDigest.getInstance("SHA-1"))
-        ) {
-          FileUtils.copyInputStreamToFile(digestInputStream, destination);
-          MessageDigest md = digestInputStream.getMessageDigest();
-          byte[] hash = md.digest();
-
+        try {
+          byte[] hash = copyAssetAndGetHash(asset, destination, mContext);
           asset.downloadTime = new Date();
           asset.relativePath = filename;
           asset.hash = hash;
-          mFinishedAssetQueue.add(asset);
+          mFinishedAssetList.add(asset);
         } catch (Exception e) {
-          // TODO: try downloading failed asset from remote url
-          Log.e(TAG, "Failed to copy asset " + asset.assetsFilename, e);
-          mErroredAssetQueue.add(asset);
+          mErroredAssetList.add(asset);
         }
       }
     }
 
-    mDatabase.assetDao().insertAssets(Arrays.asList(mFinishedAssetQueue.toArray(new AssetEntity[0])), mUpdateEntity);
-    for (AssetEntity asset : mExistingAssetQueue) {
+    mDatabase.assetDao().insertAssets(mFinishedAssetList, mUpdateEntity);
+    for (AssetEntity asset : mExistingAssetList) {
       mDatabase.assetDao().addExistingAssetToUpdate(mUpdateEntity, asset.url, asset.isLaunchAsset);
     }
-    if (mErroredAssetQueue.size() == 0) {
+    if (mErroredAssetList.size() == 0) {
       mDatabase.updateDao().markUpdateReady(mUpdateEntity);
     }
+    // TODO: maybe try downloading failed assets in background
   }
 }

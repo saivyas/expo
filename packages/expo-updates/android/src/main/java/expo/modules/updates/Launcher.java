@@ -5,6 +5,7 @@ import android.util.Log;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +13,9 @@ import java.util.Map;
 import expo.modules.updates.db.UpdatesDatabase;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
+import expo.modules.updates.loader.EmbeddedLoader;
 import expo.modules.updates.loader.FileDownloader;
+import expo.modules.updates.loader.Manifest;
 
 public class Launcher {
 
@@ -63,7 +66,7 @@ public class Launcher {
 
     mLaunchedUpdate = new SelectionPolicyNewest().selectUpdateToLaunch(launchableUpdates);
 
-    // before returning, verify that we have all the required assets on disk
+    // before returning, verify that we have the launch asset on disk
     // according to the database, we should, but something could have gone wrong on disk
 
     AssetEntity launchAsset = mDatabase.updateDao().loadLaunchAsset(mLaunchedUpdate.id);
@@ -72,11 +75,37 @@ public class Launcher {
     }
 
     File launchAssetFile = new File(mUpdatesDirectory, launchAsset.relativePath);
-    if (!launchAssetFile.exists()) {
+    boolean launchAssetFileExists = launchAssetFile.exists();
+    if (!launchAssetFileExists) {
       // something has gone wrong, we're missing the launch asset
-      // try to redownload
-      // TODO: check embedded assets for this first!
+      // first we check to see if a copy is embedded in the binary
+      Manifest embeddedManifest = EmbeddedLoader.readEmbeddedManifest(mContext);
+      if (embeddedManifest != null) {
+        ArrayList<AssetEntity> embeddedAssets = embeddedManifest.getAssetEntityList();
+        AssetEntity matchingEmbeddedAsset = null;
+        for (AssetEntity embeddedAsset : embeddedAssets) {
+          if (embeddedAsset.url.equals(launchAsset.url)) {
+            matchingEmbeddedAsset = embeddedAsset;
+            break;
+          }
+        }
 
+        if (matchingEmbeddedAsset != null) {
+          try {
+            byte[] hash = EmbeddedLoader.copyAssetAndGetHash(matchingEmbeddedAsset, launchAssetFile, mContext);
+            if (hash != null && Arrays.equals(hash, launchAsset.hash)) {
+              launchAssetFileExists = true;
+            }
+          } catch (Exception e) {
+            // things are really not going our way...
+          }
+        }
+      }
+    }
+
+    if (!launchAssetFileExists) {
+      // we still don't have the launch asset
+      // try downloading it remotely
       try {
         launchAsset = FileDownloader.downloadAssetSync(launchAsset, mUpdatesDirectory, mContext);
         mDatabase.assetDao().updateAsset(launchAsset);

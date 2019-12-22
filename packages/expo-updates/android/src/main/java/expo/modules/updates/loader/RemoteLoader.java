@@ -97,27 +97,23 @@ public class RemoteLoader {
   // private helper methods
 
   private void processManifest(Manifest manifest) {
-    try {
-      UpdateEntity newUpdateEntity = manifest.getUpdateEntity();
-      UpdateEntity existingUpdateEntity = mDatabase.updateDao().loadUpdateWithId(newUpdateEntity.id);
-      if (existingUpdateEntity != null && existingUpdateEntity.status == UpdateStatus.READY) {
-        // hooray, we already have this update downloaded and ready to go!
-        mUpdateEntity = existingUpdateEntity;
-        finishWithSuccess();
+    UpdateEntity newUpdateEntity = manifest.getUpdateEntity();
+    UpdateEntity existingUpdateEntity = mDatabase.updateDao().loadUpdateWithId(newUpdateEntity.id);
+    if (existingUpdateEntity != null && existingUpdateEntity.status == UpdateStatus.READY) {
+      // hooray, we already have this update downloaded and ready to go!
+      mUpdateEntity = existingUpdateEntity;
+      finishWithSuccess();
+    } else {
+      if (existingUpdateEntity == null) {
+        // no update already exists with this ID, so we need to insert it and download everything.
+        mUpdateEntity = newUpdateEntity;
+        mDatabase.updateDao().insertUpdate(mUpdateEntity);
       } else {
-        if (existingUpdateEntity == null) {
-          // no update already exists with this ID, so we need to insert it and download everything.
-          mUpdateEntity = newUpdateEntity;
-          mDatabase.updateDao().insertUpdate(mUpdateEntity);
-        } else {
-          // we've already partially downloaded the update, so we should use the existing entity.
-          // however, it's not ready, so we should try to download all the assets again.
-          mUpdateEntity = existingUpdateEntity;
-        }
-        downloadAllAssets(manifest.getAssetEntityList());
+        // we've already partially downloaded the update, so we should use the existing entity.
+        // however, it's not ready, so we should try to download all the assets again.
+        mUpdateEntity = existingUpdateEntity;
       }
-    } catch (Exception e) {
-      finishWithError("Failed to parse manifest data", e);
+      downloadAllAssets(manifest.getAssetEntityList());
     }
   }
 
