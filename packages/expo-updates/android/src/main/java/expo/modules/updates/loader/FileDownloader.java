@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
 
+import expo.modules.updates.R;
 import expo.modules.updates.UpdateUtils;
 
 import org.apache.commons.io.FileUtils;
@@ -214,7 +215,9 @@ public class FileDownloader {
   private static Request addHeadersToUrl(Uri url, Context context) {
     Request.Builder requestBuilder = new Request.Builder()
             .url(url.toString())
-            .header("Expo-Platform", "android");
+            .header("Expo-Platform", "android")
+            .header("Expo-Api-Version", "1")
+            .header("Expo-Client-Environment", "STANDALONE");
 
     String binaryVersion = UpdateUtils.getBinaryVersion(context);
     if (binaryVersion != null) {
@@ -231,11 +234,13 @@ public class FileDownloader {
             .header("Expo-Platform", "android")
             .header("Expo-JSON-Error", "true")
             .header("Expo-Accept-Signature", "true")
+            .header("Expo-Release-Channel", context.getString(R.string.expo_release_channel))
             .cacheControl(CacheControl.FORCE_NETWORK);
 
     String binaryVersion = UpdateUtils.getBinaryVersion(context);
     if (binaryVersion != null) {
       requestBuilder = requestBuilder.header("Expo-Binary-Version", binaryVersion)
+          // TODO: fix this
               .header("Expo-SDK-Version", "36.0.0");
     }
     return requestBuilder.build();
