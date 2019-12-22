@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,6 +15,7 @@ import org.unimodules.core.interfaces.services.EventEmitter;
 
 import expo.modules.updates.db.UpdatesDatabase;
 import expo.modules.updates.db.entity.UpdateEntity;
+import expo.modules.updates.loader.FileDownloader;
 import expo.modules.updates.loader.Manifest;
 import expo.modules.updates.loader.RemoteLoader;
 
@@ -25,7 +25,6 @@ public class UpdatesModule extends ExportedModule {
 
   private static final String UPDATES_EVENT_NAME = "Expo.nativeUpdatesEvent";
   private static final String UPDATE_DOWNLOAD_START_EVENT = "downloadStart";
-  private static final String UPDATE_DOWNLOAD_PROGRESS_EVENT = "downloadProgress";
   private static final String UPDATE_DOWNLOAD_FINISHED_EVENT = "downloadFinished";
   private static final String UPDATE_NO_UPDATE_AVAILABLE_EVENT = "noUpdateAvailable";
   private static final String UPDATE_ERROR_EVENT = "error";
@@ -80,39 +79,30 @@ public class UpdatesModule extends ExportedModule {
       return;
     }
 
-    UpdatesDatabase database = controller.getDatabase(); // TODO: use lock
-    new RemoteLoader(mContext, database, controller.getUpdatesDirectory())
-        .downloadManifest(
-            controller.getManifestUrl(),
-            new RemoteLoader.ManifestDownloadCallback() {
-              @Override
-              public void onFailure(String message, Exception e) {
-                promise.reject("ERR_UPDATES_CHECK", message, e);
-                Log.e(TAG, message, e);
-              }
+    FileDownloader.downloadManifest(controller.getManifestUrl(), mContext, new FileDownloader.ManifestDownloadCallback() {
+      @Override
+      public void onFailure(String message, Exception e) {
+        promise.reject("ERR_UPDATES_CHECK", message, e);
+        Log.e(TAG, message, e);
+      }
 
-              @Override
-              public void onSuccess(Manifest manifest) {
-                UpdateEntity launchedUpdate = controller.getLaunchedUpdate();
-                if (launchedUpdate == null) {
-                  // this shouldn't ever happen, but if we don't have anything to compare
-                  // the new manifest to, let the user know an update is available
-                  promise.resolve(manifest.getRawManifestJson().toString());
-                  return;
-                }
+      @Override
+      public void onSuccess(Manifest manifest) {
+        UpdateEntity launchedUpdate = controller.getLaunchedUpdate();
+        if (launchedUpdate == null) {
+          // this shouldn't ever happen, but if we don't have anything to compare
+          // the new manifest to, let the user know an update is available
+          promise.resolve(manifest.getRawManifestJson().toString());
+          return;
+        }
 
-                // compare launchedUpdate to newly downloaded manifest
-                UpdateEntity newerUpdate = new SelectionPolicyNewest().selectUpdateToLaunch(
-                    Arrays.asList(launchedUpdate, manifest.getUpdateEntity())
-                );
-                if (newerUpdate == launchedUpdate) {
-                  promise.resolve(false);
-                } else {
-                  promise.resolve(manifest.getRawManifestJson());
-                }
-              }
-            }
-        );
+        if (new SelectionPolicyNewest().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate)) {
+          promise.resolve(manifest.getRawManifestJson());
+        } else {
+          promise.resolve(false);
+        }
+      }
+    });
   }
 
   @ExpoMethod
@@ -127,33 +117,44 @@ public class UpdatesModule extends ExportedModule {
       return;
     }
 
-    UpdatesDatabase database = controller.getDatabase(); // TODO: use lock
+    UpdatesDatabase database = controller.getDatabase();
     new RemoteLoader(mContext, database, controller.getUpdatesDirectory())
         .start(
             controller.getManifestUrl(),
             new RemoteLoader.LoaderCallback() {
               @Override
               public void onFailure(Exception e) {
+                controller.releaseDatabase();
                 promise.reject("ERR_UPDATES_FETCH", "Failed to download new update", e);
               }
 
               @Override
-              public void onManifestDownloaded(Manifest manifest) {
-                // TODO: maybe return a boolean?
+              public boolean onManifestDownloaded(Manifest manifest) {
                 UpdateEntity launchedUpdate = controller.getLaunchedUpdate();
-                if (launchedUpdate != null && launchedUpdate.id.equals(manifest.getUpdateEntity().id)) {
-                  sendEvent(UPDATE_NO_UPDATE_AVAILABLE_EVENT);
-                  promise.resolve(false);
-                } else {
+                if (launchedUpdate == null) {
+                  // this shouldn't ever happen, but if we don't have anything to compare
+                  // the new manifest to, let the user know an update is available
+                  sendEvent(UPDATE_DOWNLOAD_START_EVENT);
+                  return true;
+                }
+
+                boolean shouldContinue = new SelectionPolicyNewest().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate);
+                if (shouldContinue) {
                   sendEvent(UPDATE_DOWNLOAD_START_EVENT);
                 }
+                return shouldContinue;
               }
 
               @Override
               public void onSuccess(UpdateEntity update) {
-                // TODO: send manifest
-                sendEvent(UPDATE_DOWNLOAD_FINISHED_EVENT);
-                promise.resolve(update.id.toString());
+                controller.releaseDatabase();
+                if (update == null) {
+                  sendEvent(UPDATE_NO_UPDATE_AVAILABLE_EVENT);
+                  promise.resolve(false);
+                } else {
+                  sendEvent(UPDATE_DOWNLOAD_FINISHED_EVENT);
+                  promise.resolve(update.metadata);
+                }
               }
             }
         );
