@@ -27,6 +27,7 @@ public class Crypto {
     void onCompleted(boolean isValid);
   }
 
+  // TODO: remove spongyCastle
   private static BouncyCastleProvider sBouncyCastleProvider = new BouncyCastleProvider();
   static {
     Security.insertProviderAt(sBouncyCastleProvider, 1);

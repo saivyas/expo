@@ -5,12 +5,17 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import expo.modules.updates.db.Reaper;
 import expo.modules.updates.db.UpdatesDatabase;
@@ -34,6 +39,11 @@ public class UpdatesController {
 
   private static String UPDATES_DIRECTORY_NAME = ".expo-internal";
   private static String URL_PLACEHOLDER = "EXPO_APP_URL";
+
+  public static final String UPDATES_EVENT_NAME = "Expo.nativeUpdatesEvent";
+  public static final String UPDATE_AVAILABLE_EVENT = "updateAvailable";
+  public static final String UPDATE_NO_UPDATE_AVAILABLE_EVENT = "noUpdateAvailable";
+  public static final String UPDATE_ERROR_EVENT = "error";
 
   private static UpdatesController sInstance;
 
@@ -74,11 +84,8 @@ public class UpdatesController {
 
       final ReactInstanceManager instanceManager = ((ReactApplication) mContext).getReactNativeHost().getReactInstanceManager();
       Handler handler = new Handler(Looper.getMainLooper());
-      handler.post(new Runnable() {
-        @Override
-        public void run() {
-          instanceManager.recreateReactContextInBackground();
-        }
+      handler.post(() -> {
+        instanceManager.recreateReactContextInBackground();
       });
       return true;
     } else {
@@ -94,35 +101,46 @@ public class UpdatesController {
     releaseDatabase();
 
     if (mManifestUrl != null) {
-      AsyncTask.execute(new Runnable() {
-        @Override
-        public void run() {
-          UpdatesDatabase database = getDatabase();
-          new RemoteLoader(mContext, database, mUpdatesDirectory)
-              .start(mManifestUrl, new RemoteLoader.LoaderCallback() {
-                @Override
-                public void onFailure(Exception e) {
-                  Log.e(TAG, "Failed to download remote update", e);
-                  releaseDatabase();
-                  runReaper();
+      AsyncTask.execute(() -> {
+        UpdatesDatabase db = getDatabase();
+        new RemoteLoader(mContext, db, mUpdatesDirectory)
+            .start(mManifestUrl, new RemoteLoader.LoaderCallback() {
+              @Override
+              public void onFailure(Exception e) {
+                Log.e(TAG, "Failed to download remote update", e);
+                releaseDatabase();
+
+                WritableMap params = Arguments.createMap();
+                params.putString("message", e.getMessage());
+                sendEvent(UPDATE_ERROR_EVENT, params);
+
+                runReaper();
+              }
+
+              @Override
+              public boolean onManifestDownloaded(Manifest manifest) {
+                UpdateEntity launchedUpdate = mLauncher.getLaunchedUpdate();
+                if (launchedUpdate == null) {
+                  return true;
+                }
+                return new SelectionPolicyNewest().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate);
+              }
+
+              @Override
+              public void onSuccess(UpdateEntity update) {
+                releaseDatabase();
+
+                if (update == null) {
+                  sendEvent(UPDATE_NO_UPDATE_AVAILABLE_EVENT, null);
+                } else {
+                  WritableMap params = Arguments.createMap();
+                  params.putString("manifestString", update.metadata.toString());
+                  sendEvent(UPDATE_AVAILABLE_EVENT, params);
                 }
 
-                @Override
-                public boolean onManifestDownloaded(Manifest manifest) {
-                  UpdateEntity launchedUpdate = mLauncher.getLaunchedUpdate();
-                  if (launchedUpdate == null) {
-                    return true;
-                  }
-                  return new SelectionPolicyNewest().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate);
-                }
-
-                @Override
-                public void onSuccess(UpdateEntity update) {
-                  releaseDatabase();
-                  runReaper();
-                }
-              });
-        }
+                runReaper();
+              }
+            });
       });
     }
   }
@@ -185,5 +203,44 @@ public class UpdatesController {
       }
     }
     return updatesDirectory;
+  }
+
+  private void sendEvent(final String eventName, final WritableMap params) {
+    if (mContext instanceof ReactApplication) {
+      final ReactInstanceManager instanceManager = ((ReactApplication) mContext).getReactNativeHost().getReactInstanceManager();
+      AsyncTask.execute(() -> {
+        try {
+          ReactContext reactContext = null;
+          // in case we're trying to send an event before the reactContext has been initialized
+          // continue to retry for 5000ms
+          for (int i = 0; i < 5; i++) {
+            reactContext = instanceManager.getCurrentReactContext();
+            if (reactContext != null) {
+              break;
+            }
+            Thread.sleep(1000);
+          }
+
+          if (reactContext != null) {
+            DeviceEventManagerModule.RCTDeviceEventEmitter emitter = reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class);
+            if (emitter != null) {
+              WritableMap eventParams = params;
+              if (eventParams == null) {
+                eventParams = Arguments.createMap();
+              }
+              eventParams.putString("type", eventName);
+              emitter.emit(UPDATES_EVENT_NAME, eventParams);
+              return;
+            }
+          }
+
+          Log.e(TAG, "Could not emit " + eventName + " event; no event emitter was found.");
+        } catch (Exception e) {
+          Log.e(TAG, "Could not emit " + eventName + " event; no react context was found.");
+        }
+      });
+    } else {
+      Log.e(TAG, "Could not emit " + eventName + " event; UpdatesController was not initialized with an instance of ReactApplication.");
+    }
   }
 }

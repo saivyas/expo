@@ -1,7 +1,6 @@
 package expo.modules.updates;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.util.Log;
 
 import java.util.HashMap;
@@ -11,7 +10,6 @@ import org.unimodules.core.ExportedModule;
 import org.unimodules.core.ModuleRegistry;
 import org.unimodules.core.Promise;
 import org.unimodules.core.interfaces.ExpoMethod;
-import org.unimodules.core.interfaces.services.EventEmitter;
 
 import expo.modules.updates.db.UpdatesDatabase;
 import expo.modules.updates.db.entity.UpdateEntity;
@@ -22,12 +20,6 @@ import expo.modules.updates.loader.RemoteLoader;
 public class UpdatesModule extends ExportedModule {
   private static final String NAME = "ExpoUpdates";
   private static final String TAG = UpdatesModule.class.getSimpleName();
-
-  private static final String UPDATES_EVENT_NAME = "Expo.nativeUpdatesEvent";
-  private static final String UPDATE_DOWNLOAD_START_EVENT = "downloadStart";
-  private static final String UPDATE_DOWNLOAD_FINISHED_EVENT = "downloadFinished";
-  private static final String UPDATE_NO_UPDATE_AVAILABLE_EVENT = "noUpdateAvailable";
-  private static final String UPDATE_ERROR_EVENT = "error";
 
   private ModuleRegistry mModuleRegistry;
   private Context mContext;
@@ -97,7 +89,7 @@ public class UpdatesModule extends ExportedModule {
         }
 
         if (new SelectionPolicyNewest().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate)) {
-          promise.resolve(manifest.getRawManifestJson());
+          promise.resolve(manifest.getRawManifestJson().toString());
         } else {
           promise.resolve(false);
         }
@@ -134,40 +126,17 @@ public class UpdatesModule extends ExportedModule {
                 if (launchedUpdate == null) {
                   // this shouldn't ever happen, but if we don't have anything to compare
                   // the new manifest to, let the user know an update is available
-                  sendEvent(UPDATE_DOWNLOAD_START_EVENT);
                   return true;
                 }
-
-                boolean shouldContinue = new SelectionPolicyNewest().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate);
-                if (shouldContinue) {
-                  sendEvent(UPDATE_DOWNLOAD_START_EVENT);
-                }
-                return shouldContinue;
+                return new SelectionPolicyNewest().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate);
               }
 
               @Override
               public void onSuccess(UpdateEntity update) {
                 controller.releaseDatabase();
-                if (update == null) {
-                  sendEvent(UPDATE_NO_UPDATE_AVAILABLE_EVENT);
-                  promise.resolve(false);
-                } else {
-                  sendEvent(UPDATE_DOWNLOAD_FINISHED_EVENT);
-                  promise.resolve(update.metadata);
-                }
+                promise.resolve(update == null ? false : update.metadata.toString());
               }
             }
         );
-  }
-
-  private void sendEvent(String eventName) {
-    EventEmitter eventEmitter = mModuleRegistry.getModule(EventEmitter.class);
-    if (eventEmitter != null) {
-      Bundle eventBundle = new Bundle();
-      eventBundle.putString("type", eventName);
-      eventEmitter.emit(UPDATES_EVENT_NAME, eventBundle);
-    } else {
-      Log.e(TAG, "Could not emit " + eventName + " event, no event emitter present.");
-    }
   }
 }
