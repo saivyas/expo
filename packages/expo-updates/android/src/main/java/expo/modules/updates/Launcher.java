@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ArrayBlockingQueue;
 
 import expo.modules.updates.db.UpdatesDatabase;
 import expo.modules.updates.db.entity.AssetEntity;
@@ -17,13 +16,14 @@ import expo.modules.updates.loader.FileDownloader;
 
 public class Launcher {
 
-  private static String TAG = Launcher.class.getSimpleName();
+  private static final String TAG = Launcher.class.getSimpleName();
 
   private Context mContext;
   private UpdatesDatabase mDatabase;
   private File mUpdatesDirectory;
 
-  private UpdateEntity mLaunchedUpdate;
+  private UpdateEntity mLaunchedUpdate = null;
+  private String mLaunchAssetFile = null;
 
   public Launcher(Context context, UpdatesDatabase database, File updatesDirectory) {
     mContext = context;
@@ -33,6 +33,10 @@ public class Launcher {
 
   public UpdateEntity getLaunchedUpdate() {
     return mLaunchedUpdate;
+  }
+
+  public String getLaunchAssetFile() {
+    return mLaunchAssetFile;
   }
 
   public UpdateEntity launch() {
@@ -57,49 +61,34 @@ public class Launcher {
       }
     }
 
-    return new SelectionPolicyNewest().selectUpdateToLaunch(launchableUpdates);
-  }
+    mLaunchedUpdate = new SelectionPolicyNewest().selectUpdateToLaunch(launchableUpdates);
 
-  public String getLaunchAssetFile() {
-    if (mLaunchedUpdate == null) {
-      Log.d("erictest", "Could not find an update to launch");
-      return null;
-    }
+    // before returning, verify that we have all the required assets on disk
+    // according to the database, we should, but something could have gone wrong on disk
 
     AssetEntity launchAsset = mDatabase.updateDao().loadLaunchAsset(mLaunchedUpdate.id);
-    if (launchAsset.relativePath != null) {
-      File launchAssetFile = new File(mUpdatesDirectory, launchAsset.relativePath);
-      if (launchAssetFile.exists()) {
-        return launchAssetFile.toString();
+    if (launchAsset.relativePath == null) {
+      throw new AssertionError("Launch Asset relativePath should not be null");
+    }
+
+    File launchAssetFile = new File(mUpdatesDirectory, launchAsset.relativePath);
+    if (!launchAssetFile.exists()) {
+      // something has gone wrong, we're missing the launch asset
+      // try to redownload
+      // TODO: check embedded assets for this first!
+
+      try {
+        launchAsset = FileDownloader.downloadAssetSync(launchAsset, mUpdatesDirectory, mContext);
+        mDatabase.assetDao().updateAsset(launchAsset);
+        launchAssetFile = new File(mUpdatesDirectory, launchAsset.relativePath);
+      } catch (Exception e) {
+        Log.e(TAG, "Could not launch; failed to load update from disk or network", e);
+        return null;
       }
     }
 
-    // something has gone wrong, we're missing the launch asset
-    // try to redownload
-    // TODO: check embedded assets for this first!
-
-    // TODO: urg. should use okhttp sync method for this :(
-    final ArrayBlockingQueue<AssetEntity> blockingQueue = new ArrayBlockingQueue<>(1);
-    FileDownloader.downloadAsset(launchAsset, mUpdatesDirectory, mContext, new FileDownloader.AssetDownloadCallback() {
-      @Override
-      public void onFailure(Exception e, AssetEntity assetEntity) {
-        Log.d("erictest", "Failed to load update from disk or network");
-      }
-
-      @Override
-      public void onSuccess(AssetEntity assetEntity, boolean isNew) {
-        blockingQueue.add(assetEntity);
-      }
-    });
-
-    try {
-      AssetEntity downloadedLaunchAsset = blockingQueue.take();
-      mDatabase.assetDao().updateAsset(downloadedLaunchAsset);
-      return new File(mUpdatesDirectory, downloadedLaunchAsset.relativePath).toString();
-    } catch (Exception e) {
-      Log.d("erictest", "exception while waiting for blocking queue", e);
-      return null;
-    }
+    mLaunchAssetFile = launchAssetFile.toString();
+    return mLaunchedUpdate;
   }
 
   public Map<String, String> getLocalAssetFiles() {

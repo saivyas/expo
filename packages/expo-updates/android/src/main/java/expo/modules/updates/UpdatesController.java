@@ -65,6 +65,7 @@ public class UpdatesController {
   public boolean reloadReactApplication() {
     if (mContext instanceof ReactApplication) {
       // TODO: wait for database lock
+      mLauncher = new Launcher(mContext, mDatabase, mUpdatesDirectory);
       mLauncher.launch();
       final ReactInstanceManager instanceManager = ((ReactApplication) mContext).getReactNativeHost().getReactInstanceManager();
       Handler handler = new Handler(Looper.getMainLooper());

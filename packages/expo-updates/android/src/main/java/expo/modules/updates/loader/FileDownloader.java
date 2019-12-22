@@ -2,6 +2,7 @@ package expo.modules.updates.loader;
 
 import android.content.Context;
 import android.net.Uri;
+import android.util.Log;
 
 import expo.modules.updates.UpdateUtils;
 
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
 import expo.modules.updates.db.entity.AssetEntity;
@@ -25,6 +27,8 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class FileDownloader {
+
+  private static final String TAG = FileDownloader.class.getSimpleName();
 
   private static OkHttpClient sClient = new OkHttpClient.Builder().build();
 
@@ -66,8 +70,9 @@ public class FileDownloader {
           MessageDigest md = digestInputStream.getMessageDigest();
           byte[] data = md.digest();
           callback.onSuccess(destination, data);
-        } catch (Exception e) {
-          callback.onFailure(e);
+        } catch (NoSuchAlgorithmException | NullPointerException e) {
+          Log.e(TAG, "Could got get SHA-1 hash of file", e);
+          callback.onSuccess(destination, null);
         }
       }
     });
@@ -132,6 +137,7 @@ public class FileDownloader {
     File path = new File(destinationDirectory, filename);
 
     if (path.exists()) {
+      asset.relativePath = filename;
       callback.onSuccess(asset, false);
     } else {
       FileDownloader.downloadFileToPath(FileDownloader.addHeadersToUrl(asset.url, context), path, new FileDownloader.FileDownloadCallback() {
@@ -151,8 +157,40 @@ public class FileDownloader {
     }
   }
 
+  public static AssetEntity downloadAssetSync(AssetEntity asset, File destinationDirectory, Context context) throws IOException {
+    String filename = UpdateUtils.sha1(asset.url.toString()) + "." + asset.type;
+    File path = new File(destinationDirectory, filename);
+
+    if (path.exists()) {
+      asset.relativePath = filename;
+      return asset;
+    } else {
+      Response response = downloadDataSync(FileDownloader.addHeadersToUrl(asset.url, context));
+
+      try (
+          InputStream inputStream = response.body().byteStream();
+          DigestInputStream digestInputStream = new DigestInputStream(inputStream, MessageDigest.getInstance("SHA-1"));
+      ) {
+        FileUtils.copyInputStreamToFile(digestInputStream, path);
+
+        MessageDigest md = digestInputStream.getMessageDigest();
+        asset.hash = md.digest();
+      } catch (NoSuchAlgorithmException | NullPointerException e) {
+        Log.e(TAG, "Could not get SHA-1 hash of file", e);
+      }
+
+      asset.downloadTime = new Date();
+      asset.relativePath = filename;
+      return asset;
+    }
+  }
+
   public static void downloadData(Request request, Callback callback) {
     downloadData(request, callback, false);
+  }
+
+  public static Response downloadDataSync(Request request) throws IOException {
+    return sClient.newCall(request).execute();
   }
 
   private static void downloadData(final Request request, final Callback callback, final boolean isRetry) {
