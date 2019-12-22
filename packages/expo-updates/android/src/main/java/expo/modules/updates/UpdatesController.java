@@ -42,12 +42,12 @@ public class UpdatesController {
   private Uri mManifestUrl;
   private File mUpdatesDirectory;
   private Launcher mLauncher;
+  private DatabaseHolder mDatabaseHolder;
+  private SelectionPolicy mSelectionPolicy;
 
   // launch conditions
   private boolean mIsReadyToLaunch = false;
   private boolean mTimeoutFinished = false;
-
-  private DatabaseHolder mDatabaseHolder;
 
   private UpdatesController(Context context, Uri url) {
     sInstance = this;
@@ -55,6 +55,7 @@ public class UpdatesController {
     mManifestUrl = url;
     mUpdatesDirectory = UpdateUtils.getOrCreateUpdatesDirectory(context);
     mDatabaseHolder = new DatabaseHolder(UpdatesDatabase.getInstance(context));
+    mSelectionPolicy = new SelectionPolicyNewest();
   }
 
   public static UpdatesController getInstance() {
@@ -79,8 +80,10 @@ public class UpdatesController {
     new Handler().postDelayed(() -> this.finishTimeout(false), delay);
 
     UpdatesDatabase database = getDatabase();
-    new EmbeddedLoader(mContext, database, mUpdatesDirectory).loadEmbeddedUpdate();
-    mLauncher = new Launcher(mContext, mUpdatesDirectory);
+    mLauncher = new Launcher(mContext, mUpdatesDirectory, mSelectionPolicy);
+    if (mSelectionPolicy.shouldLoadNewUpdate(EmbeddedLoader.readEmbeddedManifest(mContext).getUpdateEntity(), mLauncher.getLaunchableUpdate(database))) {
+      new EmbeddedLoader(mContext, database, mUpdatesDirectory).loadEmbeddedUpdate();
+    }
     mLauncher.launch(database);
     releaseDatabase();
 
@@ -110,7 +113,7 @@ public class UpdatesController {
                 if (launchedUpdate == null) {
                   return true;
                 }
-                return new SelectionPolicyNewest().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate);
+                return mSelectionPolicy.shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate);
               }
 
               @Override
@@ -137,7 +140,7 @@ public class UpdatesController {
   public boolean reloadReactApplication() {
     if (mContext instanceof ReactApplication) {
       UpdatesDatabase database = getDatabase();
-      mLauncher = new Launcher(mContext, mUpdatesDirectory);
+      mLauncher = new Launcher(mContext, mUpdatesDirectory, mSelectionPolicy);
       mLauncher.launch(database);
       releaseDatabase();
 
@@ -182,6 +185,10 @@ public class UpdatesController {
 
   public UpdateEntity getLaunchedUpdate() {
     return mLauncher.getLaunchedUpdate();
+  }
+
+  public SelectionPolicy getSelectionPolicy() {
+    return mSelectionPolicy;
   }
 
   private class DatabaseHolder {
@@ -250,7 +257,7 @@ public class UpdatesController {
 
     if (relaunch) {
       UpdatesDatabase database = getDatabase();
-      Launcher newLauncher = new Launcher(mContext, mUpdatesDirectory);
+      Launcher newLauncher = new Launcher(mContext, mUpdatesDirectory, mSelectionPolicy);
       newLauncher.launch(database);
       releaseDatabase();
 

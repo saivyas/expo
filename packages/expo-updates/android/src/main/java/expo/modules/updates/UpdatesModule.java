@@ -88,7 +88,7 @@ public class UpdatesModule extends ExportedModule {
           return;
         }
 
-        if (new SelectionPolicyNewest().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate)) {
+        if (controller.getSelectionPolicy().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate)) {
           promise.resolve(manifest.getRawManifestJson().toString());
         } else {
           promise.resolve(false);
@@ -128,7 +128,7 @@ public class UpdatesModule extends ExportedModule {
                   // the new manifest to, let the user know an update is available
                   return true;
                 }
-                return new SelectionPolicyNewest().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate);
+                return controller.getSelectionPolicy().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate);
               }
 
               @Override

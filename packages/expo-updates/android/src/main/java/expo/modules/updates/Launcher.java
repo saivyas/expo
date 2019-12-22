@@ -23,14 +23,16 @@ public class Launcher {
 
   private Context mContext;
   private File mUpdatesDirectory;
+  private SelectionPolicy mSelectionPolicy;
 
   private UpdateEntity mLaunchedUpdate = null;
   private String mLaunchAssetFile = null;
   private Map<String, String> mLocalAssetFiles = null;
 
-  public Launcher(Context context, File updatesDirectory) {
+  public Launcher(Context context, File updatesDirectory, SelectionPolicy selectionPolicy) {
     mContext = context;
     mUpdatesDirectory = updatesDirectory;
+    mSelectionPolicy = selectionPolicy;
   }
 
   public UpdateEntity getLaunchedUpdate() {
@@ -45,7 +47,7 @@ public class Launcher {
     return mLocalAssetFiles;
   }
 
-  public UpdateEntity launch(UpdatesDatabase database) {
+  public UpdateEntity getLaunchableUpdate(UpdatesDatabase database) {
     List<UpdateEntity> launchableUpdates = database.updateDao().loadLaunchableUpdates();
 
     String versionName = UpdateUtils.getBinaryVersion(mContext);
@@ -67,9 +69,13 @@ public class Launcher {
       }
     }
 
-    mLaunchedUpdate = new SelectionPolicyNewest().selectUpdateToLaunch(launchableUpdates);
+    return mSelectionPolicy.selectUpdateToLaunch(launchableUpdates);
+  }
 
-    // before returning, verify that we have the launch asset on disk
+  public UpdateEntity launch(UpdatesDatabase database) {
+    mLaunchedUpdate = getLaunchableUpdate(database);
+
+    // verify that we have the launch asset on disk
     // according to the database, we should, but something could have gone wrong on disk
 
     AssetEntity launchAsset = database.updateDao().loadLaunchAsset(mLaunchedUpdate.id);
