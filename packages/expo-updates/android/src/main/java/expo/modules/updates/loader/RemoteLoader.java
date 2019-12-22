@@ -29,7 +29,7 @@ public class RemoteLoader {
 
   public interface LoaderCallback {
     void onFailure(Exception e);
-    void onManifestDownloaded(Manifest manifest);
+    boolean onManifestDownloaded(Manifest manifest);
     void onSuccess(UpdateEntity update);
   }
 
@@ -57,8 +57,12 @@ public class RemoteLoader {
 
       @Override
       public void onSuccess(Manifest manifest) {
-        mCallback.onManifestDownloaded(manifest);
-        processManifest(manifest);
+        boolean shouldContinue = mCallback.onManifestDownloaded(manifest);
+        if (shouldContinue) {
+          processManifest(manifest);
+        } else {
+          onSuccess(null);
+        }
       }
     });
   }

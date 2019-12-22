@@ -22,15 +22,14 @@ public class Launcher {
   private static final String TAG = Launcher.class.getSimpleName();
 
   private Context mContext;
-  private UpdatesDatabase mDatabase;
   private File mUpdatesDirectory;
 
   private UpdateEntity mLaunchedUpdate = null;
   private String mLaunchAssetFile = null;
+  private Map<String, String> mLocalAssetFiles = null;
 
-  public Launcher(Context context, UpdatesDatabase database, File updatesDirectory) {
+  public Launcher(Context context, File updatesDirectory) {
     mContext = context;
-    mDatabase = database;
     mUpdatesDirectory = updatesDirectory;
   }
 
@@ -42,8 +41,12 @@ public class Launcher {
     return mLaunchAssetFile;
   }
 
-  public UpdateEntity launch() {
-    List<UpdateEntity> launchableUpdates = mDatabase.updateDao().loadLaunchableUpdates();
+  public Map<String, String> getLocalAssetFiles() {
+    return mLocalAssetFiles;
+  }
+
+  public UpdateEntity launch(UpdatesDatabase database) {
+    List<UpdateEntity> launchableUpdates = database.updateDao().loadLaunchableUpdates();
 
     String versionName = UpdateUtils.getBinaryVersion(mContext);
 
@@ -69,7 +72,7 @@ public class Launcher {
     // before returning, verify that we have the launch asset on disk
     // according to the database, we should, but something could have gone wrong on disk
 
-    AssetEntity launchAsset = mDatabase.updateDao().loadLaunchAsset(mLaunchedUpdate.id);
+    AssetEntity launchAsset = database.updateDao().loadLaunchAsset(mLaunchedUpdate.id);
     if (launchAsset.relativePath == null) {
       throw new AssertionError("Launch Asset relativePath should not be null");
     }
@@ -108,7 +111,7 @@ public class Launcher {
       // try downloading it remotely
       try {
         launchAsset = FileDownloader.downloadAssetSync(launchAsset, mUpdatesDirectory, mContext);
-        mDatabase.assetDao().updateAsset(launchAsset);
+        database.assetDao().updateAsset(launchAsset);
         launchAssetFile = new File(mUpdatesDirectory, launchAsset.relativePath);
       } catch (Exception e) {
         Log.e(TAG, "Could not launch; failed to load update from disk or network", e);
@@ -117,28 +120,22 @@ public class Launcher {
     }
 
     mLaunchAssetFile = launchAssetFile.toString();
-    return mLaunchedUpdate;
-  }
 
-  public Map<String, String> getLocalAssetFiles() {
-    if (mLaunchedUpdate == null) {
-      return null;
-    }
-
-    List<AssetEntity> assetEntities = mDatabase.assetDao().loadAssetsForUpdate(mLaunchedUpdate.id);
+    List<AssetEntity> assetEntities = database.assetDao().loadAssetsForUpdate(mLaunchedUpdate.id);
     if (assetEntities == null) {
       return null;
     }
-    Map<String, String> localAssetFiles = new HashMap<>();
+    mLocalAssetFiles = new HashMap<>();
     for (int i = 0; i < assetEntities.size(); i++) {
       String filename = assetEntities.get(i).relativePath;
       if (filename != null) {
-        localAssetFiles.put(
+        mLocalAssetFiles.put(
             assetEntities.get(i).url.toString(),
             new File(mUpdatesDirectory, filename).toString()
         );
       }
     }
-    return localAssetFiles;
+
+    return mLaunchedUpdate;
   }
 }

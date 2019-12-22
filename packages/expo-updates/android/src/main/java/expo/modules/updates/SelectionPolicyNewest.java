@@ -15,6 +15,7 @@ import java.util.List;
  */
 public class SelectionPolicyNewest implements SelectionPolicy {
 
+  @Override
   public UpdateEntity selectUpdateToLaunch(List<UpdateEntity> updates) {
     UpdateEntity updateToLaunch = null;
     for (UpdateEntity update : updates) {
@@ -23,5 +24,10 @@ public class SelectionPolicyNewest implements SelectionPolicy {
       }
     }
     return updateToLaunch;
+  }
+
+  @Override
+  public boolean shouldLoadNewUpdate(UpdateEntity newUpdate, UpdateEntity launchedUpdate) {
+    return newUpdate.commitTime.after(launchedUpdate.commitTime);
   }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
@@ -25,12 +26,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class UpdatesController {
 
   private static final String TAG = UpdatesController.class.getSimpleName();
 
-  private static String UPDATES_DIRECTORY_NAME = ".expo";
+  private static String UPDATES_DIRECTORY_NAME = ".expo-internal";
   private static String URL_PLACEHOLDER = "EXPO_APP_URL";
 
   private static UpdatesController sInstance;
@@ -38,9 +40,10 @@ public class UpdatesController {
   private Context mContext;
   private Uri mManifestUrl;
   private File mUpdatesDirectory;
-  private UpdatesDatabase mDatabase;
-  private RemoteLoader mRemoteLoader;
   private Launcher mLauncher;
+
+  private UpdatesDatabase mDatabase;
+  private ReentrantLock mDatabaseLock = new ReentrantLock();
 
   public static UpdatesController getInstance() {
     return sInstance;
@@ -64,9 +67,11 @@ public class UpdatesController {
 
   public boolean reloadReactApplication() {
     if (mContext instanceof ReactApplication) {
-      // TODO: wait for database lock
-      mLauncher = new Launcher(mContext, mDatabase, mUpdatesDirectory);
-      mLauncher.launch();
+      UpdatesDatabase database = getDatabase();
+      mLauncher = new Launcher(mContext,  mUpdatesDirectory);
+      mLauncher.launch(database);
+      releaseDatabase();
+
       final ReactInstanceManager instanceManager = ((ReactApplication) mContext).getReactNativeHost().getReactInstanceManager();
       Handler handler = new Handler(Looper.getMainLooper());
       handler.post(new Runnable() {
@@ -82,27 +87,41 @@ public class UpdatesController {
   }
 
   public void start() {
-    new EmbeddedLoader(mContext, mDatabase, mUpdatesDirectory).loadEmbeddedUpdate();
-    mLauncher = new Launcher(mContext, mDatabase, mUpdatesDirectory);
-    mLauncher.launch();
-    if (mRemoteLoader == null && mManifestUrl != null) {
-      // TODO: run in an async task, wait until after launched
-      mRemoteLoader = new RemoteLoader(mContext, mDatabase, mUpdatesDirectory);
-      mRemoteLoader.start(mManifestUrl, new RemoteLoader.LoaderCallback() {
-        @Override
-        public void onFailure(Exception e) {
-          Log.e("erictest", "failure", e);
-        }
+    UpdatesDatabase database = getDatabase();
+    new EmbeddedLoader(mContext, database, mUpdatesDirectory).loadEmbeddedUpdate();
+    mLauncher = new Launcher(mContext, mUpdatesDirectory);
+    mLauncher.launch(database);
+    releaseDatabase();
 
+    if (mManifestUrl != null) {
+      AsyncTask.execute(new Runnable() {
         @Override
-        public void onManifestDownloaded(Manifest manifest) {
-          Log.d("erictest", "new manifest downloaded");
-        }
+        public void run() {
+          UpdatesDatabase database = getDatabase();
+          new RemoteLoader(mContext, database, mUpdatesDirectory)
+              .start(mManifestUrl, new RemoteLoader.LoaderCallback() {
+                @Override
+                public void onFailure(Exception e) {
+                  Log.e(TAG, "Failed to download remote update", e);
+                  releaseDatabase();
+                  runReaper();
+                }
 
-        @Override
-        public void onSuccess(UpdateEntity update) {
-          Log.d("erictest", "success");
-          Reaper.reapUnusedUpdates(mDatabase, mUpdatesDirectory, mLauncher.getLaunchedUpdate());
+                @Override
+                public boolean onManifestDownloaded(Manifest manifest) {
+                  UpdateEntity launchedUpdate = mLauncher.getLaunchedUpdate();
+                  if (launchedUpdate == null) {
+                    return true;
+                  }
+                  return new SelectionPolicyNewest().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate);
+                }
+
+                @Override
+                public void onSuccess(UpdateEntity update) {
+                  releaseDatabase();
+                  runReaper();
+                }
+              });
         }
       });
     }
@@ -117,8 +136,13 @@ public class UpdatesController {
   }
 
   public UpdatesDatabase getDatabase() {
-    // TODO: use lock
+    // mDatabaseLock.lock();
     return mDatabase;
+  }
+
+  public void releaseDatabase() {
+    // TODO: fix. this won't work because it might be called from a different thread :(
+    // mDatabaseLock.unlock();
   }
 
   public UpdateEntity getLaunchedUpdate() {
@@ -139,6 +163,12 @@ public class UpdatesController {
     return mLauncher.getLocalAssetFiles();
   }
 
+  private void runReaper() {
+    UpdatesDatabase database = getDatabase();
+    Reaper.reapUnusedUpdates(database, mUpdatesDirectory, mLauncher.getLaunchedUpdate());
+    releaseDatabase();
+  }
+
   private File getOrCreateUpdatesDirectory() {
     File updatesDirectory = new File(mContext.getFilesDir(), UPDATES_DIRECTORY_NAME);
     boolean exists = updatesDirectory.exists();
@@ -146,12 +176,12 @@ public class UpdatesController {
     if (!exists || isFile) {
       if (isFile) {
         if (!updatesDirectory.delete()) {
-          // TODO: throw error
+          throw new AssertionError("Updates directory should not be a file");
         }
       }
 
       if (!updatesDirectory.mkdir()) {
-        // TODO: throw error
+        throw new AssertionError("Updates directory must exist or be able to be created");
       }
     }
     return updatesDirectory;
