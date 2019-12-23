@@ -11,6 +11,7 @@ import android.util.Log;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.JSBundleLoader;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
@@ -23,6 +24,7 @@ import expo.modules.updates.loader.Manifest;
 import expo.modules.updates.loader.RemoteLoader;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.util.Map;
 
 public class UpdatesController {
@@ -77,7 +79,12 @@ public class UpdatesController {
     } catch (NumberFormatException e) {
       Log.e(TAG, "Could not parse expo_updates_launch_wait_ms; defaulting to 0", e);
     }
-    new Handler().postDelayed(() -> this.finishTimeout(false), delay);
+
+    if (delay > 0) {
+      new Handler().postDelayed(() -> this.finishTimeout(false), delay);
+    } else {
+      mTimeoutFinished = true;
+    }
 
     UpdatesDatabase database = getDatabase();
     mLauncher = new Launcher(mContext, mUpdatesDirectory, mSelectionPolicy);
@@ -139,12 +146,32 @@ public class UpdatesController {
 
   public boolean reloadReactApplication() {
     if (mContext instanceof ReactApplication) {
+      String oldLaunchAssetFile = mLauncher.getLaunchAssetFile();
+
       UpdatesDatabase database = getDatabase();
       mLauncher = new Launcher(mContext, mUpdatesDirectory, mSelectionPolicy);
       mLauncher.launch(database);
       releaseDatabase();
 
       final ReactInstanceManager instanceManager = ((ReactApplication) mContext).getReactNativeHost().getReactInstanceManager();
+
+      String newLaunchAssetFile = mLauncher.getLaunchAssetFile();
+      if (newLaunchAssetFile != null && !newLaunchAssetFile.equals(oldLaunchAssetFile)) {
+        // Unfortunately, even though RN exposes a way to reload an application,
+        // it assumes that the JS bundle will stay at the same location throughout
+        // the entire lifecycle of the app. Since we need to change the location of
+        // the bundle, we need to use reflection to set an otherwise inaccessible
+        // field of the ReactInstanceManager.
+        try {
+          JSBundleLoader newJSBundleLoader = JSBundleLoader.createFileLoader(newLaunchAssetFile);
+          Field jsBundleLoaderField = instanceManager.getClass().getDeclaredField("mBundleLoader");
+          jsBundleLoaderField.setAccessible(true);
+          jsBundleLoaderField.set(instanceManager, newJSBundleLoader);
+        } catch (Exception e) {
+          Log.e(TAG, "Could not reset JSBundleLoader in ReactInstanceManager", e);
+        }
+      }
+
       Handler handler = new Handler(Looper.getMainLooper());
       handler.post(instanceManager::recreateReactContextInBackground);
       return true;

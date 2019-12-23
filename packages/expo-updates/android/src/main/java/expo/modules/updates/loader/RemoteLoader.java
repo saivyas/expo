@@ -150,7 +150,7 @@ public class RemoteLoader {
       mErroredAssetList.add(assetEntity);
     }
 
-    if (mFinishedAssetList.size() + mErroredAssetList.size() == mAssetTotal) {
+    if (mFinishedAssetList.size() + mErroredAssetList.size() + mExistingAssetList.size() == mAssetTotal) {
       mDatabase.assetDao().insertAssets(mFinishedAssetList, mUpdateEntity);
       for (AssetEntity asset : mExistingAssetList) {
         mDatabase.assetDao().addExistingAssetToUpdate(mUpdateEntity, asset.url, asset.isLaunchAsset);
