@@ -61,7 +61,7 @@ public class RemoteLoader {
         if (shouldContinue) {
           processManifest(manifest);
         } else {
-          onSuccess(null);
+          mCallback.onSuccess(null);
         }
       }
     });

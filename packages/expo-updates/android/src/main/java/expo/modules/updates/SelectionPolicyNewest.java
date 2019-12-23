@@ -28,6 +28,12 @@ public class SelectionPolicyNewest implements SelectionPolicy {
 
   @Override
   public boolean shouldLoadNewUpdate(UpdateEntity newUpdate, UpdateEntity launchedUpdate) {
+    if (launchedUpdate == null) {
+      return true;
+    }
+    if (newUpdate == null) {
+      return false;
+    }
     return newUpdate.commitTime.after(launchedUpdate.commitTime);
   }
 }
