@@ -1,6 +1,7 @@
 package expo.modules.updates;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.util.Log;
 
 import java.util.HashMap;
@@ -54,14 +55,16 @@ public class UpdatesModule extends ExportedModule {
 
   @ExpoMethod
   public void reload(final Promise promise) {
-    if (UpdatesController.getInstance().reloadReactApplication()) {
-      promise.resolve(null);
-    } else {
-      promise.reject(
-          "ERR_UPDATES_RELOAD",
-          "Could not reload application. Ensure you have passed an instance of ReactApplication into UpdatesController.initialize()."
-      );
-    }
+    AsyncTask.execute(() -> {
+      if (UpdatesController.getInstance().reloadReactApplication()) {
+        promise.resolve(null);
+      } else {
+        promise.reject(
+            "ERR_UPDATES_RELOAD",
+            "Could not reload application. Ensure you have passed an instance of ReactApplication into UpdatesController.initialize()."
+        );
+      }
+    });
   }
 
   @ExpoMethod
@@ -114,34 +117,36 @@ public class UpdatesModule extends ExportedModule {
       return;
     }
 
-    UpdatesDatabase database = controller.getDatabase();
-    new RemoteLoader(mContext, database, controller.getUpdatesDirectory())
-        .start(
-            controller.getManifestUrl(),
-            new RemoteLoader.LoaderCallback() {
-              @Override
-              public void onFailure(Exception e) {
-                controller.releaseDatabase();
-                promise.reject("ERR_UPDATES_FETCH", "Failed to download new update", e);
-              }
-
-              @Override
-              public boolean onManifestDownloaded(Manifest manifest) {
-                UpdateEntity launchedUpdate = controller.getLaunchedUpdate();
-                if (launchedUpdate == null) {
-                  // this shouldn't ever happen, but if we don't have anything to compare
-                  // the new manifest to, let the user know an update is available
-                  return true;
+    AsyncTask.execute(() -> {
+      UpdatesDatabase database = controller.getDatabase();
+      new RemoteLoader(mContext, database, controller.getUpdatesDirectory())
+          .start(
+              controller.getManifestUrl(),
+              new RemoteLoader.LoaderCallback() {
+                @Override
+                public void onFailure(Exception e) {
+                  controller.releaseDatabase();
+                  promise.reject("ERR_UPDATES_FETCH", "Failed to download new update", e);
                 }
-                return controller.getSelectionPolicy().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate);
-              }
 
-              @Override
-              public void onSuccess(UpdateEntity update) {
-                controller.releaseDatabase();
-                promise.resolve(update == null ? false : update.metadata.toString());
+                @Override
+                public boolean onManifestDownloaded(Manifest manifest) {
+                  UpdateEntity launchedUpdate = controller.getLaunchedUpdate();
+                  if (launchedUpdate == null) {
+                    // this shouldn't ever happen, but if we don't have anything to compare
+                    // the new manifest to, let the user know an update is available
+                    return true;
+                  }
+                  return controller.getSelectionPolicy().shouldLoadNewUpdate(manifest.getUpdateEntity(), launchedUpdate);
+                }
+
+                @Override
+                public void onSuccess(UpdateEntity update) {
+                  controller.releaseDatabase();
+                  promise.resolve(update == null ? false : update.metadata.toString());
+                }
               }
-            }
-        );
+          );
+    });
   }
 }
