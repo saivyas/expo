@@ -44,6 +44,11 @@ public class UpdatesModule extends ExportedModule {
     Map<String, Object> constants = new HashMap<>();
     constants.put("localAssets", UpdatesController.getInstance().getLocalAssetFiles());
 
+    UpdateEntity launchedUpdate = UpdatesController.getInstance().getLaunchedUpdate();
+    if (launchedUpdate != null) {
+      constants.put("manifestString", launchedUpdate.metadata.toString());
+    }
+
     return constants;
   }
 
