@@ -2,6 +2,7 @@ package expo.modules.updates;
 
 import expo.modules.updates.db.entity.UpdateEntity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,6 +25,23 @@ public class SelectionPolicyNewest implements SelectionPolicy {
       }
     }
     return updateToLaunch;
+  }
+
+  @Override
+  public List<UpdateEntity> markUpdatesForDeletion(List<UpdateEntity> updates, UpdateEntity launchedUpdate) {
+    List<UpdateEntity> updatesToMark = new ArrayList<>();
+    for (UpdateEntity update : updates) {
+      if (launchedUpdate != null && update.commitTime.before(launchedUpdate.commitTime)) {
+        update.status = UpdateStatus.UNUSED;
+        update.keep = false;
+        updatesToMark.add(update);
+      }
+      if (launchedUpdate != null && update.id.equals(launchedUpdate.id)) {
+        update.keep = true;
+        updatesToMark.add(update);
+      }
+    }
+    return updatesToMark;
   }
 
   @Override

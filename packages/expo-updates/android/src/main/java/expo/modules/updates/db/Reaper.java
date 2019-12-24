@@ -2,6 +2,7 @@ package expo.modules.updates.db;
 
 import android.util.Log;
 
+import expo.modules.updates.SelectionPolicy;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
 
@@ -13,13 +14,15 @@ public class Reaper {
 
   private static String TAG = Reaper.class.getSimpleName();
 
-  public static void reapUnusedUpdates(UpdatesDatabase database, File updatesDirectory, UpdateEntity launchedUpdate) {
+  public static void reapUnusedUpdates(UpdatesDatabase database, File updatesDirectory, UpdateEntity launchedUpdate, SelectionPolicy selectionPolicy) {
     if (launchedUpdate == null) {
       Log.d(TAG, "Tried to reap while no update was launched; aborting");
       return;
     }
 
-    database.updateDao().markUpdatesForDeletion(launchedUpdate); // TODO: this should use the selection policy
+    List<UpdateEntity> allUpdates = database.updateDao().loadAllUpdates();
+    List<UpdateEntity> markedUpdates = selectionPolicy.markUpdatesForDeletion(allUpdates, launchedUpdate);
+    database.updateDao().updateUpdates(markedUpdates);
     List<AssetEntity> assetsToDelete = database.assetDao().markAndLoadAssetsForDeletion();
 
     LinkedList<AssetEntity> deletedAssets = new LinkedList<>();

@@ -292,12 +292,13 @@ public class UpdatesController {
     }
 
     mTimeoutFinished = true;
+    Log.d(TAG, "notifying in finishTimeout");
     notify();
   }
 
   private void runReaper() {
     UpdatesDatabase database = getDatabase();
-    Reaper.reapUnusedUpdates(database, mUpdatesDirectory, mLauncher.getLaunchedUpdate());
+    Reaper.reapUnusedUpdates(database, mUpdatesDirectory, mLauncher.getLaunchedUpdate(), mSelectionPolicy);
     releaseDatabase();
   }
 

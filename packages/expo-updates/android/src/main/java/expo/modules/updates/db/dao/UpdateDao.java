@@ -1,6 +1,7 @@
 package expo.modules.updates.db.dao;
 
 import androidx.room.RoomWarnings;
+import androidx.room.Update;
 import expo.modules.updates.UpdateStatus;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
@@ -47,6 +48,9 @@ public abstract class UpdateDao {
   /**
    * for public use
    */
+  @Query("SELECT * FROM updates;")
+  public abstract List<UpdateEntity> loadAllUpdates();
+
   public List<UpdateEntity> loadLaunchableUpdates() {
     return _loadUpdatesWithStatuses(Arrays.asList(UpdateStatus.LAUNCHABLE, UpdateStatus.READY));
   }
@@ -69,11 +73,8 @@ public abstract class UpdateDao {
     _keepUpdate(update.id);
   }
 
-  @Transaction
-  public void markUpdatesForDeletion(UpdateEntity launchedUpdate) {
-    _keepUpdate(launchedUpdate.id);
-    _markOlderUpdatesForDeletion(UpdateStatus.UNUSED, launchedUpdate.id);
-  }
+  @Update
+  public abstract void updateUpdates(List<UpdateEntity> updates);
 
   @Transaction
   public void deleteUnusedUpdates() {
