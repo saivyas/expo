@@ -32,7 +32,7 @@ public abstract class UpdatesDatabase extends RoomDatabase {
     if (sInstance == null) {
       sInstance = Room.databaseBuilder(context, UpdatesDatabase.class, DB_NAME)
               .fallbackToDestructiveMigration()
-              .allowMainThreadQueries() // TODO: decide if this is necessary
+              .allowMainThreadQueries()
               .addCallback(new RoomDatabase.Callback() {
                 @Override
                 public void onCreate(@NonNull SupportSQLiteDatabase db) {

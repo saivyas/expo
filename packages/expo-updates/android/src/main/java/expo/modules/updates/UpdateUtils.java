@@ -7,7 +7,12 @@ import android.net.Uri;
 import android.util.Log;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.security.DigestInputStream;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class UpdateUtils {
 
@@ -55,6 +60,19 @@ public class UpdateUtils {
     }
     // fall back to returning a uri-encoded string if we can't do SHA-1 for some reason
     return Uri.encode(string);
+  }
+
+  public static byte[] sha1(File file) throws NoSuchAlgorithmException, IOException {
+    try (
+        InputStream inputStream = new FileInputStream(file);
+        DigestInputStream digestInputStream = new DigestInputStream(inputStream, MessageDigest.getInstance("SHA-1"))
+    ) {
+      MessageDigest md = digestInputStream.getMessageDigest();
+      return md.digest();
+    } catch (NoSuchAlgorithmException | IOException e) {
+      Log.e(TAG, "Failed to hash asset " + file.toString(), e);
+      throw e;
+    }
   }
 
   // https://stackoverflow.com/questions/9655181/how-to-convert-a-byte-array-to-a-hex-string-in-java

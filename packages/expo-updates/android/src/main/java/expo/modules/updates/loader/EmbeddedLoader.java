@@ -121,6 +121,7 @@ public class EmbeddedLoader {
       File destination = new File(mUpdatesDirectory, filename);
 
       if (destination.exists()) {
+        asset.relativePath = filename;
         mExistingAssetList.add(asset);
       } else {
         try {
@@ -135,10 +136,22 @@ public class EmbeddedLoader {
       }
     }
 
-    mDatabase.assetDao().insertAssets(mFinishedAssetList, mUpdateEntity);
     for (AssetEntity asset : mExistingAssetList) {
-      mDatabase.assetDao().addExistingAssetToUpdate(mUpdateEntity, asset.url, asset.isLaunchAsset);
+      boolean existingAssetFound = mDatabase.assetDao().addExistingAssetToUpdate(mUpdateEntity, asset.url, asset.isLaunchAsset);
+      if (!existingAssetFound) {
+        // the database and filesystem have gotten out of sync
+        // do our best to create a new entry for this file even though it already existed on disk
+        byte[] hash = null;
+        try {
+          hash = UpdateUtils.sha1(new File(mUpdatesDirectory, asset.relativePath));
+        } catch (Exception e) {
+        }
+        asset.downloadTime = new Date();
+        asset.hash = hash;
+        mFinishedAssetList.add(asset);
+      }
     }
+    mDatabase.assetDao().insertAssets(mFinishedAssetList, mUpdateEntity);
     if (mErroredAssetList.size() == 0) {
       mDatabase.updateDao().markUpdateReady(mUpdateEntity);
     }

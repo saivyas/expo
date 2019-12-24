@@ -5,12 +5,14 @@ import android.net.Uri;
 import android.util.Log;
 
 import expo.modules.updates.UpdateStatus;
+import expo.modules.updates.UpdateUtils;
 import expo.modules.updates.db.UpdatesDatabase;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class RemoteLoader {
 
@@ -151,10 +153,22 @@ public class RemoteLoader {
     }
 
     if (mFinishedAssetList.size() + mErroredAssetList.size() + mExistingAssetList.size() == mAssetTotal) {
-      mDatabase.assetDao().insertAssets(mFinishedAssetList, mUpdateEntity);
       for (AssetEntity asset : mExistingAssetList) {
-        mDatabase.assetDao().addExistingAssetToUpdate(mUpdateEntity, asset.url, asset.isLaunchAsset);
+        boolean existingAssetFound = mDatabase.assetDao().addExistingAssetToUpdate(mUpdateEntity, asset.url, asset.isLaunchAsset);
+        if (!existingAssetFound) {
+          // the database and filesystem have gotten out of sync
+          // do our best to create a new entry for this file even though it already existed on disk
+          byte[] hash = null;
+          try {
+            hash = UpdateUtils.sha1(new File(mUpdatesDirectory, asset.relativePath));
+          } catch (Exception e) {
+          }
+          asset.downloadTime = new Date();
+          asset.hash = hash;
+          mFinishedAssetList.add(asset);
+        }
       }
+      mDatabase.assetDao().insertAssets(mFinishedAssetList, mUpdateEntity);
       if (mErroredAssetList.size() == 0) {
         mDatabase.updateDao().markUpdateReady(mUpdateEntity);
       }
