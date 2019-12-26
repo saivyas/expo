@@ -2,6 +2,7 @@ package expo.modules.updates.db.entity;
 
 import android.net.Uri;
 
+import androidx.room.Index;
 import expo.modules.updates.HashType;
 
 import org.json.JSONObject;
@@ -14,7 +15,8 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "assets")
+@Entity(tableName = "assets",
+        indices = {@Index(value = {"url"}, unique = true)})
 public class AssetEntity {
   @PrimaryKey(autoGenerate = true)
   // 0 is treated as unset while inserting the entity into the db
