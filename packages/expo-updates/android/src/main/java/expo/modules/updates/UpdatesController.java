@@ -68,6 +68,11 @@ public class UpdatesController {
     return sInstance;
   }
 
+  /**
+   * Initializes the UpdatesController singleton. This should be called as early as possible in the
+   * application's lifecycle.
+   * @param context the base context of the application, ideally a {@link ReactApplication}
+   */
   public static void initialize(Context context) {
     if (sInstance == null) {
       String urlString = context.getString(R.string.expo_app_url);
@@ -76,6 +81,110 @@ public class UpdatesController {
     }
   }
 
+  /**
+   * If UpdatesController.initialize() is not provided with a {@link ReactApplication}, this method
+   * can be used to set a {@link ReactNativeHost} on the class. This is optional, but required in
+   * order for `Updates.reload()` and some Updates module events to work.
+   * @param reactNativeHost the ReactNativeHost of the application running the Updates module
+   */
+  public void setReactNativeHost(ReactNativeHost reactNativeHost) {
+    mReactNativeHost = reactNativeHost;
+  }
+
+  // database
+
+  private class DatabaseHolder {
+    private UpdatesDatabase mDatabase;
+    private boolean isInUse = false;
+
+    public DatabaseHolder(UpdatesDatabase database) {
+      mDatabase = database;
+    }
+
+    public synchronized UpdatesDatabase getDatabase() {
+      while (isInUse) {
+        try {
+          wait();
+        } catch (InterruptedException e) {
+          Log.e(TAG, "Interrupted while waiting for database", e);
+        }
+      }
+
+      isInUse = true;
+      return mDatabase;
+    }
+
+    public synchronized void releaseDatabase() {
+      isInUse = false;
+      notify();
+    }
+  }
+
+  public UpdatesDatabase getDatabase() {
+    return mDatabaseHolder.getDatabase();
+  }
+
+  public void releaseDatabase() {
+    mDatabaseHolder.releaseDatabase();
+  }
+
+  /**
+   * Returns the path on disk to the launch asset (JS bundle) file for the React Native host to use.
+   * Blocks until the configured timeout runs out, or a new update has been downloaded and is ready
+   * to use (whichever comes sooner). ReactNativeHost.getJSBundleFile() should call into this.
+   */
+  public synchronized String getLaunchAssetFile() {
+    while (!mIsReadyToLaunch || !mTimeoutFinished) {
+      try {
+        wait();
+      } catch (InterruptedException e) {
+        Log.e(TAG, "Interrupted while waiting for launch asset file", e);
+      }
+    }
+
+    if (mLauncher == null) {
+      return null;
+    }
+    return mLauncher.getLaunchAssetFile();
+  }
+
+  /**
+   * Returns a map of the locally downloaded assets for the current update. Keys are the remote URLs
+   * of the assets and values are local paths. This should be exported by the Updates JS module and
+   * can be used by `expo-asset` or a similar module to override React Native's asset resolution and
+   * use the locally downloaded assets.
+   */
+  public Map<String, String> getLocalAssetFiles() {
+    if (mLauncher == null) {
+      return null;
+    }
+    return mLauncher.getLocalAssetFiles();
+  }
+
+  // other getters
+
+  public Uri getManifestUrl() {
+    return mManifestUrl;
+  }
+
+  public File getUpdatesDirectory() {
+    return mUpdatesDirectory;
+  }
+
+  public UpdateEntity getLaunchedUpdate() {
+    return mLauncher.getLaunchedUpdate();
+  }
+
+  public SelectionPolicy getSelectionPolicy() {
+    return mSelectionPolicy;
+  }
+
+  /**
+   * Starts the update process to launch a previously-loaded update and (if configured to do so)
+   * check for a new update from the server. This method should be called as early as possible in
+   * the application's lifecycle.
+   * @param context the base context of the application, ideally a {@link ReactApplication}
+   */
   public synchronized void start(final Context context) {
     int delay = 0;
     try {
@@ -148,115 +257,6 @@ public class UpdatesController {
     }
   }
 
-  public boolean reloadReactApplication(Context context) {
-    if (mReactNativeHost != null) {
-      String oldLaunchAssetFile = mLauncher.getLaunchAssetFile();
-
-      UpdatesDatabase database = getDatabase();
-      mLauncher = new Launcher(mUpdatesDirectory, mSelectionPolicy);
-      mLauncher.launch(database, context);
-      releaseDatabase();
-
-      final ReactInstanceManager instanceManager = mReactNativeHost.getReactInstanceManager();
-
-      String newLaunchAssetFile = mLauncher.getLaunchAssetFile();
-      if (newLaunchAssetFile != null && !newLaunchAssetFile.equals(oldLaunchAssetFile)) {
-        // Unfortunately, even though RN exposes a way to reload an application,
-        // it assumes that the JS bundle will stay at the same location throughout
-        // the entire lifecycle of the app. Since we need to change the location of
-        // the bundle, we need to use reflection to set an otherwise inaccessible
-        // field of the ReactInstanceManager.
-        try {
-          JSBundleLoader newJSBundleLoader = JSBundleLoader.createFileLoader(newLaunchAssetFile);
-          Field jsBundleLoaderField = instanceManager.getClass().getDeclaredField("mBundleLoader");
-          jsBundleLoaderField.setAccessible(true);
-          jsBundleLoaderField.set(instanceManager, newJSBundleLoader);
-        } catch (Exception e) {
-          Log.e(TAG, "Could not reset JSBundleLoader in ReactInstanceManager", e);
-        }
-      }
-
-      Handler handler = new Handler(Looper.getMainLooper());
-      handler.post(instanceManager::recreateReactContextInBackground);
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  public synchronized String getLaunchAssetFile() {
-    while (!mIsReadyToLaunch || !mTimeoutFinished) {
-      try {
-        wait();
-      } catch (InterruptedException e) {
-        Log.e(TAG, "Interrupted while waiting for launch asset file", e);
-      }
-    }
-
-    if (mLauncher == null) {
-      return null;
-    }
-    return mLauncher.getLaunchAssetFile();
-  }
-
-  public Map<String, String> getLocalAssetFiles() {
-    if (mLauncher == null) {
-      return null;
-    }
-    return mLauncher.getLocalAssetFiles();
-  }
-
-  public Uri getManifestUrl() {
-    return mManifestUrl;
-  }
-
-  public File getUpdatesDirectory() {
-    return mUpdatesDirectory;
-  }
-
-  public UpdateEntity getLaunchedUpdate() {
-    return mLauncher.getLaunchedUpdate();
-  }
-
-  public SelectionPolicy getSelectionPolicy() {
-    return mSelectionPolicy;
-  }
-
-  private class DatabaseHolder {
-    private UpdatesDatabase mDatabase;
-    private boolean isInUse = false;
-
-    public DatabaseHolder(UpdatesDatabase database) {
-      mDatabase = database;
-    }
-
-    public synchronized UpdatesDatabase getDatabase() {
-      while (isInUse) {
-        try {
-          wait();
-        } catch (InterruptedException e) {
-          Log.e(TAG, "Interrupted while waiting for database", e);
-        }
-      }
-
-      isInUse = true;
-      return mDatabase;
-    }
-
-    public synchronized void releaseDatabase() {
-      isInUse = false;
-      notify();
-    }
-  }
-
-  public UpdatesDatabase getDatabase() {
-    return mDatabaseHolder.getDatabase();
-  }
-
-  public void releaseDatabase() {
-    mDatabaseHolder.releaseDatabase();
-  }
-
   private boolean shouldCheckForUpdateOnLaunch(Context context) {
     if (mManifestUrl == null) {
       return false;
@@ -303,6 +303,42 @@ public class UpdatesController {
     UpdatesDatabase database = getDatabase();
     Reaper.reapUnusedUpdates(database, mUpdatesDirectory, mLauncher.getLaunchedUpdate(), mSelectionPolicy);
     releaseDatabase();
+  }
+
+  public boolean reloadReactApplication(Context context) {
+    if (mReactNativeHost != null) {
+      String oldLaunchAssetFile = mLauncher.getLaunchAssetFile();
+
+      UpdatesDatabase database = getDatabase();
+      mLauncher = new Launcher(mUpdatesDirectory, mSelectionPolicy);
+      mLauncher.launch(database, context);
+      releaseDatabase();
+
+      final ReactInstanceManager instanceManager = mReactNativeHost.getReactInstanceManager();
+
+      String newLaunchAssetFile = mLauncher.getLaunchAssetFile();
+      if (newLaunchAssetFile != null && !newLaunchAssetFile.equals(oldLaunchAssetFile)) {
+        // Unfortunately, even though RN exposes a way to reload an application,
+        // it assumes that the JS bundle will stay at the same location throughout
+        // the entire lifecycle of the app. Since we need to change the location of
+        // the bundle, we need to use reflection to set an otherwise inaccessible
+        // field of the ReactInstanceManager.
+        try {
+          JSBundleLoader newJSBundleLoader = JSBundleLoader.createFileLoader(newLaunchAssetFile);
+          Field jsBundleLoaderField = instanceManager.getClass().getDeclaredField("mBundleLoader");
+          jsBundleLoaderField.setAccessible(true);
+          jsBundleLoaderField.set(instanceManager, newJSBundleLoader);
+        } catch (Exception e) {
+          Log.e(TAG, "Could not reset JSBundleLoader in ReactInstanceManager", e);
+        }
+      }
+
+      Handler handler = new Handler(Looper.getMainLooper());
+      handler.post(instanceManager::recreateReactContextInBackground);
+      return true;
+    } else {
+      return false;
+    }
   }
 
   private void sendEventToReactInstance(final String eventName, final WritableMap params) {

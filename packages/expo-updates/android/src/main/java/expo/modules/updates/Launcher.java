@@ -45,31 +45,6 @@ public class Launcher {
     return mLocalAssetFiles;
   }
 
-  public UpdateEntity getLaunchableUpdate(UpdatesDatabase database, Context context) {
-    List<UpdateEntity> launchableUpdates = database.updateDao().loadLaunchableUpdates();
-
-    String versionName = UpdateUtils.getBinaryVersion(context);
-
-    if (versionName != null) {
-      List<UpdateEntity> launchableUpdatesCopy = new ArrayList<>(launchableUpdates);
-      for (UpdateEntity update : launchableUpdatesCopy) {
-        String[] binaryVersions = update.binaryVersions.split(",");
-        boolean matches = false;
-        for (String version : binaryVersions) {
-          if (version.equals(versionName)) {
-            matches = true;
-            break;
-          }
-        }
-        if (!matches) {
-          launchableUpdates.remove(update);
-        }
-      }
-    }
-
-    return mSelectionPolicy.selectUpdateToLaunch(launchableUpdates);
-  }
-
   public UpdateEntity launch(UpdatesDatabase database, Context context) {
     mLaunchedUpdate = getLaunchableUpdate(database, context);
 
@@ -141,5 +116,30 @@ public class Launcher {
     }
 
     return mLaunchedUpdate;
+  }
+
+  public UpdateEntity getLaunchableUpdate(UpdatesDatabase database, Context context) {
+    List<UpdateEntity> launchableUpdates = database.updateDao().loadLaunchableUpdates();
+
+    String versionName = UpdateUtils.getBinaryVersion(context);
+
+    if (versionName != null) {
+      List<UpdateEntity> launchableUpdatesCopy = new ArrayList<>(launchableUpdates);
+      for (UpdateEntity update : launchableUpdatesCopy) {
+        String[] binaryVersions = update.binaryVersions.split(",");
+        boolean matches = false;
+        for (String version : binaryVersions) {
+          if (version.equals(versionName)) {
+            matches = true;
+            break;
+          }
+        }
+        if (!matches) {
+          launchableUpdates.remove(update);
+        }
+      }
+    }
+
+    return mSelectionPolicy.selectUpdateToLaunch(launchableUpdates);
   }
 }
