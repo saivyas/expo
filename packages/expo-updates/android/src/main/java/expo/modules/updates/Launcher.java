@@ -21,7 +21,6 @@ public class Launcher {
 
   private static final String TAG = Launcher.class.getSimpleName();
 
-  private Context mContext;
   private File mUpdatesDirectory;
   private SelectionPolicy mSelectionPolicy;
 
@@ -29,8 +28,7 @@ public class Launcher {
   private String mLaunchAssetFile = null;
   private Map<String, String> mLocalAssetFiles = null;
 
-  public Launcher(Context context, File updatesDirectory, SelectionPolicy selectionPolicy) {
-    mContext = context;
+  public Launcher(File updatesDirectory, SelectionPolicy selectionPolicy) {
     mUpdatesDirectory = updatesDirectory;
     mSelectionPolicy = selectionPolicy;
   }
@@ -47,10 +45,10 @@ public class Launcher {
     return mLocalAssetFiles;
   }
 
-  public UpdateEntity getLaunchableUpdate(UpdatesDatabase database) {
+  public UpdateEntity getLaunchableUpdate(UpdatesDatabase database, Context context) {
     List<UpdateEntity> launchableUpdates = database.updateDao().loadLaunchableUpdates();
 
-    String versionName = UpdateUtils.getBinaryVersion(mContext);
+    String versionName = UpdateUtils.getBinaryVersion(context);
 
     if (versionName != null) {
       List<UpdateEntity> launchableUpdatesCopy = new ArrayList<>(launchableUpdates);
@@ -72,8 +70,8 @@ public class Launcher {
     return mSelectionPolicy.selectUpdateToLaunch(launchableUpdates);
   }
 
-  public UpdateEntity launch(UpdatesDatabase database) {
-    mLaunchedUpdate = getLaunchableUpdate(database);
+  public UpdateEntity launch(UpdatesDatabase database, Context context) {
+    mLaunchedUpdate = getLaunchableUpdate(database, context);
 
     // verify that we have the launch asset on disk
     // according to the database, we should, but something could have gone wrong on disk
@@ -88,7 +86,7 @@ public class Launcher {
     if (!launchAssetFileExists) {
       // something has gone wrong, we're missing the launch asset
       // first we check to see if a copy is embedded in the binary
-      Manifest embeddedManifest = EmbeddedLoader.readEmbeddedManifest(mContext);
+      Manifest embeddedManifest = EmbeddedLoader.readEmbeddedManifest(context);
       if (embeddedManifest != null) {
         ArrayList<AssetEntity> embeddedAssets = embeddedManifest.getAssetEntityList();
         AssetEntity matchingEmbeddedAsset = null;
@@ -101,7 +99,7 @@ public class Launcher {
 
         if (matchingEmbeddedAsset != null) {
           try {
-            byte[] hash = EmbeddedLoader.copyAssetAndGetHash(matchingEmbeddedAsset, launchAssetFile, mContext);
+            byte[] hash = EmbeddedLoader.copyAssetAndGetHash(matchingEmbeddedAsset, launchAssetFile, context);
             if (hash != null && Arrays.equals(hash, launchAsset.hash)) {
               launchAssetFileExists = true;
             }
@@ -116,7 +114,7 @@ public class Launcher {
       // we still don't have the launch asset
       // try downloading it remotely
       try {
-        launchAsset = FileDownloader.downloadAssetSync(launchAsset, mUpdatesDirectory, mContext);
+        launchAsset = FileDownloader.downloadAssetSync(launchAsset, mUpdatesDirectory, context);
         database.assetDao().updateAsset(launchAsset);
         launchAssetFile = new File(mUpdatesDirectory, launchAsset.relativePath);
       } catch (Exception e) {

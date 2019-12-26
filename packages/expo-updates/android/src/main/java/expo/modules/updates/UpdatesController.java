@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
+import com.facebook.react.ReactNativeHost;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.JSBundleLoader;
 import com.facebook.react.bridge.ReactContext;
@@ -40,7 +41,8 @@ public class UpdatesController {
 
   private static UpdatesController sInstance;
 
-  private Context mContext;
+  private ReactNativeHost mReactNativeHost;
+
   private Uri mManifestUrl;
   private File mUpdatesDirectory;
   private Launcher mLauncher;
@@ -53,11 +55,13 @@ public class UpdatesController {
 
   private UpdatesController(Context context, Uri url) {
     sInstance = this;
-    mContext = context;
     mManifestUrl = url;
     mUpdatesDirectory = UpdateUtils.getOrCreateUpdatesDirectory(context);
     mDatabaseHolder = new DatabaseHolder(UpdatesDatabase.getInstance(context));
     mSelectionPolicy = new SelectionPolicyNewest();
+    if (context instanceof ReactApplication) {
+      mReactNativeHost = ((ReactApplication) context).getReactNativeHost();
+    }
   }
 
   public static UpdatesController getInstance() {
@@ -72,35 +76,35 @@ public class UpdatesController {
     }
   }
 
-  public synchronized void start() {
+  public synchronized void start(final Context context) {
     int delay = 0;
     try {
-      delay = Integer.parseInt(mContext.getString(R.string.expo_updates_launch_wait_ms));
+      delay = Integer.parseInt(context.getString(R.string.expo_updates_launch_wait_ms));
     } catch (NumberFormatException e) {
       Log.e(TAG, "Could not parse expo_updates_launch_wait_ms; defaulting to 0", e);
     }
 
     if (delay > 0) {
-      new Handler().postDelayed(() -> this.finishTimeout(false), delay);
+      new Handler().postDelayed(() -> this.finishTimeout(false, context), delay);
     } else {
       mTimeoutFinished = true;
     }
 
     UpdatesDatabase database = getDatabase();
-    mLauncher = new Launcher(mContext, mUpdatesDirectory, mSelectionPolicy);
-    if (mSelectionPolicy.shouldLoadNewUpdate(EmbeddedLoader.readEmbeddedManifest(mContext).getUpdateEntity(), mLauncher.getLaunchableUpdate(database))) {
-      new EmbeddedLoader(mContext, database, mUpdatesDirectory).loadEmbeddedUpdate();
+    mLauncher = new Launcher(mUpdatesDirectory, mSelectionPolicy);
+    if (mSelectionPolicy.shouldLoadNewUpdate(EmbeddedLoader.readEmbeddedManifest(context).getUpdateEntity(), mLauncher.getLaunchableUpdate(database, context))) {
+      new EmbeddedLoader(context, database, mUpdatesDirectory).loadEmbeddedUpdate();
     }
-    mLauncher.launch(database);
+    mLauncher.launch(database, context);
     releaseDatabase();
 
     mIsReadyToLaunch = true;
     notify();
 
-    if (shouldCheckForUpdateOnLaunch()) {
+    if (shouldCheckForUpdateOnLaunch(context)) {
       AsyncTask.execute(() -> {
         UpdatesDatabase db = getDatabase();
-        new RemoteLoader(mContext, db, mUpdatesDirectory)
+        new RemoteLoader(context, db, mUpdatesDirectory)
             .start(mManifestUrl, new RemoteLoader.LoaderCallback() {
               @Override
               public void onFailure(Exception e) {
@@ -109,7 +113,7 @@ public class UpdatesController {
 
                 WritableMap params = Arguments.createMap();
                 params.putString("message", e.getMessage());
-                sendEventToReactContext(UPDATE_ERROR_EVENT, params);
+                sendEventToReactInstance(UPDATE_ERROR_EVENT, params);
 
                 runReaper();
               }
@@ -127,14 +131,14 @@ public class UpdatesController {
               public void onSuccess(UpdateEntity update) {
                 releaseDatabase();
 
-                finishTimeout(true);
+                finishTimeout(true, context);
 
                 if (update == null) {
-                  sendEventToReactContext(UPDATE_NO_UPDATE_AVAILABLE_EVENT, null);
+                  sendEventToReactInstance(UPDATE_NO_UPDATE_AVAILABLE_EVENT, null);
                 } else {
                   WritableMap params = Arguments.createMap();
                   params.putString("manifestString", update.metadata.toString());
-                  sendEventToReactContext(UPDATE_AVAILABLE_EVENT, params);
+                  sendEventToReactInstance(UPDATE_AVAILABLE_EVENT, params);
                 }
 
                 runReaper();
@@ -144,16 +148,16 @@ public class UpdatesController {
     }
   }
 
-  public boolean reloadReactApplication() {
-    if (mContext instanceof ReactApplication) {
+  public boolean reloadReactApplication(Context context) {
+    if (mReactNativeHost != null) {
       String oldLaunchAssetFile = mLauncher.getLaunchAssetFile();
 
       UpdatesDatabase database = getDatabase();
-      mLauncher = new Launcher(mContext, mUpdatesDirectory, mSelectionPolicy);
-      mLauncher.launch(database);
+      mLauncher = new Launcher(mUpdatesDirectory, mSelectionPolicy);
+      mLauncher.launch(database, context);
       releaseDatabase();
 
-      final ReactInstanceManager instanceManager = ((ReactApplication) mContext).getReactNativeHost().getReactInstanceManager();
+      final ReactInstanceManager instanceManager = mReactNativeHost.getReactInstanceManager();
 
       String newLaunchAssetFile = mLauncher.getLaunchAssetFile();
       if (newLaunchAssetFile != null && !newLaunchAssetFile.equals(oldLaunchAssetFile)) {
@@ -253,18 +257,18 @@ public class UpdatesController {
     mDatabaseHolder.releaseDatabase();
   }
 
-  private boolean shouldCheckForUpdateOnLaunch() {
+  private boolean shouldCheckForUpdateOnLaunch(Context context) {
     if (mManifestUrl == null) {
       return false;
     }
 
-    String developerSetting = mContext.getString(R.string.expo_updates_check_on_launch);
+    String developerSetting = context.getString(R.string.expo_updates_check_on_launch);
     if ("ALWAYS".equals(developerSetting)) {
       return true;
     } else if ("NEVER".equals(developerSetting)) {
       return false;
     } else if ("WIFI_ONLY".equals(developerSetting)) {
-      ConnectivityManager cm = (ConnectivityManager)mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+      ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
       if (cm == null) {
         Log.e(TAG, "Could not determine active network connection is metered; not checking for updates");
         return false;
@@ -276,7 +280,7 @@ public class UpdatesController {
     }
   }
 
-  private synchronized void finishTimeout(boolean relaunch) {
+  private synchronized void finishTimeout(boolean relaunch, Context context) {
     if (mTimeoutFinished) {
       // already finished, do nothing
       return;
@@ -284,15 +288,14 @@ public class UpdatesController {
 
     if (relaunch) {
       UpdatesDatabase database = getDatabase();
-      Launcher newLauncher = new Launcher(mContext, mUpdatesDirectory, mSelectionPolicy);
-      newLauncher.launch(database);
+      Launcher newLauncher = new Launcher(mUpdatesDirectory, mSelectionPolicy);
+      newLauncher.launch(database, context);
       releaseDatabase();
 
       mLauncher = newLauncher;
     }
 
     mTimeoutFinished = true;
-    Log.d(TAG, "notifying in finishTimeout");
     notify();
   }
 
@@ -302,9 +305,9 @@ public class UpdatesController {
     releaseDatabase();
   }
 
-  private void sendEventToReactContext(final String eventName, final WritableMap params) {
-    if (mContext instanceof ReactApplication) {
-      final ReactInstanceManager instanceManager = ((ReactApplication) mContext).getReactNativeHost().getReactInstanceManager();
+  private void sendEventToReactInstance(final String eventName, final WritableMap params) {
+    if (mReactNativeHost != null) {
+      final ReactInstanceManager instanceManager = mReactNativeHost.getReactInstanceManager();
       AsyncTask.execute(() -> {
         try {
           ReactContext reactContext = null;

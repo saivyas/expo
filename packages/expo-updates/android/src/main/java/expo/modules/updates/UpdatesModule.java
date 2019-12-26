@@ -23,11 +23,9 @@ public class UpdatesModule extends ExportedModule {
   private static final String TAG = UpdatesModule.class.getSimpleName();
 
   private ModuleRegistry mModuleRegistry;
-  private Context mContext;
 
   public UpdatesModule(Context context) {
     super(context);
-    mContext = context;
   }
 
   @Override
@@ -56,7 +54,7 @@ public class UpdatesModule extends ExportedModule {
   @ExpoMethod
   public void reload(final Promise promise) {
     AsyncTask.execute(() -> {
-      if (UpdatesController.getInstance().reloadReactApplication()) {
+      if (UpdatesController.getInstance().reloadReactApplication(getContext())) {
         promise.resolve(null);
       } else {
         promise.reject(
@@ -79,7 +77,7 @@ public class UpdatesModule extends ExportedModule {
       return;
     }
 
-    FileDownloader.downloadManifest(controller.getManifestUrl(), mContext, new FileDownloader.ManifestDownloadCallback() {
+    FileDownloader.downloadManifest(controller.getManifestUrl(), getContext(), new FileDownloader.ManifestDownloadCallback() {
       @Override
       public void onFailure(String message, Exception e) {
         promise.reject("ERR_UPDATES_CHECK", message, e);
@@ -119,7 +117,7 @@ public class UpdatesModule extends ExportedModule {
 
     AsyncTask.execute(() -> {
       UpdatesDatabase database = controller.getDatabase();
-      new RemoteLoader(mContext, database, controller.getUpdatesDirectory())
+      new RemoteLoader(getContext(), database, controller.getUpdatesDirectory())
           .start(
               controller.getManifestUrl(),
               new RemoteLoader.LoaderCallback() {
