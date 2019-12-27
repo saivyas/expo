@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.Looper;
 import android.util.Log;
 
@@ -197,7 +198,9 @@ public class UpdatesController {
     }
 
     if (delay > 0) {
-      new Handler().postDelayed(this::finishTimeout, delay);
+      HandlerThread handlerThread = new HandlerThread("expo-updates-timer");
+      handlerThread.start();
+      new Handler(handlerThread.getLooper()).postDelayed(this::finishTimeout, delay);
     } else {
       mTimeoutFinished = true;
     }
