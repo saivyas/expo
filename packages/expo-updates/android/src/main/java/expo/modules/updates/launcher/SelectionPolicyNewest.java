@@ -1,6 +1,8 @@
-package expo.modules.updates;
+package expo.modules.updates.launcher;
 
 import expo.modules.updates.db.entity.UpdateEntity;
+import expo.modules.updates.db.enums.UpdateStatus;
+import expo.modules.updates.launcher.SelectionPolicy;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package expo.modules.updates.db.entity;
 
-import expo.modules.updates.UpdateStatus;
+import expo.modules.updates.db.enums.UpdateStatus;
 
 import org.json.JSONObject;
 

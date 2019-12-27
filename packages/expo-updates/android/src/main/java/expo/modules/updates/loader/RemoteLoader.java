@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
 
-import expo.modules.updates.UpdateStatus;
+import expo.modules.updates.db.enums.UpdateStatus;
 import expo.modules.updates.UpdateUtils;
 import expo.modules.updates.db.UpdatesDatabase;
 import expo.modules.updates.db.entity.AssetEntity;

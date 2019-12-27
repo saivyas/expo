@@ -3,8 +3,8 @@ package expo.modules.updates.db;
 import android.net.Uri;
 import android.util.Log;
 
-import expo.modules.updates.HashType;
-import expo.modules.updates.UpdateStatus;
+import expo.modules.updates.db.enums.HashType;
+import expo.modules.updates.db.enums.UpdateStatus;
 
 import org.json.JSONException;
 import org.json.JSONObject;

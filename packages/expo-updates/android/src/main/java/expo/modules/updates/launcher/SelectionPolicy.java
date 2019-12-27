@@ -1,4 +1,4 @@
-package expo.modules.updates;
+package expo.modules.updates.launcher;
 
 import expo.modules.updates.db.entity.UpdateEntity;
 

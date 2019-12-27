@@ -3,7 +3,7 @@ package expo.modules.updates.db.entity;
 import android.net.Uri;
 
 import androidx.room.Index;
-import expo.modules.updates.HashType;
+import expo.modules.updates.db.enums.HashType;
 
 import org.json.JSONObject;
 

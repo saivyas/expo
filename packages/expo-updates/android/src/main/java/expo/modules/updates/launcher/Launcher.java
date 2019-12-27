@@ -1,4 +1,4 @@
-package expo.modules.updates;
+package expo.modules.updates.launcher;
 
 import android.content.Context;
 import android.util.Log;
@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import expo.modules.updates.UpdateUtils;
 import expo.modules.updates.db.UpdatesDatabase;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;

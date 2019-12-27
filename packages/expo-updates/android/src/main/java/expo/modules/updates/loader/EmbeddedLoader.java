@@ -3,7 +3,7 @@ package expo.modules.updates.loader;
 import android.content.Context;
 import android.util.Log;
 
-import expo.modules.updates.UpdateStatus;
+import expo.modules.updates.db.enums.UpdateStatus;
 import expo.modules.updates.UpdateUtils;
 import expo.modules.updates.db.UpdatesDatabase;
 import expo.modules.updates.db.entity.AssetEntity;
@@ -20,9 +20,7 @@ import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class EmbeddedLoader {
 

@@ -2,7 +2,7 @@ package expo.modules.updates.db.dao;
 
 import androidx.room.RoomWarnings;
 import androidx.room.Update;
-import expo.modules.updates.UpdateStatus;
+import expo.modules.updates.db.enums.UpdateStatus;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
 
@@ -12,7 +12,6 @@ import java.util.UUID;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
-import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Transaction;
 

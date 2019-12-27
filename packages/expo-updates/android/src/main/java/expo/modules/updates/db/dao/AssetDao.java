@@ -3,7 +3,7 @@ package expo.modules.updates.db.dao;
 import android.net.Uri;
 
 import androidx.room.Update;
-import expo.modules.updates.UpdateStatus;
+import expo.modules.updates.db.enums.UpdateStatus;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateAssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;

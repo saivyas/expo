@@ -2,7 +2,7 @@ package expo.modules.updates.db;
 
 import android.util.Log;
 
-import expo.modules.updates.SelectionPolicy;
+import expo.modules.updates.launcher.SelectionPolicy;
 import expo.modules.updates.db.entity.AssetEntity;
 import expo.modules.updates.db.entity.UpdateEntity;
 
