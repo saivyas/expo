@@ -204,11 +204,14 @@ public class UpdatesController {
     if (mSelectionPolicy.shouldLoadNewUpdate(EmbeddedLoader.readEmbeddedManifest(context).getUpdateEntity(), mLauncher.getLaunchableUpdate(database, context))) {
       new EmbeddedLoader(context, database, mUpdatesDirectory).loadEmbeddedUpdate();
     }
-    mLauncher.launch(database, context);
-    releaseDatabase();
-
-    mIsReadyToLaunch = true;
-    notify();
+    AsyncTask.execute(() -> {
+      mLauncher.launch(database, context);
+      releaseDatabase();
+      synchronized (UpdatesController.this) {
+        mIsReadyToLaunch = true;
+        notify();
+      }
+    });
 
     if (shouldCheckForUpdateOnLaunch(context)) {
       AsyncTask.execute(() -> {

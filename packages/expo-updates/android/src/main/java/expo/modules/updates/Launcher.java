@@ -56,46 +56,9 @@ public class Launcher {
       throw new AssertionError("Launch Asset relativePath should not be null");
     }
 
-    File launchAssetFile = new File(mUpdatesDirectory, launchAsset.relativePath);
-    boolean launchAssetFileExists = launchAssetFile.exists();
-    if (!launchAssetFileExists) {
-      // something has gone wrong, we're missing the launch asset
-      // first we check to see if a copy is embedded in the binary
-      Manifest embeddedManifest = EmbeddedLoader.readEmbeddedManifest(context);
-      if (embeddedManifest != null) {
-        ArrayList<AssetEntity> embeddedAssets = embeddedManifest.getAssetEntityList();
-        AssetEntity matchingEmbeddedAsset = null;
-        for (AssetEntity embeddedAsset : embeddedAssets) {
-          if (embeddedAsset.url.equals(launchAsset.url)) {
-            matchingEmbeddedAsset = embeddedAsset;
-            break;
-          }
-        }
-
-        if (matchingEmbeddedAsset != null) {
-          try {
-            byte[] hash = EmbeddedLoader.copyAssetAndGetHash(matchingEmbeddedAsset, launchAssetFile, context);
-            if (hash != null && Arrays.equals(hash, launchAsset.hash)) {
-              launchAssetFileExists = true;
-            }
-          } catch (Exception e) {
-            // things are really not going our way...
-          }
-        }
-      }
-    }
-
-    if (!launchAssetFileExists) {
-      // we still don't have the launch asset
-      // try downloading it remotely
-      try {
-        launchAsset = FileDownloader.downloadAssetSync(launchAsset, mUpdatesDirectory, context);
-        database.assetDao().updateAsset(launchAsset);
-        launchAssetFile = new File(mUpdatesDirectory, launchAsset.relativePath);
-      } catch (Exception e) {
-        Log.e(TAG, "Could not launch; failed to load update from disk or network", e);
-        return null;
-      }
+    File launchAssetFile = ensureAssetExistsSynchronously(launchAsset, database, context);
+    if (launchAssetFile == null) {
+      return null;
     }
 
     mLaunchAssetFile = launchAssetFile.toString();
@@ -105,13 +68,16 @@ public class Launcher {
       return null;
     }
     mLocalAssetFiles = new HashMap<>();
-    for (int i = 0; i < assetEntities.size(); i++) {
-      String filename = assetEntities.get(i).relativePath;
+    for (AssetEntity asset : assetEntities) {
+      String filename = asset.relativePath;
       if (filename != null) {
-        mLocalAssetFiles.put(
-            assetEntities.get(i).url.toString(),
-            new File(mUpdatesDirectory, filename).toString()
-        );
+        File assetFile = ensureAssetExistsSynchronously(asset, database, context);
+        if (assetFile != null) {
+          mLocalAssetFiles.put(
+              asset.url.toString(),
+              assetFile.toString()
+          );
+        }
       }
     }
 
@@ -141,5 +107,57 @@ public class Launcher {
     }
 
     return mSelectionPolicy.selectUpdateToLaunch(launchableUpdates);
+  }
+
+  private File ensureAssetExistsSynchronously(AssetEntity asset, UpdatesDatabase database, Context context) {
+    File assetFile = new File(mUpdatesDirectory, asset.relativePath);
+    boolean assetFileExists = assetFile.exists();
+    if (!assetFileExists) {
+      // something has gone wrong, we're missing the launch asset
+      // first we check to see if a copy is embedded in the binary
+      Manifest embeddedManifest = EmbeddedLoader.readEmbeddedManifest(context);
+      if (embeddedManifest != null) {
+        ArrayList<AssetEntity> embeddedAssets = embeddedManifest.getAssetEntityList();
+        AssetEntity matchingEmbeddedAsset = null;
+        for (AssetEntity embeddedAsset : embeddedAssets) {
+          if (embeddedAsset.url.equals(asset.url)) {
+            matchingEmbeddedAsset = embeddedAsset;
+            break;
+          }
+        }
+
+        if (matchingEmbeddedAsset != null) {
+          try {
+            byte[] hash = EmbeddedLoader.copyAssetAndGetHash(matchingEmbeddedAsset, assetFile, context);
+            if (hash != null && Arrays.equals(hash, asset.hash)) {
+              assetFileExists = true;
+            }
+          } catch (Exception e) {
+            // things are really not going our way...
+          }
+        }
+      }
+    }
+
+    if (!assetFileExists) {
+      // we still don't have the launch asset
+      // try downloading it remotely
+      try {
+        asset = FileDownloader.downloadAssetSync(asset, mUpdatesDirectory, context);
+        database.assetDao().updateAsset(asset);
+        assetFile = new File(mUpdatesDirectory, asset.relativePath);
+        assetFileExists = assetFile.exists();
+      } catch (Exception e) {
+        Log.e(TAG, "Could not launch; failed to load update from disk or network", e);
+        return null;
+      }
+    }
+
+    if (!assetFileExists) {
+      Log.e(TAG, "Could not launch; failed to load update from disk or network");
+      return null;
+    } else {
+      return assetFile;
+    }
   }
 }
