@@ -52,6 +52,7 @@ public class UpdatesController {
   // launch conditions
   private boolean mIsReadyToLaunch = false;
   private boolean mTimeoutFinished = false;
+  private boolean mHasLaunched = false;
 
   private UpdatesController(Context context, Uri url) {
     sInstance = this;
@@ -142,6 +143,8 @@ public class UpdatesController {
       }
     }
 
+    mHasLaunched = true;
+
     if (mLauncher == null) {
       return null;
     }
@@ -194,7 +197,7 @@ public class UpdatesController {
     }
 
     if (delay > 0) {
-      new Handler().postDelayed(() -> this.finishTimeout(false, context), delay);
+      new Handler().postDelayed(this::finishTimeout, delay);
     } else {
       mTimeoutFinished = true;
     }
@@ -204,12 +207,14 @@ public class UpdatesController {
     if (mSelectionPolicy.shouldLoadNewUpdate(EmbeddedLoader.readEmbeddedManifest(context).getUpdateEntity(), mLauncher.getLaunchableUpdate(database, context))) {
       new EmbeddedLoader(context, database, mUpdatesDirectory).loadEmbeddedUpdate();
     }
-    AsyncTask.execute(() -> {
-      mLauncher.launch(database, context);
-      releaseDatabase();
-      synchronized (UpdatesController.this) {
-        mIsReadyToLaunch = true;
-        notify();
+    mLauncher.launch(database, context, new Launcher.LauncherCallback() {
+      @Override
+      public void onFinished() {
+        releaseDatabase();
+        synchronized (UpdatesController.this) {
+          mIsReadyToLaunch = true;
+          UpdatesController.this.notify();
+        }
       }
     });
 
@@ -241,19 +246,29 @@ public class UpdatesController {
 
               @Override
               public void onSuccess(UpdateEntity update) {
-                releaseDatabase();
+                final Launcher newLauncher = new Launcher(mUpdatesDirectory, mSelectionPolicy);
+                newLauncher.launch(database, context, new Launcher.LauncherCallback() {
+                  @Override
+                  public void onFinished() {
+                    releaseDatabase();
 
-                finishTimeout(true, context);
+                    if (!mHasLaunched) {
+                      mLauncher = newLauncher;
+                    }
 
-                if (update == null) {
-                  sendEventToReactInstance(UPDATE_NO_UPDATE_AVAILABLE_EVENT, null);
-                } else {
-                  WritableMap params = Arguments.createMap();
-                  params.putString("manifestString", update.metadata.toString());
-                  sendEventToReactInstance(UPDATE_AVAILABLE_EVENT, params);
-                }
+                    finishTimeout();
 
-                runReaper();
+                    if (update == null) {
+                      sendEventToReactInstance(UPDATE_NO_UPDATE_AVAILABLE_EVENT, null);
+                    } else {
+                      WritableMap params = Arguments.createMap();
+                      params.putString("manifestString", update.metadata.toString());
+                      sendEventToReactInstance(UPDATE_AVAILABLE_EVENT, params);
+                    }
+
+                    runReaper();
+                  }
+                });
               }
             });
       });
@@ -283,21 +298,11 @@ public class UpdatesController {
     }
   }
 
-  private synchronized void finishTimeout(boolean relaunch, Context context) {
+  private synchronized void finishTimeout() {
     if (mTimeoutFinished) {
       // already finished, do nothing
       return;
     }
-
-    if (relaunch) {
-      UpdatesDatabase database = getDatabase();
-      Launcher newLauncher = new Launcher(mUpdatesDirectory, mSelectionPolicy);
-      newLauncher.launch(database, context);
-      releaseDatabase();
-
-      mLauncher = newLauncher;
-    }
-
     mTimeoutFinished = true;
     notify();
   }
@@ -313,31 +318,36 @@ public class UpdatesController {
       String oldLaunchAssetFile = mLauncher.getLaunchAssetFile();
 
       UpdatesDatabase database = getDatabase();
-      mLauncher = new Launcher(mUpdatesDirectory, mSelectionPolicy);
-      mLauncher.launch(database, context);
-      releaseDatabase();
+      final Launcher newLauncher = new Launcher(mUpdatesDirectory, mSelectionPolicy);
+      newLauncher.launch(database, context, new Launcher.LauncherCallback() {
+        @Override
+        public void onFinished() {
+          mLauncher = newLauncher;
+          releaseDatabase();
 
-      final ReactInstanceManager instanceManager = mReactNativeHost.getReactInstanceManager();
+          final ReactInstanceManager instanceManager = mReactNativeHost.getReactInstanceManager();
 
-      String newLaunchAssetFile = mLauncher.getLaunchAssetFile();
-      if (newLaunchAssetFile != null && !newLaunchAssetFile.equals(oldLaunchAssetFile)) {
-        // Unfortunately, even though RN exposes a way to reload an application,
-        // it assumes that the JS bundle will stay at the same location throughout
-        // the entire lifecycle of the app. Since we need to change the location of
-        // the bundle, we need to use reflection to set an otherwise inaccessible
-        // field of the ReactInstanceManager.
-        try {
-          JSBundleLoader newJSBundleLoader = JSBundleLoader.createFileLoader(newLaunchAssetFile);
-          Field jsBundleLoaderField = instanceManager.getClass().getDeclaredField("mBundleLoader");
-          jsBundleLoaderField.setAccessible(true);
-          jsBundleLoaderField.set(instanceManager, newJSBundleLoader);
-        } catch (Exception e) {
-          Log.e(TAG, "Could not reset JSBundleLoader in ReactInstanceManager", e);
+          String newLaunchAssetFile = mLauncher.getLaunchAssetFile();
+          if (newLaunchAssetFile != null && !newLaunchAssetFile.equals(oldLaunchAssetFile)) {
+            // Unfortunately, even though RN exposes a way to reload an application,
+            // it assumes that the JS bundle will stay at the same location throughout
+            // the entire lifecycle of the app. Since we need to change the location of
+            // the bundle, we need to use reflection to set an otherwise inaccessible
+            // field of the ReactInstanceManager.
+            try {
+              JSBundleLoader newJSBundleLoader = JSBundleLoader.createFileLoader(newLaunchAssetFile);
+              Field jsBundleLoaderField = instanceManager.getClass().getDeclaredField("mBundleLoader");
+              jsBundleLoaderField.setAccessible(true);
+              jsBundleLoaderField.set(instanceManager, newJSBundleLoader);
+            } catch (Exception e) {
+              Log.e(TAG, "Could not reset JSBundleLoader in ReactInstanceManager", e);
+            }
+          }
+
+          Handler handler = new Handler(Looper.getMainLooper());
+          handler.post(instanceManager::recreateReactContextInBackground);
         }
-      }
-
-      Handler handler = new Handler(Looper.getMainLooper());
-      handler.post(instanceManager::recreateReactContextInBackground);
+      });
       return true;
     } else {
       return false;

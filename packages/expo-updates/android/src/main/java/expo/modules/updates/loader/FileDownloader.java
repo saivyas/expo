@@ -158,40 +158,8 @@ public class FileDownloader {
     }
   }
 
-  public static AssetEntity downloadAssetSync(AssetEntity asset, File destinationDirectory, Context context) throws IOException {
-    String filename = UpdateUtils.sha1(asset.url.toString()) + "." + asset.type;
-    File path = new File(destinationDirectory, filename);
-
-    if (path.exists()) {
-      asset.relativePath = filename;
-      return asset;
-    } else {
-      Response response = downloadDataSync(FileDownloader.addHeadersToUrl(asset.url, context));
-
-      try (
-          InputStream inputStream = response.body().byteStream();
-          DigestInputStream digestInputStream = new DigestInputStream(inputStream, MessageDigest.getInstance("SHA-1"));
-      ) {
-        FileUtils.copyInputStreamToFile(digestInputStream, path);
-
-        MessageDigest md = digestInputStream.getMessageDigest();
-        asset.hash = md.digest();
-      } catch (NoSuchAlgorithmException | NullPointerException e) {
-        Log.e(TAG, "Could not get SHA-1 hash of file", e);
-      }
-
-      asset.downloadTime = new Date();
-      asset.relativePath = filename;
-      return asset;
-    }
-  }
-
   public static void downloadData(Request request, Callback callback) {
     downloadData(request, callback, false);
-  }
-
-  public static Response downloadDataSync(Request request) throws IOException {
-    return sClient.newCall(request).execute();
   }
 
   private static void downloadData(final Request request, final Callback callback, final boolean isRetry) {

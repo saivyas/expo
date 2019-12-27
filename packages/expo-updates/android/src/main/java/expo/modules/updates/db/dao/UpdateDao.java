@@ -29,6 +29,10 @@ public abstract class UpdateDao {
   @Query("SELECT * FROM updates WHERE id = :id;")
   public abstract List<UpdateEntity> _loadUpdatesWithId(UUID id);
 
+  @Query("SELECT * FROM updates INNER JOIN assets ON updates.launch_asset_id = assets.id WHERE updates.id = :id;")
+  @SuppressWarnings(RoomWarnings.CURSOR_MISMATCH)
+  public abstract AssetEntity _loadLaunchAsset(UUID id);
+
   @Query("UPDATE updates SET keep = 1 WHERE id = :id;")
   public abstract void _keepUpdate(UUID id);
 
@@ -60,9 +64,11 @@ public abstract class UpdateDao {
     return updateEntities.size() > 0 ? updateEntities.get(0) : null;
   }
 
-  @Query("SELECT * FROM updates INNER JOIN assets ON updates.launch_asset_id = assets.id WHERE updates.id = :id;")
-  @SuppressWarnings(RoomWarnings.CURSOR_MISMATCH)
-  public abstract AssetEntity loadLaunchAsset(UUID id);
+  public AssetEntity loadLaunchAsset(UUID id) {
+    AssetEntity assetEntity = _loadLaunchAsset(id);
+    assetEntity.isLaunchAsset = true;
+    return assetEntity;
+  }
 
   @Insert
   public abstract void insertUpdate(UpdateEntity update);

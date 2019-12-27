@@ -28,6 +28,15 @@ public class Launcher {
   private String mLaunchAssetFile = null;
   private Map<String, String> mLocalAssetFiles = null;
 
+  private int mAssetsToDownload = 0;
+  private int mAssetsToDownloadFinished = 0;
+
+  private LauncherCallback mCallback = null;
+
+  public interface LauncherCallback{
+    public void onFinished();
+  }
+
   public Launcher(File updatesDirectory, SelectionPolicy selectionPolicy) {
     mUpdatesDirectory = updatesDirectory;
     mSelectionPolicy = selectionPolicy;
@@ -45,7 +54,11 @@ public class Launcher {
     return mLocalAssetFiles;
   }
 
-  public UpdateEntity launch(UpdatesDatabase database, Context context) {
+  public synchronized void launch(UpdatesDatabase database, Context context, LauncherCallback callback) {
+    if (mCallback != null) {
+      throw new AssertionError("Launcher has already started. Create a new instance in order to launch a new version.");
+    }
+    mCallback = callback;
     mLaunchedUpdate = getLaunchableUpdate(database, context);
 
     // verify that we have the launch asset on disk
@@ -56,22 +69,17 @@ public class Launcher {
       throw new AssertionError("Launch Asset relativePath should not be null");
     }
 
-    File launchAssetFile = ensureAssetExistsSynchronously(launchAsset, database, context);
-    if (launchAssetFile == null) {
-      return null;
+    File launchAssetFile = ensureAssetExists(launchAsset, database, context);
+    if (launchAssetFile != null) {
+      mLaunchAssetFile = launchAssetFile.toString();
     }
-
-    mLaunchAssetFile = launchAssetFile.toString();
 
     List<AssetEntity> assetEntities = database.assetDao().loadAssetsForUpdate(mLaunchedUpdate.id);
-    if (assetEntities == null) {
-      return null;
-    }
     mLocalAssetFiles = new HashMap<>();
     for (AssetEntity asset : assetEntities) {
       String filename = asset.relativePath;
       if (filename != null) {
-        File assetFile = ensureAssetExistsSynchronously(asset, database, context);
+        File assetFile = ensureAssetExists(asset, database, context);
         if (assetFile != null) {
           mLocalAssetFiles.put(
               asset.url.toString(),
@@ -81,7 +89,9 @@ public class Launcher {
       }
     }
 
-    return mLaunchedUpdate;
+    if (mAssetsToDownload == 0) {
+      mCallback.onFinished();
+    }
   }
 
   public UpdateEntity getLaunchableUpdate(UpdatesDatabase database, Context context) {
@@ -109,7 +119,7 @@ public class Launcher {
     return mSelectionPolicy.selectUpdateToLaunch(launchableUpdates);
   }
 
-  private File ensureAssetExistsSynchronously(AssetEntity asset, UpdatesDatabase database, Context context) {
+  private File ensureAssetExists(AssetEntity asset, UpdatesDatabase database, Context context) {
     File assetFile = new File(mUpdatesDirectory, asset.relativePath);
     boolean assetFileExists = assetFile.exists();
     if (!assetFileExists) {
@@ -140,24 +150,48 @@ public class Launcher {
     }
 
     if (!assetFileExists) {
-      // we still don't have the launch asset
-      // try downloading it remotely
-      try {
-        asset = FileDownloader.downloadAssetSync(asset, mUpdatesDirectory, context);
-        database.assetDao().updateAsset(asset);
-        assetFile = new File(mUpdatesDirectory, asset.relativePath);
-        assetFileExists = assetFile.exists();
-      } catch (Exception e) {
-        Log.e(TAG, "Could not launch; failed to load update from disk or network", e);
-        return null;
-      }
-    }
+      // we still don't have the asset locally, so try downloading it remotely
+      mAssetsToDownload++;
+      FileDownloader.downloadAsset(asset, mUpdatesDirectory, context, new FileDownloader.AssetDownloadCallback() {
+        @Override
+        public void onFailure(Exception e, AssetEntity assetEntity) {
+          Log.e(TAG, "Failed to load asset from disk or network", e);
+          maybeFinish(assetEntity, null);
+        }
 
-    if (!assetFileExists) {
-      Log.e(TAG, "Could not launch; failed to load update from disk or network");
+        @Override
+        public void onSuccess(AssetEntity assetEntity, boolean isNew) {
+          database.assetDao().updateAsset(assetEntity);
+          File assetFile = new File(mUpdatesDirectory, assetEntity.relativePath);
+          maybeFinish(assetEntity, assetFile.exists() ? assetFile : null);
+        }
+      });
       return null;
     } else {
       return assetFile;
+    }
+  }
+
+  private synchronized void maybeFinish(AssetEntity asset, File assetFile) {
+    mAssetsToDownloadFinished++;
+    if (asset.isLaunchAsset) {
+      if (assetFile == null) {
+        Log.e(TAG, "Could not launch; failed to load update from disk or network");
+        mLaunchAssetFile = null;
+      } else {
+        mLaunchAssetFile = assetFile.toString();
+      }
+    } else {
+      if (assetFile != null) {
+        mLocalAssetFiles.put(
+            asset.url.toString(),
+            assetFile.toString()
+        );
+      }
+    }
+
+    if (mAssetsToDownloadFinished == mAssetsToDownload) {
+      mCallback.onFinished();
     }
   }
 }
