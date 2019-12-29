@@ -68,8 +68,8 @@ NS_ASSUME_NONNULL_BEGIN
 {
   if (!_updatesDirectory) {
     NSFileManager *fileManager = NSFileManager.defaultManager;
-    NSURL *applicationDocumentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    _updatesDirectory = [applicationDocumentsDirectory URLByAppendingPathComponent:@".expo-updates"];
+    NSURL *applicationDocumentsDirectory = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
+    _updatesDirectory = [applicationDocumentsDirectory URLByAppendingPathComponent:@".expo-internal"];
     NSString *updatesDirectoryPath = [_updatesDirectory path];
 
     BOOL isDir;
