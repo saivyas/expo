@@ -126,10 +126,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 
 # pragma mark - insert and update
 
-- (void)addUpdateWithId:(NSUUID *)updateId
-             commitTime:(NSNumber *)commitTime
-         binaryVersions:(NSString *)binaryVersions
-               metadata:(NSDictionary * _Nullable)metadata
+- (void)addUpdateWithManifest:(EXUpdatesManifest *)manifest
 {
   if (!_db) {
     [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Missing database handle" info:nil isFatal:YES];
@@ -141,10 +138,10 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 
   [self _executeSql:sql
            withArgs:@[
-                      updateId,
-                      commitTime,
-                      binaryVersions,
-                      metadata ?: [NSNull null],
+                      manifest.updateId,
+                      @([manifest.commitTime timeIntervalSince1970] * 1000),
+                      manifest.binaryVersions,
+                      manifest.metadata ?: [NSNull null],
                       @(EXUpdatesDatabaseStatusPending)
                       ]];
 }

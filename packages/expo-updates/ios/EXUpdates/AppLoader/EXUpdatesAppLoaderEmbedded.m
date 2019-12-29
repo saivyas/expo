@@ -5,15 +5,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-static NSString * const kEXUpdatesEmbeddedManifestName = @"manifest";
+static NSString * const kEXUpdatesEmbeddedManifestName = @"shell-app-manifest";
 static NSString * const kEXUpdatesEmbeddedManifestType = @"json";
 
 @implementation EXUpdatesAppLoaderEmbedded
-
-// embedded manifest expected to be manifest.json in NSBundle
-// `assets` should be an array of objects with an `nsBundleFilename`
-// property such that [[NSBundle mainBundle] pathForResource:asset.nsBundleFilename ofType:asset.type]
-// returns the correct path
 
 - (void)loadUpdateFromEmbeddedManifest
 {
@@ -26,7 +21,7 @@ static NSString * const kEXUpdatesEmbeddedManifestType = @"json";
     NSLog(@"Could not read embedded manifest: %@", [err localizedDescription]);
   } else {
     NSAssert([manifest isKindOfClass:[NSDictionary class]], @"embedded manifest should be a valid JSON file");
-    self.manifest = (NSDictionary *)manifest;
+    self.manifest = [EXUpdatesManifest manifestWithManagedManifest:(NSDictionary *)manifest];
     [self startLoadingFromManifest];
   }
 }

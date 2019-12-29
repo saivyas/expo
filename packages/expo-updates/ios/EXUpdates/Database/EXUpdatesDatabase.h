@@ -1,6 +1,7 @@
 //  Copyright © 2019 650 Industries. All rights reserved.
 
 #import <EXUpdates/EXUpdatesAsset.h>
+#import <EXUpdates/EXUpdatesManifest.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,11 +23,7 @@ typedef NS_ENUM(NSInteger, EXUpdatesDatabaseHashType) {
 - (void)openDatabase;
 - (void)closeDatabase;
 
-- (void)addUpdateWithId:(NSUUID *)updateId
-             commitTime:(NSNumber *)commitTime
-         binaryVersions:(NSString *)binaryVersions
-               metadata:(NSDictionary * _Nullable)metadata;
-
+- (void)addUpdateWithManifest:(EXUpdatesManifest *)manifest;
 - (void)addAssets:(NSArray<EXUpdatesAsset *>*)assets
    toUpdateWithId:(NSUUID *)updateId;
 

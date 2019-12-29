@@ -2,12 +2,13 @@
 
 #import <EXUpdates/EXUpdatesAppLoader.h>
 #import <EXUpdates/EXUpdatesAsset.h>
+#import <EXUpdates/EXUpdatesManifest.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EXUpdatesAppLoader ()
 
-@property (nonatomic, strong) NSDictionary *manifest;
+@property (nonatomic, strong) EXUpdatesManifest *manifest;
 
 - (void)startLoadingFromManifest;
 - (void)handleAssetDownloadWithData:(NSData *)data response:(NSURLResponse * _Nullable)response asset:(EXUpdatesAsset *)asset;

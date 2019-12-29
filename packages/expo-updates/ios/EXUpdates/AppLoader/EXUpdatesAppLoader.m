@@ -59,10 +59,9 @@ static NSString * const kEXUpdatesAppLoaderErrorDomain = @"EXUpdatesAppLoader";
   [self _writeManifestToDatabase];
 
   if (_delegate) {
-    [_delegate appLoader:self didStartLoadingUpdateWithMetadata:_manifest[@"metadata"]];
+    [_delegate appLoader:self didStartLoadingUpdateWithMetadata:_manifest.metadata];
   }
 
-  [self _addBundleTaskToQueue];
   [self _addAllAssetTasksToQueues];
 
   for (EXUpdatesAsset *asset in _assetQueue) {
@@ -100,7 +99,7 @@ static NSString * const kEXUpdatesAppLoaderErrorDomain = @"EXUpdatesAppLoader";
 
 - (void)_finish
 {
-  [[EXUpdatesAppController sharedInstance].database addAssets:_finishedAssets toUpdateWithId:[self _updateId]];
+  [[EXUpdatesAppController sharedInstance].database addAssets:_finishedAssets toUpdateWithId:_manifest.updateId];
   [self _unlockDatabase];
   if (_delegate) {
     if ([_erroredAssets count]) {
@@ -110,7 +109,7 @@ static NSString * const kEXUpdatesAppLoaderErrorDomain = @"EXUpdatesAppLoader";
                                                                             NSLocalizedDescriptionKey: @"Failed to download all assets"
                                                                             }]];
     } else {
-      [_delegate appLoader:self didFinishLoadingUpdateWithId:[self _updateId]];
+      [_delegate appLoader:self didFinishLoadingUpdateWithId:_manifest.updateId];
     }
   }
 }
@@ -118,85 +117,17 @@ static NSString * const kEXUpdatesAppLoaderErrorDomain = @"EXUpdatesAppLoader";
 - (void)_writeManifestToDatabase
 {
   [self _lockDatabase];
-  id commitTime = _manifest[@"commitTime"];
-  id binaryVersions = _manifest[@"binaryVersions"];
-  id metadata = _manifest[@"metadata"];
-
-  NSAssert([commitTime isKindOfClass:[NSNumber class]], @"commitTime should be a number");
-  NSAssert([binaryVersions isKindOfClass:[NSString class]], @"binaryVersions should be a string");
-  NSAssert(!metadata || [metadata isKindOfClass:[NSDictionary class]], @"metadata should be null or an object");
 
   EXUpdatesDatabase *database = [EXUpdatesAppController sharedInstance].database;
-  [database addUpdateWithId:[self _updateId]
-                 commitTime:(NSNumber *)commitTime
-             binaryVersions:(NSString *)binaryVersions
-                   metadata:(NSDictionary *)metadata];
-}
-
-- (void)_addBundleTaskToQueue
-{
-  id bundleUrlString = _manifest[@"bundleUrl"];
-  NSAssert(bundleUrlString && [bundleUrlString isKindOfClass:[NSString class]], @"bundleUrl should be a nonnull string");
-  NSURL *url = [NSURL URLWithString:bundleUrlString];
-  NSAssert(url, @"bundleUrl must be a valid URL");
-  // TODO: check database to make sure we don't already have this downloaded
-  
-  EXUpdatesAsset *asset = [[EXUpdatesAsset alloc] initWithUrl:url type:@"js"];
-  asset.isLaunchAsset = YES;
-
-  NSString *filename = [EXUpdatesUtils sha1WithData:[bundleUrlString dataUsingEncoding:NSUTF8StringEncoding]];
-  asset.filename = filename;
-  
-  [_assetQueue addObject:asset];
+  [database addUpdateWithManifest:_manifest];
 }
 
 - (void)_addAllAssetTasksToQueues
 {
-  id assets = _manifest[@"assets"];
-  NSAssert(assets && [assets isKindOfClass:[NSArray class]], @"assets should be a nonnull array");
-
-  for (NSDictionary *asset in (NSArray *)assets) {
-    NSAssert([asset isKindOfClass:[NSDictionary class]], @"assets must be objects");
-    id urlString = asset[@"url"];
-    id type = asset[@"type"];
-    id metadata = asset[@"metadata"];
-    id nsBundleFilename = asset[@"nsBundleFilename"];
-    NSAssert(urlString && [urlString isKindOfClass:[NSString class]], @"asset url should be a nonnull string");
-    NSAssert(type && [type isKindOfClass:[NSString class]], @"asset type should be a nonnull string");
-    NSURL *url = [NSURL URLWithString:(NSString *)urlString];
-    NSAssert(url, @"asset url should be a valid URL");
-
-    EXUpdatesAsset *asset = [[EXUpdatesAsset alloc] initWithUrl:url type:(NSString *)type];
-
-    if (metadata) {
-      NSAssert([metadata isKindOfClass:[NSDictionary class]], @"asset metadata should be an object");
-      asset.metadata = (NSDictionary *)metadata;
-    }
-
-    if (nsBundleFilename) {
-      NSAssert([nsBundleFilename isKindOfClass:[NSString class]], @"asset localPath should be a string");
-      asset.nsBundleFilename = (NSString *)nsBundleFilename;
-    }
-
-    NSString *filename = [EXUpdatesUtils sha1WithData:[(NSString *)urlString dataUsingEncoding:NSUTF8StringEncoding]];
-    asset.filename = filename;
-
-    [_assetQueue addObject:asset];
-  }
+  _assetQueue = [_manifest.assets copy];
 }
 
 # pragma mark - helpers
-
-- (NSUUID *)_updateId
-{
-  id updateId = _manifest[@"id"];
-  NSAssert([updateId isKindOfClass:[NSString class]], @"update ID should be a string");
-  
-  NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:(NSString *)updateId];
-  NSAssert(uuid, @"update ID should be a valid UUID");
-  
-  return uuid;
-}
 
 - (void)_lockDatabase
 {

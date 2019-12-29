@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
     id manifest = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&err];
     NSAssert(!err && manifest && [manifest isKindOfClass:[NSDictionary class]], @"manifest should be a valid JSON object");
     
-    self.manifest = (NSDictionary *)manifest;
+    self.manifest = [EXUpdatesManifest manifestWithManagedManifest:(NSDictionary *)manifest];
     [self startLoadingFromManifest];
   } errorBlock:^(NSError * error, NSURLResponse * response) {
     // TODO: handle error

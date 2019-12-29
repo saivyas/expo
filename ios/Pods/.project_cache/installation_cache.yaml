@@ -6861,8 +6861,8 @@ CACHE_KEYS:
       - EXTaskManager (8.0.0)
   EXUpdates:
     BUILD_SETTINGS_CHECKSUM:
-      EXUpdates: 1da87caf9e156b8412dad8bb042a2b54
-    CHECKSUM: 4bb4c813dac48562f9640b5cb7c8283a60b0e68b
+      EXUpdates: fcd84f2a4a5f24424ba75fea1c09d0a4
+    CHECKSUM: b61ea62926d7a3a0927611f08bf7aac0332f3b40
     FILES:
       - "../../packages/expo-updates/ios/EXUpdates/AppLauncher/EXUpdatesAppLauncher.h"
       - "../../packages/expo-updates/ios/EXUpdates/AppLauncher/EXUpdatesAppLauncher.m"
@@ -6879,6 +6879,8 @@ CACHE_KEYS:
       - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesAsset.m"
       - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesFileDownloader.h"
       - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesFileDownloader.m"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesManifest.h"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesManifest.m"
       - "../../packages/expo-updates/ios/EXUpdates/Database/EXUpdatesDatabase.h"
       - "../../packages/expo-updates/ios/EXUpdates/Database/EXUpdatesDatabase.m"
       - "../../packages/expo-updates/ios/EXUpdates/Database/EXUpdatesReaper.h"

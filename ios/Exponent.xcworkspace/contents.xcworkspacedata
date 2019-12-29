@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/eric/expo/expo/packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesManifest.m">
+   </FileRef>
+   <FileRef
       location = "group:Exponent.xcodeproj">
    </FileRef>
    <FileRef
