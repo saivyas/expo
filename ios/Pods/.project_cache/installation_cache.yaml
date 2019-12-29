@@ -6877,6 +6877,8 @@ CACHE_KEYS:
       - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesAppLoaderRemote.m"
       - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesAsset.h"
       - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesAsset.m"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesCrypto.h"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesCrypto.m"
       - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesFileDownloader.h"
       - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesFileDownloader.m"
       - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesManifest.h"

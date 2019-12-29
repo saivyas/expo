@@ -2,6 +2,7 @@
 
 #import <EXUpdates/EXUpdatesAppController.h>
 #import <EXUpdates/EXUpdatesAppLoaderRemote.h>
+#import <EXUpdates/EXUpdatesCrypto.h>
 #import <EXUpdates/EXUpdatesFileDownloader.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -38,9 +39,30 @@ NS_ASSUME_NONNULL_BEGIN
     NSError *err;
     id manifest = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&err];
     NSAssert(!err && manifest && [manifest isKindOfClass:[NSDictionary class]], @"manifest should be a valid JSON object");
-    
-    self.manifest = [EXUpdatesManifest manifestWithManagedManifest:(NSDictionary *)manifest];
-    [self startLoadingFromManifest];
+
+    id innerManifestString = manifest[@"manifestString"];
+    id signature = manifest[@"signature"];
+    if (innerManifestString && signature) {
+      NSAssert([innerManifestString isKindOfClass:[NSString class]], @"manifestString should be a string");
+      NSAssert([signature isKindOfClass:[NSString class]], @"signature should be a string");
+      [EXUpdatesCrypto verifySignatureWithData:(NSString *)innerManifestString
+                                     signature:(NSString *)signature
+                                  successBlock:^(BOOL isValid) {
+                                                  if (isValid) {
+                                                    self.manifest = [EXUpdatesManifest manifestWithManagedManifest:(NSDictionary *)manifest];
+                                                    [self startLoadingFromManifest];
+                                                  } else {
+                                                    // TODO: error callback
+                                                  }
+                                                }
+                                    errorBlock:^(NSError * _Nonnull error) {
+                                                  // TODO: error callback
+                                                }
+      ];
+    } else {
+      self.manifest = [EXUpdatesManifest manifestWithManagedManifest:(NSDictionary *)manifest];
+      [self startLoadingFromManifest];
+    }
   } errorBlock:^(NSError * error, NSURLResponse * response) {
     // TODO: handle error
   }];
