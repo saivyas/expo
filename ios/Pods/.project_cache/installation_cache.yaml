@@ -6859,6 +6859,41 @@ CACHE_KEYS:
     PROJECT_NAME: EXTaskManager
     SPECS:
       - EXTaskManager (8.0.0)
+  EXUpdates:
+    BUILD_SETTINGS_CHECKSUM:
+      EXUpdates: 1da87caf9e156b8412dad8bb042a2b54
+    CHECKSUM: 4bb4c813dac48562f9640b5cb7c8283a60b0e68b
+    FILES:
+      - "../../packages/expo-updates/ios/EXUpdates/AppLauncher/EXUpdatesAppLauncher.h"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLauncher/EXUpdatesAppLauncher.m"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLauncher/EXUpdatesSelectionPolicy.h"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLauncher/EXUpdatesSelectionPolicy.m"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesAppLoader+Private.h"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesAppLoader.h"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesAppLoader.m"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesAppLoaderEmbedded.h"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesAppLoaderEmbedded.m"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesAppLoaderRemote.h"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesAppLoaderRemote.m"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesAsset.h"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesAsset.m"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesFileDownloader.h"
+      - "../../packages/expo-updates/ios/EXUpdates/AppLoader/EXUpdatesFileDownloader.m"
+      - "../../packages/expo-updates/ios/EXUpdates/Database/EXUpdatesDatabase.h"
+      - "../../packages/expo-updates/ios/EXUpdates/Database/EXUpdatesDatabase.m"
+      - "../../packages/expo-updates/ios/EXUpdates/Database/EXUpdatesReaper.h"
+      - "../../packages/expo-updates/ios/EXUpdates/Database/EXUpdatesReaper.m"
+      - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesAppController.h"
+      - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesAppController.m"
+      - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesConfig.h"
+      - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesConfig.m"
+      - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesModule.h"
+      - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesModule.m"
+      - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesUtils.h"
+      - "../../packages/expo-updates/ios/EXUpdates/EXUpdatesUtils.m"
+    PROJECT_NAME: EXUpdates
+    SPECS:
+      - EXUpdates (0.0.1-rc.0)
   EXVideoThumbnails:
     BUILD_SETTINGS_CHECKSUM:
       EXVideoThumbnails: f4311fc5a4bf4f6ea661c8712ad5ecfe
@@ -7141,16 +7176,16 @@ CACHE_KEYS:
       - nanopb/encode (0.3.9011)
   Pods-Exponent:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 975f47ebe83766cf972b07b6b2eb7075
-      Release: 975f47ebe83766cf972b07b6b2eb7075
+      Debug: f8c0cfce2bd8be8f7c7240feb8ff712d
+      Release: f8c0cfce2bd8be8f7c7240feb8ff712d
   Pods-ExponentIntegrationTests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 704bee7f7fc762df105d69e08c2d1961
-      Release: 704bee7f7fc762df105d69e08c2d1961
+      Debug: 1a5f78f5e00d4a9949b3ca7daf4e9df8
+      Release: 1a5f78f5e00d4a9949b3ca7daf4e9df8
   Pods-Tests:
     BUILD_SETTINGS_CHECKSUM:
-      Debug: 704bee7f7fc762df105d69e08c2d1961
-      Release: 704bee7f7fc762df105d69e08c2d1961
+      Debug: 1a5f78f5e00d4a9949b3ca7daf4e9df8
+      Release: 1a5f78f5e00d4a9949b3ca7daf4e9df8
   Protobuf:
     BUILD_SETTINGS_CHECKSUM:
       Protobuf: e9ec876cfd5ece357978b5d515d5282c
