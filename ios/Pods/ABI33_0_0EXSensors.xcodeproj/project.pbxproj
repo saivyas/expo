@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		147AEE1F8BE0003B035C70D87AE04ED2 /* ABI33_0_0EXSensorsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F2B76306106865A55A6368395E4FAB8 /* ABI33_0_0EXSensorsManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		23B2608EB1767E5964B770A95DFD576B /* ABI33_0_0EXGyroscope.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CC037858D5965741B7F8AAC28753DE /* ABI33_0_0EXGyroscope.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		278328C896024314BD6BD70E02DE4E22 /* ABI33_0_0EXDeviceMotion.h in Headers */ = {isa = PBXBuildFile; fileRef = B157B4BCD798E0E78AF63A7AA111653C /* ABI33_0_0EXDeviceMotion.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3EFF39AD6674AFC142B13E9F883AA428 /* ABI33_0_0EXMagnetometerUncalibrated.m in Sources */ = {isa = PBXBuildFile; fileRef = 09074BB745EA69DCDAC849B82A0A37F2 /* ABI33_0_0EXMagnetometerUncalibrated.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		48C3FDDD29CB37743AF13B526E491F6F /* ABI33_0_0EXBarometer.m in Sources */ = {isa = PBXBuildFile; fileRef = C93FA62F4A2FE472BD06A1AAE1439908 /* ABI33_0_0EXBarometer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5C422C0B71C067A85108EC1CA7F5D861 /* ABI33_0_0EXBarometer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A537F47B7BED3AE65D0140DFDAF9C9D /* ABI33_0_0EXBarometer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		618DC9E2CAAA9752385FA2C4590863AE /* ABI33_0_0EXGyroscope.h in Headers */ = {isa = PBXBuildFile; fileRef = CC964EABE876BEC389C9E83AE5CC4D49 /* ABI33_0_0EXGyroscope.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		99057D79126EA0B262706A8AC105C33B /* ABI33_0_0EXAccelerometer.h in Headers */ = {isa = PBXBuildFile; fileRef = E2E2A193F2D34D626E9DB7CC13B4146D /* ABI33_0_0EXAccelerometer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9A283A376E02718E2F6BF2EEEBDEFBF9 /* ABI33_0_0EXSensorsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D512CCFEB708F80D44B896C3CA444C /* ABI33_0_0EXSensorsManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		ABB487B5F32C79DCE16E3CC89BCBAF67 /* ABI33_0_0EXMagnetometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B6C1445FB771A8539CEF13065666D /* ABI33_0_0EXMagnetometer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BCAFF7ABFD8CD2CD398F6735AFEBF4BC /* ABI33_0_0EXDeviceMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F8A53ABE21E8FD91771281E061CAB0 /* ABI33_0_0EXDeviceMotion.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BFAD31E8B2C626F912A1C5121F1A13AD /* ABI33_0_0EXPedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2791FDDB7F85307C93CD66B1B25A5F06 /* ABI33_0_0EXPedometer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C2768D437BD924B29F726D776D63795F /* ABI33_0_0EXPedometer.h in Headers */ = {isa = PBXBuildFile; fileRef = D9AB9BB2C3640BAC06CBB5CF4CCEBB81 /* ABI33_0_0EXPedometer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CE6BA614C8C32CFF158FB362CA850262 /* ABI33_0_0EXAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0419584C94486180B65A0A9A18EDADDB /* ABI33_0_0EXAccelerometer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E16033253258484EEE8B406D8FE6F237 /* ABI33_0_0EXMagnetometer.h in Headers */ = {isa = PBXBuildFile; fileRef = CB4ACA709A2CC39B601DE56C25699CCB /* ABI33_0_0EXMagnetometer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F35E57EFCE565570C0CE5D198470591E /* ABI33_0_0EXBaseSensorModule.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF00A1217ED21DB55973A4B1B9A8EC2 /* ABI33_0_0EXBaseSensorModule.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F6623BF6CD2E7D9A07D0445ECF757B23 /* ABI33_0_0EXSensors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2D74102140775915369BB21B4D9AB2 /* ABI33_0_0EXSensors-dummy.m */; };
+		F8E6C3AE528FF34AA8BEE153D9218E62 /* ABI33_0_0EXBaseSensorModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 667C7249674A263D4A3AEA89B95C9259 /* ABI33_0_0EXBaseSensorModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FA3029810B0BECA6111BD6F8B115D6AB /* ABI33_0_0EXMagnetometerUncalibrated.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FD081C95DFAA2A3FBB06ABDDF961ED5 /* ABI33_0_0EXMagnetometerUncalibrated.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		477E661466B47FCAA4572729712BDB36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53BAF8BE131A1CF8B2986F3AD3ACDDB5 /* ABI33_0_0UMSensorsInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E14199193CDFF3E33047A33D1AE1C365;
+			remoteInfo = ABI33_0_0UMSensorsInterface;
+		};
+		6AF95A3EB499F94369F901C22DB7D81C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04A3304FD96C3D4E82E18E82CF17B6D8 /* ABI33_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C051C97A4147D306821BE0B317EE7A65;
+			remoteInfo = ABI33_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0419584C94486180B65A0A9A18EDADDB /* ABI33_0_0EXAccelerometer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI33_0_0EXAccelerometer.m; sourceTree = "<group>"; };
+		04A3304FD96C3D4E82E18E82CF17B6D8 /* ABI33_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI33_0_0UMCore; path = ABI33_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		09074BB745EA69DCDAC849B82A0A37F2 /* ABI33_0_0EXMagnetometerUncalibrated.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI33_0_0EXMagnetometerUncalibrated.m; sourceTree = "<group>"; };
+		12536F354BAFC39EB1120650EF0DB0E3 /* ABI33_0_0EXSensors.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI33_0_0EXSensors.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		16F8A53ABE21E8FD91771281E061CAB0 /* ABI33_0_0EXDeviceMotion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI33_0_0EXDeviceMotion.m; sourceTree = "<group>"; };
+		1A537F47B7BED3AE65D0140DFDAF9C9D /* ABI33_0_0EXBarometer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI33_0_0EXBarometer.h; sourceTree = "<group>"; };
+		1E7CB3F825AEFAFCA8DCE5D5C3132F9C /* libABI33_0_0EXSensors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI33_0_0EXSensors.a; path = libABI33_0_0EXSensors.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FD081C95DFAA2A3FBB06ABDDF961ED5 /* ABI33_0_0EXMagnetometerUncalibrated.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI33_0_0EXMagnetometerUncalibrated.h; sourceTree = "<group>"; };
+		24D512CCFEB708F80D44B896C3CA444C /* ABI33_0_0EXSensorsManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXSensorsManager.m; path = ABI33_0_0EXSensors/ABI33_0_0EXSensorsManager.m; sourceTree = "<group>"; };
+		2791FDDB7F85307C93CD66B1B25A5F06 /* ABI33_0_0EXPedometer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI33_0_0EXPedometer.m; sourceTree = "<group>"; };
+		3AD675109FBB46D7D09461D7D7E70779 /* ABI33_0_0EXSensors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI33_0_0EXSensors.xcconfig; sourceTree = "<group>"; };
+		53BAF8BE131A1CF8B2986F3AD3ACDDB5 /* ABI33_0_0UMSensorsInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI33_0_0UMSensorsInterface; path = ABI33_0_0UMSensorsInterface.xcodeproj; sourceTree = "<group>"; };
+		55CC037858D5965741B7F8AAC28753DE /* ABI33_0_0EXGyroscope.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI33_0_0EXGyroscope.m; sourceTree = "<group>"; };
+		632EF0F47B7ABC1315D0289C831F0CEC /* ABI33_0_0EXSensors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI33_0_0EXSensors-prefix.pch"; sourceTree = "<group>"; };
+		667C7249674A263D4A3AEA89B95C9259 /* ABI33_0_0EXBaseSensorModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI33_0_0EXBaseSensorModule.h; sourceTree = "<group>"; };
+		7E9B6C1445FB771A8539CEF13065666D /* ABI33_0_0EXMagnetometer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI33_0_0EXMagnetometer.m; sourceTree = "<group>"; };
+		7F2B76306106865A55A6368395E4FAB8 /* ABI33_0_0EXSensorsManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXSensorsManager.h; path = ABI33_0_0EXSensors/ABI33_0_0EXSensorsManager.h; sourceTree = "<group>"; };
+		ADF00A1217ED21DB55973A4B1B9A8EC2 /* ABI33_0_0EXBaseSensorModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI33_0_0EXBaseSensorModule.m; sourceTree = "<group>"; };
+		B157B4BCD798E0E78AF63A7AA111653C /* ABI33_0_0EXDeviceMotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI33_0_0EXDeviceMotion.h; sourceTree = "<group>"; };
+		C93FA62F4A2FE472BD06A1AAE1439908 /* ABI33_0_0EXBarometer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI33_0_0EXBarometer.m; sourceTree = "<group>"; };
+		CB4ACA709A2CC39B601DE56C25699CCB /* ABI33_0_0EXMagnetometer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI33_0_0EXMagnetometer.h; sourceTree = "<group>"; };
+		CC964EABE876BEC389C9E83AE5CC4D49 /* ABI33_0_0EXGyroscope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI33_0_0EXGyroscope.h; sourceTree = "<group>"; };
+		D9AB9BB2C3640BAC06CBB5CF4CCEBB81 /* ABI33_0_0EXPedometer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI33_0_0EXPedometer.h; sourceTree = "<group>"; };
+		E2E2A193F2D34D626E9DB7CC13B4146D /* ABI33_0_0EXAccelerometer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI33_0_0EXAccelerometer.h; sourceTree = "<group>"; };
+		FE2D74102140775915369BB21B4D9AB2 /* ABI33_0_0EXSensors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI33_0_0EXSensors-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBD8BE9AD53CF7A3A4781669DCE2DEF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25F746B718BB5FE33C8846B5432F1FBD /* ABI33_0_0EXSensors */ = {
+			isa = PBXGroup;
+			children = (
+				7F2B76306106865A55A6368395E4FAB8 /* ABI33_0_0EXSensorsManager.h */,
+				24D512CCFEB708F80D44B896C3CA444C /* ABI33_0_0EXSensorsManager.m */,
+				E02D83C39F63DDED667C2CF077BA976F /* Modules */,
+				F2776E64B3909BA94C043974757047AA /* Pod */,
+				80759FD2CEA04BB6A4578283B5339E81 /* Support Files */,
+			);
+			name = ABI33_0_0EXSensors;
+			path = "../versioned-react-native/ABI33_0_0/EXSensors";
+			sourceTree = "<group>";
+		};
+		4D1F3BCEBEA7AFC690F8EADAB3293528 = {
+			isa = PBXGroup;
+			children = (
+				25F746B718BB5FE33C8846B5432F1FBD /* ABI33_0_0EXSensors */,
+				69542EBF7A01F448BC91D4F45E6E1C9D /* Dependencies */,
+				EDD513742AC9F8C55348C877DEC1A126 /* Frameworks */,
+				F4895A79D1C0C9AA1F338011A802E992 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		69542EBF7A01F448BC91D4F45E6E1C9D /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				04A3304FD96C3D4E82E18E82CF17B6D8 /* ABI33_0_0UMCore */,
+				53BAF8BE131A1CF8B2986F3AD3ACDDB5 /* ABI33_0_0UMSensorsInterface */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		80759FD2CEA04BB6A4578283B5339E81 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AD675109FBB46D7D09461D7D7E70779 /* ABI33_0_0EXSensors.xcconfig */,
+				FE2D74102140775915369BB21B4D9AB2 /* ABI33_0_0EXSensors-dummy.m */,
+				632EF0F47B7ABC1315D0289C831F0CEC /* ABI33_0_0EXSensors-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI33_0_0EXSensors";
+			sourceTree = "<group>";
+		};
+		E02D83C39F63DDED667C2CF077BA976F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D9AB9BB2C3640BAC06CBB5CF4CCEBB81 /* ABI33_0_0EXPedometer.h */,
+				2791FDDB7F85307C93CD66B1B25A5F06 /* ABI33_0_0EXPedometer.m */,
+				E65F986E7321B28834AD20F84FF17E74 /* SensorModules */,
+			);
+			name = Modules;
+			path = ABI33_0_0EXSensors/Modules;
+			sourceTree = "<group>";
+		};
+		E65F986E7321B28834AD20F84FF17E74 /* SensorModules */ = {
+			isa = PBXGroup;
+			children = (
+				E2E2A193F2D34D626E9DB7CC13B4146D /* ABI33_0_0EXAccelerometer.h */,
+				0419584C94486180B65A0A9A18EDADDB /* ABI33_0_0EXAccelerometer.m */,
+				1A537F47B7BED3AE65D0140DFDAF9C9D /* ABI33_0_0EXBarometer.h */,
+				C93FA62F4A2FE472BD06A1AAE1439908 /* ABI33_0_0EXBarometer.m */,
+				667C7249674A263D4A3AEA89B95C9259 /* ABI33_0_0EXBaseSensorModule.h */,
+				ADF00A1217ED21DB55973A4B1B9A8EC2 /* ABI33_0_0EXBaseSensorModule.m */,
+				B157B4BCD798E0E78AF63A7AA111653C /* ABI33_0_0EXDeviceMotion.h */,
+				16F8A53ABE21E8FD91771281E061CAB0 /* ABI33_0_0EXDeviceMotion.m */,
+				CC964EABE876BEC389C9E83AE5CC4D49 /* ABI33_0_0EXGyroscope.h */,
+				55CC037858D5965741B7F8AAC28753DE /* ABI33_0_0EXGyroscope.m */,
+				CB4ACA709A2CC39B601DE56C25699CCB /* ABI33_0_0EXMagnetometer.h */,
+				7E9B6C1445FB771A8539CEF13065666D /* ABI33_0_0EXMagnetometer.m */,
+				1FD081C95DFAA2A3FBB06ABDDF961ED5 /* ABI33_0_0EXMagnetometerUncalibrated.h */,
+				09074BB745EA69DCDAC849B82A0A37F2 /* ABI33_0_0EXMagnetometerUncalibrated.m */,
+			);
+			name = SensorModules;
+			path = SensorModules;
+			sourceTree = "<group>";
+		};
+		EDD513742AC9F8C55348C877DEC1A126 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F2776E64B3909BA94C043974757047AA /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				12536F354BAFC39EB1120650EF0DB0E3 /* ABI33_0_0EXSensors.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		F4895A79D1C0C9AA1F338011A802E992 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E7CB3F825AEFAFCA8DCE5D5C3132F9C /* libABI33_0_0EXSensors.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C7583F8CC5597E2FF1E2866FBB698D6C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99057D79126EA0B262706A8AC105C33B /* ABI33_0_0EXAccelerometer.h in Headers */,
+				5C422C0B71C067A85108EC1CA7F5D861 /* ABI33_0_0EXBarometer.h in Headers */,
+				F8E6C3AE528FF34AA8BEE153D9218E62 /* ABI33_0_0EXBaseSensorModule.h in Headers */,
+				278328C896024314BD6BD70E02DE4E22 /* ABI33_0_0EXDeviceMotion.h in Headers */,
+				618DC9E2CAAA9752385FA2C4590863AE /* ABI33_0_0EXGyroscope.h in Headers */,
+				E16033253258484EEE8B406D8FE6F237 /* ABI33_0_0EXMagnetometer.h in Headers */,
+				FA3029810B0BECA6111BD6F8B115D6AB /* ABI33_0_0EXMagnetometerUncalibrated.h in Headers */,
+				C2768D437BD924B29F726D776D63795F /* ABI33_0_0EXPedometer.h in Headers */,
+				147AEE1F8BE0003B035C70D87AE04ED2 /* ABI33_0_0EXSensorsManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		22BD4DABD3B9949402FD0DA558271DE0 /* ABI33_0_0EXSensors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 580399A68A6D191F76BFBFFC66077207 /* Build configuration list for PBXNativeTarget "ABI33_0_0EXSensors" */;
+			buildPhases = (
+				C7583F8CC5597E2FF1E2866FBB698D6C /* Headers */,
+				D10AC3E35D1A6D5A47921FCFC5559AA7 /* Sources */,
+				FBD8BE9AD53CF7A3A4781669DCE2DEF1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E81251A2DD80ADFE82656B7C9AE7EDC /* PBXTargetDependency */,
+				2C1839C876DF573C7D8CDFE7C36B9955 /* PBXTargetDependency */,
+			);
+			name = ABI33_0_0EXSensors;
+			productName = ABI33_0_0EXSensors;
+			productReference = 1E7CB3F825AEFAFCA8DCE5D5C3132F9C /* libABI33_0_0EXSensors.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		295384597207B5BF842D3C13DE13743E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = E0546BCEB8774DBA3041089A650183E0 /* Build configuration list for PBXProject "ABI33_0_0EXSensors" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4D1F3BCEBEA7AFC690F8EADAB3293528;
+			productRefGroup = F4895A79D1C0C9AA1F338011A802E992 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 04A3304FD96C3D4E82E18E82CF17B6D8 /* ABI33_0_0UMCore */;
+				},
+				{
+					ProjectRef = 53BAF8BE131A1CF8B2986F3AD3ACDDB5 /* ABI33_0_0UMSensorsInterface */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				22BD4DABD3B9949402FD0DA558271DE0 /* ABI33_0_0EXSensors */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D10AC3E35D1A6D5A47921FCFC5559AA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6BA614C8C32CFF158FB362CA850262 /* ABI33_0_0EXAccelerometer.m in Sources */,
+				48C3FDDD29CB37743AF13B526E491F6F /* ABI33_0_0EXBarometer.m in Sources */,
+				F35E57EFCE565570C0CE5D198470591E /* ABI33_0_0EXBaseSensorModule.m in Sources */,
+				BCAFF7ABFD8CD2CD398F6735AFEBF4BC /* ABI33_0_0EXDeviceMotion.m in Sources */,
+				23B2608EB1767E5964B770A95DFD576B /* ABI33_0_0EXGyroscope.m in Sources */,
+				ABB487B5F32C79DCE16E3CC89BCBAF67 /* ABI33_0_0EXMagnetometer.m in Sources */,
+				3EFF39AD6674AFC142B13E9F883AA428 /* ABI33_0_0EXMagnetometerUncalibrated.m in Sources */,
+				BFAD31E8B2C626F912A1C5121F1A13AD /* ABI33_0_0EXPedometer.m in Sources */,
+				F6623BF6CD2E7D9A07D0445ECF757B23 /* ABI33_0_0EXSensors-dummy.m in Sources */,
+				9A283A376E02718E2F6BF2EEEBDEFBF9 /* ABI33_0_0EXSensorsManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C1839C876DF573C7D8CDFE7C36B9955 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI33_0_0UMSensorsInterface;
+			targetProxy = 477E661466B47FCAA4572729712BDB36 /* PBXContainerItemProxy */;
+		};
+		7E81251A2DD80ADFE82656B7C9AE7EDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI33_0_0UMCore;
+			targetProxy = 6AF95A3EB499F94369F901C22DB7D81C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		56F1A6A0B73B69D35AE0E50EDFD54B8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AD675109FBB46D7D09461D7D7E70779 /* ABI33_0_0EXSensors.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXSensors/ABI33_0_0EXSensors-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXSensors;
+				PRODUCT_NAME = ABI33_0_0EXSensors;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6DD1581C078EC23CCD9893DD0882FCA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		F27059B4A2BD9F3DBF5E988CDA6EE8FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F5E4A03391F2B42C452A3D26AE3B1025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AD675109FBB46D7D09461D7D7E70779 /* ABI33_0_0EXSensors.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXSensors/ABI33_0_0EXSensors-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXSensors;
+				PRODUCT_NAME = ABI33_0_0EXSensors;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		580399A68A6D191F76BFBFFC66077207 /* Build configuration list for PBXNativeTarget "ABI33_0_0EXSensors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5E4A03391F2B42C452A3D26AE3B1025 /* Debug */,
+				56F1A6A0B73B69D35AE0E50EDFD54B8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0546BCEB8774DBA3041089A650183E0 /* Build configuration list for PBXProject "ABI33_0_0EXSensors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F27059B4A2BD9F3DBF5E988CDA6EE8FF /* Debug */,
+				6DD1581C078EC23CCD9893DD0882FCA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 295384597207B5BF842D3C13DE13743E /* Project object */;
+}

@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		161B1CFC37CB4341F52D0D288F5332C0 /* ABI34_0_0EXCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9DC57DF9072A0F3E9F3ECF3E892BC /* ABI34_0_0EXCamera.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5AE171A05953DC409D56350AD3E50924 /* ABI34_0_0EXCameraUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B1457322DF7F4C86FD2E39C42A0BE60 /* ABI34_0_0EXCameraUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		72B497F23BC95D59DE8351E8FF5823CE /* ABI34_0_0EXCameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CAF8FD0A5130DF0D0906EBFF691C31 /* ABI34_0_0EXCameraManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		883EF62CFFFFF154525F5B9777CAAD43 /* ABI34_0_0EXCamera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4B64905FF62A4991A85379376C6E7 /* ABI34_0_0EXCamera-dummy.m */; };
+		961D5857DD4E26C9EF99919A762FEB62 /* ABI34_0_0EXCameraManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 453F5613A7D62236445477C752B21C7F /* ABI34_0_0EXCameraManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B8E883810E7DEA1BE9EBC820D5C592F0 /* ABI34_0_0EXCameraUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 185D82459C251068177F16A37E135877 /* ABI34_0_0EXCameraUtils.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E8296F4CC007BAF0562CA884A68A9695 /* ABI34_0_0EXCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = B792332BBC673C71CD2BFC576FA5DFBF /* ABI34_0_0EXCamera.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49D54E3DD409360BEF2A1B7324F8440A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DDCDDF2B7705155DF5B1CC3C1376C46 /* ABI34_0_0UMImageLoaderInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CEE7DA9F8732A18628FB1B11EA5EA14;
+			remoteInfo = ABI34_0_0UMImageLoaderInterface;
+		};
+		5F889201F80546DE2DD818696D6AFFFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A5833492613B5F0471BFB05C9F85F16 /* ABI34_0_0UMBarCodeScannerInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B55696BB9791F600C7EF699B5D1D329C;
+			remoteInfo = ABI34_0_0UMBarCodeScannerInterface;
+		};
+		946493A85DC0D696A422837BDBAC19C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC3C70EB2686000BFDF1D041F992D5E1 /* ABI34_0_0UMPermissionsInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06B6031C2CD7CA48CDCC84F10FA2C110;
+			remoteInfo = ABI34_0_0UMPermissionsInterface;
+		};
+		A9870052B755394E21F6BA83ED15F1A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3CF18DD25420A981B0CDAE5ABCE3EC26 /* ABI34_0_0UMFaceDetectorInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F1B22A5CC5F5A8AD5B678641D8A1F5;
+			remoteInfo = ABI34_0_0UMFaceDetectorInterface;
+		};
+		BF3D9EF5A5E5CAC2AB32887CDFD45983 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 896A0BE34F5E6EF81746F58116CA6151 /* ABI34_0_0UMFileSystemInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E26994241AB52F69EBF9D3BA6347516D;
+			remoteInfo = ABI34_0_0UMFileSystemInterface;
+		};
+		DFD1983B0BEA691CC6FF0C9168C99970 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8780B8A39564A2A9EC43737BEF9FA4B4 /* ABI34_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A4E2311DB0CE13AB2665D794B59FB23A;
+			remoteInfo = ABI34_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DDCDDF2B7705155DF5B1CC3C1376C46 /* ABI34_0_0UMImageLoaderInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMImageLoaderInterface; path = ABI34_0_0UMImageLoaderInterface.xcodeproj; sourceTree = "<group>"; };
+		185D82459C251068177F16A37E135877 /* ABI34_0_0EXCameraUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI34_0_0EXCameraUtils.m; sourceTree = "<group>"; };
+		3B1457322DF7F4C86FD2E39C42A0BE60 /* ABI34_0_0EXCameraUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI34_0_0EXCameraUtils.h; sourceTree = "<group>"; };
+		3CF18DD25420A981B0CDAE5ABCE3EC26 /* ABI34_0_0UMFaceDetectorInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMFaceDetectorInterface; path = ABI34_0_0UMFaceDetectorInterface.xcodeproj; sourceTree = "<group>"; };
+		453F5613A7D62236445477C752B21C7F /* ABI34_0_0EXCameraManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0EXCameraManager.h; path = ABI34_0_0EXCamera/ABI34_0_0EXCameraManager.h; sourceTree = "<group>"; };
+		4A5833492613B5F0471BFB05C9F85F16 /* ABI34_0_0UMBarCodeScannerInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMBarCodeScannerInterface; path = ABI34_0_0UMBarCodeScannerInterface.xcodeproj; sourceTree = "<group>"; };
+		7CA4B64905FF62A4991A85379376C6E7 /* ABI34_0_0EXCamera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI34_0_0EXCamera-dummy.m"; sourceTree = "<group>"; };
+		84FF16CEF12C304E3E3DD0E0A895939E /* ABI34_0_0EXCamera.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI34_0_0EXCamera.xcconfig; sourceTree = "<group>"; };
+		8780B8A39564A2A9EC43737BEF9FA4B4 /* ABI34_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMCore; path = ABI34_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		896A0BE34F5E6EF81746F58116CA6151 /* ABI34_0_0UMFileSystemInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMFileSystemInterface; path = ABI34_0_0UMFileSystemInterface.xcodeproj; sourceTree = "<group>"; };
+		9FC9DC57DF9072A0F3E9F3ECF3E892BC /* ABI34_0_0EXCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI34_0_0EXCamera.m; path = ABI34_0_0EXCamera/ABI34_0_0EXCamera.m; sourceTree = "<group>"; };
+		A683B072D3D550DE47E34A9F46030C51 /* libABI34_0_0EXCamera.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI34_0_0EXCamera.a; path = libABI34_0_0EXCamera.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B792332BBC673C71CD2BFC576FA5DFBF /* ABI34_0_0EXCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0EXCamera.h; path = ABI34_0_0EXCamera/ABI34_0_0EXCamera.h; sourceTree = "<group>"; };
+		C6CAF8FD0A5130DF0D0906EBFF691C31 /* ABI34_0_0EXCameraManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI34_0_0EXCameraManager.m; path = ABI34_0_0EXCamera/ABI34_0_0EXCameraManager.m; sourceTree = "<group>"; };
+		D78AB89312F598C75401C9228DBB3E64 /* ABI34_0_0EXCamera.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI34_0_0EXCamera.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DC3C70EB2686000BFDF1D041F992D5E1 /* ABI34_0_0UMPermissionsInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMPermissionsInterface; path = ABI34_0_0UMPermissionsInterface.xcodeproj; sourceTree = "<group>"; };
+		E1BBEBDFE86301046E27B9C78D7B4F71 /* ABI34_0_0EXCamera-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI34_0_0EXCamera-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C0FAFDE76C52AD390143200C58835F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02C5423F9F634DF626D134DB6AD11D78 = {
+			isa = PBXGroup;
+			children = (
+				C71A52FBFD8C0F73E54FF89F98E2262E /* ABI34_0_0EXCamera */,
+				186A894579B407BBB6666C0B13CDDFE7 /* Dependencies */,
+				3D62E7A6B94E8A20BDB1FB6631219CA7 /* Frameworks */,
+				43CAB93A807965E9521BB773AA9E4CCF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		186A894579B407BBB6666C0B13CDDFE7 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				4A5833492613B5F0471BFB05C9F85F16 /* ABI34_0_0UMBarCodeScannerInterface */,
+				8780B8A39564A2A9EC43737BEF9FA4B4 /* ABI34_0_0UMCore */,
+				3CF18DD25420A981B0CDAE5ABCE3EC26 /* ABI34_0_0UMFaceDetectorInterface */,
+				896A0BE34F5E6EF81746F58116CA6151 /* ABI34_0_0UMFileSystemInterface */,
+				0DDCDDF2B7705155DF5B1CC3C1376C46 /* ABI34_0_0UMImageLoaderInterface */,
+				DC3C70EB2686000BFDF1D041F992D5E1 /* ABI34_0_0UMPermissionsInterface */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		1BB418715E47A3813A5779BDD5F58A66 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				84FF16CEF12C304E3E3DD0E0A895939E /* ABI34_0_0EXCamera.xcconfig */,
+				7CA4B64905FF62A4991A85379376C6E7 /* ABI34_0_0EXCamera-dummy.m */,
+				E1BBEBDFE86301046E27B9C78D7B4F71 /* ABI34_0_0EXCamera-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI34_0_0EXCamera";
+			sourceTree = "<group>";
+		};
+		398FA15DE437FFB6ECA1D8D22F91A4DD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3B1457322DF7F4C86FD2E39C42A0BE60 /* ABI34_0_0EXCameraUtils.h */,
+				185D82459C251068177F16A37E135877 /* ABI34_0_0EXCameraUtils.m */,
+			);
+			name = Utilities;
+			path = ABI34_0_0EXCamera/Utilities;
+			sourceTree = "<group>";
+		};
+		3D62E7A6B94E8A20BDB1FB6631219CA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43CAB93A807965E9521BB773AA9E4CCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A683B072D3D550DE47E34A9F46030C51 /* libABI34_0_0EXCamera.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BAE55F90CF46B22C28A0EE77EED10C39 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				D78AB89312F598C75401C9228DBB3E64 /* ABI34_0_0EXCamera.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		C71A52FBFD8C0F73E54FF89F98E2262E /* ABI34_0_0EXCamera */ = {
+			isa = PBXGroup;
+			children = (
+				B792332BBC673C71CD2BFC576FA5DFBF /* ABI34_0_0EXCamera.h */,
+				9FC9DC57DF9072A0F3E9F3ECF3E892BC /* ABI34_0_0EXCamera.m */,
+				453F5613A7D62236445477C752B21C7F /* ABI34_0_0EXCameraManager.h */,
+				C6CAF8FD0A5130DF0D0906EBFF691C31 /* ABI34_0_0EXCameraManager.m */,
+				BAE55F90CF46B22C28A0EE77EED10C39 /* Pod */,
+				1BB418715E47A3813A5779BDD5F58A66 /* Support Files */,
+				398FA15DE437FFB6ECA1D8D22F91A4DD /* Utilities */,
+			);
+			name = ABI34_0_0EXCamera;
+			path = "../versioned-react-native/ABI34_0_0/EXCamera";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C7D4A836BD3F94FACCE45771465AFA0A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8296F4CC007BAF0562CA884A68A9695 /* ABI34_0_0EXCamera.h in Headers */,
+				961D5857DD4E26C9EF99919A762FEB62 /* ABI34_0_0EXCameraManager.h in Headers */,
+				5AE171A05953DC409D56350AD3E50924 /* ABI34_0_0EXCameraUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8641FD0BAF2D0748A93E852EB912CE12 /* ABI34_0_0EXCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A65555C6D9E8F3EFD9DBBF115E5004DD /* Build configuration list for PBXNativeTarget "ABI34_0_0EXCamera" */;
+			buildPhases = (
+				C7D4A836BD3F94FACCE45771465AFA0A /* Headers */,
+				DEC51056CC859491C6DD6D263932491D /* Sources */,
+				4C0FAFDE76C52AD390143200C58835F8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				512454936B228480E07709117A1E7EF1 /* PBXTargetDependency */,
+				9688F6418513875C3A1E38036C622805 /* PBXTargetDependency */,
+				36EDE02FC5678381C8A1B722E6762A2A /* PBXTargetDependency */,
+				CC7D2AAB30475C100230345AA47608ED /* PBXTargetDependency */,
+				A92113036118E328B5C7D31D83B86FAD /* PBXTargetDependency */,
+				CC46EBBB558FE874E1A36733F390111F /* PBXTargetDependency */,
+			);
+			name = ABI34_0_0EXCamera;
+			productName = ABI34_0_0EXCamera;
+			productReference = A683B072D3D550DE47E34A9F46030C51 /* libABI34_0_0EXCamera.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A29F12434E3584939418B8EDB5CDBE6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = C418A736C595690F27EF3C2BB9104FC8 /* Build configuration list for PBXProject "ABI34_0_0EXCamera" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 02C5423F9F634DF626D134DB6AD11D78;
+			productRefGroup = 43CAB93A807965E9521BB773AA9E4CCF /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 8780B8A39564A2A9EC43737BEF9FA4B4 /* ABI34_0_0UMCore */;
+				},
+				{
+					ProjectRef = 896A0BE34F5E6EF81746F58116CA6151 /* ABI34_0_0UMFileSystemInterface */;
+				},
+				{
+					ProjectRef = 0DDCDDF2B7705155DF5B1CC3C1376C46 /* ABI34_0_0UMImageLoaderInterface */;
+				},
+				{
+					ProjectRef = DC3C70EB2686000BFDF1D041F992D5E1 /* ABI34_0_0UMPermissionsInterface */;
+				},
+				{
+					ProjectRef = 3CF18DD25420A981B0CDAE5ABCE3EC26 /* ABI34_0_0UMFaceDetectorInterface */;
+				},
+				{
+					ProjectRef = 4A5833492613B5F0471BFB05C9F85F16 /* ABI34_0_0UMBarCodeScannerInterface */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8641FD0BAF2D0748A93E852EB912CE12 /* ABI34_0_0EXCamera */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DEC51056CC859491C6DD6D263932491D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				883EF62CFFFFF154525F5B9777CAAD43 /* ABI34_0_0EXCamera-dummy.m in Sources */,
+				161B1CFC37CB4341F52D0D288F5332C0 /* ABI34_0_0EXCamera.m in Sources */,
+				72B497F23BC95D59DE8351E8FF5823CE /* ABI34_0_0EXCameraManager.m in Sources */,
+				B8E883810E7DEA1BE9EBC820D5C592F0 /* ABI34_0_0EXCameraUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36EDE02FC5678381C8A1B722E6762A2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMFaceDetectorInterface;
+			targetProxy = A9870052B755394E21F6BA83ED15F1A5 /* PBXContainerItemProxy */;
+		};
+		512454936B228480E07709117A1E7EF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMBarCodeScannerInterface;
+			targetProxy = 5F889201F80546DE2DD818696D6AFFFA /* PBXContainerItemProxy */;
+		};
+		9688F6418513875C3A1E38036C622805 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMCore;
+			targetProxy = DFD1983B0BEA691CC6FF0C9168C99970 /* PBXContainerItemProxy */;
+		};
+		A92113036118E328B5C7D31D83B86FAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMImageLoaderInterface;
+			targetProxy = 49D54E3DD409360BEF2A1B7324F8440A /* PBXContainerItemProxy */;
+		};
+		CC46EBBB558FE874E1A36733F390111F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMPermissionsInterface;
+			targetProxy = 946493A85DC0D696A422837BDBAC19C7 /* PBXContainerItemProxy */;
+		};
+		CC7D2AAB30475C100230345AA47608ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMFileSystemInterface;
+			targetProxy = BF3D9EF5A5E5CAC2AB32887CDFD45983 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8D77977AFFE85BAB4D334C55A808B774 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84FF16CEF12C304E3E3DD0E0A895939E /* ABI34_0_0EXCamera.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI34_0_0EXCamera/ABI34_0_0EXCamera-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI34_0_0EXCamera;
+				PRODUCT_NAME = ABI34_0_0EXCamera;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		965006D465BD208A942C26E0832C966E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84FF16CEF12C304E3E3DD0E0A895939E /* ABI34_0_0EXCamera.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI34_0_0EXCamera/ABI34_0_0EXCamera-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI34_0_0EXCamera;
+				PRODUCT_NAME = ABI34_0_0EXCamera;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E75F706386B514E3141BEE867EDCE6C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F9BDB07E441E91E00318C95DF31CB3C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A65555C6D9E8F3EFD9DBBF115E5004DD /* Build configuration list for PBXNativeTarget "ABI34_0_0EXCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D77977AFFE85BAB4D334C55A808B774 /* Debug */,
+				965006D465BD208A942C26E0832C966E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C418A736C595690F27EF3C2BB9104FC8 /* Build configuration list for PBXProject "ABI34_0_0EXCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E75F706386B514E3141BEE867EDCE6C0 /* Debug */,
+				F9BDB07E441E91E00318C95DF31CB3C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A29F12434E3584939418B8EDB5CDBE6B /* Project object */;
+}

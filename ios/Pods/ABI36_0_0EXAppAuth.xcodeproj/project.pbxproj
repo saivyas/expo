@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4710234A33D00E784825362BDED33C6A /* ABI36_0_0EXAppAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 326DCA1E556655E875FFE7FB765CD36A /* ABI36_0_0EXAppAuth.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		544FBCA0F724DF5D06FFD1DDC23CA605 /* ABI36_0_0EXAppAuth+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8EDB3FF994A77CB77806938DC91F0A /* ABI36_0_0EXAppAuth+JSON.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		613AECDD1A479A70F6B3BDFBB1EEFB73 /* ABI36_0_0EXAppAuthSessionsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 60A2A0FC2382C99DB5F2B2A35B3DDD5A /* ABI36_0_0EXAppAuthSessionsManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		620DCBA7C22FBF82D103947CE5BF6375 /* ABI36_0_0EXAppAuth.h in Headers */ = {isa = PBXBuildFile; fileRef = 3882FA7DDB1EC0163A959009250637CC /* ABI36_0_0EXAppAuth.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		68D70B3AE2FC00181943281541E8347B /* ABI36_0_0EXAppAuth+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F5B300F2ACA0550FF029DF0F8B8911 /* ABI36_0_0EXAppAuth+JSON.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		86EC5C82C0B23C611F983866C6CD88DE /* ABI36_0_0EXAppAuthSessionsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 521D64287115F36C4DFCF9651E867BEB /* ABI36_0_0EXAppAuthSessionsManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AF87000871D9CAA9E702902208DB7DFC /* ABI36_0_0EXAppAuthAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6329E5870B5892118D889477332026 /* ABI36_0_0EXAppAuthAppDelegate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F4595D76941EC90CFA0C537029B9FDA0 /* ABI36_0_0EXAppAuthAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 20E3D63431C65E0C34141547E4866ADA /* ABI36_0_0EXAppAuthAppDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F80040C4793FA3E0FA50519162B84E37 /* ABI36_0_0EXAppAuth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7540EBA2A787D85C9B1B0C9F1EC73E48 /* ABI36_0_0EXAppAuth-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93B84A789900F296BCCC81D5EEBEBCC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 623BF1140BC98B62639C011C01A91ECF /* AppAuth.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EFA7E4CE531453CF475A9A4322A84F8;
+			remoteInfo = AppAuth;
+		};
+		FE1788C25C6D47CD781DC349A76C4253 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2846A11443FCFC0F8A347AB52AA7E4A /* ABI36_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 17CDBC5DE6E16D3EE17E5C2098EE2921;
+			remoteInfo = ABI36_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E07423455AFE8C0E9EA80E0775E017C /* ABI36_0_0EXAppAuth.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI36_0_0EXAppAuth.xcconfig; sourceTree = "<group>"; };
+		20E3D63431C65E0C34141547E4866ADA /* ABI36_0_0EXAppAuthAppDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXAppAuthAppDelegate.h; path = ABI36_0_0EXAppAuth/ABI36_0_0EXAppAuthAppDelegate.h; sourceTree = "<group>"; };
+		24F5B300F2ACA0550FF029DF0F8B8911 /* ABI36_0_0EXAppAuth+JSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ABI36_0_0EXAppAuth+JSON.h"; path = "ABI36_0_0EXAppAuth/ABI36_0_0EXAppAuth+JSON.h"; sourceTree = "<group>"; };
+		2E6329E5870B5892118D889477332026 /* ABI36_0_0EXAppAuthAppDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXAppAuthAppDelegate.m; path = ABI36_0_0EXAppAuth/ABI36_0_0EXAppAuthAppDelegate.m; sourceTree = "<group>"; };
+		326DCA1E556655E875FFE7FB765CD36A /* ABI36_0_0EXAppAuth.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXAppAuth.m; path = ABI36_0_0EXAppAuth/ABI36_0_0EXAppAuth.m; sourceTree = "<group>"; };
+		3882FA7DDB1EC0163A959009250637CC /* ABI36_0_0EXAppAuth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXAppAuth.h; path = ABI36_0_0EXAppAuth/ABI36_0_0EXAppAuth.h; sourceTree = "<group>"; };
+		4B8EDB3FF994A77CB77806938DC91F0A /* ABI36_0_0EXAppAuth+JSON.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ABI36_0_0EXAppAuth+JSON.m"; path = "ABI36_0_0EXAppAuth/ABI36_0_0EXAppAuth+JSON.m"; sourceTree = "<group>"; };
+		521D64287115F36C4DFCF9651E867BEB /* ABI36_0_0EXAppAuthSessionsManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXAppAuthSessionsManager.m; path = ABI36_0_0EXAppAuth/ABI36_0_0EXAppAuthSessionsManager.m; sourceTree = "<group>"; };
+		577D3CDFBB4688BB9BA069AB7A49E174 /* ABI36_0_0EXAppAuth.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI36_0_0EXAppAuth.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		60A2A0FC2382C99DB5F2B2A35B3DDD5A /* ABI36_0_0EXAppAuthSessionsManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXAppAuthSessionsManager.h; path = ABI36_0_0EXAppAuth/ABI36_0_0EXAppAuthSessionsManager.h; sourceTree = "<group>"; };
+		623BF1140BC98B62639C011C01A91ECF /* AppAuth */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppAuth; path = AppAuth.xcodeproj; sourceTree = "<group>"; };
+		7540EBA2A787D85C9B1B0C9F1EC73E48 /* ABI36_0_0EXAppAuth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI36_0_0EXAppAuth-dummy.m"; sourceTree = "<group>"; };
+		C2846A11443FCFC0F8A347AB52AA7E4A /* ABI36_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI36_0_0UMCore; path = ABI36_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		CE5EB6074693BD6772BA6CAAEAC0AE50 /* ABI36_0_0EXAppAuth-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI36_0_0EXAppAuth-prefix.pch"; sourceTree = "<group>"; };
+		E6E78BC9F6F9CFA3341EF9125945FD87 /* libABI36_0_0EXAppAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI36_0_0EXAppAuth.a; path = libABI36_0_0EXAppAuth.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F165C1DADFB1A491F1187A6AB43E6132 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04051D96A05C261035ABA8F5FB0A2B06 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				577D3CDFBB4688BB9BA069AB7A49E174 /* ABI36_0_0EXAppAuth.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		325A7C697E48AAE89007E379FB4888B2 /* ABI36_0_0EXAppAuth */ = {
+			isa = PBXGroup;
+			children = (
+				3882FA7DDB1EC0163A959009250637CC /* ABI36_0_0EXAppAuth.h */,
+				326DCA1E556655E875FFE7FB765CD36A /* ABI36_0_0EXAppAuth.m */,
+				24F5B300F2ACA0550FF029DF0F8B8911 /* ABI36_0_0EXAppAuth+JSON.h */,
+				4B8EDB3FF994A77CB77806938DC91F0A /* ABI36_0_0EXAppAuth+JSON.m */,
+				20E3D63431C65E0C34141547E4866ADA /* ABI36_0_0EXAppAuthAppDelegate.h */,
+				2E6329E5870B5892118D889477332026 /* ABI36_0_0EXAppAuthAppDelegate.m */,
+				60A2A0FC2382C99DB5F2B2A35B3DDD5A /* ABI36_0_0EXAppAuthSessionsManager.h */,
+				521D64287115F36C4DFCF9651E867BEB /* ABI36_0_0EXAppAuthSessionsManager.m */,
+				04051D96A05C261035ABA8F5FB0A2B06 /* Pod */,
+				E7F87FEA60DD2DBE54B10623BCB88AB0 /* Support Files */,
+			);
+			name = ABI36_0_0EXAppAuth;
+			path = "../versioned-react-native/ABI36_0_0/Expo/EXAppAuth";
+			sourceTree = "<group>";
+		};
+		3C5F98A76BD9ABBE402949B62FA21177 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6E78BC9F6F9CFA3341EF9125945FD87 /* libABI36_0_0EXAppAuth.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B9C4B33639B2880EF745BB18D2509F9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA9E16D9137C406CAFA45EF732D5CB76 = {
+			isa = PBXGroup;
+			children = (
+				325A7C697E48AAE89007E379FB4888B2 /* ABI36_0_0EXAppAuth */,
+				E2C39572090C076C91FADE50DC955968 /* Dependencies */,
+				B9C4B33639B2880EF745BB18D2509F9F /* Frameworks */,
+				3C5F98A76BD9ABBE402949B62FA21177 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E2C39572090C076C91FADE50DC955968 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				C2846A11443FCFC0F8A347AB52AA7E4A /* ABI36_0_0UMCore */,
+				623BF1140BC98B62639C011C01A91ECF /* AppAuth */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		E7F87FEA60DD2DBE54B10623BCB88AB0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E07423455AFE8C0E9EA80E0775E017C /* ABI36_0_0EXAppAuth.xcconfig */,
+				7540EBA2A787D85C9B1B0C9F1EC73E48 /* ABI36_0_0EXAppAuth-dummy.m */,
+				CE5EB6074693BD6772BA6CAAEAC0AE50 /* ABI36_0_0EXAppAuth-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../../Pods/Target Support Files/ABI36_0_0EXAppAuth";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		043E037F764692ACB56C4F5607B8E23C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D70B3AE2FC00181943281541E8347B /* ABI36_0_0EXAppAuth+JSON.h in Headers */,
+				620DCBA7C22FBF82D103947CE5BF6375 /* ABI36_0_0EXAppAuth.h in Headers */,
+				F4595D76941EC90CFA0C537029B9FDA0 /* ABI36_0_0EXAppAuthAppDelegate.h in Headers */,
+				613AECDD1A479A70F6B3BDFBB1EEFB73 /* ABI36_0_0EXAppAuthSessionsManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C141552926990BD1F9178AE338D9FFF5 /* ABI36_0_0EXAppAuth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9D079262908821F686B0DFC952005A0 /* Build configuration list for PBXNativeTarget "ABI36_0_0EXAppAuth" */;
+			buildPhases = (
+				043E037F764692ACB56C4F5607B8E23C /* Headers */,
+				ADC7154CDE266938EA175AAD3020E6A3 /* Sources */,
+				F165C1DADFB1A491F1187A6AB43E6132 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BB2770EBC6F21E6D50967E8827AF505 /* PBXTargetDependency */,
+				EE16DB31FBB561EC93E9467B683F00DD /* PBXTargetDependency */,
+			);
+			name = ABI36_0_0EXAppAuth;
+			productName = ABI36_0_0EXAppAuth;
+			productReference = E6E78BC9F6F9CFA3341EF9125945FD87 /* libABI36_0_0EXAppAuth.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A96E2078E9915F97AA9DFCD9573F11DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 814D2A7A3D22D5DD4FD6DE56C00B9518 /* Build configuration list for PBXProject "ABI36_0_0EXAppAuth" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CA9E16D9137C406CAFA45EF732D5CB76;
+			productRefGroup = 3C5F98A76BD9ABBE402949B62FA21177 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = C2846A11443FCFC0F8A347AB52AA7E4A /* ABI36_0_0UMCore */;
+				},
+				{
+					ProjectRef = 623BF1140BC98B62639C011C01A91ECF /* AppAuth */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				C141552926990BD1F9178AE338D9FFF5 /* ABI36_0_0EXAppAuth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ADC7154CDE266938EA175AAD3020E6A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				544FBCA0F724DF5D06FFD1DDC23CA605 /* ABI36_0_0EXAppAuth+JSON.m in Sources */,
+				F80040C4793FA3E0FA50519162B84E37 /* ABI36_0_0EXAppAuth-dummy.m in Sources */,
+				4710234A33D00E784825362BDED33C6A /* ABI36_0_0EXAppAuth.m in Sources */,
+				AF87000871D9CAA9E702902208DB7DFC /* ABI36_0_0EXAppAuthAppDelegate.m in Sources */,
+				86EC5C82C0B23C611F983866C6CD88DE /* ABI36_0_0EXAppAuthSessionsManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BB2770EBC6F21E6D50967E8827AF505 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI36_0_0UMCore;
+			targetProxy = FE1788C25C6D47CD781DC349A76C4253 /* PBXContainerItemProxy */;
+		};
+		EE16DB31FBB561EC93E9467B683F00DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AppAuth;
+			targetProxy = 93B84A789900F296BCCC81D5EEBEBCC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		ADC6DF3C948F3207067DBDB8F8E5542B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E07423455AFE8C0E9EA80E0775E017C /* ABI36_0_0EXAppAuth.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0EXAppAuth/ABI36_0_0EXAppAuth-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0EXAppAuth;
+				PRODUCT_NAME = ABI36_0_0EXAppAuth;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C4959DB6BE61F86C8891CCBCE2C6828C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		CB286291F0D2E0B576494628F3604DA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E80F1F5BE5DDC894F57E172E40773601 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E07423455AFE8C0E9EA80E0775E017C /* ABI36_0_0EXAppAuth.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0EXAppAuth/ABI36_0_0EXAppAuth-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0EXAppAuth;
+				PRODUCT_NAME = ABI36_0_0EXAppAuth;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		814D2A7A3D22D5DD4FD6DE56C00B9518 /* Build configuration list for PBXProject "ABI36_0_0EXAppAuth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB286291F0D2E0B576494628F3604DA0 /* Debug */,
+				C4959DB6BE61F86C8891CCBCE2C6828C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9D079262908821F686B0DFC952005A0 /* Build configuration list for PBXNativeTarget "ABI36_0_0EXAppAuth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADC6DF3C948F3207067DBDB8F8E5542B /* Debug */,
+				E80F1F5BE5DDC894F57E172E40773601 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A96E2078E9915F97AA9DFCD9573F11DE /* Project object */;
+}

@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49701A5A819B56B00B9549D0C9F7A599 /* ABI33_0_0EXDocumentPickerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4B04E43290E686C47BB7CED4C94AF1 /* ABI33_0_0EXDocumentPickerModule.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		909B314A0DF744BE2DBAE67F7A2536EF /* ABI33_0_0EXDocumentPickerModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 1702F723C510444511C836DF16E59A7D /* ABI33_0_0EXDocumentPickerModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DDA8839CBCDEC146EA099F1E7EC86DFB /* ABI33_0_0EXDocumentPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD38558B055FFFAA9F139F087DA2655F /* ABI33_0_0EXDocumentPicker-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		788B12A1640AC320FC4A3A753A13347F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96F3855D648FB3721A0A29AE203D2CCC /* ABI33_0_0UMFileSystemInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C5129A732F3DD83BCD1579A2F59EB80A;
+			remoteInfo = ABI33_0_0UMFileSystemInterface;
+		};
+		ACEC0A0DE697F41DCDAE41464C87CCED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A68470E482E7C3EEA6EFE90BCF687B8F /* ABI33_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C051C97A4147D306821BE0B317EE7A65;
+			remoteInfo = ABI33_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		163480F662C3428196CDE73BBC3C75F5 /* libABI33_0_0EXDocumentPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI33_0_0EXDocumentPicker.a; path = libABI33_0_0EXDocumentPicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1702F723C510444511C836DF16E59A7D /* ABI33_0_0EXDocumentPickerModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXDocumentPickerModule.h; path = ABI33_0_0EXDocumentPicker/ABI33_0_0EXDocumentPickerModule.h; sourceTree = "<group>"; };
+		38B30A7C07006A970A3C04B66BED5ED8 /* ABI33_0_0EXDocumentPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI33_0_0EXDocumentPicker-prefix.pch"; sourceTree = "<group>"; };
+		39F6AC17AE50D32A885C56E2891EE445 /* ABI33_0_0EXDocumentPicker.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI33_0_0EXDocumentPicker.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96F3855D648FB3721A0A29AE203D2CCC /* ABI33_0_0UMFileSystemInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI33_0_0UMFileSystemInterface; path = ABI33_0_0UMFileSystemInterface.xcodeproj; sourceTree = "<group>"; };
+		A68470E482E7C3EEA6EFE90BCF687B8F /* ABI33_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI33_0_0UMCore; path = ABI33_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		BD38558B055FFFAA9F139F087DA2655F /* ABI33_0_0EXDocumentPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI33_0_0EXDocumentPicker-dummy.m"; sourceTree = "<group>"; };
+		DE4B04E43290E686C47BB7CED4C94AF1 /* ABI33_0_0EXDocumentPickerModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXDocumentPickerModule.m; path = ABI33_0_0EXDocumentPicker/ABI33_0_0EXDocumentPickerModule.m; sourceTree = "<group>"; };
+		FC18B7E0BD913DEB6279797D7ACE1E7E /* ABI33_0_0EXDocumentPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI33_0_0EXDocumentPicker.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD9AA91E3C47EF1E078930DB07C413F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21B648841E8B239D39D4DF99544FD277 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				A68470E482E7C3EEA6EFE90BCF687B8F /* ABI33_0_0UMCore */,
+				96F3855D648FB3721A0A29AE203D2CCC /* ABI33_0_0UMFileSystemInterface */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		5E5ECACB90DC4DF6ACDAFA5CADFE9306 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		71CE589B0C8D61B2948D65CD4E5BCC9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				163480F662C3428196CDE73BBC3C75F5 /* libABI33_0_0EXDocumentPicker.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FF0258B9B6218CA78E8EB8384A53FB0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC18B7E0BD913DEB6279797D7ACE1E7E /* ABI33_0_0EXDocumentPicker.xcconfig */,
+				BD38558B055FFFAA9F139F087DA2655F /* ABI33_0_0EXDocumentPicker-dummy.m */,
+				38B30A7C07006A970A3C04B66BED5ED8 /* ABI33_0_0EXDocumentPicker-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI33_0_0EXDocumentPicker";
+			sourceTree = "<group>";
+		};
+		8C248901670C303AD18C771D9E237BE0 /* ABI33_0_0EXDocumentPicker */ = {
+			isa = PBXGroup;
+			children = (
+				1702F723C510444511C836DF16E59A7D /* ABI33_0_0EXDocumentPickerModule.h */,
+				DE4B04E43290E686C47BB7CED4C94AF1 /* ABI33_0_0EXDocumentPickerModule.m */,
+				AC81D8D0D317312521B9EE7833E043B1 /* Pod */,
+				7FF0258B9B6218CA78E8EB8384A53FB0 /* Support Files */,
+			);
+			name = ABI33_0_0EXDocumentPicker;
+			path = "../versioned-react-native/ABI33_0_0/EXDocumentPicker";
+			sourceTree = "<group>";
+		};
+		AC81D8D0D317312521B9EE7833E043B1 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				39F6AC17AE50D32A885C56E2891EE445 /* ABI33_0_0EXDocumentPicker.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		F1C7B4694920DD42FAD570557231F58A = {
+			isa = PBXGroup;
+			children = (
+				8C248901670C303AD18C771D9E237BE0 /* ABI33_0_0EXDocumentPicker */,
+				21B648841E8B239D39D4DF99544FD277 /* Dependencies */,
+				5E5ECACB90DC4DF6ACDAFA5CADFE9306 /* Frameworks */,
+				71CE589B0C8D61B2948D65CD4E5BCC9A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BB22D54EB51C28330F1A8B0C50ADA748 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				909B314A0DF744BE2DBAE67F7A2536EF /* ABI33_0_0EXDocumentPickerModule.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2990466A87152F65C50CD859BA32655C /* ABI33_0_0EXDocumentPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B68FA5F6BCBFD59DC1066B8FEB1CECD /* Build configuration list for PBXNativeTarget "ABI33_0_0EXDocumentPicker" */;
+			buildPhases = (
+				BB22D54EB51C28330F1A8B0C50ADA748 /* Headers */,
+				47EE73222F875FF573F727CDF2885C17 /* Sources */,
+				AD9AA91E3C47EF1E078930DB07C413F1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				35D691E782C0F71C4DF545EFEF41DBCB /* PBXTargetDependency */,
+				F0A10DB3D3150F96055F196F2098D9C2 /* PBXTargetDependency */,
+			);
+			name = ABI33_0_0EXDocumentPicker;
+			productName = ABI33_0_0EXDocumentPicker;
+			productReference = 163480F662C3428196CDE73BBC3C75F5 /* libABI33_0_0EXDocumentPicker.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97823BF374C059BB56C8561E09834D1C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 48DB30AB7233B47ACADC7F8F0BB993FA /* Build configuration list for PBXProject "ABI33_0_0EXDocumentPicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F1C7B4694920DD42FAD570557231F58A;
+			productRefGroup = 71CE589B0C8D61B2948D65CD4E5BCC9A /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = A68470E482E7C3EEA6EFE90BCF687B8F /* ABI33_0_0UMCore */;
+				},
+				{
+					ProjectRef = 96F3855D648FB3721A0A29AE203D2CCC /* ABI33_0_0UMFileSystemInterface */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				2990466A87152F65C50CD859BA32655C /* ABI33_0_0EXDocumentPicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47EE73222F875FF573F727CDF2885C17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA8839CBCDEC146EA099F1E7EC86DFB /* ABI33_0_0EXDocumentPicker-dummy.m in Sources */,
+				49701A5A819B56B00B9549D0C9F7A599 /* ABI33_0_0EXDocumentPickerModule.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		35D691E782C0F71C4DF545EFEF41DBCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI33_0_0UMCore;
+			targetProxy = ACEC0A0DE697F41DCDAE41464C87CCED /* PBXContainerItemProxy */;
+		};
+		F0A10DB3D3150F96055F196F2098D9C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI33_0_0UMFileSystemInterface;
+			targetProxy = 788B12A1640AC320FC4A3A753A13347F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1BAB35916E030AF1615F88799E75576B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		7A6A237BF432E625840C278E75F74954 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC18B7E0BD913DEB6279797D7ACE1E7E /* ABI33_0_0EXDocumentPicker.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXDocumentPicker/ABI33_0_0EXDocumentPicker-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXDocumentPicker;
+				PRODUCT_NAME = ABI33_0_0EXDocumentPicker;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D85891792F69517687C90FF2B5C589A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		F9DA895CD82BB8543575B7272CF81079 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC18B7E0BD913DEB6279797D7ACE1E7E /* ABI33_0_0EXDocumentPicker.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXDocumentPicker/ABI33_0_0EXDocumentPicker-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXDocumentPicker;
+				PRODUCT_NAME = ABI33_0_0EXDocumentPicker;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48DB30AB7233B47ACADC7F8F0BB993FA /* Build configuration list for PBXProject "ABI33_0_0EXDocumentPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BAB35916E030AF1615F88799E75576B /* Debug */,
+				D85891792F69517687C90FF2B5C589A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B68FA5F6BCBFD59DC1066B8FEB1CECD /* Build configuration list for PBXNativeTarget "ABI33_0_0EXDocumentPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A6A237BF432E625840C278E75F74954 /* Debug */,
+				F9DA895CD82BB8543575B7272CF81079 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97823BF374C059BB56C8561E09834D1C /* Project object */;
+}

@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C3B750A88B023526796CD3A42A3B52C /* ABI33_0_0EXWKViewPDFRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6346AE799099163A13735FD624B4B621 /* ABI33_0_0EXWKViewPDFRenderer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3D5AAD9D81CEF103719A642EA1DADBF6 /* ABI33_0_0EXWKPDFRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7632D9C64A60B9479FB3F8739E4C033D /* ABI33_0_0EXWKPDFRenderer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		562020AD48322557B8028AC11267C0D5 /* ABI33_0_0EXPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0EC0689D3BD2FDE67C863EEB543BF9 /* ABI33_0_0EXPrint.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		57871C0F065DC4FCE5D3A45259162BDE /* ABI33_0_0EXWKSnapshotPDFRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 48EF0C6BEEC3190F4469A1A615A658DC /* ABI33_0_0EXWKSnapshotPDFRenderer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6ABC1D929457F33A618692D5B7CC6824 /* ABI33_0_0EXWKViewPDFRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F95E1A7FA0DC35BFF4CD4C74255F00F /* ABI33_0_0EXWKViewPDFRenderer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		941891B25A7AE0253F047EB1577A64E0 /* ABI33_0_0EXPrint-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EC0043681931E782AF480E16DFCF2 /* ABI33_0_0EXPrint-dummy.m */; };
+		B6F26152166D1AFE33D8B1D2E83ECE02 /* ABI33_0_0EXWKPDFRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0CBEFDF4907F3684D275501455E02A /* ABI33_0_0EXWKPDFRenderer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C6C06B92F31568FA47339E72367A45AE /* ABI33_0_0EXPrint.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD3B7D98AB5C3F1108C81AC780B1098 /* ABI33_0_0EXPrint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		ED528756046201103214969A0DB34BAF /* ABI33_0_0EXWKSnapshotPDFRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = B71CF896F691D9D60598537AF0E9BDED /* ABI33_0_0EXWKSnapshotPDFRenderer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78E4C58219F907EE19E303DCA5C736F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6629B96CD23196886D83EC3A1F23C350 /* ABI33_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C051C97A4147D306821BE0B317EE7A65;
+			remoteInfo = ABI33_0_0UMCore;
+		};
+		9F00C9978B8DDC2D67DE8B2FE01E1C0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2CB49E81CEE72AEB688C5AF80C26F7D /* ABI33_0_0UMFileSystemInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C5129A732F3DD83BCD1579A2F59EB80A;
+			remoteInfo = ABI33_0_0UMFileSystemInterface;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		077EC0043681931E782AF480E16DFCF2 /* ABI33_0_0EXPrint-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI33_0_0EXPrint-dummy.m"; sourceTree = "<group>"; };
+		17063BC73DEF926B439F4110DC5FBAF5 /* ABI33_0_0EXPrint-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI33_0_0EXPrint-prefix.pch"; sourceTree = "<group>"; };
+		1AD75C24F099E4451A4382B563FAF7E8 /* libABI33_0_0EXPrint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI33_0_0EXPrint.a; path = libABI33_0_0EXPrint.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		48EF0C6BEEC3190F4469A1A615A658DC /* ABI33_0_0EXWKSnapshotPDFRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXWKSnapshotPDFRenderer.h; path = ABI33_0_0EXPrint/ABI33_0_0EXWKSnapshotPDFRenderer.h; sourceTree = "<group>"; };
+		4AB5F89D9C0E19D40EA32EBC06AE3C4F /* ABI33_0_0EXPrint.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI33_0_0EXPrint.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4B0EC0689D3BD2FDE67C863EEB543BF9 /* ABI33_0_0EXPrint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXPrint.m; path = ABI33_0_0EXPrint/ABI33_0_0EXPrint.m; sourceTree = "<group>"; };
+		6346AE799099163A13735FD624B4B621 /* ABI33_0_0EXWKViewPDFRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXWKViewPDFRenderer.h; path = ABI33_0_0EXPrint/ABI33_0_0EXWKViewPDFRenderer.h; sourceTree = "<group>"; };
+		6629B96CD23196886D83EC3A1F23C350 /* ABI33_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI33_0_0UMCore; path = ABI33_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		7632D9C64A60B9479FB3F8739E4C033D /* ABI33_0_0EXWKPDFRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXWKPDFRenderer.h; path = ABI33_0_0EXPrint/ABI33_0_0EXWKPDFRenderer.h; sourceTree = "<group>"; };
+		8F95E1A7FA0DC35BFF4CD4C74255F00F /* ABI33_0_0EXWKViewPDFRenderer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXWKViewPDFRenderer.m; path = ABI33_0_0EXPrint/ABI33_0_0EXWKViewPDFRenderer.m; sourceTree = "<group>"; };
+		B71CF896F691D9D60598537AF0E9BDED /* ABI33_0_0EXWKSnapshotPDFRenderer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXWKSnapshotPDFRenderer.m; path = ABI33_0_0EXPrint/ABI33_0_0EXWKSnapshotPDFRenderer.m; sourceTree = "<group>"; };
+		BDF498E35CEFEBDCAF5934FACFB32945 /* ABI33_0_0EXPrint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI33_0_0EXPrint.xcconfig; sourceTree = "<group>"; };
+		DCD3B7D98AB5C3F1108C81AC780B1098 /* ABI33_0_0EXPrint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXPrint.h; path = ABI33_0_0EXPrint/ABI33_0_0EXPrint.h; sourceTree = "<group>"; };
+		EE0CBEFDF4907F3684D275501455E02A /* ABI33_0_0EXWKPDFRenderer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXWKPDFRenderer.m; path = ABI33_0_0EXPrint/ABI33_0_0EXWKPDFRenderer.m; sourceTree = "<group>"; };
+		F2CB49E81CEE72AEB688C5AF80C26F7D /* ABI33_0_0UMFileSystemInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI33_0_0UMFileSystemInterface; path = ABI33_0_0UMFileSystemInterface.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96B1C00FC34144E0E69C046CB2430B29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F459664B13A259123E4821C6B45F4E4 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				4AB5F89D9C0E19D40EA32EBC06AE3C4F /* ABI33_0_0EXPrint.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		19277C451AED38291CC475E96EDA9AF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22AA8C08E0EBDFED4FDCF0810DCECDD5 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				6629B96CD23196886D83EC3A1F23C350 /* ABI33_0_0UMCore */,
+				F2CB49E81CEE72AEB688C5AF80C26F7D /* ABI33_0_0UMFileSystemInterface */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		3C890D3527B1DF069273DD8923B8F7E6 = {
+			isa = PBXGroup;
+			children = (
+				8CE5CDC61AE0C03BB92FE06495D0D760 /* ABI33_0_0EXPrint */,
+				22AA8C08E0EBDFED4FDCF0810DCECDD5 /* Dependencies */,
+				19277C451AED38291CC475E96EDA9AF4 /* Frameworks */,
+				D20A4E3AD9C4D3ECFA133428209782B1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5EDAA3BAC6EDA5CB12255D30142777D0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BDF498E35CEFEBDCAF5934FACFB32945 /* ABI33_0_0EXPrint.xcconfig */,
+				077EC0043681931E782AF480E16DFCF2 /* ABI33_0_0EXPrint-dummy.m */,
+				17063BC73DEF926B439F4110DC5FBAF5 /* ABI33_0_0EXPrint-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI33_0_0EXPrint";
+			sourceTree = "<group>";
+		};
+		8CE5CDC61AE0C03BB92FE06495D0D760 /* ABI33_0_0EXPrint */ = {
+			isa = PBXGroup;
+			children = (
+				DCD3B7D98AB5C3F1108C81AC780B1098 /* ABI33_0_0EXPrint.h */,
+				4B0EC0689D3BD2FDE67C863EEB543BF9 /* ABI33_0_0EXPrint.m */,
+				7632D9C64A60B9479FB3F8739E4C033D /* ABI33_0_0EXWKPDFRenderer.h */,
+				EE0CBEFDF4907F3684D275501455E02A /* ABI33_0_0EXWKPDFRenderer.m */,
+				48EF0C6BEEC3190F4469A1A615A658DC /* ABI33_0_0EXWKSnapshotPDFRenderer.h */,
+				B71CF896F691D9D60598537AF0E9BDED /* ABI33_0_0EXWKSnapshotPDFRenderer.m */,
+				6346AE799099163A13735FD624B4B621 /* ABI33_0_0EXWKViewPDFRenderer.h */,
+				8F95E1A7FA0DC35BFF4CD4C74255F00F /* ABI33_0_0EXWKViewPDFRenderer.m */,
+				0F459664B13A259123E4821C6B45F4E4 /* Pod */,
+				5EDAA3BAC6EDA5CB12255D30142777D0 /* Support Files */,
+			);
+			name = ABI33_0_0EXPrint;
+			path = "../versioned-react-native/ABI33_0_0/EXPrint";
+			sourceTree = "<group>";
+		};
+		D20A4E3AD9C4D3ECFA133428209782B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AD75C24F099E4451A4382B563FAF7E8 /* libABI33_0_0EXPrint.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		84B5A0FBAF83BE9113E2D6D2A64FA220 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6C06B92F31568FA47339E72367A45AE /* ABI33_0_0EXPrint.h in Headers */,
+				3D5AAD9D81CEF103719A642EA1DADBF6 /* ABI33_0_0EXWKPDFRenderer.h in Headers */,
+				57871C0F065DC4FCE5D3A45259162BDE /* ABI33_0_0EXWKSnapshotPDFRenderer.h in Headers */,
+				2C3B750A88B023526796CD3A42A3B52C /* ABI33_0_0EXWKViewPDFRenderer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8C2C05BBCD8CD923A4722E831A11753B /* ABI33_0_0EXPrint */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAA6C03D0AC95507C850C1C0155E89A6 /* Build configuration list for PBXNativeTarget "ABI33_0_0EXPrint" */;
+			buildPhases = (
+				84B5A0FBAF83BE9113E2D6D2A64FA220 /* Headers */,
+				554524DEAEC9939C559CF03D5F011172 /* Sources */,
+				96B1C00FC34144E0E69C046CB2430B29 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD4B823E63210FD99E7850F3531ED2F2 /* PBXTargetDependency */,
+				15613A5E074243E279F7C3F72A699E22 /* PBXTargetDependency */,
+			);
+			name = ABI33_0_0EXPrint;
+			productName = ABI33_0_0EXPrint;
+			productReference = 1AD75C24F099E4451A4382B563FAF7E8 /* libABI33_0_0EXPrint.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		408AC53264B31FB50500549F6A4E05BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = DD18D75D00B8B1CA6397C22BCB76EB06 /* Build configuration list for PBXProject "ABI33_0_0EXPrint" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3C890D3527B1DF069273DD8923B8F7E6;
+			productRefGroup = D20A4E3AD9C4D3ECFA133428209782B1 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 6629B96CD23196886D83EC3A1F23C350 /* ABI33_0_0UMCore */;
+				},
+				{
+					ProjectRef = F2CB49E81CEE72AEB688C5AF80C26F7D /* ABI33_0_0UMFileSystemInterface */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8C2C05BBCD8CD923A4722E831A11753B /* ABI33_0_0EXPrint */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		554524DEAEC9939C559CF03D5F011172 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941891B25A7AE0253F047EB1577A64E0 /* ABI33_0_0EXPrint-dummy.m in Sources */,
+				562020AD48322557B8028AC11267C0D5 /* ABI33_0_0EXPrint.m in Sources */,
+				B6F26152166D1AFE33D8B1D2E83ECE02 /* ABI33_0_0EXWKPDFRenderer.m in Sources */,
+				ED528756046201103214969A0DB34BAF /* ABI33_0_0EXWKSnapshotPDFRenderer.m in Sources */,
+				6ABC1D929457F33A618692D5B7CC6824 /* ABI33_0_0EXWKViewPDFRenderer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		15613A5E074243E279F7C3F72A699E22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI33_0_0UMFileSystemInterface;
+			targetProxy = 9F00C9978B8DDC2D67DE8B2FE01E1C0C /* PBXContainerItemProxy */;
+		};
+		BD4B823E63210FD99E7850F3531ED2F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI33_0_0UMCore;
+			targetProxy = 78E4C58219F907EE19E303DCA5C736F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		209DBD6A27EFB5EE390B36A941B108A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDF498E35CEFEBDCAF5934FACFB32945 /* ABI33_0_0EXPrint.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXPrint/ABI33_0_0EXPrint-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXPrint;
+				PRODUCT_NAME = ABI33_0_0EXPrint;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		291E9D4751BF96E65CEF1203A277976A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDF498E35CEFEBDCAF5934FACFB32945 /* ABI33_0_0EXPrint.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXPrint/ABI33_0_0EXPrint-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXPrint;
+				PRODUCT_NAME = ABI33_0_0EXPrint;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5179CD838692FEC5A41812EEAC5D1C43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E5A206318731B39612A8D4484EDB68E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DAA6C03D0AC95507C850C1C0155E89A6 /* Build configuration list for PBXNativeTarget "ABI33_0_0EXPrint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				291E9D4751BF96E65CEF1203A277976A /* Debug */,
+				209DBD6A27EFB5EE390B36A941B108A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD18D75D00B8B1CA6397C22BCB76EB06 /* Build configuration list for PBXProject "ABI33_0_0EXPrint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5A206318731B39612A8D4484EDB68E8 /* Debug */,
+				5179CD838692FEC5A41812EEAC5D1C43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 408AC53264B31FB50500549F6A4E05BF /* Project object */;
+}

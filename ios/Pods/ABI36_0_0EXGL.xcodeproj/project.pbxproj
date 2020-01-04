@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0673333DA5D34232BBDC6211DFF9EFF1 /* ABI36_0_0EXGLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF5E78DEBDD3DB2B1D7DB205EDD83CF /* ABI36_0_0EXGLObject.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1BEEDDBA6B404FC3078A20CA7995F494 /* ABI36_0_0EXGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = DE38FDC4385C60B300E7A15CED97B6F0 /* ABI36_0_0EXGLView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4E49209799EDC24EA7CE10FE658DB0E5 /* ABI36_0_0EXGLObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 686DFE7702D2D8CFACB1DC67116CF8A4 /* ABI36_0_0EXGLObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		519484B5FE56E11742CC9434C24BF511 /* ABI36_0_0EXGLViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B406D0EA2259B23A16DC61CA0497E0 /* ABI36_0_0EXGLViewManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5B7752363A4DECE8E25FF65C43D098A4 /* ABI36_0_0EXGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E39264D53F0CD8EE4DF05C063A9C688 /* ABI36_0_0EXGLView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6B09C6E339400D0DC39EFFE8871B6B77 /* ABI36_0_0EXGLContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EBF1D458CD0293CD59B6E1C7414AE4E /* ABI36_0_0EXGLContext.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7909A5965B5BE8844FDB335A50DCAA3D /* ABI36_0_0EXGLObjectManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 843E51F1DE4FC2CD8197EDB7DD172170 /* ABI36_0_0EXGLObjectManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		90CEB3A4BAF0CDCA5C464D7753B38AA5 /* ABI36_0_0EXGLObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232CCBB8635D256599E05FCA4A9701F /* ABI36_0_0EXGLObjectManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		924078A6B2325C856CAA4532867D82F3 /* ABI36_0_0EXGLViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AF2C75315C149AA3910C7736E56D2DAE /* ABI36_0_0EXGLViewManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BCEBD251D81DA072A5C311A45B46C532 /* ABI36_0_0EXGLCameraObject.h in Headers */ = {isa = PBXBuildFile; fileRef = CFB1322726C121D1E108F28D6E3B5E0E /* ABI36_0_0EXGLCameraObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CECAB16794D1A017C8E377D1A45484F0 /* ABI36_0_0EXGLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAE6992F8E672CC74F055B9A13A55F4 /* ABI36_0_0EXGLContext.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		DCDC16B3C50203FFDD013DADC0BB9F54 /* ABI36_0_0EXGLCameraObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 104179C9167B8C4A3FAC8B59A1EDCF92 /* ABI36_0_0EXGLCameraObject.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		DF2F6E772CB5537E984A3CA29101700B /* ABI36_0_0EXGL-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6CD5C9530494E3EB44014E914516FD /* ABI36_0_0EXGL-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7A018B81F00BF863473E771BF57D4B50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E74169D73454241261E78245D96FC6F /* ABI36_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 17CDBC5DE6E16D3EE17E5C2098EE2921;
+			remoteInfo = ABI36_0_0UMCore;
+		};
+		90791D032988A9CB12DB9C75395028E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33B12BDF406363FAE4758AE6AA3506BE /* EXGL_CPP.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C66693C554B15E2593FB1F665F8BA01;
+			remoteInfo = EXGL_CPP;
+		};
+		DD808C6CE2406ED86D0FE2AEBE26F392 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3924DA74F3E4B5481A4AADA61B44F402 /* ABI36_0_0UMFileSystemInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 14CE1A3175D35872F93CBD8F6AA897CF;
+			remoteInfo = ABI36_0_0UMFileSystemInterface;
+		};
+		E7C0714F7293037E7056B87A66189744 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 273F538ABE5F0F8CE705F9184011C37B /* ABI36_0_0UMCameraInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DBBD907CE96749959099BB7EE9CA3090;
+			remoteInfo = ABI36_0_0UMCameraInterface;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		104179C9167B8C4A3FAC8B59A1EDCF92 /* ABI36_0_0EXGLCameraObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXGLCameraObject.m; path = ABI36_0_0EXGL/ABI36_0_0EXGLCameraObject.m; sourceTree = "<group>"; };
+		1E74169D73454241261E78245D96FC6F /* ABI36_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI36_0_0UMCore; path = ABI36_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		2232CCBB8635D256599E05FCA4A9701F /* ABI36_0_0EXGLObjectManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXGLObjectManager.m; path = ABI36_0_0EXGL/ABI36_0_0EXGLObjectManager.m; sourceTree = "<group>"; };
+		273F538ABE5F0F8CE705F9184011C37B /* ABI36_0_0UMCameraInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI36_0_0UMCameraInterface; path = ABI36_0_0UMCameraInterface.xcodeproj; sourceTree = "<group>"; };
+		2FF5E78DEBDD3DB2B1D7DB205EDD83CF /* ABI36_0_0EXGLObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXGLObject.m; path = ABI36_0_0EXGL/ABI36_0_0EXGLObject.m; sourceTree = "<group>"; };
+		33B12BDF406363FAE4758AE6AA3506BE /* EXGL_CPP */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EXGL_CPP; path = EXGL_CPP.xcodeproj; sourceTree = "<group>"; };
+		3924DA74F3E4B5481A4AADA61B44F402 /* ABI36_0_0UMFileSystemInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI36_0_0UMFileSystemInterface; path = ABI36_0_0UMFileSystemInterface.xcodeproj; sourceTree = "<group>"; };
+		3998283BD18AA55F8AEFFFF594B88B8A /* ABI36_0_0EXGL.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI36_0_0EXGL.xcconfig; sourceTree = "<group>"; };
+		492A12B995BB8CCB6D0F897DE461DFEC /* libABI36_0_0EXGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI36_0_0EXGL.a; path = libABI36_0_0EXGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F17BBCABF81B81C4618D302D6515279 /* ABI36_0_0EXGL-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI36_0_0EXGL-prefix.pch"; sourceTree = "<group>"; };
+		686DFE7702D2D8CFACB1DC67116CF8A4 /* ABI36_0_0EXGLObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXGLObject.h; path = ABI36_0_0EXGL/ABI36_0_0EXGLObject.h; sourceTree = "<group>"; };
+		7E39264D53F0CD8EE4DF05C063A9C688 /* ABI36_0_0EXGLView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXGLView.m; path = ABI36_0_0EXGL/ABI36_0_0EXGLView.m; sourceTree = "<group>"; };
+		7EBF1D458CD0293CD59B6E1C7414AE4E /* ABI36_0_0EXGLContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXGLContext.h; path = ABI36_0_0EXGL/ABI36_0_0EXGLContext.h; sourceTree = "<group>"; };
+		843E51F1DE4FC2CD8197EDB7DD172170 /* ABI36_0_0EXGLObjectManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXGLObjectManager.h; path = ABI36_0_0EXGL/ABI36_0_0EXGLObjectManager.h; sourceTree = "<group>"; };
+		AF2C75315C149AA3910C7736E56D2DAE /* ABI36_0_0EXGLViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXGLViewManager.h; path = ABI36_0_0EXGL/ABI36_0_0EXGLViewManager.h; sourceTree = "<group>"; };
+		B3B406D0EA2259B23A16DC61CA0497E0 /* ABI36_0_0EXGLViewManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXGLViewManager.m; path = ABI36_0_0EXGL/ABI36_0_0EXGLViewManager.m; sourceTree = "<group>"; };
+		BCAE6992F8E672CC74F055B9A13A55F4 /* ABI36_0_0EXGLContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXGLContext.m; path = ABI36_0_0EXGL/ABI36_0_0EXGLContext.m; sourceTree = "<group>"; };
+		CFB1322726C121D1E108F28D6E3B5E0E /* ABI36_0_0EXGLCameraObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXGLCameraObject.h; path = ABI36_0_0EXGL/ABI36_0_0EXGLCameraObject.h; sourceTree = "<group>"; };
+		DE38FDC4385C60B300E7A15CED97B6F0 /* ABI36_0_0EXGLView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXGLView.h; path = ABI36_0_0EXGL/ABI36_0_0EXGLView.h; sourceTree = "<group>"; };
+		ED6CD5C9530494E3EB44014E914516FD /* ABI36_0_0EXGL-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI36_0_0EXGL-dummy.m"; sourceTree = "<group>"; };
+		EEC8D40DDF54D234B069F59961FC4158 /* ABI36_0_0EXGL.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI36_0_0EXGL.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A3E342C6B1D8AB391594AA7DE4A24FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		305E5B71461124EABED6B62E55E837C7 = {
+			isa = PBXGroup;
+			children = (
+				A5A17856EA759CF574E357994BAE9224 /* ABI36_0_0EXGL */,
+				35E9903D863B9FB61D9BAEFE9574ABB1 /* Dependencies */,
+				58FC83EAE2BC0A684EAC8E962BAE3EEF /* Frameworks */,
+				CBC0AD96992957F47D7AD36896BDD173 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		35E9903D863B9FB61D9BAEFE9574ABB1 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				273F538ABE5F0F8CE705F9184011C37B /* ABI36_0_0UMCameraInterface */,
+				1E74169D73454241261E78245D96FC6F /* ABI36_0_0UMCore */,
+				3924DA74F3E4B5481A4AADA61B44F402 /* ABI36_0_0UMFileSystemInterface */,
+				33B12BDF406363FAE4758AE6AA3506BE /* EXGL_CPP */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		58FC83EAE2BC0A684EAC8E962BAE3EEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		738B05C76A8B26DBBBAB4A945D0FDEA7 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				EEC8D40DDF54D234B069F59961FC4158 /* ABI36_0_0EXGL.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		A5A17856EA759CF574E357994BAE9224 /* ABI36_0_0EXGL */ = {
+			isa = PBXGroup;
+			children = (
+				CFB1322726C121D1E108F28D6E3B5E0E /* ABI36_0_0EXGLCameraObject.h */,
+				104179C9167B8C4A3FAC8B59A1EDCF92 /* ABI36_0_0EXGLCameraObject.m */,
+				7EBF1D458CD0293CD59B6E1C7414AE4E /* ABI36_0_0EXGLContext.h */,
+				BCAE6992F8E672CC74F055B9A13A55F4 /* ABI36_0_0EXGLContext.m */,
+				686DFE7702D2D8CFACB1DC67116CF8A4 /* ABI36_0_0EXGLObject.h */,
+				2FF5E78DEBDD3DB2B1D7DB205EDD83CF /* ABI36_0_0EXGLObject.m */,
+				843E51F1DE4FC2CD8197EDB7DD172170 /* ABI36_0_0EXGLObjectManager.h */,
+				2232CCBB8635D256599E05FCA4A9701F /* ABI36_0_0EXGLObjectManager.m */,
+				DE38FDC4385C60B300E7A15CED97B6F0 /* ABI36_0_0EXGLView.h */,
+				7E39264D53F0CD8EE4DF05C063A9C688 /* ABI36_0_0EXGLView.m */,
+				AF2C75315C149AA3910C7736E56D2DAE /* ABI36_0_0EXGLViewManager.h */,
+				B3B406D0EA2259B23A16DC61CA0497E0 /* ABI36_0_0EXGLViewManager.m */,
+				738B05C76A8B26DBBBAB4A945D0FDEA7 /* Pod */,
+				BD0484C21941FC45CB88BF5053DD65D6 /* Support Files */,
+			);
+			name = ABI36_0_0EXGL;
+			path = "../versioned-react-native/ABI36_0_0/Expo/EXGL";
+			sourceTree = "<group>";
+		};
+		BD0484C21941FC45CB88BF5053DD65D6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3998283BD18AA55F8AEFFFF594B88B8A /* ABI36_0_0EXGL.xcconfig */,
+				ED6CD5C9530494E3EB44014E914516FD /* ABI36_0_0EXGL-dummy.m */,
+				4F17BBCABF81B81C4618D302D6515279 /* ABI36_0_0EXGL-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../../Pods/Target Support Files/ABI36_0_0EXGL";
+			sourceTree = "<group>";
+		};
+		CBC0AD96992957F47D7AD36896BDD173 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				492A12B995BB8CCB6D0F897DE461DFEC /* libABI36_0_0EXGL.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A871F1F00AB684EEB62B15ED7E34FF75 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCEBD251D81DA072A5C311A45B46C532 /* ABI36_0_0EXGLCameraObject.h in Headers */,
+				6B09C6E339400D0DC39EFFE8871B6B77 /* ABI36_0_0EXGLContext.h in Headers */,
+				4E49209799EDC24EA7CE10FE658DB0E5 /* ABI36_0_0EXGLObject.h in Headers */,
+				7909A5965B5BE8844FDB335A50DCAA3D /* ABI36_0_0EXGLObjectManager.h in Headers */,
+				1BEEDDBA6B404FC3078A20CA7995F494 /* ABI36_0_0EXGLView.h in Headers */,
+				924078A6B2325C856CAA4532867D82F3 /* ABI36_0_0EXGLViewManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5C5949111E3B2CD4D0C0656412CF1C90 /* ABI36_0_0EXGL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 424B8E184E21052F18DC3862D5BC071C /* Build configuration list for PBXNativeTarget "ABI36_0_0EXGL" */;
+			buildPhases = (
+				A871F1F00AB684EEB62B15ED7E34FF75 /* Headers */,
+				68C1EEC4C073003F8391DB6CB83644A0 /* Sources */,
+				7A3E342C6B1D8AB391594AA7DE4A24FA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D912EA7E70D626CD8118A3934D823638 /* PBXTargetDependency */,
+				536D0502655669B42584E5D5B66DBB0C /* PBXTargetDependency */,
+				B6439617AFADD5E897062E93DE3ECC1D /* PBXTargetDependency */,
+				12A834953D8EF8D01A87AC9C7B2275D9 /* PBXTargetDependency */,
+			);
+			name = ABI36_0_0EXGL;
+			productName = ABI36_0_0EXGL;
+			productReference = 492A12B995BB8CCB6D0F897DE461DFEC /* libABI36_0_0EXGL.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70178FAF715A2B89F85DD969A7DD9F2D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = B16E9B8BA0EEEF00472CFE61AB259A99 /* Build configuration list for PBXProject "ABI36_0_0EXGL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 305E5B71461124EABED6B62E55E837C7;
+			productRefGroup = CBC0AD96992957F47D7AD36896BDD173 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 1E74169D73454241261E78245D96FC6F /* ABI36_0_0UMCore */;
+				},
+				{
+					ProjectRef = 3924DA74F3E4B5481A4AADA61B44F402 /* ABI36_0_0UMFileSystemInterface */;
+				},
+				{
+					ProjectRef = 273F538ABE5F0F8CE705F9184011C37B /* ABI36_0_0UMCameraInterface */;
+				},
+				{
+					ProjectRef = 33B12BDF406363FAE4758AE6AA3506BE /* EXGL_CPP */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				5C5949111E3B2CD4D0C0656412CF1C90 /* ABI36_0_0EXGL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68C1EEC4C073003F8391DB6CB83644A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF2F6E772CB5537E984A3CA29101700B /* ABI36_0_0EXGL-dummy.m in Sources */,
+				DCDC16B3C50203FFDD013DADC0BB9F54 /* ABI36_0_0EXGLCameraObject.m in Sources */,
+				CECAB16794D1A017C8E377D1A45484F0 /* ABI36_0_0EXGLContext.m in Sources */,
+				0673333DA5D34232BBDC6211DFF9EFF1 /* ABI36_0_0EXGLObject.m in Sources */,
+				90CEB3A4BAF0CDCA5C464D7753B38AA5 /* ABI36_0_0EXGLObjectManager.m in Sources */,
+				5B7752363A4DECE8E25FF65C43D098A4 /* ABI36_0_0EXGLView.m in Sources */,
+				519484B5FE56E11742CC9434C24BF511 /* ABI36_0_0EXGLViewManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		12A834953D8EF8D01A87AC9C7B2275D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EXGL_CPP;
+			targetProxy = 90791D032988A9CB12DB9C75395028E2 /* PBXContainerItemProxy */;
+		};
+		536D0502655669B42584E5D5B66DBB0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI36_0_0UMCore;
+			targetProxy = 7A018B81F00BF863473E771BF57D4B50 /* PBXContainerItemProxy */;
+		};
+		B6439617AFADD5E897062E93DE3ECC1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI36_0_0UMFileSystemInterface;
+			targetProxy = DD808C6CE2406ED86D0FE2AEBE26F392 /* PBXContainerItemProxy */;
+		};
+		D912EA7E70D626CD8118A3934D823638 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI36_0_0UMCameraInterface;
+			targetProxy = E7C0714F7293037E7056B87A66189744 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1AB7E3632D462DE45A3FDAF471A81D46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3998283BD18AA55F8AEFFFF594B88B8A /* ABI36_0_0EXGL.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0EXGL/ABI36_0_0EXGL-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0EXGL;
+				PRODUCT_NAME = ABI36_0_0EXGL;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB58787C21D39A516392D093D58F0EA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BF693C4A88FBB01A4CADDB1748424892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3998283BD18AA55F8AEFFFF594B88B8A /* ABI36_0_0EXGL.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0EXGL/ABI36_0_0EXGL-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0EXGL;
+				PRODUCT_NAME = ABI36_0_0EXGL;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E231BB37DB62FFC7A4CEC5A00AE9C17D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		424B8E184E21052F18DC3862D5BC071C /* Build configuration list for PBXNativeTarget "ABI36_0_0EXGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF693C4A88FBB01A4CADDB1748424892 /* Debug */,
+				1AB7E3632D462DE45A3FDAF471A81D46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B16E9B8BA0EEEF00472CFE61AB259A99 /* Build configuration list for PBXProject "ABI36_0_0EXGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E231BB37DB62FFC7A4CEC5A00AE9C17D /* Debug */,
+				BB58787C21D39A516392D093D58F0EA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70178FAF715A2B89F85DD969A7DD9F2D /* Project object */;
+}

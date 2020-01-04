@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		045BC83F9C469006126525030415344D /* ABI35_0_0EXGLViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 469F4FB223AA253640992CE31913652C /* ABI35_0_0EXGLViewManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1813D703082E03AA1F592B622413F170 /* ABI35_0_0EXGLContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F89DB13264E9342270CF9C6BB93A49A /* ABI35_0_0EXGLContext.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1C1FA4541FA2CF12CF8572B7EE459C27 /* ABI35_0_0EXGLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4556A68858A354B4599AAE4AB23CCA50 /* ABI35_0_0EXGLContext.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		4E6CCBC25C07675F7FDF49D5CDFA6A0C /* ABI35_0_0EXGLObjectManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BAA058E9704C62591979383B45085339 /* ABI35_0_0EXGLObjectManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		52A686451C81B6F05008CB2D7E4B98CC /* ABI35_0_0EXGLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 033FA89ED46F7FBAC75328507778AF39 /* ABI35_0_0EXGLObject.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6200985A5A51534D95E06F8B91FC5712 /* ABI35_0_0EXGL-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6C79F3C2B34A97A4DAFE91A904C1BA /* ABI35_0_0EXGL-dummy.m */; };
+		7929C3795DB56C32DE9554513CAD480B /* ABI35_0_0EXGLObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D10522A21FD24D188E880536ECA147 /* ABI35_0_0EXGLObjectManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8C5217B77B041587BE6783766EA792E7 /* ABI35_0_0EXGLViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D78EBFAE43AD82652043ABE15155B73F /* ABI35_0_0EXGLViewManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A02F14540E177B2F5969AB460E368CCB /* ABI35_0_0EXGLCameraObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F0CAA1B1EB41D196E7E6472FAB8A870 /* ABI35_0_0EXGLCameraObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AEF4B36CB0C8C01840B50D59ADAB7413 /* ABI35_0_0EXGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 133D3980CAABDCFFCBEF8E00EEB9A7CE /* ABI35_0_0EXGLView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C664FC8666F9318D1605701933F1171F /* ABI35_0_0EXGLObject.h in Headers */ = {isa = PBXBuildFile; fileRef = F83AEF0D00136A7655A4E008E985DE76 /* ABI35_0_0EXGLObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C8CA3D44C574B13E78F08A6838E03BD5 /* ABI35_0_0EXGLCameraObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C84110A76045D70967191747F7E110 /* ABI35_0_0EXGLCameraObject.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E562B5A7B89FC63A7C0104006E5E402A /* ABI35_0_0EXGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = B07E8B437266DD2ED8D71A28CF7E1516 /* ABI35_0_0EXGLView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		159544306A650ADDF01BC3D91AEE2C78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1E3EF5C8C8493329A538BD6F745B29C /* ABI35_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7205ADA49415BA3BB5197065A0B628B0;
+			remoteInfo = ABI35_0_0UMCore;
+		};
+		80F19ECD28A47D4104237DB96D38222C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45D55119684AA731A40CB025D5A6BC57 /* EXGL_CPP.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C66693C554B15E2593FB1F665F8BA01;
+			remoteInfo = EXGL_CPP;
+		};
+		9C5C2EF274C03F51975A974A06EF3A5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56D2B27CAC5AEB1176A38A28D5B9B1F9 /* ABI35_0_0UMFileSystemInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 236B933BDEB947465197DD4712DF67E8;
+			remoteInfo = ABI35_0_0UMFileSystemInterface;
+		};
+		F429973A2A735BD438F950AC0101241D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E39D6C278596543CFC6BB1A037BAD52 /* ABI35_0_0UMCameraInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B41D5D5BB6442F5F52D4B72D9FCE14F3;
+			remoteInfo = ABI35_0_0UMCameraInterface;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		033FA89ED46F7FBAC75328507778AF39 /* ABI35_0_0EXGLObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI35_0_0EXGLObject.m; path = ABI35_0_0EXGL/ABI35_0_0EXGLObject.m; sourceTree = "<group>"; };
+		133D3980CAABDCFFCBEF8E00EEB9A7CE /* ABI35_0_0EXGLView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI35_0_0EXGLView.h; path = ABI35_0_0EXGL/ABI35_0_0EXGLView.h; sourceTree = "<group>"; };
+		17C84110A76045D70967191747F7E110 /* ABI35_0_0EXGLCameraObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI35_0_0EXGLCameraObject.m; path = ABI35_0_0EXGL/ABI35_0_0EXGLCameraObject.m; sourceTree = "<group>"; };
+		3F0CAA1B1EB41D196E7E6472FAB8A870 /* ABI35_0_0EXGLCameraObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI35_0_0EXGLCameraObject.h; path = ABI35_0_0EXGL/ABI35_0_0EXGLCameraObject.h; sourceTree = "<group>"; };
+		4556A68858A354B4599AAE4AB23CCA50 /* ABI35_0_0EXGLContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI35_0_0EXGLContext.m; path = ABI35_0_0EXGL/ABI35_0_0EXGLContext.m; sourceTree = "<group>"; };
+		45D10522A21FD24D188E880536ECA147 /* ABI35_0_0EXGLObjectManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI35_0_0EXGLObjectManager.m; path = ABI35_0_0EXGL/ABI35_0_0EXGLObjectManager.m; sourceTree = "<group>"; };
+		45D55119684AA731A40CB025D5A6BC57 /* EXGL_CPP */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EXGL_CPP; path = EXGL_CPP.xcodeproj; sourceTree = "<group>"; };
+		469F4FB223AA253640992CE31913652C /* ABI35_0_0EXGLViewManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI35_0_0EXGLViewManager.m; path = ABI35_0_0EXGL/ABI35_0_0EXGLViewManager.m; sourceTree = "<group>"; };
+		56D2B27CAC5AEB1176A38A28D5B9B1F9 /* ABI35_0_0UMFileSystemInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI35_0_0UMFileSystemInterface; path = ABI35_0_0UMFileSystemInterface.xcodeproj; sourceTree = "<group>"; };
+		57AEFC12790DE75231842733C67291B8 /* libABI35_0_0EXGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI35_0_0EXGL.a; path = libABI35_0_0EXGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B37FD3FBA03F1339496BB01F119D5A2 /* ABI35_0_0EXGL.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI35_0_0EXGL.xcconfig; sourceTree = "<group>"; };
+		7E39D6C278596543CFC6BB1A037BAD52 /* ABI35_0_0UMCameraInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI35_0_0UMCameraInterface; path = ABI35_0_0UMCameraInterface.xcodeproj; sourceTree = "<group>"; };
+		890E8E81F40B95290E9A735F036E7769 /* ABI35_0_0EXGL.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI35_0_0EXGL.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8E6C79F3C2B34A97A4DAFE91A904C1BA /* ABI35_0_0EXGL-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI35_0_0EXGL-dummy.m"; sourceTree = "<group>"; };
+		9F89DB13264E9342270CF9C6BB93A49A /* ABI35_0_0EXGLContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI35_0_0EXGLContext.h; path = ABI35_0_0EXGL/ABI35_0_0EXGLContext.h; sourceTree = "<group>"; };
+		B07E8B437266DD2ED8D71A28CF7E1516 /* ABI35_0_0EXGLView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI35_0_0EXGLView.m; path = ABI35_0_0EXGL/ABI35_0_0EXGLView.m; sourceTree = "<group>"; };
+		BAA058E9704C62591979383B45085339 /* ABI35_0_0EXGLObjectManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI35_0_0EXGLObjectManager.h; path = ABI35_0_0EXGL/ABI35_0_0EXGLObjectManager.h; sourceTree = "<group>"; };
+		D78EBFAE43AD82652043ABE15155B73F /* ABI35_0_0EXGLViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI35_0_0EXGLViewManager.h; path = ABI35_0_0EXGL/ABI35_0_0EXGLViewManager.h; sourceTree = "<group>"; };
+		F1E3EF5C8C8493329A538BD6F745B29C /* ABI35_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI35_0_0UMCore; path = ABI35_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		F5089E3AD17B390D9FD8659103328F59 /* ABI35_0_0EXGL-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI35_0_0EXGL-prefix.pch"; sourceTree = "<group>"; };
+		F83AEF0D00136A7655A4E008E985DE76 /* ABI35_0_0EXGLObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI35_0_0EXGLObject.h; path = ABI35_0_0EXGL/ABI35_0_0EXGLObject.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30ECD7EC0D6EBA7A3577C968FFEC4861 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		086A9DC6CADE07EFE2CF05BDFC5AE47D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B37FD3FBA03F1339496BB01F119D5A2 /* ABI35_0_0EXGL.xcconfig */,
+				8E6C79F3C2B34A97A4DAFE91A904C1BA /* ABI35_0_0EXGL-dummy.m */,
+				F5089E3AD17B390D9FD8659103328F59 /* ABI35_0_0EXGL-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI35_0_0EXGL";
+			sourceTree = "<group>";
+		};
+		51173987660B6C154CE5FD8E30831259 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		61A29A9620BFD3198F7FD16EA10BD6AA = {
+			isa = PBXGroup;
+			children = (
+				A086CF91A94F44FC6861D976919C0396 /* ABI35_0_0EXGL */,
+				83DE1F7311567C74E8C02D10FBB814B9 /* Dependencies */,
+				51173987660B6C154CE5FD8E30831259 /* Frameworks */,
+				CAD88BECDC88CD99F97F342BB8C46CD7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83DE1F7311567C74E8C02D10FBB814B9 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				7E39D6C278596543CFC6BB1A037BAD52 /* ABI35_0_0UMCameraInterface */,
+				F1E3EF5C8C8493329A538BD6F745B29C /* ABI35_0_0UMCore */,
+				56D2B27CAC5AEB1176A38A28D5B9B1F9 /* ABI35_0_0UMFileSystemInterface */,
+				45D55119684AA731A40CB025D5A6BC57 /* EXGL_CPP */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		A086CF91A94F44FC6861D976919C0396 /* ABI35_0_0EXGL */ = {
+			isa = PBXGroup;
+			children = (
+				3F0CAA1B1EB41D196E7E6472FAB8A870 /* ABI35_0_0EXGLCameraObject.h */,
+				17C84110A76045D70967191747F7E110 /* ABI35_0_0EXGLCameraObject.m */,
+				9F89DB13264E9342270CF9C6BB93A49A /* ABI35_0_0EXGLContext.h */,
+				4556A68858A354B4599AAE4AB23CCA50 /* ABI35_0_0EXGLContext.m */,
+				F83AEF0D00136A7655A4E008E985DE76 /* ABI35_0_0EXGLObject.h */,
+				033FA89ED46F7FBAC75328507778AF39 /* ABI35_0_0EXGLObject.m */,
+				BAA058E9704C62591979383B45085339 /* ABI35_0_0EXGLObjectManager.h */,
+				45D10522A21FD24D188E880536ECA147 /* ABI35_0_0EXGLObjectManager.m */,
+				133D3980CAABDCFFCBEF8E00EEB9A7CE /* ABI35_0_0EXGLView.h */,
+				B07E8B437266DD2ED8D71A28CF7E1516 /* ABI35_0_0EXGLView.m */,
+				D78EBFAE43AD82652043ABE15155B73F /* ABI35_0_0EXGLViewManager.h */,
+				469F4FB223AA253640992CE31913652C /* ABI35_0_0EXGLViewManager.m */,
+				F98B5E24ABD307E2D2816A12D33B8EC8 /* Pod */,
+				086A9DC6CADE07EFE2CF05BDFC5AE47D /* Support Files */,
+			);
+			name = ABI35_0_0EXGL;
+			path = "../versioned-react-native/ABI35_0_0/EXGL";
+			sourceTree = "<group>";
+		};
+		CAD88BECDC88CD99F97F342BB8C46CD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57AEFC12790DE75231842733C67291B8 /* libABI35_0_0EXGL.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F98B5E24ABD307E2D2816A12D33B8EC8 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				890E8E81F40B95290E9A735F036E7769 /* ABI35_0_0EXGL.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9CF3D092344860F3BC0B079835CD5DB6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A02F14540E177B2F5969AB460E368CCB /* ABI35_0_0EXGLCameraObject.h in Headers */,
+				1813D703082E03AA1F592B622413F170 /* ABI35_0_0EXGLContext.h in Headers */,
+				C664FC8666F9318D1605701933F1171F /* ABI35_0_0EXGLObject.h in Headers */,
+				4E6CCBC25C07675F7FDF49D5CDFA6A0C /* ABI35_0_0EXGLObjectManager.h in Headers */,
+				AEF4B36CB0C8C01840B50D59ADAB7413 /* ABI35_0_0EXGLView.h in Headers */,
+				8C5217B77B041587BE6783766EA792E7 /* ABI35_0_0EXGLViewManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8195317006CB7C1FCD9A7CDDB58B6391 /* ABI35_0_0EXGL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 671C44BCDE61F09A829D5A348E97882A /* Build configuration list for PBXNativeTarget "ABI35_0_0EXGL" */;
+			buildPhases = (
+				9CF3D092344860F3BC0B079835CD5DB6 /* Headers */,
+				8F6592AD589ED860051629D51EE1EF5D /* Sources */,
+				30ECD7EC0D6EBA7A3577C968FFEC4861 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				420963F39DEAC0D5A921C0FA20587634 /* PBXTargetDependency */,
+				8FF07053769466BC05144CEAA24888DF /* PBXTargetDependency */,
+				EC39108E68108CE5023D585462337BC2 /* PBXTargetDependency */,
+				4EF339F230D1A1AB6C420E29471FE20E /* PBXTargetDependency */,
+			);
+			name = ABI35_0_0EXGL;
+			productName = ABI35_0_0EXGL;
+			productReference = 57AEFC12790DE75231842733C67291B8 /* libABI35_0_0EXGL.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB0963A7B22E17F6C6D5A000694D518D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 05E6707803484B2A3BCC13A5B5FDC3F8 /* Build configuration list for PBXProject "ABI35_0_0EXGL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 61A29A9620BFD3198F7FD16EA10BD6AA;
+			productRefGroup = CAD88BECDC88CD99F97F342BB8C46CD7 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = F1E3EF5C8C8493329A538BD6F745B29C /* ABI35_0_0UMCore */;
+				},
+				{
+					ProjectRef = 56D2B27CAC5AEB1176A38A28D5B9B1F9 /* ABI35_0_0UMFileSystemInterface */;
+				},
+				{
+					ProjectRef = 7E39D6C278596543CFC6BB1A037BAD52 /* ABI35_0_0UMCameraInterface */;
+				},
+				{
+					ProjectRef = 45D55119684AA731A40CB025D5A6BC57 /* EXGL_CPP */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8195317006CB7C1FCD9A7CDDB58B6391 /* ABI35_0_0EXGL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F6592AD589ED860051629D51EE1EF5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6200985A5A51534D95E06F8B91FC5712 /* ABI35_0_0EXGL-dummy.m in Sources */,
+				C8CA3D44C574B13E78F08A6838E03BD5 /* ABI35_0_0EXGLCameraObject.m in Sources */,
+				1C1FA4541FA2CF12CF8572B7EE459C27 /* ABI35_0_0EXGLContext.m in Sources */,
+				52A686451C81B6F05008CB2D7E4B98CC /* ABI35_0_0EXGLObject.m in Sources */,
+				7929C3795DB56C32DE9554513CAD480B /* ABI35_0_0EXGLObjectManager.m in Sources */,
+				E562B5A7B89FC63A7C0104006E5E402A /* ABI35_0_0EXGLView.m in Sources */,
+				045BC83F9C469006126525030415344D /* ABI35_0_0EXGLViewManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		420963F39DEAC0D5A921C0FA20587634 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI35_0_0UMCameraInterface;
+			targetProxy = F429973A2A735BD438F950AC0101241D /* PBXContainerItemProxy */;
+		};
+		4EF339F230D1A1AB6C420E29471FE20E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EXGL_CPP;
+			targetProxy = 80F19ECD28A47D4104237DB96D38222C /* PBXContainerItemProxy */;
+		};
+		8FF07053769466BC05144CEAA24888DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI35_0_0UMCore;
+			targetProxy = 159544306A650ADDF01BC3D91AEE2C78 /* PBXContainerItemProxy */;
+		};
+		EC39108E68108CE5023D585462337BC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI35_0_0UMFileSystemInterface;
+			targetProxy = 9C5C2EF274C03F51975A974A06EF3A5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		01BF420DFF942A77D0A37B0725CA359F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B37FD3FBA03F1339496BB01F119D5A2 /* ABI35_0_0EXGL.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI35_0_0EXGL/ABI35_0_0EXGL-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI35_0_0EXGL;
+				PRODUCT_NAME = ABI35_0_0EXGL;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0880BB63DE81ADE12C84AA06342EF83E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		241803F53C7E656C8DEF2B5F17B16CF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B37FD3FBA03F1339496BB01F119D5A2 /* ABI35_0_0EXGL.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI35_0_0EXGL/ABI35_0_0EXGL-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI35_0_0EXGL;
+				PRODUCT_NAME = ABI35_0_0EXGL;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8BDA6448FDEFC85DEFDDF767D8CFA764 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05E6707803484B2A3BCC13A5B5FDC3F8 /* Build configuration list for PBXProject "ABI35_0_0EXGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0880BB63DE81ADE12C84AA06342EF83E /* Debug */,
+				8BDA6448FDEFC85DEFDDF767D8CFA764 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		671C44BCDE61F09A829D5A348E97882A /* Build configuration list for PBXNativeTarget "ABI35_0_0EXGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				241803F53C7E656C8DEF2B5F17B16CF6 /* Debug */,
+				01BF420DFF942A77D0A37B0725CA359F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB0963A7B22E17F6C6D5A000694D518D /* Project object */;
+}

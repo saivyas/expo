@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BA0CCE14C6FC997403B3B369D44AFCC /* ABI34_0_0EXSMSModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6C13C8330589861089EC6D946DF24 /* ABI34_0_0EXSMSModule.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7C45588B7C7086F3568CF3A2C7ACBBE2 /* ABI34_0_0EXSMS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 682EF265D9BF78308B790A3EC021BC52 /* ABI34_0_0EXSMS-dummy.m */; };
+		7E9E3375A2F681C9469328D72379DA45 /* ABI34_0_0EXSMSModule.h in Headers */ = {isa = PBXBuildFile; fileRef = E8A4B5C1ACFDF469D403AFA125E63B89 /* ABI34_0_0EXSMSModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA266178E348A4AE81537061701B9E7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B71B6A495729665AFAC2A70B1A6767C /* ABI34_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A4E2311DB0CE13AB2665D794B59FB23A;
+			remoteInfo = ABI34_0_0UMCore;
+		};
+		CA2E81B01E6F77FFE040A6C4EE47D175 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CFEC97F1E39CE87366B6C3146B49543 /* ABI34_0_0UMPermissionsInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06B6031C2CD7CA48CDCC84F10FA2C110;
+			remoteInfo = ABI34_0_0UMPermissionsInterface;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07A6C13C8330589861089EC6D946DF24 /* ABI34_0_0EXSMSModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI34_0_0EXSMSModule.m; path = ABI34_0_0EXSMS/ABI34_0_0EXSMSModule.m; sourceTree = "<group>"; };
+		0B71B6A495729665AFAC2A70B1A6767C /* ABI34_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMCore; path = ABI34_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		2CFEC97F1E39CE87366B6C3146B49543 /* ABI34_0_0UMPermissionsInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMPermissionsInterface; path = ABI34_0_0UMPermissionsInterface.xcodeproj; sourceTree = "<group>"; };
+		682EF265D9BF78308B790A3EC021BC52 /* ABI34_0_0EXSMS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI34_0_0EXSMS-dummy.m"; sourceTree = "<group>"; };
+		71B6FF690D774A24FD9486ACEC04E580 /* ABI34_0_0EXSMS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI34_0_0EXSMS.xcconfig; sourceTree = "<group>"; };
+		87757420DF835DE36321A2DEB7789D4F /* ABI34_0_0EXSMS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI34_0_0EXSMS-prefix.pch"; sourceTree = "<group>"; };
+		A1797FC059232C6F13E6837ADD8ECD86 /* libABI34_0_0EXSMS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI34_0_0EXSMS.a; path = libABI34_0_0EXSMS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8A4B5C1ACFDF469D403AFA125E63B89 /* ABI34_0_0EXSMSModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0EXSMSModule.h; path = ABI34_0_0EXSMS/ABI34_0_0EXSMSModule.h; sourceTree = "<group>"; };
+		F0340FFD9FD952C2BDD730393329A917 /* ABI34_0_0EXSMS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI34_0_0EXSMS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E65D7A505FBB82AC02140753D9E0CD5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1092A5E2A083EDE2566F24D3E65C175E = {
+			isa = PBXGroup;
+			children = (
+				9562EE1B981D1D920C2BBB2736697346 /* ABI34_0_0EXSMS */,
+				CFC6AC2986672E0FE7F72DB54306A035 /* Dependencies */,
+				5C80E07E00EAE8B73C11758E6F3D7EB3 /* Frameworks */,
+				EA65F46AF949BCA286D0397BC118AEE9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5C80E07E00EAE8B73C11758E6F3D7EB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D618296F021A3BA375B4B4844E63C0A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				71B6FF690D774A24FD9486ACEC04E580 /* ABI34_0_0EXSMS.xcconfig */,
+				682EF265D9BF78308B790A3EC021BC52 /* ABI34_0_0EXSMS-dummy.m */,
+				87757420DF835DE36321A2DEB7789D4F /* ABI34_0_0EXSMS-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI34_0_0EXSMS";
+			sourceTree = "<group>";
+		};
+		9562EE1B981D1D920C2BBB2736697346 /* ABI34_0_0EXSMS */ = {
+			isa = PBXGroup;
+			children = (
+				E8A4B5C1ACFDF469D403AFA125E63B89 /* ABI34_0_0EXSMSModule.h */,
+				07A6C13C8330589861089EC6D946DF24 /* ABI34_0_0EXSMSModule.m */,
+				A20DE5E3D84D99987F825DEB8F214122 /* Pod */,
+				6D618296F021A3BA375B4B4844E63C0A /* Support Files */,
+			);
+			name = ABI34_0_0EXSMS;
+			path = "../versioned-react-native/ABI34_0_0/EXSMS";
+			sourceTree = "<group>";
+		};
+		A20DE5E3D84D99987F825DEB8F214122 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				F0340FFD9FD952C2BDD730393329A917 /* ABI34_0_0EXSMS.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		CFC6AC2986672E0FE7F72DB54306A035 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				0B71B6A495729665AFAC2A70B1A6767C /* ABI34_0_0UMCore */,
+				2CFEC97F1E39CE87366B6C3146B49543 /* ABI34_0_0UMPermissionsInterface */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		EA65F46AF949BCA286D0397BC118AEE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1797FC059232C6F13E6837ADD8ECD86 /* libABI34_0_0EXSMS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		24CA92C1818CD4AC9EDB7A11C2191AA8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E9E3375A2F681C9469328D72379DA45 /* ABI34_0_0EXSMSModule.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3757F7A93C0A1DA0F995A60CC352539E /* ABI34_0_0EXSMS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BCC0A03DC638A673A617470AAEBE283 /* Build configuration list for PBXNativeTarget "ABI34_0_0EXSMS" */;
+			buildPhases = (
+				24CA92C1818CD4AC9EDB7A11C2191AA8 /* Headers */,
+				302BBCC8E44021BF5C20035AC8A0EC97 /* Sources */,
+				E65D7A505FBB82AC02140753D9E0CD5A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DF0BF06BD636CA8B36026BC843AF749 /* PBXTargetDependency */,
+				486B8F58BC800BCC1B40097447010B0D /* PBXTargetDependency */,
+			);
+			name = ABI34_0_0EXSMS;
+			productName = ABI34_0_0EXSMS;
+			productReference = A1797FC059232C6F13E6837ADD8ECD86 /* libABI34_0_0EXSMS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7CD781600586FA765360F04CB7E29792 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 96A2C83B15AD0BE1B0DA8B2474CDEA6F /* Build configuration list for PBXProject "ABI34_0_0EXSMS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1092A5E2A083EDE2566F24D3E65C175E;
+			productRefGroup = EA65F46AF949BCA286D0397BC118AEE9 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 0B71B6A495729665AFAC2A70B1A6767C /* ABI34_0_0UMCore */;
+				},
+				{
+					ProjectRef = 2CFEC97F1E39CE87366B6C3146B49543 /* ABI34_0_0UMPermissionsInterface */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				3757F7A93C0A1DA0F995A60CC352539E /* ABI34_0_0EXSMS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		302BBCC8E44021BF5C20035AC8A0EC97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C45588B7C7086F3568CF3A2C7ACBBE2 /* ABI34_0_0EXSMS-dummy.m in Sources */,
+				0BA0CCE14C6FC997403B3B369D44AFCC /* ABI34_0_0EXSMSModule.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		486B8F58BC800BCC1B40097447010B0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMPermissionsInterface;
+			targetProxy = CA2E81B01E6F77FFE040A6C4EE47D175 /* PBXContainerItemProxy */;
+		};
+		5DF0BF06BD636CA8B36026BC843AF749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMCore;
+			targetProxy = BA266178E348A4AE81537061701B9E7E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		17BDDC3A823FA18B7F25EC312782EBE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71B6FF690D774A24FD9486ACEC04E580 /* ABI34_0_0EXSMS.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI34_0_0EXSMS/ABI34_0_0EXSMS-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI34_0_0EXSMS;
+				PRODUCT_NAME = ABI34_0_0EXSMS;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		461888B76DE3B9B853FF027B77D6C304 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71B6FF690D774A24FD9486ACEC04E580 /* ABI34_0_0EXSMS.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI34_0_0EXSMS/ABI34_0_0EXSMS-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI34_0_0EXSMS;
+				PRODUCT_NAME = ABI34_0_0EXSMS;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8D67F63A2C63246DCE17DA5BA35C37EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		EBB6DF7A944DB0A18F4CD38EA0416583 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BCC0A03DC638A673A617470AAEBE283 /* Build configuration list for PBXNativeTarget "ABI34_0_0EXSMS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17BDDC3A823FA18B7F25EC312782EBE0 /* Debug */,
+				461888B76DE3B9B853FF027B77D6C304 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96A2C83B15AD0BE1B0DA8B2474CDEA6F /* Build configuration list for PBXProject "ABI34_0_0EXSMS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBB6DF7A944DB0A18F4CD38EA0416583 /* Debug */,
+				8D67F63A2C63246DCE17DA5BA35C37EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7CD781600586FA765360F04CB7E29792 /* Project object */;
+}

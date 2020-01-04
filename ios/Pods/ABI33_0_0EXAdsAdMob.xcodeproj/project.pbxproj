@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F302705D346D97E83CACAFDD6A58AE8 /* ABI33_0_0EXAdsDFPBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15885AAAB3287888B52CC6B652B7CE84 /* ABI33_0_0EXAdsDFPBannerView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		64C0BCB70106259BFE6BC0440659B8B3 /* ABI33_0_0EXAdsAdMobRewarded.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FC566683ED5B1208C5F8FADB13983AE /* ABI33_0_0EXAdsAdMobRewarded.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		85153C82D7FFAB3496C61BC4BC7AE916 /* ABI33_0_0EXAdsAdMobBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = EF7949D9C48B8718C0B70B9DE701049D /* ABI33_0_0EXAdsAdMobBannerView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9179FC475B42FE9DB2AFF503FF5DC6E0 /* ABI33_0_0EXAdsAdMobInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = D9E9EC9F931B6B9E2BBEB6E9288790DE /* ABI33_0_0EXAdsAdMobInterstitial.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		94E2AEF0D53547BE1D3261F25CC0326C /* ABI33_0_0EXAdsAdMobDFPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 83B290122D7A20C520C2C1DC41503823 /* ABI33_0_0EXAdsAdMobDFPManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BAC7C0570047A4CFAF26322DC83E5EC2 /* ABI33_0_0EXAdsAdMob-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7A028E4731700F9D54262092AF5A82 /* ABI33_0_0EXAdsAdMob-dummy.m */; };
+		CE5EF393786F9FAEB63477EA61DC50BF /* ABI33_0_0EXAdsAdMobBannerViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 31B1648DD96A63395A7EBD7A34970341 /* ABI33_0_0EXAdsAdMobBannerViewManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D5567604C5005355D23121C96B61EDDB /* ABI33_0_0EXAdsDFPBannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = E0677DCA22E2A131AF7DF74CCD88221A /* ABI33_0_0EXAdsDFPBannerView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EA172FFC5DCB018899FDE9DA19343A68 /* ABI33_0_0EXAdsAdMobBannerViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D87FA638116F55481D6E37CAF222E2 /* ABI33_0_0EXAdsAdMobBannerViewManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EDF6F3D26B0F181B3488DFA6DA5CC5DB /* ABI33_0_0EXAdsAdMobInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F1C12AB16C87F01DC73DF09A4DB27E /* ABI33_0_0EXAdsAdMobInterstitial.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F7C5CAE5D5D4AB826C25382C0A2C9F04 /* ABI33_0_0EXAdsAdMobBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF79F735A4977095397A330CF4A040 /* ABI33_0_0EXAdsAdMobBannerView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F9C0D73533D2B6D81645476258C778C5 /* ABI33_0_0EXAdsAdMobRewarded.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5470EFC552491E74EB493E24B7CE5B /* ABI33_0_0EXAdsAdMobRewarded.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FBB2172442975BA21288914D91C50D35 /* ABI33_0_0EXAdsAdMobDFPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62179560B94506CD0488305F96182925 /* ABI33_0_0EXAdsAdMobDFPManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A8C87A0FB1DA2094066A1BE964BB1591 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEF40BB89C46BABC43B0D1BF12B4AAF2 /* Google-Mobile-Ads-SDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 662B519EDA759B92F78065D8C998C86E;
+			remoteInfo = "Google-Mobile-Ads-SDK";
+		};
+		F28C145739A83817321260EDC63CF0C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B569D14C2A6B1465DF47C886D81FD85C /* ABI33_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C051C97A4147D306821BE0B317EE7A65;
+			remoteInfo = ABI33_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07322EB945B9C7AFA281E4D0465C243B /* libABI33_0_0EXAdsAdMob.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI33_0_0EXAdsAdMob.a; path = libABI33_0_0EXAdsAdMob.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D7A028E4731700F9D54262092AF5A82 /* ABI33_0_0EXAdsAdMob-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI33_0_0EXAdsAdMob-dummy.m"; sourceTree = "<group>"; };
+		15885AAAB3287888B52CC6B652B7CE84 /* ABI33_0_0EXAdsDFPBannerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXAdsDFPBannerView.m; path = ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsDFPBannerView.m; sourceTree = "<group>"; };
+		1BCF79F735A4977095397A330CF4A040 /* ABI33_0_0EXAdsAdMobBannerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXAdsAdMobBannerView.m; path = ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsAdMobBannerView.m; sourceTree = "<group>"; };
+		31B1648DD96A63395A7EBD7A34970341 /* ABI33_0_0EXAdsAdMobBannerViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXAdsAdMobBannerViewManager.h; path = ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsAdMobBannerViewManager.h; sourceTree = "<group>"; };
+		3EC55145DFD1C4800DFABFDAAC12455F /* ABI33_0_0EXAdsAdMob.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI33_0_0EXAdsAdMob.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4FC566683ED5B1208C5F8FADB13983AE /* ABI33_0_0EXAdsAdMobRewarded.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXAdsAdMobRewarded.h; path = ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsAdMobRewarded.h; sourceTree = "<group>"; };
+		62179560B94506CD0488305F96182925 /* ABI33_0_0EXAdsAdMobDFPManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXAdsAdMobDFPManager.m; path = ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsAdMobDFPManager.m; sourceTree = "<group>"; };
+		7F5470EFC552491E74EB493E24B7CE5B /* ABI33_0_0EXAdsAdMobRewarded.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXAdsAdMobRewarded.m; path = ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsAdMobRewarded.m; sourceTree = "<group>"; };
+		83B290122D7A20C520C2C1DC41503823 /* ABI33_0_0EXAdsAdMobDFPManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXAdsAdMobDFPManager.h; path = ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsAdMobDFPManager.h; sourceTree = "<group>"; };
+		94D66FC3411E96EF067A7B348F2AE4C8 /* ABI33_0_0EXAdsAdMob.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI33_0_0EXAdsAdMob.xcconfig; sourceTree = "<group>"; };
+		B569D14C2A6B1465DF47C886D81FD85C /* ABI33_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI33_0_0UMCore; path = ABI33_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		D2F1C12AB16C87F01DC73DF09A4DB27E /* ABI33_0_0EXAdsAdMobInterstitial.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXAdsAdMobInterstitial.m; path = ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsAdMobInterstitial.m; sourceTree = "<group>"; };
+		D9D87FA638116F55481D6E37CAF222E2 /* ABI33_0_0EXAdsAdMobBannerViewManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXAdsAdMobBannerViewManager.m; path = ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsAdMobBannerViewManager.m; sourceTree = "<group>"; };
+		D9E9EC9F931B6B9E2BBEB6E9288790DE /* ABI33_0_0EXAdsAdMobInterstitial.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXAdsAdMobInterstitial.h; path = ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsAdMobInterstitial.h; sourceTree = "<group>"; };
+		DEF40BB89C46BABC43B0D1BF12B4AAF2 /* Google-Mobile-Ads-SDK */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Google-Mobile-Ads-SDK"; path = "Google-Mobile-Ads-SDK.xcodeproj"; sourceTree = "<group>"; };
+		E0677DCA22E2A131AF7DF74CCD88221A /* ABI33_0_0EXAdsDFPBannerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXAdsDFPBannerView.h; path = ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsDFPBannerView.h; sourceTree = "<group>"; };
+		EC8B00513E24A6337DA4AEAA8FF9DCB1 /* ABI33_0_0EXAdsAdMob-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI33_0_0EXAdsAdMob-prefix.pch"; sourceTree = "<group>"; };
+		EF7949D9C48B8718C0B70B9DE701049D /* ABI33_0_0EXAdsAdMobBannerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXAdsAdMobBannerView.h; path = ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsAdMobBannerView.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90EA6F5A627589612F93DA9708A3FEFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12437ED696B6B5E46A6465AF171AD336 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				B569D14C2A6B1465DF47C886D81FD85C /* ABI33_0_0UMCore */,
+				DEF40BB89C46BABC43B0D1BF12B4AAF2 /* Google-Mobile-Ads-SDK */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		163875D94E6FE15613723CB80197A3E5 = {
+			isa = PBXGroup;
+			children = (
+				BBC2E24FAD2735752BC511DBDC69CF87 /* ABI33_0_0EXAdsAdMob */,
+				12437ED696B6B5E46A6465AF171AD336 /* Dependencies */,
+				8FA51036271297E646E86E2109C17CFE /* Frameworks */,
+				75759917CB87895C5FC0E240A0257C1C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		429B9CA98C839CDDB0578BF2529D5EA5 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				3EC55145DFD1C4800DFABFDAAC12455F /* ABI33_0_0EXAdsAdMob.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		6ECD89D5DD976B2447C7F3025F389AAC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				94D66FC3411E96EF067A7B348F2AE4C8 /* ABI33_0_0EXAdsAdMob.xcconfig */,
+				0D7A028E4731700F9D54262092AF5A82 /* ABI33_0_0EXAdsAdMob-dummy.m */,
+				EC8B00513E24A6337DA4AEAA8FF9DCB1 /* ABI33_0_0EXAdsAdMob-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI33_0_0EXAdsAdMob";
+			sourceTree = "<group>";
+		};
+		75759917CB87895C5FC0E240A0257C1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07322EB945B9C7AFA281E4D0465C243B /* libABI33_0_0EXAdsAdMob.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8FA51036271297E646E86E2109C17CFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBC2E24FAD2735752BC511DBDC69CF87 /* ABI33_0_0EXAdsAdMob */ = {
+			isa = PBXGroup;
+			children = (
+				EF7949D9C48B8718C0B70B9DE701049D /* ABI33_0_0EXAdsAdMobBannerView.h */,
+				1BCF79F735A4977095397A330CF4A040 /* ABI33_0_0EXAdsAdMobBannerView.m */,
+				31B1648DD96A63395A7EBD7A34970341 /* ABI33_0_0EXAdsAdMobBannerViewManager.h */,
+				D9D87FA638116F55481D6E37CAF222E2 /* ABI33_0_0EXAdsAdMobBannerViewManager.m */,
+				83B290122D7A20C520C2C1DC41503823 /* ABI33_0_0EXAdsAdMobDFPManager.h */,
+				62179560B94506CD0488305F96182925 /* ABI33_0_0EXAdsAdMobDFPManager.m */,
+				D9E9EC9F931B6B9E2BBEB6E9288790DE /* ABI33_0_0EXAdsAdMobInterstitial.h */,
+				D2F1C12AB16C87F01DC73DF09A4DB27E /* ABI33_0_0EXAdsAdMobInterstitial.m */,
+				4FC566683ED5B1208C5F8FADB13983AE /* ABI33_0_0EXAdsAdMobRewarded.h */,
+				7F5470EFC552491E74EB493E24B7CE5B /* ABI33_0_0EXAdsAdMobRewarded.m */,
+				E0677DCA22E2A131AF7DF74CCD88221A /* ABI33_0_0EXAdsDFPBannerView.h */,
+				15885AAAB3287888B52CC6B652B7CE84 /* ABI33_0_0EXAdsDFPBannerView.m */,
+				429B9CA98C839CDDB0578BF2529D5EA5 /* Pod */,
+				6ECD89D5DD976B2447C7F3025F389AAC /* Support Files */,
+			);
+			name = ABI33_0_0EXAdsAdMob;
+			path = "../versioned-react-native/ABI33_0_0/EXAdsAdMob";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CDD23D239A8410D3EB301748A08CCD5E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85153C82D7FFAB3496C61BC4BC7AE916 /* ABI33_0_0EXAdsAdMobBannerView.h in Headers */,
+				CE5EF393786F9FAEB63477EA61DC50BF /* ABI33_0_0EXAdsAdMobBannerViewManager.h in Headers */,
+				94E2AEF0D53547BE1D3261F25CC0326C /* ABI33_0_0EXAdsAdMobDFPManager.h in Headers */,
+				9179FC475B42FE9DB2AFF503FF5DC6E0 /* ABI33_0_0EXAdsAdMobInterstitial.h in Headers */,
+				64C0BCB70106259BFE6BC0440659B8B3 /* ABI33_0_0EXAdsAdMobRewarded.h in Headers */,
+				D5567604C5005355D23121C96B61EDDB /* ABI33_0_0EXAdsDFPBannerView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E168D03771001B13B722AF7D9829449E /* ABI33_0_0EXAdsAdMob */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E15E06DAE522FFE2976119506A6D270F /* Build configuration list for PBXNativeTarget "ABI33_0_0EXAdsAdMob" */;
+			buildPhases = (
+				CDD23D239A8410D3EB301748A08CCD5E /* Headers */,
+				E8E728C839172F23828C695DFF4BBDEA /* Sources */,
+				90EA6F5A627589612F93DA9708A3FEFC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A512F754D1B5F13DAB598C6A08189BCA /* PBXTargetDependency */,
+				49B704F3664F55EE9188356EA0F1EE2F /* PBXTargetDependency */,
+			);
+			name = ABI33_0_0EXAdsAdMob;
+			productName = ABI33_0_0EXAdsAdMob;
+			productReference = 07322EB945B9C7AFA281E4D0465C243B /* libABI33_0_0EXAdsAdMob.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		557BE3C97D0E4C30109C75E42C928BC3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 85EBD2E554B5CB0E68A2790697D69EE5 /* Build configuration list for PBXProject "ABI33_0_0EXAdsAdMob" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 163875D94E6FE15613723CB80197A3E5;
+			productRefGroup = 75759917CB87895C5FC0E240A0257C1C /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = B569D14C2A6B1465DF47C886D81FD85C /* ABI33_0_0UMCore */;
+				},
+				{
+					ProjectRef = DEF40BB89C46BABC43B0D1BF12B4AAF2 /* Google-Mobile-Ads-SDK */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				E168D03771001B13B722AF7D9829449E /* ABI33_0_0EXAdsAdMob */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8E728C839172F23828C695DFF4BBDEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC7C0570047A4CFAF26322DC83E5EC2 /* ABI33_0_0EXAdsAdMob-dummy.m in Sources */,
+				F7C5CAE5D5D4AB826C25382C0A2C9F04 /* ABI33_0_0EXAdsAdMobBannerView.m in Sources */,
+				EA172FFC5DCB018899FDE9DA19343A68 /* ABI33_0_0EXAdsAdMobBannerViewManager.m in Sources */,
+				FBB2172442975BA21288914D91C50D35 /* ABI33_0_0EXAdsAdMobDFPManager.m in Sources */,
+				EDF6F3D26B0F181B3488DFA6DA5CC5DB /* ABI33_0_0EXAdsAdMobInterstitial.m in Sources */,
+				F9C0D73533D2B6D81645476258C778C5 /* ABI33_0_0EXAdsAdMobRewarded.m in Sources */,
+				0F302705D346D97E83CACAFDD6A58AE8 /* ABI33_0_0EXAdsDFPBannerView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49B704F3664F55EE9188356EA0F1EE2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Google-Mobile-Ads-SDK";
+			targetProxy = A8C87A0FB1DA2094066A1BE964BB1591 /* PBXContainerItemProxy */;
+		};
+		A512F754D1B5F13DAB598C6A08189BCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI33_0_0UMCore;
+			targetProxy = F28C145739A83817321260EDC63CF0C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0F4F41B3D7DE4D7609E8A4A0DEB87F43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94D66FC3411E96EF067A7B348F2AE4C8 /* ABI33_0_0EXAdsAdMob.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsAdMob-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXAdsAdMob;
+				PRODUCT_NAME = ABI33_0_0EXAdsAdMob;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		12B98D449A17126A55947FC37FED2D6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		A2BB28780891771882E293A5018304D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94D66FC3411E96EF067A7B348F2AE4C8 /* ABI33_0_0EXAdsAdMob.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXAdsAdMob/ABI33_0_0EXAdsAdMob-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXAdsAdMob;
+				PRODUCT_NAME = ABI33_0_0EXAdsAdMob;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A4CDEA5F3584ED269C70F8D4A00A9432 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85EBD2E554B5CB0E68A2790697D69EE5 /* Build configuration list for PBXProject "ABI33_0_0EXAdsAdMob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4CDEA5F3584ED269C70F8D4A00A9432 /* Debug */,
+				12B98D449A17126A55947FC37FED2D6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E15E06DAE522FFE2976119506A6D270F /* Build configuration list for PBXNativeTarget "ABI33_0_0EXAdsAdMob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2BB28780891771882E293A5018304D1 /* Debug */,
+				0F4F41B3D7DE4D7609E8A4A0DEB87F43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 557BE3C97D0E4C30109C75E42C928BC3 /* Project object */;
+}

@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5EBD4372B7A113D1502AD55870CB876A /* ABI36_0_0EXCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C6E5A7BDBD7C6CEF34BABA9EA1DCDD2 /* ABI36_0_0EXCrypto.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		95C8D82E3A16C0EF6ECA7FD955208BAD /* ABI36_0_0EXCrypto-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE069D9C22E265EFD88BF6449DF0F951 /* ABI36_0_0EXCrypto-dummy.m */; };
+		BA95EE490FF19575F082FDB34E07CF69 /* ABI36_0_0EXCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E77AF275839493E17E87553AD1813DA /* ABI36_0_0EXCrypto.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B3A6C3AF7E5B37B2945FFEBEE3A5143E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B88E13925ECB7093433BA42AAFFBA682 /* ABI36_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 17CDBC5DE6E16D3EE17E5C2098EE2921;
+			remoteInfo = ABI36_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		129B7F4801036720FC0CB3EFCF60027D /* libABI36_0_0EXCrypto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI36_0_0EXCrypto.a; path = libABI36_0_0EXCrypto.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B0E6118D35312F71684E6AF7D9CB02F /* ABI36_0_0EXCrypto.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI36_0_0EXCrypto.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4C6E5A7BDBD7C6CEF34BABA9EA1DCDD2 /* ABI36_0_0EXCrypto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXCrypto.h; path = ABI36_0_0EXCrypto/ABI36_0_0EXCrypto.h; sourceTree = "<group>"; };
+		7E77AF275839493E17E87553AD1813DA /* ABI36_0_0EXCrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXCrypto.m; path = ABI36_0_0EXCrypto/ABI36_0_0EXCrypto.m; sourceTree = "<group>"; };
+		B88E13925ECB7093433BA42AAFFBA682 /* ABI36_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI36_0_0UMCore; path = ABI36_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		BE069D9C22E265EFD88BF6449DF0F951 /* ABI36_0_0EXCrypto-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI36_0_0EXCrypto-dummy.m"; sourceTree = "<group>"; };
+		CD0DE5FEDF76E3D1198D6A6B3BA201EE /* ABI36_0_0EXCrypto.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI36_0_0EXCrypto.xcconfig; sourceTree = "<group>"; };
+		E964908AB745756B5AC3CC0516284630 /* ABI36_0_0EXCrypto-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI36_0_0EXCrypto-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB4AFDA3A7349633489ECE25F45B8618 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43BA18A75B827F4268A4A78660B6B18E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				129B7F4801036720FC0CB3EFCF60027D /* libABI36_0_0EXCrypto.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C20458E487EAE790789459DDBD8D629 /* ABI36_0_0EXCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				4C6E5A7BDBD7C6CEF34BABA9EA1DCDD2 /* ABI36_0_0EXCrypto.h */,
+				7E77AF275839493E17E87553AD1813DA /* ABI36_0_0EXCrypto.m */,
+				FC34D1BD60381E5CA39A6646157118C4 /* Pod */,
+				51A5B70DB39910A58520DF635EE8364A /* Support Files */,
+			);
+			name = ABI36_0_0EXCrypto;
+			path = "../versioned-react-native/ABI36_0_0/Expo/EXCrypto";
+			sourceTree = "<group>";
+		};
+		51A5B70DB39910A58520DF635EE8364A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD0DE5FEDF76E3D1198D6A6B3BA201EE /* ABI36_0_0EXCrypto.xcconfig */,
+				BE069D9C22E265EFD88BF6449DF0F951 /* ABI36_0_0EXCrypto-dummy.m */,
+				E964908AB745756B5AC3CC0516284630 /* ABI36_0_0EXCrypto-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../../Pods/Target Support Files/ABI36_0_0EXCrypto";
+			sourceTree = "<group>";
+		};
+		841A32EBD44276FF3A61059425AADBDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D8AD5FD297473C1559262C59173129B = {
+			isa = PBXGroup;
+			children = (
+				4C20458E487EAE790789459DDBD8D629 /* ABI36_0_0EXCrypto */,
+				A64D4611845D8783992488859FF510B9 /* Dependencies */,
+				841A32EBD44276FF3A61059425AADBDA /* Frameworks */,
+				43BA18A75B827F4268A4A78660B6B18E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A64D4611845D8783992488859FF510B9 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				B88E13925ECB7093433BA42AAFFBA682 /* ABI36_0_0UMCore */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		FC34D1BD60381E5CA39A6646157118C4 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				2B0E6118D35312F71684E6AF7D9CB02F /* ABI36_0_0EXCrypto.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		352149C0477F41EB5ECE30DE923BEC66 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EBD4372B7A113D1502AD55870CB876A /* ABI36_0_0EXCrypto.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		740ADEF58EB286960163A2FC64642B71 /* ABI36_0_0EXCrypto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C03FFC4AF7AA473E435538A9B7583F6 /* Build configuration list for PBXNativeTarget "ABI36_0_0EXCrypto" */;
+			buildPhases = (
+				352149C0477F41EB5ECE30DE923BEC66 /* Headers */,
+				463FAD539A6D703B00C9CE29590FB64B /* Sources */,
+				BB4AFDA3A7349633489ECE25F45B8618 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD9A244602CC409C0FB820609E7360D6 /* PBXTargetDependency */,
+			);
+			name = ABI36_0_0EXCrypto;
+			productName = ABI36_0_0EXCrypto;
+			productReference = 129B7F4801036720FC0CB3EFCF60027D /* libABI36_0_0EXCrypto.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A853A78C84A3F18FE6F7CA54DF218E4A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = D47AECB3BF6F4511185A1BB07B3BE89B /* Build configuration list for PBXProject "ABI36_0_0EXCrypto" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8D8AD5FD297473C1559262C59173129B;
+			productRefGroup = 43BA18A75B827F4268A4A78660B6B18E /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = B88E13925ECB7093433BA42AAFFBA682 /* ABI36_0_0UMCore */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				740ADEF58EB286960163A2FC64642B71 /* ABI36_0_0EXCrypto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		463FAD539A6D703B00C9CE29590FB64B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95C8D82E3A16C0EF6ECA7FD955208BAD /* ABI36_0_0EXCrypto-dummy.m in Sources */,
+				BA95EE490FF19575F082FDB34E07CF69 /* ABI36_0_0EXCrypto.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD9A244602CC409C0FB820609E7360D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI36_0_0UMCore;
+			targetProxy = B3A6C3AF7E5B37B2945FFEBEE3A5143E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0A11323C4F63333E8B8523CC80CCE84D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		412083285C89AADDED37F0A785968846 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD0DE5FEDF76E3D1198D6A6B3BA201EE /* ABI36_0_0EXCrypto.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0EXCrypto/ABI36_0_0EXCrypto-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0EXCrypto;
+				PRODUCT_NAME = ABI36_0_0EXCrypto;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BDC8ED66A2E8B4D3EABB39A98E9E88E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		67C88153176B1AA5189399F04A0C3ACB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD0DE5FEDF76E3D1198D6A6B3BA201EE /* ABI36_0_0EXCrypto.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0EXCrypto/ABI36_0_0EXCrypto-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0EXCrypto;
+				PRODUCT_NAME = ABI36_0_0EXCrypto;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C03FFC4AF7AA473E435538A9B7583F6 /* Build configuration list for PBXNativeTarget "ABI36_0_0EXCrypto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67C88153176B1AA5189399F04A0C3ACB /* Debug */,
+				412083285C89AADDED37F0A785968846 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D47AECB3BF6F4511185A1BB07B3BE89B /* Build configuration list for PBXProject "ABI36_0_0EXCrypto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BDC8ED66A2E8B4D3EABB39A98E9E88E /* Debug */,
+				0A11323C4F63333E8B8523CC80CCE84D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A853A78C84A3F18FE6F7CA54DF218E4A /* Project object */;
+}

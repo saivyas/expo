@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17EFAA328EFFF006C091C70B3CF14BD7 /* ABI36_0_0EXCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE1AE4CCD2842739703AFBE41310A26 /* ABI36_0_0EXCalendar.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		201774F570606CF2B84E26C03AD2170A /* ABI36_0_0EXCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DE2BED2FAC4E987BB236B64182EDDE /* ABI36_0_0EXCalendar-dummy.m */; };
+		22F63E239A39335D6827EC1AC1088433 /* ABI36_0_0EXRemindersPermissionRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 493F04685893F02FB3B50657CD3B6E25 /* ABI36_0_0EXRemindersPermissionRequester.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		40FD25DAAB22BAAC3851294C168CC8EA /* ABI36_0_0EXCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD26EFE95710203E49B4EB2109C9A2 /* ABI36_0_0EXCalendar.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6CE4FBB46A9A09BF1BF7BAB623BB4F0F /* ABI36_0_0EXCalendarConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB6D61FD3DA578D32B51226D48EA230 /* ABI36_0_0EXCalendarConverter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		87DB2AFDC5A547E0C12585D28C079C20 /* ABI36_0_0EXRemindersPermissionRequester.h in Headers */ = {isa = PBXBuildFile; fileRef = 04878CFF53C3EF8E84C464930E86F383 /* ABI36_0_0EXRemindersPermissionRequester.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8A38CB6A6CEE8A24E27BF0A6DF33DED9 /* ABI36_0_0EXCalendarPermissionRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B16B5FAC78665D55838184F23DEB228 /* ABI36_0_0EXCalendarPermissionRequester.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9B33952D375221C012791055FA1FB52F /* ABI36_0_0EXCalendarPermissionRequester.h in Headers */ = {isa = PBXBuildFile; fileRef = 95F856C3D5BD6D610071B49D8506768C /* ABI36_0_0EXCalendarPermissionRequester.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E93FDB345A97D7D5AF6D43E2CAEA1E8E /* ABI36_0_0EXCalendarConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = A8273F6B72D2AC5A22F4D2A57946DC41 /* ABI36_0_0EXCalendarConverter.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5115F2FF167C154777FDB9B514D43828 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4EDE55A4991601A6EA7913F1C0C5C14 /* ABI36_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 17CDBC5DE6E16D3EE17E5C2098EE2921;
+			remoteInfo = ABI36_0_0UMCore;
+		};
+		9F4661CF7C94552DB15914CDCE751360 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1BB8A04F3FA5C80984DD5A9E572CF64 /* ABI36_0_0UMPermissionsInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AF33C3CB14E800C8A2ADCF84553CDB13;
+			remoteInfo = ABI36_0_0UMPermissionsInterface;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04878CFF53C3EF8E84C464930E86F383 /* ABI36_0_0EXRemindersPermissionRequester.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXRemindersPermissionRequester.h; path = ABI36_0_0EXCalendar/ABI36_0_0EXRemindersPermissionRequester.h; sourceTree = "<group>"; };
+		2B16B5FAC78665D55838184F23DEB228 /* ABI36_0_0EXCalendarPermissionRequester.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXCalendarPermissionRequester.m; path = ABI36_0_0EXCalendar/ABI36_0_0EXCalendarPermissionRequester.m; sourceTree = "<group>"; };
+		493F04685893F02FB3B50657CD3B6E25 /* ABI36_0_0EXRemindersPermissionRequester.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXRemindersPermissionRequester.m; path = ABI36_0_0EXCalendar/ABI36_0_0EXRemindersPermissionRequester.m; sourceTree = "<group>"; };
+		6B5051A3F29C20ED07D1B8A57615173D /* ABI36_0_0EXCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI36_0_0EXCalendar-prefix.pch"; sourceTree = "<group>"; };
+		93A7B63381E492A99D38BAA4B31CCED0 /* ABI36_0_0EXCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI36_0_0EXCalendar.xcconfig; sourceTree = "<group>"; };
+		95F856C3D5BD6D610071B49D8506768C /* ABI36_0_0EXCalendarPermissionRequester.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXCalendarPermissionRequester.h; path = ABI36_0_0EXCalendar/ABI36_0_0EXCalendarPermissionRequester.h; sourceTree = "<group>"; };
+		97DE2BED2FAC4E987BB236B64182EDDE /* ABI36_0_0EXCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI36_0_0EXCalendar-dummy.m"; sourceTree = "<group>"; };
+		A8273F6B72D2AC5A22F4D2A57946DC41 /* ABI36_0_0EXCalendarConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXCalendarConverter.h; path = ABI36_0_0EXCalendar/ABI36_0_0EXCalendarConverter.h; sourceTree = "<group>"; };
+		B1BB8A04F3FA5C80984DD5A9E572CF64 /* ABI36_0_0UMPermissionsInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI36_0_0UMPermissionsInterface; path = ABI36_0_0UMPermissionsInterface.xcodeproj; sourceTree = "<group>"; };
+		B4EDE55A4991601A6EA7913F1C0C5C14 /* ABI36_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI36_0_0UMCore; path = ABI36_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		BAE99FBC0FECC5513EE39C410AF9C9C1 /* ABI36_0_0EXCalendar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI36_0_0EXCalendar.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BCEB85D7C6CC282C460FA22D95FB799E /* libABI36_0_0EXCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI36_0_0EXCalendar.a; path = libABI36_0_0EXCalendar.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDE1AE4CCD2842739703AFBE41310A26 /* ABI36_0_0EXCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXCalendar.h; path = ABI36_0_0EXCalendar/ABI36_0_0EXCalendar.h; sourceTree = "<group>"; };
+		CECD26EFE95710203E49B4EB2109C9A2 /* ABI36_0_0EXCalendar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXCalendar.m; path = ABI36_0_0EXCalendar/ABI36_0_0EXCalendar.m; sourceTree = "<group>"; };
+		DEB6D61FD3DA578D32B51226D48EA230 /* ABI36_0_0EXCalendarConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXCalendarConverter.m; path = ABI36_0_0EXCalendar/ABI36_0_0EXCalendarConverter.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACC86D41D1731346F17D015179BF8A00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08CB5BA6DAA0CF974D0016E98F94CC4F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				93A7B63381E492A99D38BAA4B31CCED0 /* ABI36_0_0EXCalendar.xcconfig */,
+				97DE2BED2FAC4E987BB236B64182EDDE /* ABI36_0_0EXCalendar-dummy.m */,
+				6B5051A3F29C20ED07D1B8A57615173D /* ABI36_0_0EXCalendar-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../../Pods/Target Support Files/ABI36_0_0EXCalendar";
+			sourceTree = "<group>";
+		};
+		1E765F5F1600EBD7AB40C5C5363AB1F5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCEB85D7C6CC282C460FA22D95FB799E /* libABI36_0_0EXCalendar.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DDD37FD183FEC6563651AA59386708B /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				BAE99FBC0FECC5513EE39C410AF9C9C1 /* ABI36_0_0EXCalendar.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		4B161C23387C641F7DA131B7E8234BAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F9F3324AD6E697DADDFA86B4F48AF58 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				B4EDE55A4991601A6EA7913F1C0C5C14 /* ABI36_0_0UMCore */,
+				B1BB8A04F3FA5C80984DD5A9E572CF64 /* ABI36_0_0UMPermissionsInterface */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		EAC1F480C8824B1766EEBBC09F6C44DB = {
+			isa = PBXGroup;
+			children = (
+				FA8B236F4236729621B34F15C63EB2F8 /* ABI36_0_0EXCalendar */,
+				8F9F3324AD6E697DADDFA86B4F48AF58 /* Dependencies */,
+				4B161C23387C641F7DA131B7E8234BAD /* Frameworks */,
+				1E765F5F1600EBD7AB40C5C5363AB1F5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA8B236F4236729621B34F15C63EB2F8 /* ABI36_0_0EXCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				CDE1AE4CCD2842739703AFBE41310A26 /* ABI36_0_0EXCalendar.h */,
+				CECD26EFE95710203E49B4EB2109C9A2 /* ABI36_0_0EXCalendar.m */,
+				A8273F6B72D2AC5A22F4D2A57946DC41 /* ABI36_0_0EXCalendarConverter.h */,
+				DEB6D61FD3DA578D32B51226D48EA230 /* ABI36_0_0EXCalendarConverter.m */,
+				95F856C3D5BD6D610071B49D8506768C /* ABI36_0_0EXCalendarPermissionRequester.h */,
+				2B16B5FAC78665D55838184F23DEB228 /* ABI36_0_0EXCalendarPermissionRequester.m */,
+				04878CFF53C3EF8E84C464930E86F383 /* ABI36_0_0EXRemindersPermissionRequester.h */,
+				493F04685893F02FB3B50657CD3B6E25 /* ABI36_0_0EXRemindersPermissionRequester.m */,
+				3DDD37FD183FEC6563651AA59386708B /* Pod */,
+				08CB5BA6DAA0CF974D0016E98F94CC4F /* Support Files */,
+			);
+			name = ABI36_0_0EXCalendar;
+			path = "../versioned-react-native/ABI36_0_0/Expo/EXCalendar";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B48A5B6FC5BBEE152F1E2305BA706400 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17EFAA328EFFF006C091C70B3CF14BD7 /* ABI36_0_0EXCalendar.h in Headers */,
+				E93FDB345A97D7D5AF6D43E2CAEA1E8E /* ABI36_0_0EXCalendarConverter.h in Headers */,
+				9B33952D375221C012791055FA1FB52F /* ABI36_0_0EXCalendarPermissionRequester.h in Headers */,
+				87DB2AFDC5A547E0C12585D28C079C20 /* ABI36_0_0EXRemindersPermissionRequester.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		97286700A4E9E0679E0D10B1CE32F7FD /* ABI36_0_0EXCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33CDF95D09A27A821109EC7DA286B291 /* Build configuration list for PBXNativeTarget "ABI36_0_0EXCalendar" */;
+			buildPhases = (
+				B48A5B6FC5BBEE152F1E2305BA706400 /* Headers */,
+				C0EA5DFBA108DAE6ED6B516B83AC1506 /* Sources */,
+				ACC86D41D1731346F17D015179BF8A00 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C72952F223EE7276B3DC2BB3C4E049A7 /* PBXTargetDependency */,
+				D11A876FB18E6DE2C8E5F3636B4ACD10 /* PBXTargetDependency */,
+			);
+			name = ABI36_0_0EXCalendar;
+			productName = ABI36_0_0EXCalendar;
+			productReference = BCEB85D7C6CC282C460FA22D95FB799E /* libABI36_0_0EXCalendar.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F91E9D7B374106AFF1E6BFFF71B7EDF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4F5B70517B782CD1199A26858DC4835F /* Build configuration list for PBXProject "ABI36_0_0EXCalendar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EAC1F480C8824B1766EEBBC09F6C44DB;
+			productRefGroup = 1E765F5F1600EBD7AB40C5C5363AB1F5 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = B4EDE55A4991601A6EA7913F1C0C5C14 /* ABI36_0_0UMCore */;
+				},
+				{
+					ProjectRef = B1BB8A04F3FA5C80984DD5A9E572CF64 /* ABI36_0_0UMPermissionsInterface */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				97286700A4E9E0679E0D10B1CE32F7FD /* ABI36_0_0EXCalendar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0EA5DFBA108DAE6ED6B516B83AC1506 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				201774F570606CF2B84E26C03AD2170A /* ABI36_0_0EXCalendar-dummy.m in Sources */,
+				40FD25DAAB22BAAC3851294C168CC8EA /* ABI36_0_0EXCalendar.m in Sources */,
+				6CE4FBB46A9A09BF1BF7BAB623BB4F0F /* ABI36_0_0EXCalendarConverter.m in Sources */,
+				8A38CB6A6CEE8A24E27BF0A6DF33DED9 /* ABI36_0_0EXCalendarPermissionRequester.m in Sources */,
+				22F63E239A39335D6827EC1AC1088433 /* ABI36_0_0EXRemindersPermissionRequester.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C72952F223EE7276B3DC2BB3C4E049A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI36_0_0UMCore;
+			targetProxy = 5115F2FF167C154777FDB9B514D43828 /* PBXContainerItemProxy */;
+		};
+		D11A876FB18E6DE2C8E5F3636B4ACD10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI36_0_0UMPermissionsInterface;
+			targetProxy = 9F4661CF7C94552DB15914CDCE751360 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		07CD7F2E24B7A46645C272B02623240F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		50EF9EE0C0CF23DF82254C28878023E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93A7B63381E492A99D38BAA4B31CCED0 /* ABI36_0_0EXCalendar.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0EXCalendar/ABI36_0_0EXCalendar-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0EXCalendar;
+				PRODUCT_NAME = ABI36_0_0EXCalendar;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DBB3AFB5C13EC3E7E6654380AE82F088 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E345F0EC53C1B660318184A9B6269495 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93A7B63381E492A99D38BAA4B31CCED0 /* ABI36_0_0EXCalendar.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0EXCalendar/ABI36_0_0EXCalendar-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0EXCalendar;
+				PRODUCT_NAME = ABI36_0_0EXCalendar;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		33CDF95D09A27A821109EC7DA286B291 /* Build configuration list for PBXNativeTarget "ABI36_0_0EXCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50EF9EE0C0CF23DF82254C28878023E2 /* Debug */,
+				E345F0EC53C1B660318184A9B6269495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F5B70517B782CD1199A26858DC4835F /* Build configuration list for PBXProject "ABI36_0_0EXCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBB3AFB5C13EC3E7E6654380AE82F088 /* Debug */,
+				07CD7F2E24B7A46645C272B02623240F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F91E9D7B374106AFF1E6BFFF71B7EDF /* Project object */;
+}

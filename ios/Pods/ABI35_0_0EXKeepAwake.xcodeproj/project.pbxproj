@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0920028284B65E4C23F11A692E60DD36 /* ABI35_0_0EXKeepAwake.h in Headers */ = {isa = PBXBuildFile; fileRef = 34DE85A50AC64B4587112E29BCAA323B /* ABI35_0_0EXKeepAwake.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0A3CC129134A4288E46D40D48923DA3A /* ABI35_0_0EXKeepAwake.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510BB3CCAEDFB0CA9FEDA1C5EB2EDC4 /* ABI35_0_0EXKeepAwake.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FB3D4204FD16827020353FB28B416469 /* ABI35_0_0EXKeepAwake-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E230F7812485143EA70D635F9EC90153 /* ABI35_0_0EXKeepAwake-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1EF6AB27A72A611B19A0674E720B62D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73AC7F3875140C7E9C05A18BDF3A28EE /* ABI35_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7205ADA49415BA3BB5197065A0B628B0;
+			remoteInfo = ABI35_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A9D819320B3974CCE82257A2A46B2EB /* ABI35_0_0EXKeepAwake.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI35_0_0EXKeepAwake.xcconfig; sourceTree = "<group>"; };
+		1B4849A370D8C639F6FB11870D6F3B0F /* ABI35_0_0EXKeepAwake-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI35_0_0EXKeepAwake-prefix.pch"; sourceTree = "<group>"; };
+		34DE85A50AC64B4587112E29BCAA323B /* ABI35_0_0EXKeepAwake.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI35_0_0EXKeepAwake.h; path = ABI35_0_0EXKeepAwake/ABI35_0_0EXKeepAwake.h; sourceTree = "<group>"; };
+		73AC7F3875140C7E9C05A18BDF3A28EE /* ABI35_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI35_0_0UMCore; path = ABI35_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		7CD18ECA60EAF74B80BBDD518876FAF3 /* libABI35_0_0EXKeepAwake.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI35_0_0EXKeepAwake.a; path = libABI35_0_0EXKeepAwake.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D6F95CE0BE6E3AB9001B248820E77AF /* ABI35_0_0EXKeepAwake.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI35_0_0EXKeepAwake.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9510BB3CCAEDFB0CA9FEDA1C5EB2EDC4 /* ABI35_0_0EXKeepAwake.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI35_0_0EXKeepAwake.m; path = ABI35_0_0EXKeepAwake/ABI35_0_0EXKeepAwake.m; sourceTree = "<group>"; };
+		E230F7812485143EA70D635F9EC90153 /* ABI35_0_0EXKeepAwake-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI35_0_0EXKeepAwake-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		238E81D91E71AC318456F9242D8161F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05110EABAA5C9DD803E88B2F7A41CE21 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				8D6F95CE0BE6E3AB9001B248820E77AF /* ABI35_0_0EXKeepAwake.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		41103C9150880B331D28F856C195CD6A /* ABI35_0_0EXKeepAwake */ = {
+			isa = PBXGroup;
+			children = (
+				34DE85A50AC64B4587112E29BCAA323B /* ABI35_0_0EXKeepAwake.h */,
+				9510BB3CCAEDFB0CA9FEDA1C5EB2EDC4 /* ABI35_0_0EXKeepAwake.m */,
+				05110EABAA5C9DD803E88B2F7A41CE21 /* Pod */,
+				5E585C10DDE5B2AD0017674C6C3AD4B1 /* Support Files */,
+			);
+			name = ABI35_0_0EXKeepAwake;
+			path = "../versioned-react-native/ABI35_0_0/EXKeepAwake";
+			sourceTree = "<group>";
+		};
+		46A616100CCE7324FFE05FA476837C19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A6646206714DF1230C3D86B9C9714B5 = {
+			isa = PBXGroup;
+			children = (
+				41103C9150880B331D28F856C195CD6A /* ABI35_0_0EXKeepAwake */,
+				CBCC5CF88D1E702AEBCFB1C9069BBF59 /* Dependencies */,
+				46A616100CCE7324FFE05FA476837C19 /* Frameworks */,
+				91EC39B87B83EC959C00A280D792853B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5E585C10DDE5B2AD0017674C6C3AD4B1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A9D819320B3974CCE82257A2A46B2EB /* ABI35_0_0EXKeepAwake.xcconfig */,
+				E230F7812485143EA70D635F9EC90153 /* ABI35_0_0EXKeepAwake-dummy.m */,
+				1B4849A370D8C639F6FB11870D6F3B0F /* ABI35_0_0EXKeepAwake-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI35_0_0EXKeepAwake";
+			sourceTree = "<group>";
+		};
+		91EC39B87B83EC959C00A280D792853B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CD18ECA60EAF74B80BBDD518876FAF3 /* libABI35_0_0EXKeepAwake.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBCC5CF88D1E702AEBCFB1C9069BBF59 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				73AC7F3875140C7E9C05A18BDF3A28EE /* ABI35_0_0UMCore */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		563DA86A6650572F9E51F8E0651AF6EF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0920028284B65E4C23F11A692E60DD36 /* ABI35_0_0EXKeepAwake.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0DB3A61EDE02E1A441963B657BDE4233 /* ABI35_0_0EXKeepAwake */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F214027AB88EE36D381A93311F74206 /* Build configuration list for PBXNativeTarget "ABI35_0_0EXKeepAwake" */;
+			buildPhases = (
+				563DA86A6650572F9E51F8E0651AF6EF /* Headers */,
+				A016CDB6F9430433C6399D75A818EC67 /* Sources */,
+				238E81D91E71AC318456F9242D8161F5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				82EA8AE9AED45873CC83F2514BE9E54F /* PBXTargetDependency */,
+			);
+			name = ABI35_0_0EXKeepAwake;
+			productName = ABI35_0_0EXKeepAwake;
+			productReference = 7CD18ECA60EAF74B80BBDD518876FAF3 /* libABI35_0_0EXKeepAwake.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6FA832539E26F37AFAD3DD6254CD3FDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = FEDBB4CF4FD786460B5CF892B76F9A63 /* Build configuration list for PBXProject "ABI35_0_0EXKeepAwake" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5A6646206714DF1230C3D86B9C9714B5;
+			productRefGroup = 91EC39B87B83EC959C00A280D792853B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 73AC7F3875140C7E9C05A18BDF3A28EE /* ABI35_0_0UMCore */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				0DB3A61EDE02E1A441963B657BDE4233 /* ABI35_0_0EXKeepAwake */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A016CDB6F9430433C6399D75A818EC67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB3D4204FD16827020353FB28B416469 /* ABI35_0_0EXKeepAwake-dummy.m in Sources */,
+				0A3CC129134A4288E46D40D48923DA3A /* ABI35_0_0EXKeepAwake.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		82EA8AE9AED45873CC83F2514BE9E54F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI35_0_0UMCore;
+			targetProxy = 1EF6AB27A72A611B19A0674E720B62D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5E92C7E7C56E47001BD30260BE000C67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		81907D95721903DA8993631EFCBF0F4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A9D819320B3974CCE82257A2A46B2EB /* ABI35_0_0EXKeepAwake.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI35_0_0EXKeepAwake/ABI35_0_0EXKeepAwake-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI35_0_0EXKeepAwake;
+				PRODUCT_NAME = ABI35_0_0EXKeepAwake;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E5BB257606F7780C115788BDE65A9B43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A9D819320B3974CCE82257A2A46B2EB /* ABI35_0_0EXKeepAwake.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI35_0_0EXKeepAwake/ABI35_0_0EXKeepAwake-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI35_0_0EXKeepAwake;
+				PRODUCT_NAME = ABI35_0_0EXKeepAwake;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F9DFEFEF9D9D19AED911A70AC7E133D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F214027AB88EE36D381A93311F74206 /* Build configuration list for PBXNativeTarget "ABI35_0_0EXKeepAwake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81907D95721903DA8993631EFCBF0F4F /* Debug */,
+				E5BB257606F7780C115788BDE65A9B43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEDBB4CF4FD786460B5CF892B76F9A63 /* Build configuration list for PBXProject "ABI35_0_0EXKeepAwake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9DFEFEF9D9D19AED911A70AC7E133D4 /* Debug */,
+				5E92C7E7C56E47001BD30260BE000C67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6FA832539E26F37AFAD3DD6254CD3FDA /* Project object */;
+}

@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		017986DC458F0D9E62CF392C8380AD0D /* ABI34_0_0EXBarCodeScannerUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C8C879A477E6E73DCA1661CECB7E3FF /* ABI34_0_0EXBarCodeScannerUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3392FE56E882029D0FDFF7D47746E35F /* ABI34_0_0EXBarCodeScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 81A0B62ED84D9F5E9F92BAECE7EAFB27 /* ABI34_0_0EXBarCodeScanner.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		431909AF95B5F2CE814B08539BDFE7B6 /* ABI34_0_0EXBarCodeScannerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = FE235C169D9695881B891DFD7F6FD474 /* ABI34_0_0EXBarCodeScannerModule.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5890DA7387C91B90BB96EFFE18EC55C3 /* ABI34_0_0EXBarCodeScannerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E211C42D1C556DE6340E7873D7477ED /* ABI34_0_0EXBarCodeScannerView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6D4370FFA5F3EE05CA9A31AEC5629274 /* ABI34_0_0EXBarCodeScannerViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EEBE3726957443B16AEBB4AC6F4294D /* ABI34_0_0EXBarCodeScannerViewManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7361727A2D962B827592E09AE1F5040A /* ABI34_0_0EXBarCodeScannerViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA5B8389451EA5EDE7EDACE1E39CC96 /* ABI34_0_0EXBarCodeScannerViewManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9D79709C586273270618B9420DBA8072 /* ABI34_0_0EXBarCodeScanner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FF98E6953873ECCEF5BCEF683500F997 /* ABI34_0_0EXBarCodeScanner-dummy.m */; };
+		A066D4DA09BE074540C1084389194F42 /* ABI34_0_0EXBarCodeScannerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BB0186953A02E65ABB0821F112D51E /* ABI34_0_0EXBarCodeScannerProvider.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BB6E4E3FDBAAF39FD3074979BD799825 /* ABI34_0_0EXBarCodeScannerModule.h in Headers */ = {isa = PBXBuildFile; fileRef = B4881F05258D082F072810C11F88AAE3 /* ABI34_0_0EXBarCodeScannerModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BF44F8175528E17AD5A12C9EC026D7F5 /* ABI34_0_0EXBarCodeScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82814D87A79A9C52D85811041F6D8930 /* ABI34_0_0EXBarCodeScannerView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CCFE2EF00516AD807F71AFBE600C2ADC /* ABI34_0_0EXBarCodeScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = E98FAFB18D1DE8F4B871731785BBF214 /* ABI34_0_0EXBarCodeScanner.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E83515C669F5F374161BE99CFF41FE99 /* ABI34_0_0EXBarCodeScannerProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = F3C8BFD246A767B575E20A91C44F53C7 /* ABI34_0_0EXBarCodeScannerProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E99B3F7DCA7B264BECEFE48C930224A9 /* ABI34_0_0EXBarCodeScannerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8471A5124BE5E1CC754FE203780EDB5C /* ABI34_0_0EXBarCodeScannerUtils.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		61956971DEFE9E36403A6EC6D66E3D9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5BF682E2D961C2623095A08699A72D6 /* ABI34_0_0UMImageLoaderInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CEE7DA9F8732A18628FB1B11EA5EA14;
+			remoteInfo = ABI34_0_0UMImageLoaderInterface;
+		};
+		65775B098C49BE40CC642029C4F8005B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCE4FC247EE5B009AAD294918BADC87E /* ABI34_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A4E2311DB0CE13AB2665D794B59FB23A;
+			remoteInfo = ABI34_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E211C42D1C556DE6340E7873D7477ED /* ABI34_0_0EXBarCodeScannerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0EXBarCodeScannerView.h; path = ABI34_0_0EXBarCodeScanner/ABI34_0_0EXBarCodeScannerView.h; sourceTree = "<group>"; };
+		2B2D0A4E61617DEDA6B75B342188B09F /* ABI34_0_0EXBarCodeScanner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI34_0_0EXBarCodeScanner.xcconfig; sourceTree = "<group>"; };
+		4C8C879A477E6E73DCA1661CECB7E3FF /* ABI34_0_0EXBarCodeScannerUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI34_0_0EXBarCodeScannerUtils.h; sourceTree = "<group>"; };
+		81A0B62ED84D9F5E9F92BAECE7EAFB27 /* ABI34_0_0EXBarCodeScanner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0EXBarCodeScanner.h; path = ABI34_0_0EXBarCodeScanner/ABI34_0_0EXBarCodeScanner.h; sourceTree = "<group>"; };
+		82814D87A79A9C52D85811041F6D8930 /* ABI34_0_0EXBarCodeScannerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI34_0_0EXBarCodeScannerView.m; path = ABI34_0_0EXBarCodeScanner/ABI34_0_0EXBarCodeScannerView.m; sourceTree = "<group>"; };
+		8471A5124BE5E1CC754FE203780EDB5C /* ABI34_0_0EXBarCodeScannerUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI34_0_0EXBarCodeScannerUtils.m; sourceTree = "<group>"; };
+		9EEBE3726957443B16AEBB4AC6F4294D /* ABI34_0_0EXBarCodeScannerViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0EXBarCodeScannerViewManager.h; path = ABI34_0_0EXBarCodeScanner/ABI34_0_0EXBarCodeScannerViewManager.h; sourceTree = "<group>"; };
+		A1725352E405A24578E27082F9916146 /* ABI34_0_0EXBarCodeScanner.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI34_0_0EXBarCodeScanner.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B4881F05258D082F072810C11F88AAE3 /* ABI34_0_0EXBarCodeScannerModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0EXBarCodeScannerModule.h; path = ABI34_0_0EXBarCodeScanner/ABI34_0_0EXBarCodeScannerModule.h; sourceTree = "<group>"; };
+		C7C4FA7C24D316DF2D82C14FA5A5EF56 /* libABI34_0_0EXBarCodeScanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI34_0_0EXBarCodeScanner.a; path = libABI34_0_0EXBarCodeScanner.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAA5B8389451EA5EDE7EDACE1E39CC96 /* ABI34_0_0EXBarCodeScannerViewManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI34_0_0EXBarCodeScannerViewManager.m; path = ABI34_0_0EXBarCodeScanner/ABI34_0_0EXBarCodeScannerViewManager.m; sourceTree = "<group>"; };
+		DCE4FC247EE5B009AAD294918BADC87E /* ABI34_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMCore; path = ABI34_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		E5BF682E2D961C2623095A08699A72D6 /* ABI34_0_0UMImageLoaderInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMImageLoaderInterface; path = ABI34_0_0UMImageLoaderInterface.xcodeproj; sourceTree = "<group>"; };
+		E98FAFB18D1DE8F4B871731785BBF214 /* ABI34_0_0EXBarCodeScanner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI34_0_0EXBarCodeScanner.m; path = ABI34_0_0EXBarCodeScanner/ABI34_0_0EXBarCodeScanner.m; sourceTree = "<group>"; };
+		F3C8BFD246A767B575E20A91C44F53C7 /* ABI34_0_0EXBarCodeScannerProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0EXBarCodeScannerProvider.h; path = ABI34_0_0EXBarCodeScanner/ABI34_0_0EXBarCodeScannerProvider.h; sourceTree = "<group>"; };
+		F4BB0186953A02E65ABB0821F112D51E /* ABI34_0_0EXBarCodeScannerProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI34_0_0EXBarCodeScannerProvider.m; path = ABI34_0_0EXBarCodeScanner/ABI34_0_0EXBarCodeScannerProvider.m; sourceTree = "<group>"; };
+		F6D51989199821A02FE1D4703399E39F /* ABI34_0_0EXBarCodeScanner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI34_0_0EXBarCodeScanner-prefix.pch"; sourceTree = "<group>"; };
+		FE235C169D9695881B891DFD7F6FD474 /* ABI34_0_0EXBarCodeScannerModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI34_0_0EXBarCodeScannerModule.m; path = ABI34_0_0EXBarCodeScanner/ABI34_0_0EXBarCodeScannerModule.m; sourceTree = "<group>"; };
+		FF98E6953873ECCEF5BCEF683500F997 /* ABI34_0_0EXBarCodeScanner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI34_0_0EXBarCodeScanner-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C997A9DFE9CF98E730CFF13E9102E244 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28B53B99BFC4AC5CE56F4235988B3562 /* ABI34_0_0EXBarCodeScanner */ = {
+			isa = PBXGroup;
+			children = (
+				81A0B62ED84D9F5E9F92BAECE7EAFB27 /* ABI34_0_0EXBarCodeScanner.h */,
+				E98FAFB18D1DE8F4B871731785BBF214 /* ABI34_0_0EXBarCodeScanner.m */,
+				B4881F05258D082F072810C11F88AAE3 /* ABI34_0_0EXBarCodeScannerModule.h */,
+				FE235C169D9695881B891DFD7F6FD474 /* ABI34_0_0EXBarCodeScannerModule.m */,
+				F3C8BFD246A767B575E20A91C44F53C7 /* ABI34_0_0EXBarCodeScannerProvider.h */,
+				F4BB0186953A02E65ABB0821F112D51E /* ABI34_0_0EXBarCodeScannerProvider.m */,
+				1E211C42D1C556DE6340E7873D7477ED /* ABI34_0_0EXBarCodeScannerView.h */,
+				82814D87A79A9C52D85811041F6D8930 /* ABI34_0_0EXBarCodeScannerView.m */,
+				9EEBE3726957443B16AEBB4AC6F4294D /* ABI34_0_0EXBarCodeScannerViewManager.h */,
+				DAA5B8389451EA5EDE7EDACE1E39CC96 /* ABI34_0_0EXBarCodeScannerViewManager.m */,
+				6BBE09120928A34CBF13262061669B4F /* Pod */,
+				F685567B05E32E19D84498CBE79C9D2B /* Support Files */,
+				7BCC4BAF0E75725C18CD432A6C57027D /* Utilities */,
+			);
+			name = ABI34_0_0EXBarCodeScanner;
+			path = "../versioned-react-native/ABI34_0_0/EXBarCodeScanner";
+			sourceTree = "<group>";
+		};
+		58543A8C2A7C6711FAB0190D91DEC442 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6BBE09120928A34CBF13262061669B4F /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				A1725352E405A24578E27082F9916146 /* ABI34_0_0EXBarCodeScanner.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		6E3A4128E6C4A2AC9E4C5B6B11E5BA0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7C4FA7C24D316DF2D82C14FA5A5EF56 /* libABI34_0_0EXBarCodeScanner.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A28582757782F617250AAC1E3DB8660 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				DCE4FC247EE5B009AAD294918BADC87E /* ABI34_0_0UMCore */,
+				E5BF682E2D961C2623095A08699A72D6 /* ABI34_0_0UMImageLoaderInterface */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		7BCC4BAF0E75725C18CD432A6C57027D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4C8C879A477E6E73DCA1661CECB7E3FF /* ABI34_0_0EXBarCodeScannerUtils.h */,
+				8471A5124BE5E1CC754FE203780EDB5C /* ABI34_0_0EXBarCodeScannerUtils.m */,
+			);
+			name = Utilities;
+			path = ABI34_0_0EXBarCodeScanner/Utilities;
+			sourceTree = "<group>";
+		};
+		C97906C782CA48F8D12E0923940B0F88 = {
+			isa = PBXGroup;
+			children = (
+				28B53B99BFC4AC5CE56F4235988B3562 /* ABI34_0_0EXBarCodeScanner */,
+				7A28582757782F617250AAC1E3DB8660 /* Dependencies */,
+				58543A8C2A7C6711FAB0190D91DEC442 /* Frameworks */,
+				6E3A4128E6C4A2AC9E4C5B6B11E5BA0B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F685567B05E32E19D84498CBE79C9D2B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2B2D0A4E61617DEDA6B75B342188B09F /* ABI34_0_0EXBarCodeScanner.xcconfig */,
+				FF98E6953873ECCEF5BCEF683500F997 /* ABI34_0_0EXBarCodeScanner-dummy.m */,
+				F6D51989199821A02FE1D4703399E39F /* ABI34_0_0EXBarCodeScanner-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI34_0_0EXBarCodeScanner";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AE47CB3586974E5E6347862C67C27F44 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3392FE56E882029D0FDFF7D47746E35F /* ABI34_0_0EXBarCodeScanner.h in Headers */,
+				BB6E4E3FDBAAF39FD3074979BD799825 /* ABI34_0_0EXBarCodeScannerModule.h in Headers */,
+				E83515C669F5F374161BE99CFF41FE99 /* ABI34_0_0EXBarCodeScannerProvider.h in Headers */,
+				017986DC458F0D9E62CF392C8380AD0D /* ABI34_0_0EXBarCodeScannerUtils.h in Headers */,
+				5890DA7387C91B90BB96EFFE18EC55C3 /* ABI34_0_0EXBarCodeScannerView.h in Headers */,
+				6D4370FFA5F3EE05CA9A31AEC5629274 /* ABI34_0_0EXBarCodeScannerViewManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2A565810E5D481C28FBBC1694245B292 /* ABI34_0_0EXBarCodeScanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1470BA915CA0F307EE195C3C98FDC2C /* Build configuration list for PBXNativeTarget "ABI34_0_0EXBarCodeScanner" */;
+			buildPhases = (
+				AE47CB3586974E5E6347862C67C27F44 /* Headers */,
+				1E3F363F8D8D21C9EDDC0608AA0699C9 /* Sources */,
+				C997A9DFE9CF98E730CFF13E9102E244 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0ED05ADF4B74110D79BB6734447F1D83 /* PBXTargetDependency */,
+				071314BE5B68EC5622EA325C1C9DE5B3 /* PBXTargetDependency */,
+			);
+			name = ABI34_0_0EXBarCodeScanner;
+			productName = ABI34_0_0EXBarCodeScanner;
+			productReference = C7C4FA7C24D316DF2D82C14FA5A5EF56 /* libABI34_0_0EXBarCodeScanner.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0B9DE3684ECACB4DE05C772737FEDD50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 87C0D9F78949A20AE796CF177A22B11A /* Build configuration list for PBXProject "ABI34_0_0EXBarCodeScanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C97906C782CA48F8D12E0923940B0F88;
+			productRefGroup = 6E3A4128E6C4A2AC9E4C5B6B11E5BA0B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = DCE4FC247EE5B009AAD294918BADC87E /* ABI34_0_0UMCore */;
+				},
+				{
+					ProjectRef = E5BF682E2D961C2623095A08699A72D6 /* ABI34_0_0UMImageLoaderInterface */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				2A565810E5D481C28FBBC1694245B292 /* ABI34_0_0EXBarCodeScanner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E3F363F8D8D21C9EDDC0608AA0699C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D79709C586273270618B9420DBA8072 /* ABI34_0_0EXBarCodeScanner-dummy.m in Sources */,
+				CCFE2EF00516AD807F71AFBE600C2ADC /* ABI34_0_0EXBarCodeScanner.m in Sources */,
+				431909AF95B5F2CE814B08539BDFE7B6 /* ABI34_0_0EXBarCodeScannerModule.m in Sources */,
+				A066D4DA09BE074540C1084389194F42 /* ABI34_0_0EXBarCodeScannerProvider.m in Sources */,
+				E99B3F7DCA7B264BECEFE48C930224A9 /* ABI34_0_0EXBarCodeScannerUtils.m in Sources */,
+				BF44F8175528E17AD5A12C9EC026D7F5 /* ABI34_0_0EXBarCodeScannerView.m in Sources */,
+				7361727A2D962B827592E09AE1F5040A /* ABI34_0_0EXBarCodeScannerViewManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		071314BE5B68EC5622EA325C1C9DE5B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMImageLoaderInterface;
+			targetProxy = 61956971DEFE9E36403A6EC6D66E3D9C /* PBXContainerItemProxy */;
+		};
+		0ED05ADF4B74110D79BB6734447F1D83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMCore;
+			targetProxy = 65775B098C49BE40CC642029C4F8005B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5E4A34077151DE25A5520FCB9472ECD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5F0300252AAD9C76C89C8707FE95BEF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D5AA6CB23DC567B96125BBA909584DBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B2D0A4E61617DEDA6B75B342188B09F /* ABI34_0_0EXBarCodeScanner.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI34_0_0EXBarCodeScanner/ABI34_0_0EXBarCodeScanner-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI34_0_0EXBarCodeScanner;
+				PRODUCT_NAME = ABI34_0_0EXBarCodeScanner;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F7EEE597D0CA7600EF71BB178431C052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B2D0A4E61617DEDA6B75B342188B09F /* ABI34_0_0EXBarCodeScanner.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI34_0_0EXBarCodeScanner/ABI34_0_0EXBarCodeScanner-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI34_0_0EXBarCodeScanner;
+				PRODUCT_NAME = ABI34_0_0EXBarCodeScanner;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87C0D9F78949A20AE796CF177A22B11A /* Build configuration list for PBXProject "ABI34_0_0EXBarCodeScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E4A34077151DE25A5520FCB9472ECD9 /* Debug */,
+				5F0300252AAD9C76C89C8707FE95BEF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1470BA915CA0F307EE195C3C98FDC2C /* Build configuration list for PBXNativeTarget "ABI34_0_0EXBarCodeScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5AA6CB23DC567B96125BBA909584DBC /* Debug */,
+				F7EEE597D0CA7600EF71BB178431C052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0B9DE3684ECACB4DE05C772737FEDD50 /* Project object */;
+}

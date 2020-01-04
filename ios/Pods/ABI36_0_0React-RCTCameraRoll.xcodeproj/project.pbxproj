@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22320A4B089B3318577FC0D6931D64C8 /* ABI36_0_0RCTPhotoLibraryImageLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = B00C7BFD3EF1B7B47F5941678435C54C /* ABI36_0_0RCTPhotoLibraryImageLoader.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		35A7DF8614814558A8BC26C59EC0DE9D /* ABI36_0_0RCTCameraRollManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF16E886FBC2089E178F7C0AADE602D9 /* ABI36_0_0RCTCameraRollManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3ED757427ED43037D5A16BC4B67C2BE0 /* ABI36_0_0RCTImagePickerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C094807E20C94327805D30C8ED7B23F5 /* ABI36_0_0RCTImagePickerManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		401CFE3B058D0DEB6B39B42496BD14F5 /* ABI36_0_0RCTAssetsLibraryRequestHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = D5D6FDBAD6CAD55490E03B62D0B573FA /* ABI36_0_0RCTAssetsLibraryRequestHandler.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		522E8562F36859596017E9AF231FB018 /* ABI36_0_0RCTImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E41DB1FA7450C47E6704B5D4C24ED2 /* ABI36_0_0RCTImagePickerManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		58499ADF815FC83F86821B0C2CB042B7 /* ABI36_0_0RCTAssetsLibraryRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D6146DE43C0085CB4385EE78A65A3999 /* ABI36_0_0RCTAssetsLibraryRequestHandler.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9DA22FFB4B1C4677BEDE950A428CEA30 /* ABI36_0_0React-RCTCameraRoll-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0817F64DE7D7D2BA067BAA28F83EE /* ABI36_0_0React-RCTCameraRoll-dummy.m */; };
+		A4C478573FE13B9D41B4EB9A4359DEE0 /* ABI36_0_0RCTPhotoLibraryImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D42C2A659D20EC622D95D14EDA722E54 /* ABI36_0_0RCTPhotoLibraryImageLoader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C89225CBAFD03C606BFD6C29353C1DFC /* ABI36_0_0RCTCameraRollManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0034D93B25FDD7B4ED6F83C02B2913DC /* ABI36_0_0RCTCameraRollManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7F692B429912591F9E056760170331EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4127909AB53184055C1F079BE730F535 /* ABI36_0_0React-RCTImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BF0DC4FE0DF5A5FD7119637979C866BE;
+			remoteInfo = "ABI36_0_0React-RCTImage";
+		};
+		F91094BFCC90B40E21CADDCD57B98AC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 843364C42A57774BC81306AE1749C3E1 /* ABI36_0_0React-Core.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DB60AB33C163C50B5E903D79785312A;
+			remoteInfo = "ABI36_0_0React-Core";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0034D93B25FDD7B4ED6F83C02B2913DC /* ABI36_0_0RCTCameraRollManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI36_0_0RCTCameraRollManager.h; sourceTree = "<group>"; };
+		1084BC4C22B25E7E903569F5C955FC4A /* ABI36_0_0React-RCTCameraRoll-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI36_0_0React-RCTCameraRoll-prefix.pch"; sourceTree = "<group>"; };
+		33988657314689A398B2B461F27EAE6D /* ABI36_0_0React-RCTCameraRoll.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ABI36_0_0React-RCTCameraRoll.xcconfig"; sourceTree = "<group>"; };
+		4127909AB53184055C1F079BE730F535 /* ABI36_0_0React-RCTImage */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ABI36_0_0React-RCTImage"; path = "ABI36_0_0React-RCTImage.xcodeproj"; sourceTree = "<group>"; };
+		7CF73485CEC2CF22AE519B46526A1BD9 /* ABI36_0_0React-RCTCameraRoll.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "ABI36_0_0React-RCTCameraRoll.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		843364C42A57774BC81306AE1749C3E1 /* ABI36_0_0React-Core */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ABI36_0_0React-Core"; path = "ABI36_0_0React-Core.xcodeproj"; sourceTree = "<group>"; };
+		8BE0817F64DE7D7D2BA067BAA28F83EE /* ABI36_0_0React-RCTCameraRoll-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI36_0_0React-RCTCameraRoll-dummy.m"; sourceTree = "<group>"; };
+		B00C7BFD3EF1B7B47F5941678435C54C /* ABI36_0_0RCTPhotoLibraryImageLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI36_0_0RCTPhotoLibraryImageLoader.h; sourceTree = "<group>"; };
+		B8E41DB1FA7450C47E6704B5D4C24ED2 /* ABI36_0_0RCTImagePickerManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI36_0_0RCTImagePickerManager.m; sourceTree = "<group>"; };
+		BBF7F9E341E98ADAE116357660F0A18C /* libABI36_0_0React-RCTCameraRoll.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libABI36_0_0React-RCTCameraRoll.a"; path = "libABI36_0_0React-RCTCameraRoll.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C094807E20C94327805D30C8ED7B23F5 /* ABI36_0_0RCTImagePickerManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI36_0_0RCTImagePickerManager.h; sourceTree = "<group>"; };
+		CF16E886FBC2089E178F7C0AADE602D9 /* ABI36_0_0RCTCameraRollManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI36_0_0RCTCameraRollManager.m; sourceTree = "<group>"; };
+		D42C2A659D20EC622D95D14EDA722E54 /* ABI36_0_0RCTPhotoLibraryImageLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI36_0_0RCTPhotoLibraryImageLoader.m; sourceTree = "<group>"; };
+		D5D6FDBAD6CAD55490E03B62D0B573FA /* ABI36_0_0RCTAssetsLibraryRequestHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI36_0_0RCTAssetsLibraryRequestHandler.h; sourceTree = "<group>"; };
+		D6146DE43C0085CB4385EE78A65A3999 /* ABI36_0_0RCTAssetsLibraryRequestHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI36_0_0RCTAssetsLibraryRequestHandler.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		007F489FD9ECC39043ED5B44852A4833 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38184A0DB5CF84D025147CE8664C54CC /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				843364C42A57774BC81306AE1749C3E1 /* ABI36_0_0React-Core */,
+				4127909AB53184055C1F079BE730F535 /* ABI36_0_0React-RCTImage */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		656163FF03CC5AC1C33A54DF7EC6063B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				33988657314689A398B2B461F27EAE6D /* ABI36_0_0React-RCTCameraRoll.xcconfig */,
+				8BE0817F64DE7D7D2BA067BAA28F83EE /* ABI36_0_0React-RCTCameraRoll-dummy.m */,
+				1084BC4C22B25E7E903569F5C955FC4A /* ABI36_0_0React-RCTCameraRoll-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../../../Pods/Target Support Files/ABI36_0_0React-RCTCameraRoll";
+			sourceTree = "<group>";
+		};
+		7F486F6B72828C836F413A7FCED6D63A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8196B7FB8F541555B92DB034667C5B4C /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				7CF73485CEC2CF22AE519B46526A1BD9 /* ABI36_0_0React-RCTCameraRoll.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		B04D55DCFBD3B84BFF757100C19A00A6 = {
+			isa = PBXGroup;
+			children = (
+				F113F9ED77A9C4D634EB9D0A1236FC75 /* ABI36_0_0React-RCTCameraRoll */,
+				38184A0DB5CF84D025147CE8664C54CC /* Dependencies */,
+				7F486F6B72828C836F413A7FCED6D63A /* Frameworks */,
+				EA72A400A84E9FB2318517BFA11081AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA72A400A84E9FB2318517BFA11081AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBF7F9E341E98ADAE116357660F0A18C /* libABI36_0_0React-RCTCameraRoll.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F113F9ED77A9C4D634EB9D0A1236FC75 /* ABI36_0_0React-RCTCameraRoll */ = {
+			isa = PBXGroup;
+			children = (
+				D5D6FDBAD6CAD55490E03B62D0B573FA /* ABI36_0_0RCTAssetsLibraryRequestHandler.h */,
+				D6146DE43C0085CB4385EE78A65A3999 /* ABI36_0_0RCTAssetsLibraryRequestHandler.m */,
+				0034D93B25FDD7B4ED6F83C02B2913DC /* ABI36_0_0RCTCameraRollManager.h */,
+				CF16E886FBC2089E178F7C0AADE602D9 /* ABI36_0_0RCTCameraRollManager.m */,
+				C094807E20C94327805D30C8ED7B23F5 /* ABI36_0_0RCTImagePickerManager.h */,
+				B8E41DB1FA7450C47E6704B5D4C24ED2 /* ABI36_0_0RCTImagePickerManager.m */,
+				B00C7BFD3EF1B7B47F5941678435C54C /* ABI36_0_0RCTPhotoLibraryImageLoader.h */,
+				D42C2A659D20EC622D95D14EDA722E54 /* ABI36_0_0RCTPhotoLibraryImageLoader.m */,
+				8196B7FB8F541555B92DB034667C5B4C /* Pod */,
+				656163FF03CC5AC1C33A54DF7EC6063B /* Support Files */,
+			);
+			name = "ABI36_0_0React-RCTCameraRoll";
+			path = "../versioned-react-native/ABI36_0_0/ReactNative/Libraries/CameraRoll";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F1DBC5D015F5A74FC0CB376A5188584B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				401CFE3B058D0DEB6B39B42496BD14F5 /* ABI36_0_0RCTAssetsLibraryRequestHandler.h in Headers */,
+				C89225CBAFD03C606BFD6C29353C1DFC /* ABI36_0_0RCTCameraRollManager.h in Headers */,
+				3ED757427ED43037D5A16BC4B67C2BE0 /* ABI36_0_0RCTImagePickerManager.h in Headers */,
+				22320A4B089B3318577FC0D6931D64C8 /* ABI36_0_0RCTPhotoLibraryImageLoader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		429299F985E8ED6DC0E39F920363BBEA /* ABI36_0_0React-RCTCameraRoll */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23AEFA6E4A4E27FB87888631E99906E8 /* Build configuration list for PBXNativeTarget "ABI36_0_0React-RCTCameraRoll" */;
+			buildPhases = (
+				F1DBC5D015F5A74FC0CB376A5188584B /* Headers */,
+				ED340036DF217A3C206D62595682BD7B /* Sources */,
+				007F489FD9ECC39043ED5B44852A4833 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4ED28B5C284028EFCE3C7CA35501D9E /* PBXTargetDependency */,
+				96A064B5C9426B4E68FCB22F8008843D /* PBXTargetDependency */,
+			);
+			name = "ABI36_0_0React-RCTCameraRoll";
+			productName = "ABI36_0_0React-RCTCameraRoll";
+			productReference = BBF7F9E341E98ADAE116357660F0A18C /* libABI36_0_0React-RCTCameraRoll.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0379DC45BE51D5EFC6A089F608E6975D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 089D59503C84E30A23900E52DA3706EC /* Build configuration list for PBXProject "ABI36_0_0React-RCTCameraRoll" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B04D55DCFBD3B84BFF757100C19A00A6;
+			productRefGroup = EA72A400A84E9FB2318517BFA11081AE /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 843364C42A57774BC81306AE1749C3E1 /* ABI36_0_0React-Core */;
+				},
+				{
+					ProjectRef = 4127909AB53184055C1F079BE730F535 /* ABI36_0_0React-RCTImage */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				429299F985E8ED6DC0E39F920363BBEA /* ABI36_0_0React-RCTCameraRoll */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED340036DF217A3C206D62595682BD7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58499ADF815FC83F86821B0C2CB042B7 /* ABI36_0_0RCTAssetsLibraryRequestHandler.m in Sources */,
+				35A7DF8614814558A8BC26C59EC0DE9D /* ABI36_0_0RCTCameraRollManager.m in Sources */,
+				522E8562F36859596017E9AF231FB018 /* ABI36_0_0RCTImagePickerManager.m in Sources */,
+				A4C478573FE13B9D41B4EB9A4359DEE0 /* ABI36_0_0RCTPhotoLibraryImageLoader.m in Sources */,
+				9DA22FFB4B1C4677BEDE950A428CEA30 /* ABI36_0_0React-RCTCameraRoll-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96A064B5C9426B4E68FCB22F8008843D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ABI36_0_0React-RCTImage";
+			targetProxy = 7F692B429912591F9E056760170331EB /* PBXContainerItemProxy */;
+		};
+		E4ED28B5C284028EFCE3C7CA35501D9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ABI36_0_0React-Core";
+			targetProxy = F91094BFCC90B40E21CADDCD57B98AC3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		068711FC5C1D0B7B978FC9AF3425E1A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33988657314689A398B2B461F27EAE6D /* ABI36_0_0React-RCTCameraRoll.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0React-RCTCameraRoll/ABI36_0_0React-RCTCameraRoll-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"ABI36_0_0RCT_DEV=1",
+					"ABI36_0_0RCT_ENABLE_INSPECTOR=0",
+					"ABI36_0_0ENABLE_PACKAGER_CONNECTION=0",
+					"ABI36_0_0HAVE_GOOGLE_MAPS=1",
+					"ABI36_0_0HAVE_GOOGLE_MAPS_UTILS=1",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DkNeverRequested=ABI36_0_0ReactkNeverRequested",
+					"-DkNeverProgressed=ABI36_0_0ReactkNeverProgressed",
+					"-DkSMCalloutViewRepositionDelayForUIScrollView=ABI36_0_0ReactkSMCalloutViewRepositionDelayForUIScrollView",
+					"-DregionAsJSON=ABI36_0_0ReactregionAsJSON",
+					"-DunionRect=ABI36_0_0ReactunionRect",
+					"-DJSNoBytecodeFileFormatVersion=ABI36_0_0ReactJSNoBytecodeFileFormatVersion",
+					"-DJSSamplingProfilerEnabled=ABI36_0_0ReactJSSamplingProfilerEnabled",
+					"-DRECONNECT_DELAY_MS=ABI36_0_0ReactRECONNECT_DELAY_MS",
+					"-DMAX_DELTA_TIME=ABI36_0_0ReactMAX_DELTA_TIME",
+					"-DgCurrentGenerationCount=ABI36_0_0ReactgCurrentGenerationCount",
+					"-DgPrintSkips=ABI36_0_0ReactgPrintSkips",
+					"-DgPrintChanges=ABI36_0_0ReactgPrintChanges",
+					"-DlayoutNodeInternal=ABI36_0_0ReactlayoutNodeInternal",
+					"-DgDepth=ABI36_0_0ReactgDepth",
+					"-DgPrintTree=ABI36_0_0ReactgPrintTree",
+					"-DisUndefined=ABI36_0_0ReactisUndefined",
+					"-DgNodeInstanceCount=ABI36_0_0ReactgNodeInstanceCount",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0React;
+				PRODUCT_NAME = "ABI36_0_0React-RCTCameraRoll";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D81923B5B28B92894F75C900D8BE283 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33988657314689A398B2B461F27EAE6D /* ABI36_0_0React-RCTCameraRoll.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0React-RCTCameraRoll/ABI36_0_0React-RCTCameraRoll-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"ABI36_0_0RCT_DEV=1",
+					"ABI36_0_0RCT_ENABLE_INSPECTOR=0",
+					"ABI36_0_0ENABLE_PACKAGER_CONNECTION=0",
+					"ABI36_0_0HAVE_GOOGLE_MAPS=1",
+					"ABI36_0_0HAVE_GOOGLE_MAPS_UTILS=1",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DkNeverRequested=ABI36_0_0ReactkNeverRequested",
+					"-DkNeverProgressed=ABI36_0_0ReactkNeverProgressed",
+					"-DkSMCalloutViewRepositionDelayForUIScrollView=ABI36_0_0ReactkSMCalloutViewRepositionDelayForUIScrollView",
+					"-DregionAsJSON=ABI36_0_0ReactregionAsJSON",
+					"-DunionRect=ABI36_0_0ReactunionRect",
+					"-DJSNoBytecodeFileFormatVersion=ABI36_0_0ReactJSNoBytecodeFileFormatVersion",
+					"-DJSSamplingProfilerEnabled=ABI36_0_0ReactJSSamplingProfilerEnabled",
+					"-DRECONNECT_DELAY_MS=ABI36_0_0ReactRECONNECT_DELAY_MS",
+					"-DMAX_DELTA_TIME=ABI36_0_0ReactMAX_DELTA_TIME",
+					"-DgCurrentGenerationCount=ABI36_0_0ReactgCurrentGenerationCount",
+					"-DgPrintSkips=ABI36_0_0ReactgPrintSkips",
+					"-DgPrintChanges=ABI36_0_0ReactgPrintChanges",
+					"-DlayoutNodeInternal=ABI36_0_0ReactlayoutNodeInternal",
+					"-DgDepth=ABI36_0_0ReactgDepth",
+					"-DgPrintTree=ABI36_0_0ReactgPrintTree",
+					"-DisUndefined=ABI36_0_0ReactisUndefined",
+					"-DgNodeInstanceCount=ABI36_0_0ReactgNodeInstanceCount",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0React;
+				PRODUCT_NAME = "ABI36_0_0React-RCTCameraRoll";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78A71307CC0B7A603B0584A8D188396D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		974C8F6EC603C8DEB7A8535ECE90EBE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		089D59503C84E30A23900E52DA3706EC /* Build configuration list for PBXProject "ABI36_0_0React-RCTCameraRoll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78A71307CC0B7A603B0584A8D188396D /* Debug */,
+				974C8F6EC603C8DEB7A8535ECE90EBE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23AEFA6E4A4E27FB87888631E99906E8 /* Build configuration list for PBXNativeTarget "ABI36_0_0React-RCTCameraRoll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				068711FC5C1D0B7B978FC9AF3425E1A7 /* Debug */,
+				1D81923B5B28B92894F75C900D8BE283 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0379DC45BE51D5EFC6A089F608E6975D /* Project object */;
+}

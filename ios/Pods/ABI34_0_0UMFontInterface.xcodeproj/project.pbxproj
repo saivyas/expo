@@ -1,0 +1,289 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		834EA46C67EA53D137DC0B04C561BBEF /* ABI34_0_0UMFontInterface */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 85EBE5F0248A02FBF2F50084E1DA3351 /* Build configuration list for PBXAggregateTarget "ABI34_0_0UMFontInterface" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = ABI34_0_0UMFontInterface;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXFileReference section */
+		038DA63FE22A4D19A4E55C911D36C9FD /* ABI34_0_0UMFontInterface.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI34_0_0UMFontInterface.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4499E5F3FC20A6FB28D7EAFA31A6D96E /* ABI34_0_0UMFontScalerInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0UMFontScalerInterface.h; path = ABI34_0_0UMFontInterface/ABI34_0_0UMFontScalerInterface.h; sourceTree = "<group>"; };
+		5ECBBB2855F395845576390EF9EF58C3 /* ABI34_0_0UMFontInterface.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI34_0_0UMFontInterface.xcconfig; sourceTree = "<group>"; };
+		C8020827846714B31C78872A9C33146E /* ABI34_0_0UMFontProcessorInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0UMFontProcessorInterface.h; path = ABI34_0_0UMFontInterface/ABI34_0_0UMFontProcessorInterface.h; sourceTree = "<group>"; };
+		CEF2CBA97F01020F22FB77A0625BB744 /* ABI34_0_0UMFontManagerInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0UMFontManagerInterface.h; path = ABI34_0_0UMFontInterface/ABI34_0_0UMFontManagerInterface.h; sourceTree = "<group>"; };
+		F58831DBC261F04CCB2EA65D96B77497 /* ABI34_0_0UMFontScalersManagerInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0UMFontScalersManagerInterface.h; path = ABI34_0_0UMFontInterface/ABI34_0_0UMFontScalersManagerInterface.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		15619CA89D08C74F0ADA3D8D86203F4B /* ABI34_0_0UMFontInterface */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2CBA97F01020F22FB77A0625BB744 /* ABI34_0_0UMFontManagerInterface.h */,
+				C8020827846714B31C78872A9C33146E /* ABI34_0_0UMFontProcessorInterface.h */,
+				4499E5F3FC20A6FB28D7EAFA31A6D96E /* ABI34_0_0UMFontScalerInterface.h */,
+				F58831DBC261F04CCB2EA65D96B77497 /* ABI34_0_0UMFontScalersManagerInterface.h */,
+				AA3AFB0DB50F1758938CE9A051CAE9D0 /* Pod */,
+				8C3A33DB2973D0EBAF2B43811F59D419 /* Support Files */,
+			);
+			name = ABI34_0_0UMFontInterface;
+			path = "../versioned-react-native/ABI34_0_0/UMFontInterface";
+			sourceTree = "<group>";
+		};
+		2F83A824F409DCD2E9A951A14F939154 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		458E61DDCD8443C97F18A04D37674284 = {
+			isa = PBXGroup;
+			children = (
+				15619CA89D08C74F0ADA3D8D86203F4B /* ABI34_0_0UMFontInterface */,
+				9C1EE683EBF345FC39A3E9C44825EB75 /* Frameworks */,
+				2F83A824F409DCD2E9A951A14F939154 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8C3A33DB2973D0EBAF2B43811F59D419 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5ECBBB2855F395845576390EF9EF58C3 /* ABI34_0_0UMFontInterface.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI34_0_0UMFontInterface";
+			sourceTree = "<group>";
+		};
+		9C1EE683EBF345FC39A3E9C44825EB75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA3AFB0DB50F1758938CE9A051CAE9D0 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				038DA63FE22A4D19A4E55C911D36C9FD /* ABI34_0_0UMFontInterface.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		9B2B3933C1660CF2C8C9FDBDDA9400CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4D7F7C86EA9B50AA0C945AC04E0C7DD6 /* Build configuration list for PBXProject "ABI34_0_0UMFontInterface" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 458E61DDCD8443C97F18A04D37674284;
+			productRefGroup = 2F83A824F409DCD2E9A951A14F939154 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				834EA46C67EA53D137DC0B04C561BBEF /* ABI34_0_0UMFontInterface */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		A71B3A014C15A85667A77E2FD7FB0192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CDAF32A8ED54FCC20A979F69CD00A83D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		EAE491D9C9B0C5696815E28756423C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ECBBB2855F395845576390EF9EF58C3 /* ABI34_0_0UMFontInterface.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE97DEDD206D7CA011A571981E07819F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ECBBB2855F395845576390EF9EF58C3 /* ABI34_0_0UMFontInterface.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D7F7C86EA9B50AA0C945AC04E0C7DD6 /* Build configuration list for PBXProject "ABI34_0_0UMFontInterface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A71B3A014C15A85667A77E2FD7FB0192 /* Debug */,
+				CDAF32A8ED54FCC20A979F69CD00A83D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85EBE5F0248A02FBF2F50084E1DA3351 /* Build configuration list for PBXAggregateTarget "ABI34_0_0UMFontInterface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE97DEDD206D7CA011A571981E07819F /* Debug */,
+				EAE491D9C9B0C5696815E28756423C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B2B3933C1660CF2C8C9FDBDDA9400CC /* Project object */;
+}

@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36533D839AA7A093A4C6905889C9A418 /* ABI35_0_0EXWebBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = A55DBD3432F79952CF9412518BC68A4C /* ABI35_0_0EXWebBrowser.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3FD87608AC1E2C22755845E10D1060DA /* ABI35_0_0EXWebBrowser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0431B0B569DEF4698DA4C293B8198F /* ABI35_0_0EXWebBrowser-dummy.m */; };
+		85DFF5550F225CD90E9308798F105849 /* ABI35_0_0EXWebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 98AF49FA382A10B72906274D7887810E /* ABI35_0_0EXWebBrowser.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8BF48D03BB90911DBBCE80DB3E89CCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 990DD3CFF68ECA7B1A560BF4D07CC2C5 /* ABI35_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7205ADA49415BA3BB5197065A0B628B0;
+			remoteInfo = ABI35_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7164513C4699FE89D4ECCDAE565618E1 /* ABI35_0_0EXWebBrowser.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI35_0_0EXWebBrowser.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7B0431B0B569DEF4698DA4C293B8198F /* ABI35_0_0EXWebBrowser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI35_0_0EXWebBrowser-dummy.m"; sourceTree = "<group>"; };
+		98AF49FA382A10B72906274D7887810E /* ABI35_0_0EXWebBrowser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI35_0_0EXWebBrowser.m; path = ABI35_0_0EXWebBrowser/ABI35_0_0EXWebBrowser.m; sourceTree = "<group>"; };
+		990DD3CFF68ECA7B1A560BF4D07CC2C5 /* ABI35_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI35_0_0UMCore; path = ABI35_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		A55DBD3432F79952CF9412518BC68A4C /* ABI35_0_0EXWebBrowser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI35_0_0EXWebBrowser.h; path = ABI35_0_0EXWebBrowser/ABI35_0_0EXWebBrowser.h; sourceTree = "<group>"; };
+		AA07D69B29381D20F580EA902C4DF19D /* ABI35_0_0EXWebBrowser.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI35_0_0EXWebBrowser.xcconfig; sourceTree = "<group>"; };
+		BBB5019D8FA6838CCAD5E3C734A860AB /* ABI35_0_0EXWebBrowser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI35_0_0EXWebBrowser-prefix.pch"; sourceTree = "<group>"; };
+		DC61692246E8E2CB784093136A73B18D /* libABI35_0_0EXWebBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI35_0_0EXWebBrowser.a; path = libABI35_0_0EXWebBrowser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7C301689E800CE32B61AA6A26ABF3BEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DB853AA2B26A32BB5FDA5AEDB6C231F /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				990DD3CFF68ECA7B1A560BF4D07CC2C5 /* ABI35_0_0UMCore */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		498C9A06C7F8829839A5D9F350CD34AF /* ABI35_0_0EXWebBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				A55DBD3432F79952CF9412518BC68A4C /* ABI35_0_0EXWebBrowser.h */,
+				98AF49FA382A10B72906274D7887810E /* ABI35_0_0EXWebBrowser.m */,
+				AF6C9882F4F6E118DB8DC88B71BEA676 /* Pod */,
+				BD2F6A057A43767121BAEE1B2536A284 /* Support Files */,
+			);
+			name = ABI35_0_0EXWebBrowser;
+			path = "../versioned-react-native/ABI35_0_0/EXWebBrowser";
+			sourceTree = "<group>";
+		};
+		624CA35EDD923E5BA8285A73775E1B26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF6C9882F4F6E118DB8DC88B71BEA676 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				7164513C4699FE89D4ECCDAE565618E1 /* ABI35_0_0EXWebBrowser.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		B58BED2E6D95FCE5861F5005E9EA8438 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC61692246E8E2CB784093136A73B18D /* libABI35_0_0EXWebBrowser.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD2F6A057A43767121BAEE1B2536A284 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA07D69B29381D20F580EA902C4DF19D /* ABI35_0_0EXWebBrowser.xcconfig */,
+				7B0431B0B569DEF4698DA4C293B8198F /* ABI35_0_0EXWebBrowser-dummy.m */,
+				BBB5019D8FA6838CCAD5E3C734A860AB /* ABI35_0_0EXWebBrowser-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI35_0_0EXWebBrowser";
+			sourceTree = "<group>";
+		};
+		F081413E2235832B6340097798385F8D = {
+			isa = PBXGroup;
+			children = (
+				498C9A06C7F8829839A5D9F350CD34AF /* ABI35_0_0EXWebBrowser */,
+				3DB853AA2B26A32BB5FDA5AEDB6C231F /* Dependencies */,
+				624CA35EDD923E5BA8285A73775E1B26 /* Frameworks */,
+				B58BED2E6D95FCE5861F5005E9EA8438 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F36B695E8F47FA4F0E88C18A1A96BA1F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36533D839AA7A093A4C6905889C9A418 /* ABI35_0_0EXWebBrowser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9A5EA5C15B338763F624775304EFF28F /* ABI35_0_0EXWebBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D49272CB52149D7DD78BD854323CE1E9 /* Build configuration list for PBXNativeTarget "ABI35_0_0EXWebBrowser" */;
+			buildPhases = (
+				F36B695E8F47FA4F0E88C18A1A96BA1F /* Headers */,
+				33AEEB80CC31435AB16657D20E87C2BB /* Sources */,
+				7C301689E800CE32B61AA6A26ABF3BEA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67A682C89A9560F44CE13095E4BAF25B /* PBXTargetDependency */,
+			);
+			name = ABI35_0_0EXWebBrowser;
+			productName = ABI35_0_0EXWebBrowser;
+			productReference = DC61692246E8E2CB784093136A73B18D /* libABI35_0_0EXWebBrowser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		166EA7F01EA6930A1136AD934B33F976 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 02B906394CC8A1BA86303DCEF8C13A0B /* Build configuration list for PBXProject "ABI35_0_0EXWebBrowser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F081413E2235832B6340097798385F8D;
+			productRefGroup = B58BED2E6D95FCE5861F5005E9EA8438 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 990DD3CFF68ECA7B1A560BF4D07CC2C5 /* ABI35_0_0UMCore */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				9A5EA5C15B338763F624775304EFF28F /* ABI35_0_0EXWebBrowser */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		33AEEB80CC31435AB16657D20E87C2BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FD87608AC1E2C22755845E10D1060DA /* ABI35_0_0EXWebBrowser-dummy.m in Sources */,
+				85DFF5550F225CD90E9308798F105849 /* ABI35_0_0EXWebBrowser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67A682C89A9560F44CE13095E4BAF25B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI35_0_0UMCore;
+			targetProxy = E8BF48D03BB90911DBBCE80DB3E89CCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		22D8A3621FC6BAD300B845BFCCA6F652 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA07D69B29381D20F580EA902C4DF19D /* ABI35_0_0EXWebBrowser.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI35_0_0EXWebBrowser/ABI35_0_0EXWebBrowser-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI35_0_0EXWebBrowser;
+				PRODUCT_NAME = ABI35_0_0EXWebBrowser;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6604E2E5E9EB4D3E911878745A1E5099 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA07D69B29381D20F580EA902C4DF19D /* ABI35_0_0EXWebBrowser.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI35_0_0EXWebBrowser/ABI35_0_0EXWebBrowser-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI35_0_0EXWebBrowser;
+				PRODUCT_NAME = ABI35_0_0EXWebBrowser;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B4FDCD6AD5AC8AA418D5BD523F2A4ABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E8B684F8EFFF5C56CD3A10DACF12CC61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02B906394CC8A1BA86303DCEF8C13A0B /* Build configuration list for PBXProject "ABI35_0_0EXWebBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8B684F8EFFF5C56CD3A10DACF12CC61 /* Debug */,
+				B4FDCD6AD5AC8AA418D5BD523F2A4ABF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D49272CB52149D7DD78BD854323CE1E9 /* Build configuration list for PBXNativeTarget "ABI35_0_0EXWebBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22D8A3621FC6BAD300B845BFCCA6F652 /* Debug */,
+				6604E2E5E9EB4D3E911878745A1E5099 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 166EA7F01EA6930A1136AD934B33F976 /* Project object */;
+}

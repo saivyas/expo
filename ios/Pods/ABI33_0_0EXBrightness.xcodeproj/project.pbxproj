@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49267EDD589F1A5C9B6973F339D79CDE /* ABI33_0_0EXBrightness.m in Sources */ = {isa = PBXBuildFile; fileRef = 709A53089F01F21A256D2736F02E6023 /* ABI33_0_0EXBrightness.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D4623FC9F535E7BB9567D2C7C4589741 /* ABI33_0_0EXBrightness.h in Headers */ = {isa = PBXBuildFile; fileRef = DF55BACABC34591FB75B9816BD9D3352 /* ABI33_0_0EXBrightness.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E65711AE765A3F0B0514125EC7B7F1F4 /* ABI33_0_0EXBrightness-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B62A2A72C0A6CFF8BF560B7AC03D5D /* ABI33_0_0EXBrightness-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AC01F4CD570A10DB7377A0C28C4F807 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3722D7AC0C77764E4AA36ADF5C111E9D /* ABI33_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C051C97A4147D306821BE0B317EE7A65;
+			remoteInfo = ABI33_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3722D7AC0C77764E4AA36ADF5C111E9D /* ABI33_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI33_0_0UMCore; path = ABI33_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		3723B1E53573DB496AFDD4CF16330467 /* ABI33_0_0EXBrightness.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI33_0_0EXBrightness.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		42B62A2A72C0A6CFF8BF560B7AC03D5D /* ABI33_0_0EXBrightness-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI33_0_0EXBrightness-dummy.m"; sourceTree = "<group>"; };
+		5FE3D8BC57F0CB7E58511D0886A77A67 /* ABI33_0_0EXBrightness.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI33_0_0EXBrightness.xcconfig; sourceTree = "<group>"; };
+		709A53089F01F21A256D2736F02E6023 /* ABI33_0_0EXBrightness.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXBrightness.m; path = ABI33_0_0EXBrightness/ABI33_0_0EXBrightness.m; sourceTree = "<group>"; };
+		DF55BACABC34591FB75B9816BD9D3352 /* ABI33_0_0EXBrightness.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXBrightness.h; path = ABI33_0_0EXBrightness/ABI33_0_0EXBrightness.h; sourceTree = "<group>"; };
+		F2893E4ED2E8B990C46E3E6BAB20B4FB /* libABI33_0_0EXBrightness.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI33_0_0EXBrightness.a; path = libABI33_0_0EXBrightness.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD09467B190A616B1C781613BB16B0E3 /* ABI33_0_0EXBrightness-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI33_0_0EXBrightness-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7DA441FB6A500D716F48073725E8055 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F424A7696B42CAEFA754F315F72C28C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FE3D8BC57F0CB7E58511D0886A77A67 /* ABI33_0_0EXBrightness.xcconfig */,
+				42B62A2A72C0A6CFF8BF560B7AC03D5D /* ABI33_0_0EXBrightness-dummy.m */,
+				FD09467B190A616B1C781613BB16B0E3 /* ABI33_0_0EXBrightness-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI33_0_0EXBrightness";
+			sourceTree = "<group>";
+		};
+		2BF84E5FA42E58384705B2BFE62C1895 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A8480A5068E2F52BB979B46145875C1 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				3722D7AC0C77764E4AA36ADF5C111E9D /* ABI33_0_0UMCore */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		A52B1F529F8C66E63CBCDFD84A6FA732 /* ABI33_0_0EXBrightness */ = {
+			isa = PBXGroup;
+			children = (
+				DF55BACABC34591FB75B9816BD9D3352 /* ABI33_0_0EXBrightness.h */,
+				709A53089F01F21A256D2736F02E6023 /* ABI33_0_0EXBrightness.m */,
+				E35CC89ADF7A954542FAA64E3ECBD46B /* Pod */,
+				1F424A7696B42CAEFA754F315F72C28C /* Support Files */,
+			);
+			name = ABI33_0_0EXBrightness;
+			path = "../versioned-react-native/ABI33_0_0/EXBrightness";
+			sourceTree = "<group>";
+		};
+		DEC5CC1CE46E6F57D291FDD060E5728F = {
+			isa = PBXGroup;
+			children = (
+				A52B1F529F8C66E63CBCDFD84A6FA732 /* ABI33_0_0EXBrightness */,
+				4A8480A5068E2F52BB979B46145875C1 /* Dependencies */,
+				2BF84E5FA42E58384705B2BFE62C1895 /* Frameworks */,
+				FC085EB415AA612C0FD9DAA5772F78C0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E35CC89ADF7A954542FAA64E3ECBD46B /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				3723B1E53573DB496AFDD4CF16330467 /* ABI33_0_0EXBrightness.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		FC085EB415AA612C0FD9DAA5772F78C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2893E4ED2E8B990C46E3E6BAB20B4FB /* libABI33_0_0EXBrightness.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FB9317A7D600F43E2DC2F7FF75573644 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4623FC9F535E7BB9567D2C7C4589741 /* ABI33_0_0EXBrightness.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		280D8CC741D7CAF812F4120878AFAC62 /* ABI33_0_0EXBrightness */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE3956BF881086E6BC373679818183AA /* Build configuration list for PBXNativeTarget "ABI33_0_0EXBrightness" */;
+			buildPhases = (
+				FB9317A7D600F43E2DC2F7FF75573644 /* Headers */,
+				6B817C2E4303AA432EA72C1B123C9427 /* Sources */,
+				C7DA441FB6A500D716F48073725E8055 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DC6E5D77DBD5F5AEC929DE45C0EA979 /* PBXTargetDependency */,
+			);
+			name = ABI33_0_0EXBrightness;
+			productName = ABI33_0_0EXBrightness;
+			productReference = F2893E4ED2E8B990C46E3E6BAB20B4FB /* libABI33_0_0EXBrightness.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2856E3EE0D790870DB7FEA1BB920BAB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 0AB25F99F9A32924CF0D08EB3528369F /* Build configuration list for PBXProject "ABI33_0_0EXBrightness" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DEC5CC1CE46E6F57D291FDD060E5728F;
+			productRefGroup = FC085EB415AA612C0FD9DAA5772F78C0 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 3722D7AC0C77764E4AA36ADF5C111E9D /* ABI33_0_0UMCore */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				280D8CC741D7CAF812F4120878AFAC62 /* ABI33_0_0EXBrightness */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B817C2E4303AA432EA72C1B123C9427 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E65711AE765A3F0B0514125EC7B7F1F4 /* ABI33_0_0EXBrightness-dummy.m in Sources */,
+				49267EDD589F1A5C9B6973F339D79CDE /* ABI33_0_0EXBrightness.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3DC6E5D77DBD5F5AEC929DE45C0EA979 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI33_0_0UMCore;
+			targetProxy = 3AC01F4CD570A10DB7377A0C28C4F807 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		23362BD43DB242D6141DF3514C550EF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		481EC61A61659128DA37EAB903A92D02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FE3D8BC57F0CB7E58511D0886A77A67 /* ABI33_0_0EXBrightness.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXBrightness/ABI33_0_0EXBrightness-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXBrightness;
+				PRODUCT_NAME = ABI33_0_0EXBrightness;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8EA1ED28D49704F0A9A27DAEAA8DFA08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E32B74569D21546E2B09B2137C6A3F33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FE3D8BC57F0CB7E58511D0886A77A67 /* ABI33_0_0EXBrightness.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXBrightness/ABI33_0_0EXBrightness-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXBrightness;
+				PRODUCT_NAME = ABI33_0_0EXBrightness;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AB25F99F9A32924CF0D08EB3528369F /* Build configuration list for PBXProject "ABI33_0_0EXBrightness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EA1ED28D49704F0A9A27DAEAA8DFA08 /* Debug */,
+				23362BD43DB242D6141DF3514C550EF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE3956BF881086E6BC373679818183AA /* Build configuration list for PBXNativeTarget "ABI33_0_0EXBrightness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481EC61A61659128DA37EAB903A92D02 /* Debug */,
+				E32B74569D21546E2B09B2137C6A3F33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2856E3EE0D790870DB7FEA1BB920BAB5 /* Project object */;
+}

@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22D9920DE37D15F898CDFBB0D763B9D6 /* ABI36_0_0EXGoogleSignIn+Serialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D5B52E1B82A0FC8B149465E6A6C51 /* ABI36_0_0EXGoogleSignIn+Serialization.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2DBF47880B3DEE81ECD856E72D8FC114 /* ABI36_0_0EXGoogleSignInAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DC269DBF4506BDA2F8711094B3CF4D /* ABI36_0_0EXGoogleSignInAppDelegate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2EAAD533C3CB8465DCE790F1B35EF139 /* ABI36_0_0EXGoogleSignIn+Serialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 28FC6A7A97D3F4F07E0CFA26BFA4C418 /* ABI36_0_0EXGoogleSignIn+Serialization.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3B46EF813B55FD5298D86129DDDB71EC /* ABI36_0_0EXGoogleSignIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 1232C4F893709A1C5E095DA8FDC89AEC /* ABI36_0_0EXGoogleSignIn.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		587FBCCCE16F71A312EBF41CA8217BC5 /* ABI36_0_0EXGoogleSignIn-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19539B1A6F6A764BF61264DD7817D42A /* ABI36_0_0EXGoogleSignIn-dummy.m */; };
+		60B531872155229FA967CD1A4A185148 /* ABI36_0_0EXGoogleSignInAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5530BC3F6A4C2E35CAA7301D4C0E9FB3 /* ABI36_0_0EXGoogleSignInAppDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		71DC329A026E46B229D4C861978722AE /* ABI36_0_0EXGoogleSignIn.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CAD734C08382551925634AD1D7FFD96 /* ABI36_0_0EXGoogleSignIn.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8518571C11E722A63608DB72343F73F2 /* ABI36_0_0EXAuthTask.h in Headers */ = {isa = PBXBuildFile; fileRef = BDAAA48D2D99FE3EBE379405CA256426 /* ABI36_0_0EXAuthTask.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F1FE334793145CABE26F6C478189520D /* ABI36_0_0EXAuthTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 867E9225506A32A268C0C7C616094801 /* ABI36_0_0EXAuthTask.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		663FCAA3EF496DCDB915EAD52B091FB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF4EF2D2AE3FE415DE50D987E2D0E762 /* ABI36_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 17CDBC5DE6E16D3EE17E5C2098EE2921;
+			remoteInfo = ABI36_0_0UMCore;
+		};
+		D3C2AD1C5BD3AF60E57F8DDB46630BB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EDC78711229445B5698A5E995EEE7BC /* GoogleSignIn.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 70D52585A9FA4EEA343010638ADABC11;
+			remoteInfo = GoogleSignIn;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1232C4F893709A1C5E095DA8FDC89AEC /* ABI36_0_0EXGoogleSignIn.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXGoogleSignIn.m; path = ABI36_0_0EXGoogleSignIn/ABI36_0_0EXGoogleSignIn.m; sourceTree = "<group>"; };
+		19539B1A6F6A764BF61264DD7817D42A /* ABI36_0_0EXGoogleSignIn-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI36_0_0EXGoogleSignIn-dummy.m"; sourceTree = "<group>"; };
+		28FC6A7A97D3F4F07E0CFA26BFA4C418 /* ABI36_0_0EXGoogleSignIn+Serialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ABI36_0_0EXGoogleSignIn+Serialization.h"; path = "ABI36_0_0EXGoogleSignIn/ABI36_0_0EXGoogleSignIn+Serialization.h"; sourceTree = "<group>"; };
+		2E1C8FAC751BA539F0729911E50EE394 /* ABI36_0_0EXGoogleSignIn.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI36_0_0EXGoogleSignIn.xcconfig; sourceTree = "<group>"; };
+		4E641B678EC844CCA3BE0348A7BE2BA4 /* ABI36_0_0EXGoogleSignIn.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI36_0_0EXGoogleSignIn.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5530BC3F6A4C2E35CAA7301D4C0E9FB3 /* ABI36_0_0EXGoogleSignInAppDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXGoogleSignInAppDelegate.h; path = ABI36_0_0EXGoogleSignIn/ABI36_0_0EXGoogleSignInAppDelegate.h; sourceTree = "<group>"; };
+		5EDC78711229445B5698A5E995EEE7BC /* GoogleSignIn */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GoogleSignIn; path = GoogleSignIn.xcodeproj; sourceTree = "<group>"; };
+		6CAD734C08382551925634AD1D7FFD96 /* ABI36_0_0EXGoogleSignIn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXGoogleSignIn.h; path = ABI36_0_0EXGoogleSignIn/ABI36_0_0EXGoogleSignIn.h; sourceTree = "<group>"; };
+		7D0D5B52E1B82A0FC8B149465E6A6C51 /* ABI36_0_0EXGoogleSignIn+Serialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ABI36_0_0EXGoogleSignIn+Serialization.m"; path = "ABI36_0_0EXGoogleSignIn/ABI36_0_0EXGoogleSignIn+Serialization.m"; sourceTree = "<group>"; };
+		867E9225506A32A268C0C7C616094801 /* ABI36_0_0EXAuthTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXAuthTask.m; path = ABI36_0_0EXGoogleSignIn/ABI36_0_0EXAuthTask.m; sourceTree = "<group>"; };
+		88564176BE4CC20AF2F9E5B9F19D18CE /* libABI36_0_0EXGoogleSignIn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI36_0_0EXGoogleSignIn.a; path = libABI36_0_0EXGoogleSignIn.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		88DC269DBF4506BDA2F8711094B3CF4D /* ABI36_0_0EXGoogleSignInAppDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI36_0_0EXGoogleSignInAppDelegate.m; path = ABI36_0_0EXGoogleSignIn/ABI36_0_0EXGoogleSignInAppDelegate.m; sourceTree = "<group>"; };
+		A83A0A5695BEFA91159734D94D6F19CB /* ABI36_0_0EXGoogleSignIn-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI36_0_0EXGoogleSignIn-prefix.pch"; sourceTree = "<group>"; };
+		BDAAA48D2D99FE3EBE379405CA256426 /* ABI36_0_0EXAuthTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0EXAuthTask.h; path = ABI36_0_0EXGoogleSignIn/ABI36_0_0EXAuthTask.h; sourceTree = "<group>"; };
+		DF4EF2D2AE3FE415DE50D987E2D0E762 /* ABI36_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI36_0_0UMCore; path = ABI36_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		419514AF4E4BDC54A8FB81AFA69D2BF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DC73F3DE6806A05BD60A4DE157FCDE1 = {
+			isa = PBXGroup;
+			children = (
+				5F3832350DA2A267330FE032F404969B /* ABI36_0_0EXGoogleSignIn */,
+				37C54D97FEAD4AFCDFCD2984CA69ABF2 /* Dependencies */,
+				8D3114399AE2FEF393C7EC3A8723EFD4 /* Frameworks */,
+				9BB91AF328FE1AF3153DFDE3E519036C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		37C54D97FEAD4AFCDFCD2984CA69ABF2 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				DF4EF2D2AE3FE415DE50D987E2D0E762 /* ABI36_0_0UMCore */,
+				5EDC78711229445B5698A5E995EEE7BC /* GoogleSignIn */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		5F3832350DA2A267330FE032F404969B /* ABI36_0_0EXGoogleSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				BDAAA48D2D99FE3EBE379405CA256426 /* ABI36_0_0EXAuthTask.h */,
+				867E9225506A32A268C0C7C616094801 /* ABI36_0_0EXAuthTask.m */,
+				6CAD734C08382551925634AD1D7FFD96 /* ABI36_0_0EXGoogleSignIn.h */,
+				1232C4F893709A1C5E095DA8FDC89AEC /* ABI36_0_0EXGoogleSignIn.m */,
+				28FC6A7A97D3F4F07E0CFA26BFA4C418 /* ABI36_0_0EXGoogleSignIn+Serialization.h */,
+				7D0D5B52E1B82A0FC8B149465E6A6C51 /* ABI36_0_0EXGoogleSignIn+Serialization.m */,
+				5530BC3F6A4C2E35CAA7301D4C0E9FB3 /* ABI36_0_0EXGoogleSignInAppDelegate.h */,
+				88DC269DBF4506BDA2F8711094B3CF4D /* ABI36_0_0EXGoogleSignInAppDelegate.m */,
+				9DC6671DD67FE8E9AC8EAF4271CF4616 /* Pod */,
+				F9BB56037AD602FD02ACB01114E12FF7 /* Support Files */,
+			);
+			name = ABI36_0_0EXGoogleSignIn;
+			path = "../versioned-react-native/ABI36_0_0/Expo/EXGoogleSignIn";
+			sourceTree = "<group>";
+		};
+		8D3114399AE2FEF393C7EC3A8723EFD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BB91AF328FE1AF3153DFDE3E519036C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88564176BE4CC20AF2F9E5B9F19D18CE /* libABI36_0_0EXGoogleSignIn.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9DC6671DD67FE8E9AC8EAF4271CF4616 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				4E641B678EC844CCA3BE0348A7BE2BA4 /* ABI36_0_0EXGoogleSignIn.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		F9BB56037AD602FD02ACB01114E12FF7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E1C8FAC751BA539F0729911E50EE394 /* ABI36_0_0EXGoogleSignIn.xcconfig */,
+				19539B1A6F6A764BF61264DD7817D42A /* ABI36_0_0EXGoogleSignIn-dummy.m */,
+				A83A0A5695BEFA91159734D94D6F19CB /* ABI36_0_0EXGoogleSignIn-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../../Pods/Target Support Files/ABI36_0_0EXGoogleSignIn";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		673A7E258A9467E7721EF93336DAC88B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8518571C11E722A63608DB72343F73F2 /* ABI36_0_0EXAuthTask.h in Headers */,
+				2EAAD533C3CB8465DCE790F1B35EF139 /* ABI36_0_0EXGoogleSignIn+Serialization.h in Headers */,
+				71DC329A026E46B229D4C861978722AE /* ABI36_0_0EXGoogleSignIn.h in Headers */,
+				60B531872155229FA967CD1A4A185148 /* ABI36_0_0EXGoogleSignInAppDelegate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D10CEB505D9CA3D3718F7A726381C305 /* ABI36_0_0EXGoogleSignIn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEA0EEE0BFF7C294BF5F25AAA04EEC78 /* Build configuration list for PBXNativeTarget "ABI36_0_0EXGoogleSignIn" */;
+			buildPhases = (
+				673A7E258A9467E7721EF93336DAC88B /* Headers */,
+				21C6DA0B62B965C79945B738D0C87637 /* Sources */,
+				419514AF4E4BDC54A8FB81AFA69D2BF2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC6F74FBD4ABC3A17F29A60C43D6EACA /* PBXTargetDependency */,
+				50DEB447289C1B95EF871497A68C2319 /* PBXTargetDependency */,
+			);
+			name = ABI36_0_0EXGoogleSignIn;
+			productName = ABI36_0_0EXGoogleSignIn;
+			productReference = 88564176BE4CC20AF2F9E5B9F19D18CE /* libABI36_0_0EXGoogleSignIn.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A24EA368C674AC1CF248076E57EF61B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = CEC37B51A5AAA5F34C645D8CF385CA3F /* Build configuration list for PBXProject "ABI36_0_0EXGoogleSignIn" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0DC73F3DE6806A05BD60A4DE157FCDE1;
+			productRefGroup = 9BB91AF328FE1AF3153DFDE3E519036C /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = DF4EF2D2AE3FE415DE50D987E2D0E762 /* ABI36_0_0UMCore */;
+				},
+				{
+					ProjectRef = 5EDC78711229445B5698A5E995EEE7BC /* GoogleSignIn */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D10CEB505D9CA3D3718F7A726381C305 /* ABI36_0_0EXGoogleSignIn */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21C6DA0B62B965C79945B738D0C87637 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1FE334793145CABE26F6C478189520D /* ABI36_0_0EXAuthTask.m in Sources */,
+				22D9920DE37D15F898CDFBB0D763B9D6 /* ABI36_0_0EXGoogleSignIn+Serialization.m in Sources */,
+				587FBCCCE16F71A312EBF41CA8217BC5 /* ABI36_0_0EXGoogleSignIn-dummy.m in Sources */,
+				3B46EF813B55FD5298D86129DDDB71EC /* ABI36_0_0EXGoogleSignIn.m in Sources */,
+				2DBF47880B3DEE81ECD856E72D8FC114 /* ABI36_0_0EXGoogleSignInAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50DEB447289C1B95EF871497A68C2319 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleSignIn;
+			targetProxy = D3C2AD1C5BD3AF60E57F8DDB46630BB6 /* PBXContainerItemProxy */;
+		};
+		FC6F74FBD4ABC3A17F29A60C43D6EACA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI36_0_0UMCore;
+			targetProxy = 663FCAA3EF496DCDB915EAD52B091FB3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1ADDFED0D5C7F980B3F6C5698C23901D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		27EE7CAC55D3D8DACA30A73E46A7C92F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		350764F06A7F753188A52C39461F072F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E1C8FAC751BA539F0729911E50EE394 /* ABI36_0_0EXGoogleSignIn.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0EXGoogleSignIn/ABI36_0_0EXGoogleSignIn-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0EXGoogleSignIn;
+				PRODUCT_NAME = ABI36_0_0EXGoogleSignIn;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5853D67A832ACE7B435563C8A562C549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E1C8FAC751BA539F0729911E50EE394 /* ABI36_0_0EXGoogleSignIn.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0EXGoogleSignIn/ABI36_0_0EXGoogleSignIn-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0EXGoogleSignIn;
+				PRODUCT_NAME = ABI36_0_0EXGoogleSignIn;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEC37B51A5AAA5F34C645D8CF385CA3F /* Build configuration list for PBXProject "ABI36_0_0EXGoogleSignIn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1ADDFED0D5C7F980B3F6C5698C23901D /* Debug */,
+				27EE7CAC55D3D8DACA30A73E46A7C92F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEA0EEE0BFF7C294BF5F25AAA04EEC78 /* Build configuration list for PBXNativeTarget "ABI36_0_0EXGoogleSignIn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				350764F06A7F753188A52C39461F072F /* Debug */,
+				5853D67A832ACE7B435563C8A562C549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A24EA368C674AC1CF248076E57EF61B /* Project object */;
+}

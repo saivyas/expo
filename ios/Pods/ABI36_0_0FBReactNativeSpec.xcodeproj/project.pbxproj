@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E5CDB2EC105EF04B8F4FDF7C4E32274 /* ABI36_0_0FBReactNativeSpec-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4A0B83DBB0B67AF0CF0ABAA10CA5A6 /* ABI36_0_0FBReactNativeSpec-dummy.m */; };
+		85FCCBF96A16808FBAB55AB477634D59 /* ABI36_0_0FBReactNativeSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 72A5D659B067E99163706244D49FD0F6 /* ABI36_0_0FBReactNativeSpec.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EA306F55AFF78382F4BADEC965843CDC /* ABI36_0_0FBReactNativeSpec-generated.mm in Sources */ = {isa = PBXBuildFile; fileRef = C226987E53BA6ADCE4B60D87045BAD50 /* ABI36_0_0FBReactNativeSpec-generated.mm */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32 -Wno-nullability-completeness -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41290E9A15012EC94E1E026D212F3FC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 193FE1595DCFB44068EB9052319B9178 /* Folly.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 14BB2B7275726942E762F076FA966088;
+			remoteInfo = Folly;
+		};
+		8669F5041E68946A5282CD4AEE23FC8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C14B6B771757FB930586187ECBD6060 /* ABI36_0_0RCTRequired.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E2BE9F1EDF0F667B5EE94210A472445B;
+			remoteInfo = ABI36_0_0RCTRequired;
+		};
+		9414EDB0DDCD391225683293ADB711C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C38712AFA3340DF3F41088D52EA57010 /* ABI36_0_0ReactCommon.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F122331579BABCD113DBA5B7173EE5E6;
+			remoteInfo = ABI36_0_0ReactCommon;
+		};
+		A6CB4492DA2FBFFEC8CDA2D0E0FC4F16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E9B2BCCC0A4DF8333EF61C979BF22D3 /* ABI36_0_0RCTTypeSafety.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FD3A53D15347DB04F161C2E2C407BD80;
+			remoteInfo = ABI36_0_0RCTTypeSafety;
+		};
+		D26B6126C8D65A9625FDFD9C15765E58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1A4F1DAB77F425D4F8970FA28081DB0 /* ABI36_0_0React-jsi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E4130D79EB20993F8FA9316507E59BD;
+			remoteInfo = "ABI36_0_0React-jsi";
+		};
+		DA1973FBD0587C9F59881AD7CF8FB061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2D88C77D492136C00B21F6C921098970 /* ABI36_0_0React-Core.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DB60AB33C163C50B5E903D79785312A;
+			remoteInfo = "ABI36_0_0React-Core";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E9B2BCCC0A4DF8333EF61C979BF22D3 /* ABI36_0_0RCTTypeSafety */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI36_0_0RCTTypeSafety; path = ABI36_0_0RCTTypeSafety.xcodeproj; sourceTree = "<group>"; };
+		193FE1595DCFB44068EB9052319B9178 /* Folly */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Folly; path = Folly.xcodeproj; sourceTree = "<group>"; };
+		2D88C77D492136C00B21F6C921098970 /* ABI36_0_0React-Core */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ABI36_0_0React-Core"; path = "ABI36_0_0React-Core.xcodeproj"; sourceTree = "<group>"; };
+		6C14B6B771757FB930586187ECBD6060 /* ABI36_0_0RCTRequired */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI36_0_0RCTRequired; path = ABI36_0_0RCTRequired.xcodeproj; sourceTree = "<group>"; };
+		72A5D659B067E99163706244D49FD0F6 /* ABI36_0_0FBReactNativeSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0FBReactNativeSpec.h; path = FBReactNativeSpec/ABI36_0_0FBReactNativeSpec.h; sourceTree = "<group>"; };
+		755C6634C96970811DDE6A9E3D9FFA03 /* ABI36_0_0FBReactNativeSpec.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI36_0_0FBReactNativeSpec.xcconfig; sourceTree = "<group>"; };
+		87B89CF734E417B84AFDE5C129C11C21 /* ABI36_0_0FBReactNativeSpec-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI36_0_0FBReactNativeSpec-prefix.pch"; sourceTree = "<group>"; };
+		8A895AD3CC6E690CE6E2B7687AFBCCC4 /* libABI36_0_0FBReactNativeSpec.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI36_0_0FBReactNativeSpec.a; path = libABI36_0_0FBReactNativeSpec.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E4A0B83DBB0B67AF0CF0ABAA10CA5A6 /* ABI36_0_0FBReactNativeSpec-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI36_0_0FBReactNativeSpec-dummy.m"; sourceTree = "<group>"; };
+		B1A4F1DAB77F425D4F8970FA28081DB0 /* ABI36_0_0React-jsi */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ABI36_0_0React-jsi"; path = "ABI36_0_0React-jsi.xcodeproj"; sourceTree = "<group>"; };
+		B5554B42D0432123DB4412004BAC44B9 /* ABI36_0_0FBReactNativeSpec.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI36_0_0FBReactNativeSpec.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C226987E53BA6ADCE4B60D87045BAD50 /* ABI36_0_0FBReactNativeSpec-generated.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = "ABI36_0_0FBReactNativeSpec-generated.mm"; path = "FBReactNativeSpec/ABI36_0_0FBReactNativeSpec-generated.mm"; sourceTree = "<group>"; };
+		C38712AFA3340DF3F41088D52EA57010 /* ABI36_0_0ReactCommon */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI36_0_0ReactCommon; path = ABI36_0_0ReactCommon.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		558A3018FB9706B1E62C9DC39B4834B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1DB793F965FA8C8326F93610742582BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A895AD3CC6E690CE6E2B7687AFBCCC4 /* libABI36_0_0FBReactNativeSpec.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5243E97D631F385A074465ECEF34BCD5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				755C6634C96970811DDE6A9E3D9FFA03 /* ABI36_0_0FBReactNativeSpec.xcconfig */,
+				9E4A0B83DBB0B67AF0CF0ABAA10CA5A6 /* ABI36_0_0FBReactNativeSpec-dummy.m */,
+				87B89CF734E417B84AFDE5C129C11C21 /* ABI36_0_0FBReactNativeSpec-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../../../Pods/Target Support Files/ABI36_0_0FBReactNativeSpec";
+			sourceTree = "<group>";
+		};
+		5B24556D54B1CEE428D6223349662473 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				6C14B6B771757FB930586187ECBD6060 /* ABI36_0_0RCTRequired */,
+				0E9B2BCCC0A4DF8333EF61C979BF22D3 /* ABI36_0_0RCTTypeSafety */,
+				2D88C77D492136C00B21F6C921098970 /* ABI36_0_0React-Core */,
+				B1A4F1DAB77F425D4F8970FA28081DB0 /* ABI36_0_0React-jsi */,
+				C38712AFA3340DF3F41088D52EA57010 /* ABI36_0_0ReactCommon */,
+				193FE1595DCFB44068EB9052319B9178 /* Folly */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		754EBD868B43E68DFD289377B4398FD8 /* ABI36_0_0FBReactNativeSpec */ = {
+			isa = PBXGroup;
+			children = (
+				72A5D659B067E99163706244D49FD0F6 /* ABI36_0_0FBReactNativeSpec.h */,
+				C226987E53BA6ADCE4B60D87045BAD50 /* ABI36_0_0FBReactNativeSpec-generated.mm */,
+				B08C65BF682AF51DB441C0A88BF281A2 /* Pod */,
+				5243E97D631F385A074465ECEF34BCD5 /* Support Files */,
+			);
+			name = ABI36_0_0FBReactNativeSpec;
+			path = "../versioned-react-native/ABI36_0_0/ReactNative/Libraries/FBReactNativeSpec";
+			sourceTree = "<group>";
+		};
+		B08C65BF682AF51DB441C0A88BF281A2 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				B5554B42D0432123DB4412004BAC44B9 /* ABI36_0_0FBReactNativeSpec.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		B2582FAD273A9645783133DFCB0D4502 = {
+			isa = PBXGroup;
+			children = (
+				754EBD868B43E68DFD289377B4398FD8 /* ABI36_0_0FBReactNativeSpec */,
+				5B24556D54B1CEE428D6223349662473 /* Dependencies */,
+				EB479CB7791A73AD3408142262161671 /* Frameworks */,
+				1DB793F965FA8C8326F93610742582BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB479CB7791A73AD3408142262161671 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7C3E8ABA4FBFAAB9FDB42C4ED7A75078 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85FCCBF96A16808FBAB55AB477634D59 /* ABI36_0_0FBReactNativeSpec.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0FAF3C8DF6CB9C181AE84115C796920C /* ABI36_0_0FBReactNativeSpec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7837B4AD15CCCCEB8E6B06FAC002D572 /* Build configuration list for PBXNativeTarget "ABI36_0_0FBReactNativeSpec" */;
+			buildPhases = (
+				7C3E8ABA4FBFAAB9FDB42C4ED7A75078 /* Headers */,
+				B4A6B9DB8D3106EB10D4096001BCEFA4 /* Sources */,
+				558A3018FB9706B1E62C9DC39B4834B6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				272E92B772FD883B031C5062749270EF /* PBXTargetDependency */,
+				4CF4E60540368AFFA242770C124397C2 /* PBXTargetDependency */,
+				2DBD0BC18EC52356CC7A8E1FAC71DB58 /* PBXTargetDependency */,
+				BCE619843EC9C8EE446EE1B56C29CB2E /* PBXTargetDependency */,
+				EA6436D9F3C1BB4160F36F06F449AA85 /* PBXTargetDependency */,
+				7327C44F474261B66DED888049363289 /* PBXTargetDependency */,
+			);
+			name = ABI36_0_0FBReactNativeSpec;
+			productName = ABI36_0_0FBReactNativeSpec;
+			productReference = 8A895AD3CC6E690CE6E2B7687AFBCCC4 /* libABI36_0_0FBReactNativeSpec.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		584E3DD80521C82334F18F867433B563 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 0DA561B8BDC3C1790224EFDE9BAAC309 /* Build configuration list for PBXProject "ABI36_0_0FBReactNativeSpec" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B2582FAD273A9645783133DFCB0D4502;
+			productRefGroup = 1DB793F965FA8C8326F93610742582BD /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 193FE1595DCFB44068EB9052319B9178 /* Folly */;
+				},
+				{
+					ProjectRef = 6C14B6B771757FB930586187ECBD6060 /* ABI36_0_0RCTRequired */;
+				},
+				{
+					ProjectRef = 0E9B2BCCC0A4DF8333EF61C979BF22D3 /* ABI36_0_0RCTTypeSafety */;
+				},
+				{
+					ProjectRef = 2D88C77D492136C00B21F6C921098970 /* ABI36_0_0React-Core */;
+				},
+				{
+					ProjectRef = B1A4F1DAB77F425D4F8970FA28081DB0 /* ABI36_0_0React-jsi */;
+				},
+				{
+					ProjectRef = C38712AFA3340DF3F41088D52EA57010 /* ABI36_0_0ReactCommon */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				0FAF3C8DF6CB9C181AE84115C796920C /* ABI36_0_0FBReactNativeSpec */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B4A6B9DB8D3106EB10D4096001BCEFA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E5CDB2EC105EF04B8F4FDF7C4E32274 /* ABI36_0_0FBReactNativeSpec-dummy.m in Sources */,
+				EA306F55AFF78382F4BADEC965843CDC /* ABI36_0_0FBReactNativeSpec-generated.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		272E92B772FD883B031C5062749270EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI36_0_0RCTRequired;
+			targetProxy = 8669F5041E68946A5282CD4AEE23FC8B /* PBXContainerItemProxy */;
+		};
+		2DBD0BC18EC52356CC7A8E1FAC71DB58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ABI36_0_0React-Core";
+			targetProxy = DA1973FBD0587C9F59881AD7CF8FB061 /* PBXContainerItemProxy */;
+		};
+		4CF4E60540368AFFA242770C124397C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI36_0_0RCTTypeSafety;
+			targetProxy = A6CB4492DA2FBFFEC8CDA2D0E0FC4F16 /* PBXContainerItemProxy */;
+		};
+		7327C44F474261B66DED888049363289 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Folly;
+			targetProxy = 41290E9A15012EC94E1E026D212F3FC5 /* PBXContainerItemProxy */;
+		};
+		BCE619843EC9C8EE446EE1B56C29CB2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ABI36_0_0React-jsi";
+			targetProxy = D26B6126C8D65A9625FDFD9C15765E58 /* PBXContainerItemProxy */;
+		};
+		EA6436D9F3C1BB4160F36F06F449AA85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI36_0_0ReactCommon;
+			targetProxy = 9414EDB0DDCD391225683293ADB711C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0B911C0A983EF81B5B83332CEEEC07BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		15C3AE7BC102977B23B856512E15FA68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 755C6634C96970811DDE6A9E3D9FFA03 /* ABI36_0_0FBReactNativeSpec.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0FBReactNativeSpec/ABI36_0_0FBReactNativeSpec-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0FBReactNativeSpec;
+				PRODUCT_NAME = ABI36_0_0FBReactNativeSpec;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD7EA906EB32FDE5236CDD0B025FCBA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		EA2A4E7B0E2A9FD07220AA1D5358C705 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 755C6634C96970811DDE6A9E3D9FFA03 /* ABI36_0_0FBReactNativeSpec.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0FBReactNativeSpec/ABI36_0_0FBReactNativeSpec-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0FBReactNativeSpec;
+				PRODUCT_NAME = ABI36_0_0FBReactNativeSpec;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0DA561B8BDC3C1790224EFDE9BAAC309 /* Build configuration list for PBXProject "ABI36_0_0FBReactNativeSpec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7EA906EB32FDE5236CDD0B025FCBA4 /* Debug */,
+				0B911C0A983EF81B5B83332CEEEC07BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7837B4AD15CCCCEB8E6B06FAC002D572 /* Build configuration list for PBXNativeTarget "ABI36_0_0FBReactNativeSpec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA2A4E7B0E2A9FD07220AA1D5358C705 /* Debug */,
+				15C3AE7BC102977B23B856512E15FA68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 584E3DD80521C82334F18F867433B563 /* Project object */;
+}

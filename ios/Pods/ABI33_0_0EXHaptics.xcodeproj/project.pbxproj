@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		31F02DC6C97C18CD127CFB14AED29266 /* ABI33_0_0EXHapticsModule.h in Headers */ = {isa = PBXBuildFile; fileRef = C4F926A6920156904474711AE594E4F6 /* ABI33_0_0EXHapticsModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B1C32102380B709313708F86719C27A4 /* ABI33_0_0EXHapticsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0364B6488E0539B474048357FAFE2B2D /* ABI33_0_0EXHapticsModule.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B23954C185ECC8BE1FEBAB8BF2EF7FFF /* ABI33_0_0EXHaptics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDE4B256692F26E6608E9CABE4450C6 /* ABI33_0_0EXHaptics-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD1EFED5DE7861E6AB44E7752DD6CB09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AAAE8AE2852EE3464FB99EF0CEFA318 /* ABI33_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C051C97A4147D306821BE0B317EE7A65;
+			remoteInfo = ABI33_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01CCEBAAD6111AE2ECB3A64EB3AEE83A /* ABI33_0_0EXHaptics.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI33_0_0EXHaptics.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0364B6488E0539B474048357FAFE2B2D /* ABI33_0_0EXHapticsModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXHapticsModule.m; path = ABI33_0_0EXHaptics/ABI33_0_0EXHapticsModule.m; sourceTree = "<group>"; };
+		1F79C36E5887FC659D44E3C533869660 /* ABI33_0_0EXHaptics.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI33_0_0EXHaptics.xcconfig; sourceTree = "<group>"; };
+		4AAAE8AE2852EE3464FB99EF0CEFA318 /* ABI33_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI33_0_0UMCore; path = ABI33_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		5DDE4B256692F26E6608E9CABE4450C6 /* ABI33_0_0EXHaptics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI33_0_0EXHaptics-dummy.m"; sourceTree = "<group>"; };
+		C4F926A6920156904474711AE594E4F6 /* ABI33_0_0EXHapticsModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXHapticsModule.h; path = ABI33_0_0EXHaptics/ABI33_0_0EXHapticsModule.h; sourceTree = "<group>"; };
+		CAD40806F2A1D3B28CFD2F5A899384A7 /* ABI33_0_0EXHaptics-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI33_0_0EXHaptics-prefix.pch"; sourceTree = "<group>"; };
+		E4BEA0E4EA87552B23EE18F2EE7637C9 /* libABI33_0_0EXHaptics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI33_0_0EXHaptics.a; path = libABI33_0_0EXHaptics.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25585DA7910BD634178CD26D59B71EEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E7B289A303CBA2F9911AD7153364777 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F79C36E5887FC659D44E3C533869660 /* ABI33_0_0EXHaptics.xcconfig */,
+				5DDE4B256692F26E6608E9CABE4450C6 /* ABI33_0_0EXHaptics-dummy.m */,
+				CAD40806F2A1D3B28CFD2F5A899384A7 /* ABI33_0_0EXHaptics-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI33_0_0EXHaptics";
+			sourceTree = "<group>";
+		};
+		3DCAEA002356EA271DF5088054773604 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4BEA0E4EA87552B23EE18F2EE7637C9 /* libABI33_0_0EXHaptics.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FA84D5297E16ABC64F8C057212BDCE9 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				01CCEBAAD6111AE2ECB3A64EB3AEE83A /* ABI33_0_0EXHaptics.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		41D60542F35C0FC22CE1E2DD9A07C935 /* ABI33_0_0EXHaptics */ = {
+			isa = PBXGroup;
+			children = (
+				C4F926A6920156904474711AE594E4F6 /* ABI33_0_0EXHapticsModule.h */,
+				0364B6488E0539B474048357FAFE2B2D /* ABI33_0_0EXHapticsModule.m */,
+				3FA84D5297E16ABC64F8C057212BDCE9 /* Pod */,
+				0E7B289A303CBA2F9911AD7153364777 /* Support Files */,
+			);
+			name = ABI33_0_0EXHaptics;
+			path = "../versioned-react-native/ABI33_0_0/EXHaptics";
+			sourceTree = "<group>";
+		};
+		E4A87B7D2F2FADA4ED551D3D5B17DCA5 = {
+			isa = PBXGroup;
+			children = (
+				41D60542F35C0FC22CE1E2DD9A07C935 /* ABI33_0_0EXHaptics */,
+				EA466E3EFDD6333F6EEA378352049B37 /* Dependencies */,
+				F36A57720282C5411003DB52F56565D2 /* Frameworks */,
+				3DCAEA002356EA271DF5088054773604 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA466E3EFDD6333F6EEA378352049B37 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				4AAAE8AE2852EE3464FB99EF0CEFA318 /* ABI33_0_0UMCore */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		F36A57720282C5411003DB52F56565D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EF98B910A071EE3F8D0364D59D2B9151 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31F02DC6C97C18CD127CFB14AED29266 /* ABI33_0_0EXHapticsModule.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AC1A0A81282B6C29F8D85563CC804F85 /* ABI33_0_0EXHaptics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7831C77BB483868ADE7DF6473AF94D7 /* Build configuration list for PBXNativeTarget "ABI33_0_0EXHaptics" */;
+			buildPhases = (
+				EF98B910A071EE3F8D0364D59D2B9151 /* Headers */,
+				8D55FCBD4A6A47D60C0DD32FA1A38BD5 /* Sources */,
+				25585DA7910BD634178CD26D59B71EEC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63AF99E429994B58C8E089BD82EB4F9C /* PBXTargetDependency */,
+			);
+			name = ABI33_0_0EXHaptics;
+			productName = ABI33_0_0EXHaptics;
+			productReference = E4BEA0E4EA87552B23EE18F2EE7637C9 /* libABI33_0_0EXHaptics.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E8413DA371967DBCC8B75B41350B672 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = E8F6B50209A6C737ED376801376FFF69 /* Build configuration list for PBXProject "ABI33_0_0EXHaptics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E4A87B7D2F2FADA4ED551D3D5B17DCA5;
+			productRefGroup = 3DCAEA002356EA271DF5088054773604 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 4AAAE8AE2852EE3464FB99EF0CEFA318 /* ABI33_0_0UMCore */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				AC1A0A81282B6C29F8D85563CC804F85 /* ABI33_0_0EXHaptics */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D55FCBD4A6A47D60C0DD32FA1A38BD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B23954C185ECC8BE1FEBAB8BF2EF7FFF /* ABI33_0_0EXHaptics-dummy.m in Sources */,
+				B1C32102380B709313708F86719C27A4 /* ABI33_0_0EXHapticsModule.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63AF99E429994B58C8E089BD82EB4F9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI33_0_0UMCore;
+			targetProxy = DD1EFED5DE7861E6AB44E7752DD6CB09 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1B4B23C169D3519A8D94847D8D05E32E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F79C36E5887FC659D44E3C533869660 /* ABI33_0_0EXHaptics.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXHaptics/ABI33_0_0EXHaptics-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXHaptics;
+				PRODUCT_NAME = ABI33_0_0EXHaptics;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B37E56F5000A1610CC1CAC1664F75BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		ED48D9298CB84B785C688C4542362626 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		F07BED6F5BF45A60681DE05BC81351C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F79C36E5887FC659D44E3C533869660 /* ABI33_0_0EXHaptics.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXHaptics/ABI33_0_0EXHaptics-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXHaptics;
+				PRODUCT_NAME = ABI33_0_0EXHaptics;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E7831C77BB483868ADE7DF6473AF94D7 /* Build configuration list for PBXNativeTarget "ABI33_0_0EXHaptics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4B23C169D3519A8D94847D8D05E32E /* Debug */,
+				F07BED6F5BF45A60681DE05BC81351C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8F6B50209A6C737ED376801376FFF69 /* Build configuration list for PBXProject "ABI33_0_0EXHaptics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B37E56F5000A1610CC1CAC1664F75BD /* Debug */,
+				ED48D9298CB84B785C688C4542362626 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E8413DA371967DBCC8B75B41350B672 /* Project object */;
+}

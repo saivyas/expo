@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27CC506C40E032C91AE9D000974806B9 /* ABI33_0_0EXMailComposer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D61DA56EA47A56CF46883D517B2CE5C /* ABI33_0_0EXMailComposer-dummy.m */; };
+		2947088934CAAB714B75A74161E3C307 /* ABI33_0_0EXMailComposer.h in Headers */ = {isa = PBXBuildFile; fileRef = 337AFF91F62EABCE6609C2147F5C1252 /* ABI33_0_0EXMailComposer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		29E0D1300548AA07D8E6D4D30EA705A2 /* ABI33_0_0EXMailComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB739918E6C7B98ADC7E2DCF8F3590 /* ABI33_0_0EXMailComposer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		10F351FE335A26EFA18C75728A2F8B50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBDCCA308BF6955DD73850589A3A530E /* ABI33_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C051C97A4147D306821BE0B317EE7A65;
+			remoteInfo = ABI33_0_0UMCore;
+		};
+		29B551895B5152A3B0F5A58EEC977A7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EA745F875FD72EAE545B2E656AEAD69 /* ABI33_0_0UMFileSystemInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C5129A732F3DD83BCD1579A2F59EB80A;
+			remoteInfo = ABI33_0_0UMFileSystemInterface;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1ACB739918E6C7B98ADC7E2DCF8F3590 /* ABI33_0_0EXMailComposer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXMailComposer.m; path = ABI33_0_0EXMailComposer/ABI33_0_0EXMailComposer.m; sourceTree = "<group>"; };
+		1D61DA56EA47A56CF46883D517B2CE5C /* ABI33_0_0EXMailComposer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI33_0_0EXMailComposer-dummy.m"; sourceTree = "<group>"; };
+		337AFF91F62EABCE6609C2147F5C1252 /* ABI33_0_0EXMailComposer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXMailComposer.h; path = ABI33_0_0EXMailComposer/ABI33_0_0EXMailComposer.h; sourceTree = "<group>"; };
+		7EA745F875FD72EAE545B2E656AEAD69 /* ABI33_0_0UMFileSystemInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI33_0_0UMFileSystemInterface; path = ABI33_0_0UMFileSystemInterface.xcodeproj; sourceTree = "<group>"; };
+		812A006FF1429BB28D8289E1DEC7A01B /* ABI33_0_0EXMailComposer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI33_0_0EXMailComposer-prefix.pch"; sourceTree = "<group>"; };
+		C198ED022B22BC86F62E8BC8D8450A3A /* libABI33_0_0EXMailComposer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI33_0_0EXMailComposer.a; path = libABI33_0_0EXMailComposer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBDCCA308BF6955DD73850589A3A530E /* ABI33_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI33_0_0UMCore; path = ABI33_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		E685BB3BB867256B20257DA755365536 /* ABI33_0_0EXMailComposer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI33_0_0EXMailComposer.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FC986594E29DD5101B8BAABD3AAF2F08 /* ABI33_0_0EXMailComposer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI33_0_0EXMailComposer.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04EB3B91D52470EC4A08940CDB79D4A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A469B442B511C116762F8EAD3AC1EC4 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				E685BB3BB867256B20257DA755365536 /* ABI33_0_0EXMailComposer.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		52B0154112F6C4104B4B088DEE1D90D7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC986594E29DD5101B8BAABD3AAF2F08 /* ABI33_0_0EXMailComposer.xcconfig */,
+				1D61DA56EA47A56CF46883D517B2CE5C /* ABI33_0_0EXMailComposer-dummy.m */,
+				812A006FF1429BB28D8289E1DEC7A01B /* ABI33_0_0EXMailComposer-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI33_0_0EXMailComposer";
+			sourceTree = "<group>";
+		};
+		6B597A1012A630C6285A3277D5E1E6BE /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				DBDCCA308BF6955DD73850589A3A530E /* ABI33_0_0UMCore */,
+				7EA745F875FD72EAE545B2E656AEAD69 /* ABI33_0_0UMFileSystemInterface */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		6B9D885CA4F8CB87645BAAE3ED2C3A7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		73482555B278A4A921C2D08518E1CC85 /* ABI33_0_0EXMailComposer */ = {
+			isa = PBXGroup;
+			children = (
+				337AFF91F62EABCE6609C2147F5C1252 /* ABI33_0_0EXMailComposer.h */,
+				1ACB739918E6C7B98ADC7E2DCF8F3590 /* ABI33_0_0EXMailComposer.m */,
+				2A469B442B511C116762F8EAD3AC1EC4 /* Pod */,
+				52B0154112F6C4104B4B088DEE1D90D7 /* Support Files */,
+			);
+			name = ABI33_0_0EXMailComposer;
+			path = "../versioned-react-native/ABI33_0_0/EXMailComposer";
+			sourceTree = "<group>";
+		};
+		D08C9C4D87B97DE9561B06CF90428D4E = {
+			isa = PBXGroup;
+			children = (
+				73482555B278A4A921C2D08518E1CC85 /* ABI33_0_0EXMailComposer */,
+				6B597A1012A630C6285A3277D5E1E6BE /* Dependencies */,
+				6B9D885CA4F8CB87645BAAE3ED2C3A7A /* Frameworks */,
+				D93A1B2E21A3671F83A98C7AE789CC7A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D93A1B2E21A3671F83A98C7AE789CC7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C198ED022B22BC86F62E8BC8D8450A3A /* libABI33_0_0EXMailComposer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FC98F204B714458561DBEB4732DE5D45 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2947088934CAAB714B75A74161E3C307 /* ABI33_0_0EXMailComposer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3165C93343FF2185FCDA29B4C5FB1B2E /* ABI33_0_0EXMailComposer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D815048B2E59CEACEDCED978EA2D891A /* Build configuration list for PBXNativeTarget "ABI33_0_0EXMailComposer" */;
+			buildPhases = (
+				FC98F204B714458561DBEB4732DE5D45 /* Headers */,
+				975FBCF5CB7198BA5D996613BA8BE96C /* Sources */,
+				04EB3B91D52470EC4A08940CDB79D4A4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0110CEBF7D70EBBBEB77E651DDB5CCC3 /* PBXTargetDependency */,
+				0E013201F5C379B1B6BCA3D2F1231389 /* PBXTargetDependency */,
+			);
+			name = ABI33_0_0EXMailComposer;
+			productName = ABI33_0_0EXMailComposer;
+			productReference = C198ED022B22BC86F62E8BC8D8450A3A /* libABI33_0_0EXMailComposer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDC2112779512985523FA1D165C110F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 6FCF069520060CEA1FC0F11D5AA13745 /* Build configuration list for PBXProject "ABI33_0_0EXMailComposer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D08C9C4D87B97DE9561B06CF90428D4E;
+			productRefGroup = D93A1B2E21A3671F83A98C7AE789CC7A /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = DBDCCA308BF6955DD73850589A3A530E /* ABI33_0_0UMCore */;
+				},
+				{
+					ProjectRef = 7EA745F875FD72EAE545B2E656AEAD69 /* ABI33_0_0UMFileSystemInterface */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				3165C93343FF2185FCDA29B4C5FB1B2E /* ABI33_0_0EXMailComposer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		975FBCF5CB7198BA5D996613BA8BE96C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27CC506C40E032C91AE9D000974806B9 /* ABI33_0_0EXMailComposer-dummy.m in Sources */,
+				29E0D1300548AA07D8E6D4D30EA705A2 /* ABI33_0_0EXMailComposer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0110CEBF7D70EBBBEB77E651DDB5CCC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI33_0_0UMCore;
+			targetProxy = 10F351FE335A26EFA18C75728A2F8B50 /* PBXContainerItemProxy */;
+		};
+		0E013201F5C379B1B6BCA3D2F1231389 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI33_0_0UMFileSystemInterface;
+			targetProxy = 29B551895B5152A3B0F5A58EEC977A7D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C7716D5994C0A28A131D75CB22ECA96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC986594E29DD5101B8BAABD3AAF2F08 /* ABI33_0_0EXMailComposer.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXMailComposer/ABI33_0_0EXMailComposer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXMailComposer;
+				PRODUCT_NAME = ABI33_0_0EXMailComposer;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E4E18D038496087417BA895203EAB6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC986594E29DD5101B8BAABD3AAF2F08 /* ABI33_0_0EXMailComposer.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXMailComposer/ABI33_0_0EXMailComposer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXMailComposer;
+				PRODUCT_NAME = ABI33_0_0EXMailComposer;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E70AC10D13A264524A23D82AFDF64275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F509BE15AB9FBC82A888E4A36AED6AFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6FCF069520060CEA1FC0F11D5AA13745 /* Build configuration list for PBXProject "ABI33_0_0EXMailComposer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E70AC10D13A264524A23D82AFDF64275 /* Debug */,
+				F509BE15AB9FBC82A888E4A36AED6AFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D815048B2E59CEACEDCED978EA2D891A /* Build configuration list for PBXNativeTarget "ABI33_0_0EXMailComposer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C7716D5994C0A28A131D75CB22ECA96 /* Debug */,
+				0E4E18D038496087417BA895203EAB6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDC2112779512985523FA1D165C110F6 /* Project object */;
+}

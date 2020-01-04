@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0294857DDFF37E17643F5239352096A5 /* ABI36_0_0BridgeJSCallInvoker.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C2174F745DCFFDF8B6C6E69B1FD181D /* ABI36_0_0BridgeJSCallInvoker.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1846241F5BDE4B052F65FC9BD7699E2C /* ABI36_0_0TurboModuleBinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FE3BC7EEAAE564677228A9AC239C2E07 /* ABI36_0_0TurboModuleBinding.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32 -Wno-documentation -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1C5466B51A3E49E48054B8461F32E4AB /* ABI36_0_0TurboCxxModule.h in Headers */ = {isa = PBXBuildFile; fileRef = DD7DAEC6E06236B4BBA527DEA82BBCE7 /* ABI36_0_0TurboCxxModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2703E1519BC31EB79FD0D052648E20C9 /* ABI36_0_0RCTTurboModuleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 67782907CDFA087AED8E4D1FE43D909A /* ABI36_0_0RCTTurboModuleManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		360A6112EAC5CAEB2C808F080BE53093 /* ABI36_0_0BridgeJSCallInvoker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A64E3F1CB0A79CACFDB713AFA2A7DE01 /* ABI36_0_0BridgeJSCallInvoker.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32 -Wno-documentation -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		4D3DB09950A5BF354D76A634E114E0AD /* ABI36_0_0ReactCommon-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF49333DC406CB54942A7ABEE44637DA /* ABI36_0_0ReactCommon-dummy.m */; };
+		500714B63E33846623BF5385C5501F26 /* ABI36_0_0LongLivedObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 585AAB5EE402DE1EB23CB82046EE0714 /* ABI36_0_0LongLivedObject.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32 -Wno-documentation -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6562AB7124C9CF000F90CE7291154B3B /* ABI36_0_0LongLivedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = DC763CC320F5F9BB277734F4759952D9 /* ABI36_0_0LongLivedObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		658FE21AB3B4976B6DC0698D2997E4DF /* ABI36_0_0JSCallInvoker.h in Headers */ = {isa = PBXBuildFile; fileRef = 96FC90DB305ECDC56AE3B5C541EEA500 /* ABI36_0_0JSCallInvoker.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		716489391D23632EE3F35203AB39690F /* ABI36_0_0TurboModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 3979124ED5F43213A1A27B6C00A7862A /* ABI36_0_0TurboModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A20BE65D3AC0A6F38DCA373619F16B61 /* ABI36_0_0TurboModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FA44654CA7CF5AD7E11701A255008AC /* ABI36_0_0TurboModule.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32 -Wno-documentation -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A2DDEEB3CC48159E114B94195E419071 /* ABI36_0_0TurboModuleBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D40183E9FAE9AF84A39CE11B6D5A1A /* ABI36_0_0TurboModuleBinding.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B11AE14CD61119EFAF1098B3E58A97B1 /* ABI36_0_0RCTTurboModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = 446D394F58B8B0A1958451740EA35579 /* ABI36_0_0RCTTurboModule.mm */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32 -Wno-documentation -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		DB495E725A56D1DD99430A284776FF74 /* ABI36_0_0TurboModuleUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 89CCD5CD80B64BA6C2923B9962D3E361 /* ABI36_0_0TurboModuleUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E3CFE736E71F37E1BA00169E2CC027F2 /* ABI36_0_0RCTTurboModuleManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 56DBF0A1EF972F83C429831327AC93C0 /* ABI36_0_0RCTTurboModuleManager.mm */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32 -Wno-documentation -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E433E20EE63DD722CC0515D143ACC1E6 /* ABI36_0_0RCTTurboModule.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5DC9476889A489D748A8E935BA4DB4 /* ABI36_0_0RCTTurboModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EBAA502E20E22EAAA28C9BE9D07BB007 /* ABI36_0_0TurboCxxModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67C9A5F225BD6E9BF187F8B9BDE9F152 /* ABI36_0_0TurboCxxModule.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32 -Wno-documentation -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EF1998701E13A34F83F51E4E7201894A /* ABI36_0_0TurboModuleUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80D8A98B1EA7B92D188AB24F6821A367 /* ABI36_0_0TurboModuleUtils.cpp */; settings = {COMPILER_FLAGS = "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32 -Wno-documentation -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3104FFC627491545E837A410C3424CD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1999BCE5913D20635F8C7A0F96DA9655 /* ABI36_0_0React-Core.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DB60AB33C163C50B5E903D79785312A;
+			remoteInfo = "ABI36_0_0React-Core";
+		};
+		764E9D164F2AA3694D530F70040F0A36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F9935E6408008D307A9C2CEB152FBAB /* Folly.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 14BB2B7275726942E762F076FA966088;
+			remoteInfo = Folly;
+		};
+		7B19BE40DA31FEBAEFCCCF59E5C1EBFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 959EF006B1EBBB95B3A527B91DAAF13C /* DoubleConversion.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 725D0E8C1060F8939288E8C91236BA4F;
+			remoteInfo = DoubleConversion;
+		};
+		7FBDFA0A58877D42E191E4383C169688 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8F07C2AE628624B0C6F3D2A204A3FEE /* ABI36_0_0React-cxxreact.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A70B3EFE0704E9DBCCC926A35291E676;
+			remoteInfo = "ABI36_0_0React-cxxreact";
+		};
+		DA95EA34AE37CAA3E8274F150EC7C37C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CCB3D70EAA03C54639F1D9C3DCCD3EC /* glog.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 86F597DC3D8F3D7A34EC5A5C413F7255;
+			remoteInfo = glog;
+		};
+		EBB7E996AC2C03C04A56314CD11CE635 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 059E860762A63C0AFBF780E530912BCC /* ABI36_0_0React-jsi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E4130D79EB20993F8FA9316507E59BD;
+			remoteInfo = "ABI36_0_0React-jsi";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		059E860762A63C0AFBF780E530912BCC /* ABI36_0_0React-jsi */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ABI36_0_0React-jsi"; path = "ABI36_0_0React-jsi.xcodeproj"; sourceTree = "<group>"; };
+		0843782419044E400C648EB906C2E99F /* ABI36_0_0ReactCommon.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI36_0_0ReactCommon.xcconfig; sourceTree = "<group>"; };
+		0FA44654CA7CF5AD7E11701A255008AC /* ABI36_0_0TurboModule.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0TurboModule.cpp; path = turbomodule/core/ABI36_0_0TurboModule.cpp; sourceTree = "<group>"; };
+		1999BCE5913D20635F8C7A0F96DA9655 /* ABI36_0_0React-Core */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ABI36_0_0React-Core"; path = "ABI36_0_0React-Core.xcodeproj"; sourceTree = "<group>"; };
+		3173D14C3647BEA6AA12A864DA7E113E /* ABI36_0_0ReactCommon-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI36_0_0ReactCommon-prefix.pch"; sourceTree = "<group>"; };
+		386D2733D40EA8D3DD4877F9554E01A7 /* libABI36_0_0ReactCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI36_0_0ReactCommon.a; path = libABI36_0_0ReactCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3979124ED5F43213A1A27B6C00A7862A /* ABI36_0_0TurboModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0TurboModule.h; path = turbomodule/core/ABI36_0_0TurboModule.h; sourceTree = "<group>"; };
+		446D394F58B8B0A1958451740EA35579 /* ABI36_0_0RCTTurboModule.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = ABI36_0_0RCTTurboModule.mm; sourceTree = "<group>"; };
+		4CCB3D70EAA03C54639F1D9C3DCCD3EC /* glog */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = glog; path = glog.xcodeproj; sourceTree = "<group>"; };
+		56DBF0A1EF972F83C429831327AC93C0 /* ABI36_0_0RCTTurboModuleManager.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = ABI36_0_0RCTTurboModuleManager.mm; sourceTree = "<group>"; };
+		585AAB5EE402DE1EB23CB82046EE0714 /* ABI36_0_0LongLivedObject.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0LongLivedObject.cpp; path = turbomodule/core/ABI36_0_0LongLivedObject.cpp; sourceTree = "<group>"; };
+		67782907CDFA087AED8E4D1FE43D909A /* ABI36_0_0RCTTurboModuleManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI36_0_0RCTTurboModuleManager.h; sourceTree = "<group>"; };
+		67C9A5F225BD6E9BF187F8B9BDE9F152 /* ABI36_0_0TurboCxxModule.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0TurboCxxModule.cpp; path = turbomodule/core/ABI36_0_0TurboCxxModule.cpp; sourceTree = "<group>"; };
+		7F9935E6408008D307A9C2CEB152FBAB /* Folly */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Folly; path = Folly.xcodeproj; sourceTree = "<group>"; };
+		80D8A98B1EA7B92D188AB24F6821A367 /* ABI36_0_0TurboModuleUtils.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0TurboModuleUtils.cpp; path = turbomodule/core/ABI36_0_0TurboModuleUtils.cpp; sourceTree = "<group>"; };
+		89CCD5CD80B64BA6C2923B9962D3E361 /* ABI36_0_0TurboModuleUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0TurboModuleUtils.h; path = turbomodule/core/ABI36_0_0TurboModuleUtils.h; sourceTree = "<group>"; };
+		8C2174F745DCFFDF8B6C6E69B1FD181D /* ABI36_0_0BridgeJSCallInvoker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0BridgeJSCallInvoker.h; path = jscallinvoker/ReactCommon/ABI36_0_0BridgeJSCallInvoker.h; sourceTree = "<group>"; };
+		959EF006B1EBBB95B3A527B91DAAF13C /* DoubleConversion */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DoubleConversion; path = DoubleConversion.xcodeproj; sourceTree = "<group>"; };
+		96FC90DB305ECDC56AE3B5C541EEA500 /* ABI36_0_0JSCallInvoker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0JSCallInvoker.h; path = jscallinvoker/ReactCommon/ABI36_0_0JSCallInvoker.h; sourceTree = "<group>"; };
+		A64E3F1CB0A79CACFDB713AFA2A7DE01 /* ABI36_0_0BridgeJSCallInvoker.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0BridgeJSCallInvoker.cpp; path = jscallinvoker/ReactCommon/ABI36_0_0BridgeJSCallInvoker.cpp; sourceTree = "<group>"; };
+		CF5DC9476889A489D748A8E935BA4DB4 /* ABI36_0_0RCTTurboModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI36_0_0RCTTurboModule.h; sourceTree = "<group>"; };
+		D1D40183E9FAE9AF84A39CE11B6D5A1A /* ABI36_0_0TurboModuleBinding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0TurboModuleBinding.h; path = turbomodule/core/ABI36_0_0TurboModuleBinding.h; sourceTree = "<group>"; };
+		D8F07C2AE628624B0C6F3D2A204A3FEE /* ABI36_0_0React-cxxreact */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ABI36_0_0React-cxxreact"; path = "ABI36_0_0React-cxxreact.xcodeproj"; sourceTree = "<group>"; };
+		DC763CC320F5F9BB277734F4759952D9 /* ABI36_0_0LongLivedObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0LongLivedObject.h; path = turbomodule/core/ABI36_0_0LongLivedObject.h; sourceTree = "<group>"; };
+		DD7DAEC6E06236B4BBA527DEA82BBCE7 /* ABI36_0_0TurboCxxModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0TurboCxxModule.h; path = turbomodule/core/ABI36_0_0TurboCxxModule.h; sourceTree = "<group>"; };
+		EF49333DC406CB54942A7ABEE44637DA /* ABI36_0_0ReactCommon-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI36_0_0ReactCommon-dummy.m"; sourceTree = "<group>"; };
+		FE3BC7EEAAE564677228A9AC239C2E07 /* ABI36_0_0TurboModuleBinding.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0TurboModuleBinding.cpp; path = turbomodule/core/ABI36_0_0TurboModuleBinding.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8874EE92E3A934C008A2C948C15C5F21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		038AA8AD40CB49FCB128594B2A341000 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				1999BCE5913D20635F8C7A0F96DA9655 /* ABI36_0_0React-Core */,
+				D8F07C2AE628624B0C6F3D2A204A3FEE /* ABI36_0_0React-cxxreact */,
+				059E860762A63C0AFBF780E530912BCC /* ABI36_0_0React-jsi */,
+				959EF006B1EBBB95B3A527B91DAAF13C /* DoubleConversion */,
+				7F9935E6408008D307A9C2CEB152FBAB /* Folly */,
+				4CCB3D70EAA03C54639F1D9C3DCCD3EC /* glog */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		0B761E7C3C671D1F04D86D6F2C44DA42 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0843782419044E400C648EB906C2E99F /* ABI36_0_0ReactCommon.xcconfig */,
+				EF49333DC406CB54942A7ABEE44637DA /* ABI36_0_0ReactCommon-dummy.m */,
+				3173D14C3647BEA6AA12A864DA7E113E /* ABI36_0_0ReactCommon-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../../Pods/Target Support Files/ABI36_0_0ReactCommon";
+			sourceTree = "<group>";
+		};
+		33F8744D9E383980EFAA6BB9F5D54185 /* jscallinvoker */ = {
+			isa = PBXGroup;
+			children = (
+				A64E3F1CB0A79CACFDB713AFA2A7DE01 /* ABI36_0_0BridgeJSCallInvoker.cpp */,
+				8C2174F745DCFFDF8B6C6E69B1FD181D /* ABI36_0_0BridgeJSCallInvoker.h */,
+				96FC90DB305ECDC56AE3B5C541EEA500 /* ABI36_0_0JSCallInvoker.h */,
+			);
+			name = jscallinvoker;
+			sourceTree = "<group>";
+		};
+		3CAF9661A4297626A8ED3DCE75A75BDD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				386D2733D40EA8D3DD4877F9554E01A7 /* libABI36_0_0ReactCommon.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		426D086A4380EA713CB5A4E205BA6CB9 /* ABI36_0_0ReactCommon */ = {
+			isa = PBXGroup;
+			children = (
+				33F8744D9E383980EFAA6BB9F5D54185 /* jscallinvoker */,
+				0B761E7C3C671D1F04D86D6F2C44DA42 /* Support Files */,
+				F18ADC53FB7BBA52CD14DA4CFE63C764 /* turbomodule */,
+			);
+			name = ABI36_0_0ReactCommon;
+			path = "../versioned-react-native/ABI36_0_0/ReactNative/ReactCommon";
+			sourceTree = "<group>";
+		};
+		49B3087282F66E1226F62CCDD5A4C75F /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				752D762AB3BD43E75498DE5889899A63 /* ios */,
+			);
+			name = platform;
+			path = turbomodule/core/platform;
+			sourceTree = "<group>";
+		};
+		4B2528D8B683AA4EE5BF95AEFE121E7D = {
+			isa = PBXGroup;
+			children = (
+				426D086A4380EA713CB5A4E205BA6CB9 /* ABI36_0_0ReactCommon */,
+				038AA8AD40CB49FCB128594B2A341000 /* Dependencies */,
+				4D574E3B7BB5391D63BD3B0BAB3407D5 /* Frameworks */,
+				3CAF9661A4297626A8ED3DCE75A75BDD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D574E3B7BB5391D63BD3B0BAB3407D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		752D762AB3BD43E75498DE5889899A63 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				CF5DC9476889A489D748A8E935BA4DB4 /* ABI36_0_0RCTTurboModule.h */,
+				446D394F58B8B0A1958451740EA35579 /* ABI36_0_0RCTTurboModule.mm */,
+				67782907CDFA087AED8E4D1FE43D909A /* ABI36_0_0RCTTurboModuleManager.h */,
+				56DBF0A1EF972F83C429831327AC93C0 /* ABI36_0_0RCTTurboModuleManager.mm */,
+			);
+			name = ios;
+			path = ios;
+			sourceTree = "<group>";
+		};
+		8040A529237EA1DDF30DA5A6EC063E78 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				585AAB5EE402DE1EB23CB82046EE0714 /* ABI36_0_0LongLivedObject.cpp */,
+				DC763CC320F5F9BB277734F4759952D9 /* ABI36_0_0LongLivedObject.h */,
+				67C9A5F225BD6E9BF187F8B9BDE9F152 /* ABI36_0_0TurboCxxModule.cpp */,
+				DD7DAEC6E06236B4BBA527DEA82BBCE7 /* ABI36_0_0TurboCxxModule.h */,
+				0FA44654CA7CF5AD7E11701A255008AC /* ABI36_0_0TurboModule.cpp */,
+				3979124ED5F43213A1A27B6C00A7862A /* ABI36_0_0TurboModule.h */,
+				FE3BC7EEAAE564677228A9AC239C2E07 /* ABI36_0_0TurboModuleBinding.cpp */,
+				D1D40183E9FAE9AF84A39CE11B6D5A1A /* ABI36_0_0TurboModuleBinding.h */,
+				80D8A98B1EA7B92D188AB24F6821A367 /* ABI36_0_0TurboModuleUtils.cpp */,
+				89CCD5CD80B64BA6C2923B9962D3E361 /* ABI36_0_0TurboModuleUtils.h */,
+				49B3087282F66E1226F62CCDD5A4C75F /* platform */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		F18ADC53FB7BBA52CD14DA4CFE63C764 /* turbomodule */ = {
+			isa = PBXGroup;
+			children = (
+				8040A529237EA1DDF30DA5A6EC063E78 /* core */,
+			);
+			name = turbomodule;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8E68E4FE94C85190C348536055161877 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0294857DDFF37E17643F5239352096A5 /* ABI36_0_0BridgeJSCallInvoker.h in Headers */,
+				658FE21AB3B4976B6DC0698D2997E4DF /* ABI36_0_0JSCallInvoker.h in Headers */,
+				6562AB7124C9CF000F90CE7291154B3B /* ABI36_0_0LongLivedObject.h in Headers */,
+				E433E20EE63DD722CC0515D143ACC1E6 /* ABI36_0_0RCTTurboModule.h in Headers */,
+				2703E1519BC31EB79FD0D052648E20C9 /* ABI36_0_0RCTTurboModuleManager.h in Headers */,
+				1C5466B51A3E49E48054B8461F32E4AB /* ABI36_0_0TurboCxxModule.h in Headers */,
+				716489391D23632EE3F35203AB39690F /* ABI36_0_0TurboModule.h in Headers */,
+				A2DDEEB3CC48159E114B94195E419071 /* ABI36_0_0TurboModuleBinding.h in Headers */,
+				DB495E725A56D1DD99430A284776FF74 /* ABI36_0_0TurboModuleUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F122331579BABCD113DBA5B7173EE5E6 /* ABI36_0_0ReactCommon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EA782512731EF56C6772868E276B7CF /* Build configuration list for PBXNativeTarget "ABI36_0_0ReactCommon" */;
+			buildPhases = (
+				8E68E4FE94C85190C348536055161877 /* Headers */,
+				9E1D8119415D766E97B1202BEB5B8EB8 /* Sources */,
+				8874EE92E3A934C008A2C948C15C5F21 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2AE45DC468E062911BB9AC86696CA04 /* PBXTargetDependency */,
+				0DB899872AB6AEAA5E7CEB54AE62C132 /* PBXTargetDependency */,
+				E3581FB4F164F1DF7A17F693B0C53244 /* PBXTargetDependency */,
+				7C44414DFC5C8F802F865AE32016B989 /* PBXTargetDependency */,
+				FCAE9904C592A0179C9D19AF87D6091F /* PBXTargetDependency */,
+				202671BC940626E08C4EBC35C1791062 /* PBXTargetDependency */,
+			);
+			name = ABI36_0_0ReactCommon;
+			productName = ABI36_0_0ReactCommon;
+			productReference = 386D2733D40EA8D3DD4877F9554E01A7 /* libABI36_0_0ReactCommon.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD7B9C7AEAE41B372C13B32DD6069325 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 25A7F37B7356D81D0A2AEB58E5A54DA0 /* Build configuration list for PBXProject "ABI36_0_0ReactCommon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4B2528D8B683AA4EE5BF95AEFE121E7D;
+			productRefGroup = 3CAF9661A4297626A8ED3DCE75A75BDD /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = D8F07C2AE628624B0C6F3D2A204A3FEE /* ABI36_0_0React-cxxreact */;
+				},
+				{
+					ProjectRef = 959EF006B1EBBB95B3A527B91DAAF13C /* DoubleConversion */;
+				},
+				{
+					ProjectRef = 7F9935E6408008D307A9C2CEB152FBAB /* Folly */;
+				},
+				{
+					ProjectRef = 4CCB3D70EAA03C54639F1D9C3DCCD3EC /* glog */;
+				},
+				{
+					ProjectRef = 1999BCE5913D20635F8C7A0F96DA9655 /* ABI36_0_0React-Core */;
+				},
+				{
+					ProjectRef = 059E860762A63C0AFBF780E530912BCC /* ABI36_0_0React-jsi */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				F122331579BABCD113DBA5B7173EE5E6 /* ABI36_0_0ReactCommon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9E1D8119415D766E97B1202BEB5B8EB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				360A6112EAC5CAEB2C808F080BE53093 /* ABI36_0_0BridgeJSCallInvoker.cpp in Sources */,
+				500714B63E33846623BF5385C5501F26 /* ABI36_0_0LongLivedObject.cpp in Sources */,
+				B11AE14CD61119EFAF1098B3E58A97B1 /* ABI36_0_0RCTTurboModule.mm in Sources */,
+				E3CFE736E71F37E1BA00169E2CC027F2 /* ABI36_0_0RCTTurboModuleManager.mm in Sources */,
+				4D3DB09950A5BF354D76A634E114E0AD /* ABI36_0_0ReactCommon-dummy.m in Sources */,
+				EBAA502E20E22EAAA28C9BE9D07BB007 /* ABI36_0_0TurboCxxModule.cpp in Sources */,
+				A20BE65D3AC0A6F38DCA373619F16B61 /* ABI36_0_0TurboModule.cpp in Sources */,
+				1846241F5BDE4B052F65FC9BD7699E2C /* ABI36_0_0TurboModuleBinding.cpp in Sources */,
+				EF1998701E13A34F83F51E4E7201894A /* ABI36_0_0TurboModuleUtils.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0DB899872AB6AEAA5E7CEB54AE62C132 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ABI36_0_0React-cxxreact";
+			targetProxy = 7FBDFA0A58877D42E191E4383C169688 /* PBXContainerItemProxy */;
+		};
+		202671BC940626E08C4EBC35C1791062 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = glog;
+			targetProxy = DA95EA34AE37CAA3E8274F150EC7C37C /* PBXContainerItemProxy */;
+		};
+		7C44414DFC5C8F802F865AE32016B989 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DoubleConversion;
+			targetProxy = 7B19BE40DA31FEBAEFCCCF59E5C1EBFB /* PBXContainerItemProxy */;
+		};
+		C2AE45DC468E062911BB9AC86696CA04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ABI36_0_0React-Core";
+			targetProxy = 3104FFC627491545E837A410C3424CD2 /* PBXContainerItemProxy */;
+		};
+		E3581FB4F164F1DF7A17F693B0C53244 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ABI36_0_0React-jsi";
+			targetProxy = EBB7E996AC2C03C04A56314CD11CE635 /* PBXContainerItemProxy */;
+		};
+		FCAE9904C592A0179C9D19AF87D6091F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Folly;
+			targetProxy = 764E9D164F2AA3694D530F70040F0A36 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0806C9C7CAF1654F813E141A0D5B29F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9689246F5B03974A805DED16E867BE6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0843782419044E400C648EB906C2E99F /* ABI36_0_0ReactCommon.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0ReactCommon/ABI36_0_0ReactCommon-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"ABI36_0_0RCT_DEV=1",
+					"ABI36_0_0RCT_ENABLE_INSPECTOR=0",
+					"ABI36_0_0ENABLE_PACKAGER_CONNECTION=0",
+					"ABI36_0_0HAVE_GOOGLE_MAPS=1",
+					"ABI36_0_0HAVE_GOOGLE_MAPS_UTILS=1",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DkNeverRequested=ABI36_0_0ReactkNeverRequested",
+					"-DkNeverProgressed=ABI36_0_0ReactkNeverProgressed",
+					"-DkSMCalloutViewRepositionDelayForUIScrollView=ABI36_0_0ReactkSMCalloutViewRepositionDelayForUIScrollView",
+					"-DregionAsJSON=ABI36_0_0ReactregionAsJSON",
+					"-DunionRect=ABI36_0_0ReactunionRect",
+					"-DJSNoBytecodeFileFormatVersion=ABI36_0_0ReactJSNoBytecodeFileFormatVersion",
+					"-DJSSamplingProfilerEnabled=ABI36_0_0ReactJSSamplingProfilerEnabled",
+					"-DRECONNECT_DELAY_MS=ABI36_0_0ReactRECONNECT_DELAY_MS",
+					"-DMAX_DELTA_TIME=ABI36_0_0ReactMAX_DELTA_TIME",
+					"-DgCurrentGenerationCount=ABI36_0_0ReactgCurrentGenerationCount",
+					"-DgPrintSkips=ABI36_0_0ReactgPrintSkips",
+					"-DgPrintChanges=ABI36_0_0ReactgPrintChanges",
+					"-DlayoutNodeInternal=ABI36_0_0ReactlayoutNodeInternal",
+					"-DgDepth=ABI36_0_0ReactgDepth",
+					"-DgPrintTree=ABI36_0_0ReactgPrintTree",
+					"-DisUndefined=ABI36_0_0ReactisUndefined",
+					"-DgNodeInstanceCount=ABI36_0_0ReactgNodeInstanceCount",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0ReactCommon;
+				PRODUCT_NAME = ABI36_0_0ReactCommon;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9DDCAD9E0191D38BDFEDB677B82ECAC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		ADCDA9EEFE7019573D339E074ACC8737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0843782419044E400C648EB906C2E99F /* ABI36_0_0ReactCommon.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0ReactCommon/ABI36_0_0ReactCommon-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"ABI36_0_0RCT_DEV=1",
+					"ABI36_0_0RCT_ENABLE_INSPECTOR=0",
+					"ABI36_0_0ENABLE_PACKAGER_CONNECTION=0",
+					"ABI36_0_0HAVE_GOOGLE_MAPS=1",
+					"ABI36_0_0HAVE_GOOGLE_MAPS_UTILS=1",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_CFLAGS = (
+					"-DkNeverRequested=ABI36_0_0ReactkNeverRequested",
+					"-DkNeverProgressed=ABI36_0_0ReactkNeverProgressed",
+					"-DkSMCalloutViewRepositionDelayForUIScrollView=ABI36_0_0ReactkSMCalloutViewRepositionDelayForUIScrollView",
+					"-DregionAsJSON=ABI36_0_0ReactregionAsJSON",
+					"-DunionRect=ABI36_0_0ReactunionRect",
+					"-DJSNoBytecodeFileFormatVersion=ABI36_0_0ReactJSNoBytecodeFileFormatVersion",
+					"-DJSSamplingProfilerEnabled=ABI36_0_0ReactJSSamplingProfilerEnabled",
+					"-DRECONNECT_DELAY_MS=ABI36_0_0ReactRECONNECT_DELAY_MS",
+					"-DMAX_DELTA_TIME=ABI36_0_0ReactMAX_DELTA_TIME",
+					"-DgCurrentGenerationCount=ABI36_0_0ReactgCurrentGenerationCount",
+					"-DgPrintSkips=ABI36_0_0ReactgPrintSkips",
+					"-DgPrintChanges=ABI36_0_0ReactgPrintChanges",
+					"-DlayoutNodeInternal=ABI36_0_0ReactlayoutNodeInternal",
+					"-DgDepth=ABI36_0_0ReactgDepth",
+					"-DgPrintTree=ABI36_0_0ReactgPrintTree",
+					"-DisUndefined=ABI36_0_0ReactisUndefined",
+					"-DgNodeInstanceCount=ABI36_0_0ReactgNodeInstanceCount",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0ReactCommon;
+				PRODUCT_NAME = ABI36_0_0ReactCommon;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25A7F37B7356D81D0A2AEB58E5A54DA0 /* Build configuration list for PBXProject "ABI36_0_0ReactCommon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0806C9C7CAF1654F813E141A0D5B29F0 /* Debug */,
+				9DDCAD9E0191D38BDFEDB677B82ECAC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EA782512731EF56C6772868E276B7CF /* Build configuration list for PBXNativeTarget "ABI36_0_0ReactCommon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADCDA9EEFE7019573D339E074ACC8737 /* Debug */,
+				9689246F5B03974A805DED16E867BE6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD7B9C7AEAE41B372C13B32DD6069325 /* Project object */;
+}

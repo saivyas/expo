@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		54E8D2E4BC5B91A76271A696CD358F75 /* ABI34_0_0UMSensorsInterface */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 872ACE06D0142A20C46430E153278E58 /* Build configuration list for PBXAggregateTarget "ABI34_0_0UMSensorsInterface" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = ABI34_0_0UMSensorsInterface;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXFileReference section */
+		135DDB8C68B0BFFAA09EF4630ADF1F9A /* ABI34_0_0UMSensorsInterface.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI34_0_0UMSensorsInterface.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1888B0DD1DA5F718C016F508458EBD23 /* ABI34_0_0UMMagnetometerUncalibratedInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0UMMagnetometerUncalibratedInterface.h; path = ABI34_0_0UMSensorsInterface/ABI34_0_0UMMagnetometerUncalibratedInterface.h; sourceTree = "<group>"; };
+		2CF01DD3780FAF04914AC14789AE5495 /* ABI34_0_0UMAccelerometerInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0UMAccelerometerInterface.h; path = ABI34_0_0UMSensorsInterface/ABI34_0_0UMAccelerometerInterface.h; sourceTree = "<group>"; };
+		557439952B5802865C42EE846FBE6D88 /* ABI34_0_0UMSensorsInterface.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI34_0_0UMSensorsInterface.xcconfig; sourceTree = "<group>"; };
+		C80EEB769B41DF3770C094D26AD987A3 /* ABI34_0_0UMGyroscopeInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0UMGyroscopeInterface.h; path = ABI34_0_0UMSensorsInterface/ABI34_0_0UMGyroscopeInterface.h; sourceTree = "<group>"; };
+		CD641E083CA4498139EE00B8257C164F /* ABI34_0_0UMDeviceMotionInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0UMDeviceMotionInterface.h; path = ABI34_0_0UMSensorsInterface/ABI34_0_0UMDeviceMotionInterface.h; sourceTree = "<group>"; };
+		E958431DDBF88C35B8180A3C632AFD2F /* ABI34_0_0UMBarometerInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0UMBarometerInterface.h; path = ABI34_0_0UMSensorsInterface/ABI34_0_0UMBarometerInterface.h; sourceTree = "<group>"; };
+		F3275DA8D878103C53B8ECC968DE93A4 /* ABI34_0_0UMMagnetometerInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0UMMagnetometerInterface.h; path = ABI34_0_0UMSensorsInterface/ABI34_0_0UMMagnetometerInterface.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		3423DA1C88F3636E7B5A78002E565582 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		669FFE198247E8BEFFD1C6C08891CE05 = {
+			isa = PBXGroup;
+			children = (
+				7F22C5253BF2EDF7AD523E9B77D9A3AE /* ABI34_0_0UMSensorsInterface */,
+				7B438CCC099CBA95CFF648DE15249E26 /* Frameworks */,
+				3423DA1C88F3636E7B5A78002E565582 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B438CCC099CBA95CFF648DE15249E26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F22C5253BF2EDF7AD523E9B77D9A3AE /* ABI34_0_0UMSensorsInterface */ = {
+			isa = PBXGroup;
+			children = (
+				2CF01DD3780FAF04914AC14789AE5495 /* ABI34_0_0UMAccelerometerInterface.h */,
+				E958431DDBF88C35B8180A3C632AFD2F /* ABI34_0_0UMBarometerInterface.h */,
+				CD641E083CA4498139EE00B8257C164F /* ABI34_0_0UMDeviceMotionInterface.h */,
+				C80EEB769B41DF3770C094D26AD987A3 /* ABI34_0_0UMGyroscopeInterface.h */,
+				F3275DA8D878103C53B8ECC968DE93A4 /* ABI34_0_0UMMagnetometerInterface.h */,
+				1888B0DD1DA5F718C016F508458EBD23 /* ABI34_0_0UMMagnetometerUncalibratedInterface.h */,
+				B4947A87D1F5A2D68084877CBDCAEFD7 /* Pod */,
+				FEFCBBD4157CA70EAF1003F0C55697B4 /* Support Files */,
+			);
+			name = ABI34_0_0UMSensorsInterface;
+			path = "../versioned-react-native/ABI34_0_0/UMSensorsInterface";
+			sourceTree = "<group>";
+		};
+		B4947A87D1F5A2D68084877CBDCAEFD7 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				135DDB8C68B0BFFAA09EF4630ADF1F9A /* ABI34_0_0UMSensorsInterface.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		FEFCBBD4157CA70EAF1003F0C55697B4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				557439952B5802865C42EE846FBE6D88 /* ABI34_0_0UMSensorsInterface.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI34_0_0UMSensorsInterface";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		B3064957A7FDA1E9EDBAF3D3D0E7D9C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = E262D321825FB9F2B80F5BF38C78F298 /* Build configuration list for PBXProject "ABI34_0_0UMSensorsInterface" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 669FFE198247E8BEFFD1C6C08891CE05;
+			productRefGroup = 3423DA1C88F3636E7B5A78002E565582 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				54E8D2E4BC5B91A76271A696CD358F75 /* ABI34_0_0UMSensorsInterface */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		1CAB5456AEAAE447945D7EE4880BB283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		6DF8DEB22C5FE1F3BC41EDAB09FC1C3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		6E3AB9B520AE32B335E700EDD6770E7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 557439952B5802865C42EE846FBE6D88 /* ABI34_0_0UMSensorsInterface.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD2E28A82C3E72E399110A345C6BAC73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 557439952B5802865C42EE846FBE6D88 /* ABI34_0_0UMSensorsInterface.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		872ACE06D0142A20C46430E153278E58 /* Build configuration list for PBXAggregateTarget "ABI34_0_0UMSensorsInterface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E3AB9B520AE32B335E700EDD6770E7F /* Debug */,
+				DD2E28A82C3E72E399110A345C6BAC73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E262D321825FB9F2B80F5BF38C78F298 /* Build configuration list for PBXProject "ABI34_0_0UMSensorsInterface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CAB5456AEAAE447945D7EE4880BB283 /* Debug */,
+				6DF8DEB22C5FE1F3BC41EDAB09FC1C3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B3064957A7FDA1E9EDBAF3D3D0E7D9C2 /* Project object */;
+}

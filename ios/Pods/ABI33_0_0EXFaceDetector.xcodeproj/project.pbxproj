@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A9D4D365CEA07FB4CEF8FB1B43A577D /* ABI33_0_0EXFaceDetectorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C804373C70F1E1A1E96466FE6A041474 /* ABI33_0_0EXFaceDetectorUtils.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		250A61B66A237E2E3110AC3C64B12E55 /* ABI33_0_0EXFaceDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 359A49BDFF22D26625CC1C1C4E6B5A44 /* ABI33_0_0EXFaceDetector.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2C52D0745485FE7597BDA3895F1941D7 /* ABI33_0_0EXFaceDetectorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D65C6885C52BCEB37ABFAC9D08FB07 /* ABI33_0_0EXFaceDetectorManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		656E12C7B10C92E0B3C852792AB7A140 /* ABI33_0_0EXFaceDetectorManagerProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = DA321341E519BD10C9938804B961E216 /* ABI33_0_0EXFaceDetectorManagerProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		65D42D66D5EE1697FA79FC0095BD7A03 /* ABI33_0_0EXFaceDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D56E837FB23CE45C7897C737F5DF97 /* ABI33_0_0EXFaceDetector.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6E9B5AD932FF5AA2A189F58D4BC3708B /* ABI33_0_0CSBufferOrientationCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = BA855D32855BF507FC3884803E19543E /* ABI33_0_0CSBufferOrientationCalculator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		74621041CD0175855B024F4EAFE27B77 /* ABI33_0_0CSBufferOrientationCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 368D66D26B2102BD87092546CDF7DF52 /* ABI33_0_0CSBufferOrientationCalculator.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7541ECC61B1DB9010F9F67187801C9D3 /* ABI33_0_0EXFaceDetectorModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EA1AFF77C7735A866C5CC4326AD5B0 /* ABI33_0_0EXFaceDetectorModule.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		79C999B7531121478808A6FF6F521E78 /* ABI33_0_0EXFaceDetectorModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 32F914D11E58772400E10D39AAAF0B58 /* ABI33_0_0EXFaceDetectorModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A25F0FF43FF843309106198C1723AC0F /* ABI33_0_0EXFaceDetectorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F9402E5B05D89ED56D862E66D7CFD84 /* ABI33_0_0EXFaceDetectorManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AA80909D24A8947C42588080D89E4D3D /* ABI33_0_0EXFaceDetectorUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BF27FBECEEB627EE57F7558294D4C647 /* ABI33_0_0EXFaceDetectorUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B5219575C99149B226100322174206FE /* ABI33_0_0EXFaceEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FE8AB51DDE015211DA66AA4299E7872 /* ABI33_0_0EXFaceEncoder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CBB48FFAC42F748F91F0631498E0DAF1 /* ABI33_0_0EXFaceDetectorManagerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF1C3CBE9C96553A9E6504FEFE846CA /* ABI33_0_0EXFaceDetectorManagerProvider.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D631DB5EDDA36B11F81068857C448B37 /* ABI33_0_0EXFaceEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4AED0AC0AEEF2FA7669C4B9327EFE6 /* ABI33_0_0EXFaceEncoder.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FCFC2A9BDC173823C6AFAA3048CC0845 /* ABI33_0_0EXFaceDetector-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F257A9DBB412DF3728C80B249AA518 /* ABI33_0_0EXFaceDetector-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28E8AF25DD7156D1FE03B986E75A7E56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B38F7D9EDB587F6B40687514F67645A3 /* Firebase.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 15B99218A87324F316F0E937B3DAAC8B;
+			remoteInfo = Firebase;
+		};
+		4C3A89845CC60D31E3942807BEA53C4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6740DC0D85EF5678B50326192991470A /* ABI33_0_0UMFaceDetectorInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 18530F00715533101CDC2559EBA372F6;
+			remoteInfo = ABI33_0_0UMFaceDetectorInterface;
+		};
+		E9F5F5C2EDDCBA0929947000E549F676 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 125937918273DFDC1659E30773DE222F /* ABI33_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C051C97A4147D306821BE0B317EE7A65;
+			remoteInfo = ABI33_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B0858D0E2E2326D51156C323A6DE348 /* ABI33_0_0EXFaceDetector.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI33_0_0EXFaceDetector.xcconfig; sourceTree = "<group>"; };
+		0DF1C3CBE9C96553A9E6504FEFE846CA /* ABI33_0_0EXFaceDetectorManagerProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXFaceDetectorManagerProvider.m; path = ABI33_0_0EXFaceDetector/ABI33_0_0EXFaceDetectorManagerProvider.m; sourceTree = "<group>"; };
+		10D65C6885C52BCEB37ABFAC9D08FB07 /* ABI33_0_0EXFaceDetectorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXFaceDetectorManager.m; path = ABI33_0_0EXFaceDetector/ABI33_0_0EXFaceDetectorManager.m; sourceTree = "<group>"; };
+		125937918273DFDC1659E30773DE222F /* ABI33_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI33_0_0UMCore; path = ABI33_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		1420C992A2670C7E2DB2EBC126ECF501 /* ABI33_0_0EXFaceDetector.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI33_0_0EXFaceDetector.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2B38D58B3ED6D476F76CDDDF51A5A9FD /* ABI33_0_0EXFaceDetector-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI33_0_0EXFaceDetector-prefix.pch"; sourceTree = "<group>"; };
+		2F9402E5B05D89ED56D862E66D7CFD84 /* ABI33_0_0EXFaceDetectorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXFaceDetectorManager.h; path = ABI33_0_0EXFaceDetector/ABI33_0_0EXFaceDetectorManager.h; sourceTree = "<group>"; };
+		32F914D11E58772400E10D39AAAF0B58 /* ABI33_0_0EXFaceDetectorModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXFaceDetectorModule.h; path = ABI33_0_0EXFaceDetector/ABI33_0_0EXFaceDetectorModule.h; sourceTree = "<group>"; };
+		359A49BDFF22D26625CC1C1C4E6B5A44 /* ABI33_0_0EXFaceDetector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXFaceDetector.m; path = ABI33_0_0EXFaceDetector/ABI33_0_0EXFaceDetector.m; sourceTree = "<group>"; };
+		368D66D26B2102BD87092546CDF7DF52 /* ABI33_0_0CSBufferOrientationCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0CSBufferOrientationCalculator.m; path = ABI33_0_0EXFaceDetector/ABI33_0_0CSBufferOrientationCalculator.m; sourceTree = "<group>"; };
+		3A4AED0AC0AEEF2FA7669C4B9327EFE6 /* ABI33_0_0EXFaceEncoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXFaceEncoder.m; path = ABI33_0_0EXFaceDetector/ABI33_0_0EXFaceEncoder.m; sourceTree = "<group>"; };
+		5FE8AB51DDE015211DA66AA4299E7872 /* ABI33_0_0EXFaceEncoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXFaceEncoder.h; path = ABI33_0_0EXFaceDetector/ABI33_0_0EXFaceEncoder.h; sourceTree = "<group>"; };
+		60EA1AFF77C7735A866C5CC4326AD5B0 /* ABI33_0_0EXFaceDetectorModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI33_0_0EXFaceDetectorModule.m; path = ABI33_0_0EXFaceDetector/ABI33_0_0EXFaceDetectorModule.m; sourceTree = "<group>"; };
+		6740DC0D85EF5678B50326192991470A /* ABI33_0_0UMFaceDetectorInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI33_0_0UMFaceDetectorInterface; path = ABI33_0_0UMFaceDetectorInterface.xcodeproj; sourceTree = "<group>"; };
+		697BC480231A748D91DA0F2DA3088F0A /* libABI33_0_0EXFaceDetector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI33_0_0EXFaceDetector.a; path = libABI33_0_0EXFaceDetector.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		70F257A9DBB412DF3728C80B249AA518 /* ABI33_0_0EXFaceDetector-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI33_0_0EXFaceDetector-dummy.m"; sourceTree = "<group>"; };
+		B38F7D9EDB587F6B40687514F67645A3 /* Firebase */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Firebase; path = Firebase.xcodeproj; sourceTree = "<group>"; };
+		BA855D32855BF507FC3884803E19543E /* ABI33_0_0CSBufferOrientationCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0CSBufferOrientationCalculator.h; path = ABI33_0_0EXFaceDetector/ABI33_0_0CSBufferOrientationCalculator.h; sourceTree = "<group>"; };
+		BF27FBECEEB627EE57F7558294D4C647 /* ABI33_0_0EXFaceDetectorUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI33_0_0EXFaceDetectorUtils.h; sourceTree = "<group>"; };
+		C804373C70F1E1A1E96466FE6A041474 /* ABI33_0_0EXFaceDetectorUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI33_0_0EXFaceDetectorUtils.m; sourceTree = "<group>"; };
+		DA321341E519BD10C9938804B961E216 /* ABI33_0_0EXFaceDetectorManagerProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXFaceDetectorManagerProvider.h; path = ABI33_0_0EXFaceDetector/ABI33_0_0EXFaceDetectorManagerProvider.h; sourceTree = "<group>"; };
+		F8D56E837FB23CE45C7897C737F5DF97 /* ABI33_0_0EXFaceDetector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI33_0_0EXFaceDetector.h; path = ABI33_0_0EXFaceDetector/ABI33_0_0EXFaceDetector.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		046A7C923999F67CD86241C0C94ECD70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C9D719D86895A9F0B87C1FD22DCE4FE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BF27FBECEEB627EE57F7558294D4C647 /* ABI33_0_0EXFaceDetectorUtils.h */,
+				C804373C70F1E1A1E96466FE6A041474 /* ABI33_0_0EXFaceDetectorUtils.m */,
+			);
+			name = Utilities;
+			path = ABI33_0_0EXFaceDetector/Utilities;
+			sourceTree = "<group>";
+		};
+		42A8FA3EB56DE6CA4A3A7A91E4442B56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		644440DA20EA1B2E132A1C6F8F3C0202 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				697BC480231A748D91DA0F2DA3088F0A /* libABI33_0_0EXFaceDetector.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		82815A098837AA2C6EE4D1E5E6F70F13 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				125937918273DFDC1659E30773DE222F /* ABI33_0_0UMCore */,
+				6740DC0D85EF5678B50326192991470A /* ABI33_0_0UMFaceDetectorInterface */,
+				B38F7D9EDB587F6B40687514F67645A3 /* Firebase */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		A3277FD577F8F8FD0721D4FA7F90780A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B0858D0E2E2326D51156C323A6DE348 /* ABI33_0_0EXFaceDetector.xcconfig */,
+				70F257A9DBB412DF3728C80B249AA518 /* ABI33_0_0EXFaceDetector-dummy.m */,
+				2B38D58B3ED6D476F76CDDDF51A5A9FD /* ABI33_0_0EXFaceDetector-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI33_0_0EXFaceDetector";
+			sourceTree = "<group>";
+		};
+		A5B61141297E2C0C1F99629608E1F68B /* ABI33_0_0EXFaceDetector */ = {
+			isa = PBXGroup;
+			children = (
+				BA855D32855BF507FC3884803E19543E /* ABI33_0_0CSBufferOrientationCalculator.h */,
+				368D66D26B2102BD87092546CDF7DF52 /* ABI33_0_0CSBufferOrientationCalculator.m */,
+				F8D56E837FB23CE45C7897C737F5DF97 /* ABI33_0_0EXFaceDetector.h */,
+				359A49BDFF22D26625CC1C1C4E6B5A44 /* ABI33_0_0EXFaceDetector.m */,
+				2F9402E5B05D89ED56D862E66D7CFD84 /* ABI33_0_0EXFaceDetectorManager.h */,
+				10D65C6885C52BCEB37ABFAC9D08FB07 /* ABI33_0_0EXFaceDetectorManager.m */,
+				DA321341E519BD10C9938804B961E216 /* ABI33_0_0EXFaceDetectorManagerProvider.h */,
+				0DF1C3CBE9C96553A9E6504FEFE846CA /* ABI33_0_0EXFaceDetectorManagerProvider.m */,
+				32F914D11E58772400E10D39AAAF0B58 /* ABI33_0_0EXFaceDetectorModule.h */,
+				60EA1AFF77C7735A866C5CC4326AD5B0 /* ABI33_0_0EXFaceDetectorModule.m */,
+				5FE8AB51DDE015211DA66AA4299E7872 /* ABI33_0_0EXFaceEncoder.h */,
+				3A4AED0AC0AEEF2FA7669C4B9327EFE6 /* ABI33_0_0EXFaceEncoder.m */,
+				E90D2F237CF38B4671973477584B3811 /* Pod */,
+				A3277FD577F8F8FD0721D4FA7F90780A /* Support Files */,
+				1C9D719D86895A9F0B87C1FD22DCE4FE /* Utilities */,
+			);
+			name = ABI33_0_0EXFaceDetector;
+			path = "../versioned-react-native/ABI33_0_0/EXFaceDetector";
+			sourceTree = "<group>";
+		};
+		E90D2F237CF38B4671973477584B3811 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				1420C992A2670C7E2DB2EBC126ECF501 /* ABI33_0_0EXFaceDetector.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		FDD3ABE0F04CF133ED23E014A64DABB6 = {
+			isa = PBXGroup;
+			children = (
+				A5B61141297E2C0C1F99629608E1F68B /* ABI33_0_0EXFaceDetector */,
+				82815A098837AA2C6EE4D1E5E6F70F13 /* Dependencies */,
+				42A8FA3EB56DE6CA4A3A7A91E4442B56 /* Frameworks */,
+				644440DA20EA1B2E132A1C6F8F3C0202 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D56FE283E336A4F5C5053B3066471B1E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E9B5AD932FF5AA2A189F58D4BC3708B /* ABI33_0_0CSBufferOrientationCalculator.h in Headers */,
+				65D42D66D5EE1697FA79FC0095BD7A03 /* ABI33_0_0EXFaceDetector.h in Headers */,
+				A25F0FF43FF843309106198C1723AC0F /* ABI33_0_0EXFaceDetectorManager.h in Headers */,
+				656E12C7B10C92E0B3C852792AB7A140 /* ABI33_0_0EXFaceDetectorManagerProvider.h in Headers */,
+				79C999B7531121478808A6FF6F521E78 /* ABI33_0_0EXFaceDetectorModule.h in Headers */,
+				AA80909D24A8947C42588080D89E4D3D /* ABI33_0_0EXFaceDetectorUtils.h in Headers */,
+				B5219575C99149B226100322174206FE /* ABI33_0_0EXFaceEncoder.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EB40BF7D00E047640433C3026494D77E /* ABI33_0_0EXFaceDetector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 462C36918616E00B7433A1D4036AF86C /* Build configuration list for PBXNativeTarget "ABI33_0_0EXFaceDetector" */;
+			buildPhases = (
+				D56FE283E336A4F5C5053B3066471B1E /* Headers */,
+				D1DC4C7C18FE9275EB880A2CDA5DBE13 /* Sources */,
+				046A7C923999F67CD86241C0C94ECD70 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D9A9E6E25D83D0172B8AE33D77D143D /* PBXTargetDependency */,
+				88178B85ED6057BB16B5105393778F47 /* PBXTargetDependency */,
+				519312193FE4D0E10D82250069F58586 /* PBXTargetDependency */,
+			);
+			name = ABI33_0_0EXFaceDetector;
+			productName = ABI33_0_0EXFaceDetector;
+			productReference = 697BC480231A748D91DA0F2DA3088F0A /* libABI33_0_0EXFaceDetector.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A67759CD33692AF1B3306101691FFB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 52F4A98737BECA8745243B82843D7299 /* Build configuration list for PBXProject "ABI33_0_0EXFaceDetector" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FDD3ABE0F04CF133ED23E014A64DABB6;
+			productRefGroup = 644440DA20EA1B2E132A1C6F8F3C0202 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 125937918273DFDC1659E30773DE222F /* ABI33_0_0UMCore */;
+				},
+				{
+					ProjectRef = 6740DC0D85EF5678B50326192991470A /* ABI33_0_0UMFaceDetectorInterface */;
+				},
+				{
+					ProjectRef = B38F7D9EDB587F6B40687514F67645A3 /* Firebase */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				EB40BF7D00E047640433C3026494D77E /* ABI33_0_0EXFaceDetector */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D1DC4C7C18FE9275EB880A2CDA5DBE13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74621041CD0175855B024F4EAFE27B77 /* ABI33_0_0CSBufferOrientationCalculator.m in Sources */,
+				FCFC2A9BDC173823C6AFAA3048CC0845 /* ABI33_0_0EXFaceDetector-dummy.m in Sources */,
+				250A61B66A237E2E3110AC3C64B12E55 /* ABI33_0_0EXFaceDetector.m in Sources */,
+				2C52D0745485FE7597BDA3895F1941D7 /* ABI33_0_0EXFaceDetectorManager.m in Sources */,
+				CBB48FFAC42F748F91F0631498E0DAF1 /* ABI33_0_0EXFaceDetectorManagerProvider.m in Sources */,
+				7541ECC61B1DB9010F9F67187801C9D3 /* ABI33_0_0EXFaceDetectorModule.m in Sources */,
+				0A9D4D365CEA07FB4CEF8FB1B43A577D /* ABI33_0_0EXFaceDetectorUtils.m in Sources */,
+				D631DB5EDDA36B11F81068857C448B37 /* ABI33_0_0EXFaceEncoder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D9A9E6E25D83D0172B8AE33D77D143D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI33_0_0UMCore;
+			targetProxy = E9F5F5C2EDDCBA0929947000E549F676 /* PBXContainerItemProxy */;
+		};
+		519312193FE4D0E10D82250069F58586 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Firebase;
+			targetProxy = 28E8AF25DD7156D1FE03B986E75A7E56 /* PBXContainerItemProxy */;
+		};
+		88178B85ED6057BB16B5105393778F47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI33_0_0UMFaceDetectorInterface;
+			targetProxy = 4C3A89845CC60D31E3942807BEA53C4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2A8FE9EB2CDA1DD24A9BCD32BE7C43C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		73E3AAD828FE2EBCEC8C63488929C725 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BD7942A1AA278111CF06724F35B861FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B0858D0E2E2326D51156C323A6DE348 /* ABI33_0_0EXFaceDetector.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXFaceDetector/ABI33_0_0EXFaceDetector-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXFaceDetector;
+				PRODUCT_NAME = ABI33_0_0EXFaceDetector;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E10DB38B36207473182AF34AD819B19E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B0858D0E2E2326D51156C323A6DE348 /* ABI33_0_0EXFaceDetector.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI33_0_0EXFaceDetector/ABI33_0_0EXFaceDetector-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI33_0_0EXFaceDetector;
+				PRODUCT_NAME = ABI33_0_0EXFaceDetector;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		462C36918616E00B7433A1D4036AF86C /* Build configuration list for PBXNativeTarget "ABI33_0_0EXFaceDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E10DB38B36207473182AF34AD819B19E /* Debug */,
+				BD7942A1AA278111CF06724F35B861FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52F4A98737BECA8745243B82843D7299 /* Build configuration list for PBXProject "ABI33_0_0EXFaceDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A8FE9EB2CDA1DD24A9BCD32BE7C43C1 /* Debug */,
+				73E3AAD828FE2EBCEC8C63488929C725 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A67759CD33692AF1B3306101691FFB5 /* Project object */;
+}

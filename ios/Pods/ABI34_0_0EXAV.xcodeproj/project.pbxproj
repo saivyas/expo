@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09F62916B63091BDBCD84ACFFEFD55FE /* ABI34_0_0EXAVPlayerData.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ABF560C64C2C2A2E4F6AF67CC7CAD4F /* ABI34_0_0EXAVPlayerData.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1C82F6DA3D3E7CE9FD4C695892B20C8A /* ABI34_0_0EXVideoPlayerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = FE640DC31A88C9C40DE449CD55142A4C /* ABI34_0_0EXVideoPlayerViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		281BB60CE106894BB6DA9324D1F3F2EC /* ABI34_0_0EXAV.h in Headers */ = {isa = PBXBuildFile; fileRef = 65D599EF2F0922213D742A3AC6B56FA7 /* ABI34_0_0EXAV.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		45025A178A2AC9481435EA70240922B5 /* ABI34_0_0EXAVObject.h in Headers */ = {isa = PBXBuildFile; fileRef = DAF8AAD57B18E18FEDC56B92EBF1B7FC /* ABI34_0_0EXAVObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6CE3C1B1B80EF8B86A7832B9B0E440FB /* ABI34_0_0EXVideoView.h in Headers */ = {isa = PBXBuildFile; fileRef = 45CCECEAE217D01688468BE2806E747A /* ABI34_0_0EXVideoView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6F4E66297778AE0286183A0E8220028C /* ABI34_0_0EXVideoPlayerViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 39B49B0475060E4568E09CB07BBDA6ED /* ABI34_0_0EXVideoPlayerViewControllerDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9DEFE193BCD03010EB14F4C3616F55D3 /* ABI34_0_0EXVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B711BD1AEBBC8BA8C37DA558C886E2C /* ABI34_0_0EXVideoPlayerViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9E693AAC6DCF011A1F8B8DF58B8236A6 /* ABI34_0_0EXAudioSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DC77437CB9261528FD7AAF6874CB9D72 /* ABI34_0_0EXAudioSessionManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A33337ED9225460B74250745E872FCC0 /* ABI34_0_0EXAV-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F59773967B771D91C608EBCFF9464E /* ABI34_0_0EXAV-dummy.m */; };
+		B320BC2F62EA5B35C7E5A7F4600096B3 /* ABI34_0_0EXVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA292A0DEB6C9808FED3AFD7E4BF95D6 /* ABI34_0_0EXVideoView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B45688FCA29D4A7F27DC841CB86A30A1 /* ABI34_0_0EXVideoManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A743DB1F94BE9414D79A1984E9D3C9B /* ABI34_0_0EXVideoManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C8B7F5BDC66FDE3F714519ABC241C130 /* ABI34_0_0EXAudioSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC064A48540C2C841E7E568C78EEC340 /* ABI34_0_0EXAudioSessionManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CE957D19005F8564A129F37E2AB9BF33 /* ABI34_0_0EXAVPlayerData.m in Sources */ = {isa = PBXBuildFile; fileRef = E5251B1BFC74433476B7814B7C4212F9 /* ABI34_0_0EXAVPlayerData.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CFF34DD26DD9887AC4F0BCD4609DF842 /* ABI34_0_0EXVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0710BB62FF3D698528B3C18182E22BB6 /* ABI34_0_0EXVideoManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F95473140A98207995E38A6524FD6CE2 /* ABI34_0_0EXAV.m in Sources */ = {isa = PBXBuildFile; fileRef = B3778634F1410535886EDEA5357BC0EA /* ABI34_0_0EXAV.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F29EC917B6D81FCB43790EB85A62A2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7614161FF91FC508666CD76A9C2081D0 /* ABI34_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A4E2311DB0CE13AB2665D794B59FB23A;
+			remoteInfo = ABI34_0_0UMCore;
+		};
+		37224E69440ABA1D1F84C491424AE574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 075D57E99F783EA7EFC7BFD121FDF6B0 /* ABI34_0_0UMPermissionsInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06B6031C2CD7CA48CDCC84F10FA2C110;
+			remoteInfo = ABI34_0_0UMPermissionsInterface;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01D6F7487F55705E55286B4CE4442744 /* ABI34_0_0EXAV-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI34_0_0EXAV-prefix.pch"; sourceTree = "<group>"; };
+		0710BB62FF3D698528B3C18182E22BB6 /* ABI34_0_0EXVideoManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI34_0_0EXVideoManager.m; sourceTree = "<group>"; };
+		075D57E99F783EA7EFC7BFD121FDF6B0 /* ABI34_0_0UMPermissionsInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMPermissionsInterface; path = ABI34_0_0UMPermissionsInterface.xcodeproj; sourceTree = "<group>"; };
+		0A743DB1F94BE9414D79A1984E9D3C9B /* ABI34_0_0EXVideoManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI34_0_0EXVideoManager.h; sourceTree = "<group>"; };
+		30F59773967B771D91C608EBCFF9464E /* ABI34_0_0EXAV-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI34_0_0EXAV-dummy.m"; sourceTree = "<group>"; };
+		39B49B0475060E4568E09CB07BBDA6ED /* ABI34_0_0EXVideoPlayerViewControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI34_0_0EXVideoPlayerViewControllerDelegate.h; sourceTree = "<group>"; };
+		45CCECEAE217D01688468BE2806E747A /* ABI34_0_0EXVideoView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI34_0_0EXVideoView.h; sourceTree = "<group>"; };
+		4ABF560C64C2C2A2E4F6AF67CC7CAD4F /* ABI34_0_0EXAVPlayerData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0EXAVPlayerData.h; path = ABI34_0_0EXAV/ABI34_0_0EXAVPlayerData.h; sourceTree = "<group>"; };
+		65D599EF2F0922213D742A3AC6B56FA7 /* ABI34_0_0EXAV.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0EXAV.h; path = ABI34_0_0EXAV/ABI34_0_0EXAV.h; sourceTree = "<group>"; };
+		7614161FF91FC508666CD76A9C2081D0 /* ABI34_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMCore; path = ABI34_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		7B711BD1AEBBC8BA8C37DA558C886E2C /* ABI34_0_0EXVideoPlayerViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI34_0_0EXVideoPlayerViewController.m; sourceTree = "<group>"; };
+		803FA7482A1D2A19B0745051EF40A312 /* ABI34_0_0EXAV.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI34_0_0EXAV.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B3778634F1410535886EDEA5357BC0EA /* ABI34_0_0EXAV.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI34_0_0EXAV.m; path = ABI34_0_0EXAV/ABI34_0_0EXAV.m; sourceTree = "<group>"; };
+		BA292A0DEB6C9808FED3AFD7E4BF95D6 /* ABI34_0_0EXVideoView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ABI34_0_0EXVideoView.m; sourceTree = "<group>"; };
+		CC064A48540C2C841E7E568C78EEC340 /* ABI34_0_0EXAudioSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI34_0_0EXAudioSessionManager.m; path = ABI34_0_0EXAV/ABI34_0_0EXAudioSessionManager.m; sourceTree = "<group>"; };
+		CCF58BA90977815B119ED4CE49317D05 /* libABI34_0_0EXAV.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI34_0_0EXAV.a; path = libABI34_0_0EXAV.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAF8AAD57B18E18FEDC56B92EBF1B7FC /* ABI34_0_0EXAVObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0EXAVObject.h; path = ABI34_0_0EXAV/ABI34_0_0EXAVObject.h; sourceTree = "<group>"; };
+		DC77437CB9261528FD7AAF6874CB9D72 /* ABI34_0_0EXAudioSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0EXAudioSessionManager.h; path = ABI34_0_0EXAV/ABI34_0_0EXAudioSessionManager.h; sourceTree = "<group>"; };
+		E5251B1BFC74433476B7814B7C4212F9 /* ABI34_0_0EXAVPlayerData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI34_0_0EXAVPlayerData.m; path = ABI34_0_0EXAV/ABI34_0_0EXAVPlayerData.m; sourceTree = "<group>"; };
+		F2C5B94C226ADD6B3859736606F7B588 /* ABI34_0_0EXAV.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI34_0_0EXAV.xcconfig; sourceTree = "<group>"; };
+		FE640DC31A88C9C40DE449CD55142A4C /* ABI34_0_0EXVideoPlayerViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI34_0_0EXVideoPlayerViewController.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C22FA7A6DF11357593837BA9D3560FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11EAE80FFF3CC8B251056023A184157A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCF58BA90977815B119ED4CE49317D05 /* libABI34_0_0EXAV.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		322FA43B64813AB68892BEF1903AF70D /* ABI34_0_0EXAV */ = {
+			isa = PBXGroup;
+			children = (
+				DC77437CB9261528FD7AAF6874CB9D72 /* ABI34_0_0EXAudioSessionManager.h */,
+				CC064A48540C2C841E7E568C78EEC340 /* ABI34_0_0EXAudioSessionManager.m */,
+				65D599EF2F0922213D742A3AC6B56FA7 /* ABI34_0_0EXAV.h */,
+				B3778634F1410535886EDEA5357BC0EA /* ABI34_0_0EXAV.m */,
+				DAF8AAD57B18E18FEDC56B92EBF1B7FC /* ABI34_0_0EXAVObject.h */,
+				4ABF560C64C2C2A2E4F6AF67CC7CAD4F /* ABI34_0_0EXAVPlayerData.h */,
+				E5251B1BFC74433476B7814B7C4212F9 /* ABI34_0_0EXAVPlayerData.m */,
+				AA37945F0EFAC6B98504750472A4DBBA /* Pod */,
+				62D30056C6BB9AA93481E610C7035BDA /* Support Files */,
+				68F99714E5A64B2B2BBD0BED4B5FBAFD /* Video */,
+			);
+			name = ABI34_0_0EXAV;
+			path = "../versioned-react-native/ABI34_0_0/EXAV";
+			sourceTree = "<group>";
+		};
+		62D30056C6BB9AA93481E610C7035BDA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F2C5B94C226ADD6B3859736606F7B588 /* ABI34_0_0EXAV.xcconfig */,
+				30F59773967B771D91C608EBCFF9464E /* ABI34_0_0EXAV-dummy.m */,
+				01D6F7487F55705E55286B4CE4442744 /* ABI34_0_0EXAV-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI34_0_0EXAV";
+			sourceTree = "<group>";
+		};
+		68F99714E5A64B2B2BBD0BED4B5FBAFD /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				0A743DB1F94BE9414D79A1984E9D3C9B /* ABI34_0_0EXVideoManager.h */,
+				0710BB62FF3D698528B3C18182E22BB6 /* ABI34_0_0EXVideoManager.m */,
+				FE640DC31A88C9C40DE449CD55142A4C /* ABI34_0_0EXVideoPlayerViewController.h */,
+				7B711BD1AEBBC8BA8C37DA558C886E2C /* ABI34_0_0EXVideoPlayerViewController.m */,
+				39B49B0475060E4568E09CB07BBDA6ED /* ABI34_0_0EXVideoPlayerViewControllerDelegate.h */,
+				45CCECEAE217D01688468BE2806E747A /* ABI34_0_0EXVideoView.h */,
+				BA292A0DEB6C9808FED3AFD7E4BF95D6 /* ABI34_0_0EXVideoView.m */,
+			);
+			name = Video;
+			path = ABI34_0_0EXAV/Video;
+			sourceTree = "<group>";
+		};
+		753B042DD4769B599359E1C9172EAC64 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				7614161FF91FC508666CD76A9C2081D0 /* ABI34_0_0UMCore */,
+				075D57E99F783EA7EFC7BFD121FDF6B0 /* ABI34_0_0UMPermissionsInterface */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		75642E068836E898FAA1A8BD416EC4B9 = {
+			isa = PBXGroup;
+			children = (
+				322FA43B64813AB68892BEF1903AF70D /* ABI34_0_0EXAV */,
+				753B042DD4769B599359E1C9172EAC64 /* Dependencies */,
+				E4A68C449826F0D28283E16FCB67EA82 /* Frameworks */,
+				11EAE80FFF3CC8B251056023A184157A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA37945F0EFAC6B98504750472A4DBBA /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				803FA7482A1D2A19B0745051EF40A312 /* ABI34_0_0EXAV.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		E4A68C449826F0D28283E16FCB67EA82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2812129368B1604B7BFEF03932D10038 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E693AAC6DCF011A1F8B8DF58B8236A6 /* ABI34_0_0EXAudioSessionManager.h in Headers */,
+				281BB60CE106894BB6DA9324D1F3F2EC /* ABI34_0_0EXAV.h in Headers */,
+				45025A178A2AC9481435EA70240922B5 /* ABI34_0_0EXAVObject.h in Headers */,
+				09F62916B63091BDBCD84ACFFEFD55FE /* ABI34_0_0EXAVPlayerData.h in Headers */,
+				B45688FCA29D4A7F27DC841CB86A30A1 /* ABI34_0_0EXVideoManager.h in Headers */,
+				1C82F6DA3D3E7CE9FD4C695892B20C8A /* ABI34_0_0EXVideoPlayerViewController.h in Headers */,
+				6F4E66297778AE0286183A0E8220028C /* ABI34_0_0EXVideoPlayerViewControllerDelegate.h in Headers */,
+				6CE3C1B1B80EF8B86A7832B9B0E440FB /* ABI34_0_0EXVideoView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		787B4C01187643F93D14DEE19AEB1C36 /* ABI34_0_0EXAV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D995C120AEC1BE563776E4C0E1BA127F /* Build configuration list for PBXNativeTarget "ABI34_0_0EXAV" */;
+			buildPhases = (
+				2812129368B1604B7BFEF03932D10038 /* Headers */,
+				11197E45CF6BB11EA0EFD3C9386BC222 /* Sources */,
+				8C22FA7A6DF11357593837BA9D3560FC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D937DE3698603259CD5E735EAB943CDB /* PBXTargetDependency */,
+				28230DD4EC8544F618D5110B0D9D0648 /* PBXTargetDependency */,
+			);
+			name = ABI34_0_0EXAV;
+			productName = ABI34_0_0EXAV;
+			productReference = CCF58BA90977815B119ED4CE49317D05 /* libABI34_0_0EXAV.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16B70D67E78E40573B4AEB6141F8032F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = FB841F3B4957E908E42BDE8D38997AD0 /* Build configuration list for PBXProject "ABI34_0_0EXAV" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 75642E068836E898FAA1A8BD416EC4B9;
+			productRefGroup = 11EAE80FFF3CC8B251056023A184157A /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 7614161FF91FC508666CD76A9C2081D0 /* ABI34_0_0UMCore */;
+				},
+				{
+					ProjectRef = 075D57E99F783EA7EFC7BFD121FDF6B0 /* ABI34_0_0UMPermissionsInterface */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				787B4C01187643F93D14DEE19AEB1C36 /* ABI34_0_0EXAV */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11197E45CF6BB11EA0EFD3C9386BC222 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8B7F5BDC66FDE3F714519ABC241C130 /* ABI34_0_0EXAudioSessionManager.m in Sources */,
+				A33337ED9225460B74250745E872FCC0 /* ABI34_0_0EXAV-dummy.m in Sources */,
+				F95473140A98207995E38A6524FD6CE2 /* ABI34_0_0EXAV.m in Sources */,
+				CE957D19005F8564A129F37E2AB9BF33 /* ABI34_0_0EXAVPlayerData.m in Sources */,
+				CFF34DD26DD9887AC4F0BCD4609DF842 /* ABI34_0_0EXVideoManager.m in Sources */,
+				9DEFE193BCD03010EB14F4C3616F55D3 /* ABI34_0_0EXVideoPlayerViewController.m in Sources */,
+				B320BC2F62EA5B35C7E5A7F4600096B3 /* ABI34_0_0EXVideoView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28230DD4EC8544F618D5110B0D9D0648 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMPermissionsInterface;
+			targetProxy = 37224E69440ABA1D1F84C491424AE574 /* PBXContainerItemProxy */;
+		};
+		D937DE3698603259CD5E735EAB943CDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMCore;
+			targetProxy = 2F29EC917B6D81FCB43790EB85A62A2B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		07DF52A36E474B6B2CEAEEF4FBC03858 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		2C6218C48455BAF2A5DEFDBDFA3E25D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2C5B94C226ADD6B3859736606F7B588 /* ABI34_0_0EXAV.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI34_0_0EXAV/ABI34_0_0EXAV-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI34_0_0EXAV;
+				PRODUCT_NAME = ABI34_0_0EXAV;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D2E5732C8BA6CA6A967A1E7624BE680A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2C5B94C226ADD6B3859736606F7B588 /* ABI34_0_0EXAV.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI34_0_0EXAV/ABI34_0_0EXAV-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI34_0_0EXAV;
+				PRODUCT_NAME = ABI34_0_0EXAV;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D6706D340A4042F1B574DD53941DA6A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D995C120AEC1BE563776E4C0E1BA127F /* Build configuration list for PBXNativeTarget "ABI34_0_0EXAV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2E5732C8BA6CA6A967A1E7624BE680A /* Debug */,
+				2C6218C48455BAF2A5DEFDBDFA3E25D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB841F3B4957E908E42BDE8D38997AD0 /* Build configuration list for PBXProject "ABI34_0_0EXAV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6706D340A4042F1B574DD53941DA6A2 /* Debug */,
+				07DF52A36E474B6B2CEAEEF4FBC03858 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 16B70D67E78E40573B4AEB6141F8032F /* Project object */;
+}

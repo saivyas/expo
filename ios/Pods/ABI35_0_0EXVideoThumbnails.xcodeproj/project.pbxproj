@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C623303962D58EE4E8906A4971C61A5E /* ABI35_0_0EXVideoThumbnailsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9F4A6530BAE11B1DF392963CCE4A46 /* ABI35_0_0EXVideoThumbnailsModule.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D344CEA82BC54F069E6C05A7CC396276 /* ABI35_0_0EXVideoThumbnailsModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F0530BD7A8DA3C37D6F534831F9E796 /* ABI35_0_0EXVideoThumbnailsModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F595A071E5E14F5C7C8FCB69F16D86F5 /* ABI35_0_0EXVideoThumbnails-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 833396DE47074B6B4CD4857DB91EB0E1 /* ABI35_0_0EXVideoThumbnails-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6F74500C95B641F31EE135C0376211CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E7BDFD15481A0645D9ECDBD9DF9A7C9 /* ABI35_0_0UMFileSystemInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 236B933BDEB947465197DD4712DF67E8;
+			remoteInfo = ABI35_0_0UMFileSystemInterface;
+		};
+		733BCDBF6DDF7673E98466B37A652E25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47F575FD9155DE62FBF31CE6B66A8111 /* ABI35_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7205ADA49415BA3BB5197065A0B628B0;
+			remoteInfo = ABI35_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2E7BDFD15481A0645D9ECDBD9DF9A7C9 /* ABI35_0_0UMFileSystemInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI35_0_0UMFileSystemInterface; path = ABI35_0_0UMFileSystemInterface.xcodeproj; sourceTree = "<group>"; };
+		35C19F0614A01EBF6D440F4BF6265B08 /* ABI35_0_0EXVideoThumbnails.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI35_0_0EXVideoThumbnails.xcconfig; sourceTree = "<group>"; };
+		47F575FD9155DE62FBF31CE6B66A8111 /* ABI35_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI35_0_0UMCore; path = ABI35_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		5B3DE9CFEE6F2F6F5735E006FB6C4F77 /* ABI35_0_0EXVideoThumbnails-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI35_0_0EXVideoThumbnails-prefix.pch"; sourceTree = "<group>"; };
+		833396DE47074B6B4CD4857DB91EB0E1 /* ABI35_0_0EXVideoThumbnails-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI35_0_0EXVideoThumbnails-dummy.m"; sourceTree = "<group>"; };
+		8F0530BD7A8DA3C37D6F534831F9E796 /* ABI35_0_0EXVideoThumbnailsModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI35_0_0EXVideoThumbnailsModule.h; path = ABI35_0_0EXVideoThumbnails/ABI35_0_0EXVideoThumbnailsModule.h; sourceTree = "<group>"; };
+		AF9F4A6530BAE11B1DF392963CCE4A46 /* ABI35_0_0EXVideoThumbnailsModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI35_0_0EXVideoThumbnailsModule.m; path = ABI35_0_0EXVideoThumbnails/ABI35_0_0EXVideoThumbnailsModule.m; sourceTree = "<group>"; };
+		D9800640F584D344B3B9502E42DA3AE9 /* ABI35_0_0EXVideoThumbnails.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI35_0_0EXVideoThumbnails.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EFE5B868AC5BDE47591B27E106EBBEDF /* libABI35_0_0EXVideoThumbnails.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI35_0_0EXVideoThumbnails.a; path = libABI35_0_0EXVideoThumbnails.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2459BEAD0969BCA7302DE569110C0EDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F82BEFE5BC8D8C486DE1962F4149BC6 = {
+			isa = PBXGroup;
+			children = (
+				3D71133F1F238D00D02E916F726C517B /* ABI35_0_0EXVideoThumbnails */,
+				14A15E36EA60FCD783B49E02C4EA9D9A /* Dependencies */,
+				4F2D75A7D1EB0821A7A13A487A164D07 /* Frameworks */,
+				ECD0A12C42071EBCDA772FE7FA3A319B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14A15E36EA60FCD783B49E02C4EA9D9A /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				47F575FD9155DE62FBF31CE6B66A8111 /* ABI35_0_0UMCore */,
+				2E7BDFD15481A0645D9ECDBD9DF9A7C9 /* ABI35_0_0UMFileSystemInterface */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		3D71133F1F238D00D02E916F726C517B /* ABI35_0_0EXVideoThumbnails */ = {
+			isa = PBXGroup;
+			children = (
+				8F0530BD7A8DA3C37D6F534831F9E796 /* ABI35_0_0EXVideoThumbnailsModule.h */,
+				AF9F4A6530BAE11B1DF392963CCE4A46 /* ABI35_0_0EXVideoThumbnailsModule.m */,
+				4F30EEFE96BDB2729DDFC6261B5C027C /* Pod */,
+				57D8D911AA30E1EA5336F3235CD37329 /* Support Files */,
+			);
+			name = ABI35_0_0EXVideoThumbnails;
+			path = "../versioned-react-native/ABI35_0_0/EXVideoThumbnails";
+			sourceTree = "<group>";
+		};
+		4F2D75A7D1EB0821A7A13A487A164D07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F30EEFE96BDB2729DDFC6261B5C027C /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				D9800640F584D344B3B9502E42DA3AE9 /* ABI35_0_0EXVideoThumbnails.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		57D8D911AA30E1EA5336F3235CD37329 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				35C19F0614A01EBF6D440F4BF6265B08 /* ABI35_0_0EXVideoThumbnails.xcconfig */,
+				833396DE47074B6B4CD4857DB91EB0E1 /* ABI35_0_0EXVideoThumbnails-dummy.m */,
+				5B3DE9CFEE6F2F6F5735E006FB6C4F77 /* ABI35_0_0EXVideoThumbnails-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI35_0_0EXVideoThumbnails";
+			sourceTree = "<group>";
+		};
+		ECD0A12C42071EBCDA772FE7FA3A319B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFE5B868AC5BDE47591B27E106EBBEDF /* libABI35_0_0EXVideoThumbnails.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3D28F675E5BA5BF2CFF18534ED173D1E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D344CEA82BC54F069E6C05A7CC396276 /* ABI35_0_0EXVideoThumbnailsModule.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F12D8220F103413DAD5BE30D27FA3B5A /* ABI35_0_0EXVideoThumbnails */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93B7991B09DDCB55C139860F2EA91AD7 /* Build configuration list for PBXNativeTarget "ABI35_0_0EXVideoThumbnails" */;
+			buildPhases = (
+				3D28F675E5BA5BF2CFF18534ED173D1E /* Headers */,
+				A518B99310BD902447C3DECB4502F45C /* Sources */,
+				2459BEAD0969BCA7302DE569110C0EDB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F015771F132BD64843FF181DA9767BF6 /* PBXTargetDependency */,
+				AF325F1CE844DD7A7CFA28A3B1AA0392 /* PBXTargetDependency */,
+			);
+			name = ABI35_0_0EXVideoThumbnails;
+			productName = ABI35_0_0EXVideoThumbnails;
+			productReference = EFE5B868AC5BDE47591B27E106EBBEDF /* libABI35_0_0EXVideoThumbnails.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		137FD1ADB017AEE3EC73D2F49A7DEFFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = AE2252043B6C681050AAD19BDBDE686E /* Build configuration list for PBXProject "ABI35_0_0EXVideoThumbnails" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0F82BEFE5BC8D8C486DE1962F4149BC6;
+			productRefGroup = ECD0A12C42071EBCDA772FE7FA3A319B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = 47F575FD9155DE62FBF31CE6B66A8111 /* ABI35_0_0UMCore */;
+				},
+				{
+					ProjectRef = 2E7BDFD15481A0645D9ECDBD9DF9A7C9 /* ABI35_0_0UMFileSystemInterface */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				F12D8220F103413DAD5BE30D27FA3B5A /* ABI35_0_0EXVideoThumbnails */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A518B99310BD902447C3DECB4502F45C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F595A071E5E14F5C7C8FCB69F16D86F5 /* ABI35_0_0EXVideoThumbnails-dummy.m in Sources */,
+				C623303962D58EE4E8906A4971C61A5E /* ABI35_0_0EXVideoThumbnailsModule.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF325F1CE844DD7A7CFA28A3B1AA0392 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI35_0_0UMFileSystemInterface;
+			targetProxy = 6F74500C95B641F31EE135C0376211CD /* PBXContainerItemProxy */;
+		};
+		F015771F132BD64843FF181DA9767BF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI35_0_0UMCore;
+			targetProxy = 733BCDBF6DDF7673E98466B37A652E25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		133C8A5AA3E3F91D13BE79F5A6E600CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35C19F0614A01EBF6D440F4BF6265B08 /* ABI35_0_0EXVideoThumbnails.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI35_0_0EXVideoThumbnails/ABI35_0_0EXVideoThumbnails-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI35_0_0EXVideoThumbnails;
+				PRODUCT_NAME = ABI35_0_0EXVideoThumbnails;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6182D35501C0416A77FEDD1704A2AAEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		ECB619B2B83AE8ABFF15CD6D283A3E30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F13FEE18F1E6E24483E76626502BA56D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35C19F0614A01EBF6D440F4BF6265B08 /* ABI35_0_0EXVideoThumbnails.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI35_0_0EXVideoThumbnails/ABI35_0_0EXVideoThumbnails-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI35_0_0EXVideoThumbnails;
+				PRODUCT_NAME = ABI35_0_0EXVideoThumbnails;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93B7991B09DDCB55C139860F2EA91AD7 /* Build configuration list for PBXNativeTarget "ABI35_0_0EXVideoThumbnails" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				133C8A5AA3E3F91D13BE79F5A6E600CF /* Debug */,
+				F13FEE18F1E6E24483E76626502BA56D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE2252043B6C681050AAD19BDBDE686E /* Build configuration list for PBXProject "ABI35_0_0EXVideoThumbnails" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECB619B2B83AE8ABFF15CD6D283A3E30 /* Debug */,
+				6182D35501C0416A77FEDD1704A2AAEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 137FD1ADB017AEE3EC73D2F49A7DEFFE /* Project object */;
+}

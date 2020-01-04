@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0267398BE85EEA6D214AC4152E4790A9 /* ABI36_0_0Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4162D08E6BFCE28936A429A5F6EFEFE3 /* ABI36_0_0Utils.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0F464BECE44D71B323328B874DD12836 /* ABI36_0_0YGValue.h in Headers */ = {isa = PBXBuildFile; fileRef = C89191859DA31C89AEF76BD02F36D3DA /* ABI36_0_0YGValue.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		364850DE5D95190C5938E3E51F6B6071 /* ABI36_0_0YGLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = BEE3189715443E6E3EF640E647AEDB7A /* ABI36_0_0YGLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3E7C36A052CA58376BAB53BC7F314931 /* ABI36_0_0experiments.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F653D9114D606592FF59E2B727684F2C /* ABI36_0_0experiments.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		41CD4E106DD9A6D7D209343C30706BD9 /* ABI36_0_0Yoga-internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F1AC17966CFD4094C225E474E8922B3 /* ABI36_0_0Yoga-internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		54126A783BA214C17FC9787D90CEFADE /* ABI36_0_0Bitfield.h in Headers */ = {isa = PBXBuildFile; fileRef = E20C0DA13E9C2FE64756141A1CEB5992 /* ABI36_0_0Bitfield.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		56FC1616FFDA98B10E013AA6670E0C6F /* ABI36_0_0log.h in Headers */ = {isa = PBXBuildFile; fileRef = B253021D503ADE4C9DB8B99F56072DD5 /* ABI36_0_0log.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		58111E5426A9E3E0B5EEA6AA8E557E1A /* ABI36_0_0log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C74EB5CEB5A402994803C8ED88304A4B /* ABI36_0_0log.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		585388F5C146CA9AF9D83EE5A90E85A8 /* ABI36_0_0YGMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = FAB6254FD951D4620303632311F16F25 /* ABI36_0_0YGMacros.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		60D04998939EF90468C34D3FB654F314 /* ABI36_0_0YGEnums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EBA53DAB31EFF53B3633FABBDABE6 /* ABI36_0_0YGEnums.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		67630B2800F12F7E4B623A2ACA96A381 /* ABI36_0_0Yoga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38779D0D942B9302B844CD5E81BBBC53 /* ABI36_0_0Yoga.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6A1A6173E6827822499FB85053C3D50F /* ABI36_0_0YGValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15AD2C2D50978E5A0A7FBC8CEFC3ED26 /* ABI36_0_0YGValue.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		71774A1AD456E7A1402F83F54A0A1D67 /* ABI36_0_0experiments-inl.h in Headers */ = {isa = PBXBuildFile; fileRef = 4963C05E58E7EB3C3DFF3142BAE8D337 /* ABI36_0_0experiments-inl.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7E51857D8A13C15A4060780FE7A5F82D /* ABI36_0_0YGFloatOptional.h in Headers */ = {isa = PBXBuildFile; fileRef = A3459FB08F64E546A35E1EF20FEFD98D /* ABI36_0_0YGFloatOptional.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		92FECFEBDF1196B59C03867399A4053B /* ABI36_0_0YGConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DA75AB5DD44F6C945AD2E0946F6AB8C /* ABI36_0_0YGConfig.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9AEDE8AB405BBF127C106D378574E4CE /* ABI36_0_0YGNodePrint.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E0B6A17FC520C5CA98CCF7FD0E4F65B /* ABI36_0_0YGNodePrint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A99E920AD77466F219C619A4DD5EC960 /* ABI36_0_0YGConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF0562811AE1E3CE2EE8293300C3435C /* ABI36_0_0YGConfig.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B2CA34F6F556D7BE76540AB21742EC2D /* ABI36_0_0Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C4306DF1FBA81B32E99085B1D3CE331 /* ABI36_0_0Utils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B2EC728BA3D1B92A0ACCEBBAEE7013E0 /* ABI36_0_0YGStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D23916F2927805FB6558C7C5BA0C36C0 /* ABI36_0_0YGStyle.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B485E0D7C54C822A9C83A7F1F57BCF48 /* ABI36_0_0event.h in Headers */ = {isa = PBXBuildFile; fileRef = BD346EA9CFD9A00213897861DC4FC051 /* ABI36_0_0event.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BBCEE311B34112874BBA2A6CE7CE2914 /* ABI36_0_0CompactValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 18626FAEA706728DFF5FD10C3ABF36FA /* ABI36_0_0CompactValue.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BF0F237FB5654CC8CD77FA1B716915A6 /* ABI36_0_0YGNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 378405CA253001162782746E6B7897CA /* ABI36_0_0YGNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BF6467182138680D3CBA6C0A91E22B28 /* ABI36_0_0YGStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B099553D033D13BAC8B511CC64F65F0 /* ABI36_0_0YGStyle.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C2BD34DB1743A3D84B7DAAE81DC0B503 /* ABI36_0_0Yoga.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EC5B78154A574999F4DF9A5D48B9BA5 /* ABI36_0_0Yoga.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CCE25395B46CC4DB11A611BDF88E4A59 /* ABI36_0_0event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2B06B66DF666DACC00E69E88A0831AE /* ABI36_0_0event.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		DF22194D9E405059EE147F24EF10B640 /* ABI36_0_0YGNodePrint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A56D736B0CDEA13250ACC141B2666864 /* ABI36_0_0YGNodePrint.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EE0DEAEE16971F3521FEC034C59E8C4C /* ABI36_0_0YGLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2E36F6EC83D7F1AD0340A29FA5F94 /* ABI36_0_0YGLayout.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F3E4BF29059D66A87712052B18F7CDCA /* ABI36_0_0YGEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = F7C4491339AC467406B29E9F01E6564E /* ABI36_0_0YGEnums.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F747613F99C661F55E3F1A40B9AD1061 /* ABI36_0_0Yoga-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 646E80063AE5573C0E2FF215C6BB542D /* ABI36_0_0Yoga-dummy.m */; };
+		F9E1116174BD8E7CEF4F13AED586812E /* ABI36_0_0YGNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEFA9A8A3D6849A60367E492F1FBCAC5 /* ABI36_0_0YGNode.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FFE3AF1D75CF07FD7B28FC768A59E337 /* ABI36_0_0experiments.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD7F12D64CDD372D51DED5F394DFA84 /* ABI36_0_0experiments.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04DA0ACDCC1483EFFA04D738EBD85D77 /* ABI36_0_0Yoga-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI36_0_0Yoga-prefix.pch"; sourceTree = "<group>"; };
+		15AD2C2D50978E5A0A7FBC8CEFC3ED26 /* ABI36_0_0YGValue.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0YGValue.cpp; path = yoga/ABI36_0_0YGValue.cpp; sourceTree = "<group>"; };
+		18626FAEA706728DFF5FD10C3ABF36FA /* ABI36_0_0CompactValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0CompactValue.h; path = yoga/ABI36_0_0CompactValue.h; sourceTree = "<group>"; };
+		1AD7F12D64CDD372D51DED5F394DFA84 /* ABI36_0_0experiments.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI36_0_0experiments.h; sourceTree = "<group>"; };
+		1E0B6A17FC520C5CA98CCF7FD0E4F65B /* ABI36_0_0YGNodePrint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0YGNodePrint.h; path = yoga/ABI36_0_0YGNodePrint.h; sourceTree = "<group>"; };
+		2DA75AB5DD44F6C945AD2E0946F6AB8C /* ABI36_0_0YGConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0YGConfig.h; path = yoga/ABI36_0_0YGConfig.h; sourceTree = "<group>"; };
+		378405CA253001162782746E6B7897CA /* ABI36_0_0YGNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0YGNode.h; path = yoga/ABI36_0_0YGNode.h; sourceTree = "<group>"; };
+		38779D0D942B9302B844CD5E81BBBC53 /* ABI36_0_0Yoga.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0Yoga.cpp; path = yoga/ABI36_0_0Yoga.cpp; sourceTree = "<group>"; };
+		4162D08E6BFCE28936A429A5F6EFEFE3 /* ABI36_0_0Utils.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0Utils.cpp; path = yoga/ABI36_0_0Utils.cpp; sourceTree = "<group>"; };
+		42218BA99431C5DCA7C85EF0FCC791AF /* ABI36_0_0Yoga.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI36_0_0Yoga.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4963C05E58E7EB3C3DFF3142BAE8D337 /* ABI36_0_0experiments-inl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI36_0_0experiments-inl.h"; sourceTree = "<group>"; };
+		4B099553D033D13BAC8B511CC64F65F0 /* ABI36_0_0YGStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0YGStyle.h; path = yoga/ABI36_0_0YGStyle.h; sourceTree = "<group>"; };
+		4F1AC17966CFD4094C225E474E8922B3 /* ABI36_0_0Yoga-internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ABI36_0_0Yoga-internal.h"; path = "yoga/ABI36_0_0Yoga-internal.h"; sourceTree = "<group>"; };
+		646E80063AE5573C0E2FF215C6BB542D /* ABI36_0_0Yoga-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI36_0_0Yoga-dummy.m"; sourceTree = "<group>"; };
+		6BC2E36F6EC83D7F1AD0340A29FA5F94 /* ABI36_0_0YGLayout.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0YGLayout.cpp; path = yoga/ABI36_0_0YGLayout.cpp; sourceTree = "<group>"; };
+		6D5DD80F6D669F5E5E4513CE946CB670 /* ABI36_0_0Yoga.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI36_0_0Yoga.xcconfig; sourceTree = "<group>"; };
+		8B1EBA53DAB31EFF53B3633FABBDABE6 /* ABI36_0_0YGEnums.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0YGEnums.cpp; path = yoga/ABI36_0_0YGEnums.cpp; sourceTree = "<group>"; };
+		9C4306DF1FBA81B32E99085B1D3CE331 /* ABI36_0_0Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0Utils.h; path = yoga/ABI36_0_0Utils.h; sourceTree = "<group>"; };
+		9EC2AB2FF1F50E1D4CEE3AD67FDF8B93 /* libABI36_0_0Yoga.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI36_0_0Yoga.a; path = libABI36_0_0Yoga.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EC5B78154A574999F4DF9A5D48B9BA5 /* ABI36_0_0Yoga.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0Yoga.h; path = yoga/ABI36_0_0Yoga.h; sourceTree = "<group>"; };
+		A2B06B66DF666DACC00E69E88A0831AE /* ABI36_0_0event.cpp */ = {isa = PBXFileReference; includeInIndex = 1; path = ABI36_0_0event.cpp; sourceTree = "<group>"; };
+		A3459FB08F64E546A35E1EF20FEFD98D /* ABI36_0_0YGFloatOptional.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0YGFloatOptional.h; path = yoga/ABI36_0_0YGFloatOptional.h; sourceTree = "<group>"; };
+		A56D736B0CDEA13250ACC141B2666864 /* ABI36_0_0YGNodePrint.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0YGNodePrint.cpp; path = yoga/ABI36_0_0YGNodePrint.cpp; sourceTree = "<group>"; };
+		AEFA9A8A3D6849A60367E492F1FBCAC5 /* ABI36_0_0YGNode.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0YGNode.cpp; path = yoga/ABI36_0_0YGNode.cpp; sourceTree = "<group>"; };
+		B253021D503ADE4C9DB8B99F56072DD5 /* ABI36_0_0log.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0log.h; path = yoga/ABI36_0_0log.h; sourceTree = "<group>"; };
+		BD346EA9CFD9A00213897861DC4FC051 /* ABI36_0_0event.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ABI36_0_0event.h; sourceTree = "<group>"; };
+		BEE3189715443E6E3EF640E647AEDB7A /* ABI36_0_0YGLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0YGLayout.h; path = yoga/ABI36_0_0YGLayout.h; sourceTree = "<group>"; };
+		C74EB5CEB5A402994803C8ED88304A4B /* ABI36_0_0log.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0log.cpp; path = yoga/ABI36_0_0log.cpp; sourceTree = "<group>"; };
+		C89191859DA31C89AEF76BD02F36D3DA /* ABI36_0_0YGValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0YGValue.h; path = yoga/ABI36_0_0YGValue.h; sourceTree = "<group>"; };
+		D23916F2927805FB6558C7C5BA0C36C0 /* ABI36_0_0YGStyle.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0YGStyle.cpp; path = yoga/ABI36_0_0YGStyle.cpp; sourceTree = "<group>"; };
+		E20C0DA13E9C2FE64756141A1CEB5992 /* ABI36_0_0Bitfield.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0Bitfield.h; path = yoga/ABI36_0_0Bitfield.h; sourceTree = "<group>"; };
+		EF0562811AE1E3CE2EE8293300C3435C /* ABI36_0_0YGConfig.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = ABI36_0_0YGConfig.cpp; path = yoga/ABI36_0_0YGConfig.cpp; sourceTree = "<group>"; };
+		F653D9114D606592FF59E2B727684F2C /* ABI36_0_0experiments.cpp */ = {isa = PBXFileReference; includeInIndex = 1; path = ABI36_0_0experiments.cpp; sourceTree = "<group>"; };
+		F7C4491339AC467406B29E9F01E6564E /* ABI36_0_0YGEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0YGEnums.h; path = yoga/ABI36_0_0YGEnums.h; sourceTree = "<group>"; };
+		FAB6254FD951D4620303632311F16F25 /* ABI36_0_0YGMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI36_0_0YGMacros.h; path = yoga/ABI36_0_0YGMacros.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16F84AEF0272AA6E572BC606D81B505A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10C6C269E2433E7E1296BDA79303726A /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				42218BA99431C5DCA7C85EF0FCC791AF /* ABI36_0_0Yoga.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		37A4749C21AABA74C299D2BC66D6BE4F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D5DD80F6D669F5E5E4513CE946CB670 /* ABI36_0_0Yoga.xcconfig */,
+				646E80063AE5573C0E2FF215C6BB542D /* ABI36_0_0Yoga-dummy.m */,
+				04DA0ACDCC1483EFFA04D738EBD85D77 /* ABI36_0_0Yoga-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../../../Pods/Target Support Files/ABI36_0_0Yoga";
+			sourceTree = "<group>";
+		};
+		4895E7E01CFD9724C88F1C8CC8EA4FAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9EC2AB2FF1F50E1D4CEE3AD67FDF8B93 /* libABI36_0_0Yoga.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		51FBD4872E3789D769DEF31CE36A8A92 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				F653D9114D606592FF59E2B727684F2C /* ABI36_0_0experiments.cpp */,
+				1AD7F12D64CDD372D51DED5F394DFA84 /* ABI36_0_0experiments.h */,
+				4963C05E58E7EB3C3DFF3142BAE8D337 /* ABI36_0_0experiments-inl.h */,
+			);
+			name = internal;
+			path = yoga/internal;
+			sourceTree = "<group>";
+		};
+		9F895C75AC1A41D0007CD128C4DC8477 /* event */ = {
+			isa = PBXGroup;
+			children = (
+				A2B06B66DF666DACC00E69E88A0831AE /* ABI36_0_0event.cpp */,
+				BD346EA9CFD9A00213897861DC4FC051 /* ABI36_0_0event.h */,
+			);
+			name = event;
+			path = yoga/event;
+			sourceTree = "<group>";
+		};
+		DCC87827F9D6D484B808212F83C3C5EB /* ABI36_0_0Yoga */ = {
+			isa = PBXGroup;
+			children = (
+				E20C0DA13E9C2FE64756141A1CEB5992 /* ABI36_0_0Bitfield.h */,
+				18626FAEA706728DFF5FD10C3ABF36FA /* ABI36_0_0CompactValue.h */,
+				C74EB5CEB5A402994803C8ED88304A4B /* ABI36_0_0log.cpp */,
+				B253021D503ADE4C9DB8B99F56072DD5 /* ABI36_0_0log.h */,
+				4162D08E6BFCE28936A429A5F6EFEFE3 /* ABI36_0_0Utils.cpp */,
+				9C4306DF1FBA81B32E99085B1D3CE331 /* ABI36_0_0Utils.h */,
+				EF0562811AE1E3CE2EE8293300C3435C /* ABI36_0_0YGConfig.cpp */,
+				2DA75AB5DD44F6C945AD2E0946F6AB8C /* ABI36_0_0YGConfig.h */,
+				8B1EBA53DAB31EFF53B3633FABBDABE6 /* ABI36_0_0YGEnums.cpp */,
+				F7C4491339AC467406B29E9F01E6564E /* ABI36_0_0YGEnums.h */,
+				A3459FB08F64E546A35E1EF20FEFD98D /* ABI36_0_0YGFloatOptional.h */,
+				6BC2E36F6EC83D7F1AD0340A29FA5F94 /* ABI36_0_0YGLayout.cpp */,
+				BEE3189715443E6E3EF640E647AEDB7A /* ABI36_0_0YGLayout.h */,
+				FAB6254FD951D4620303632311F16F25 /* ABI36_0_0YGMacros.h */,
+				AEFA9A8A3D6849A60367E492F1FBCAC5 /* ABI36_0_0YGNode.cpp */,
+				378405CA253001162782746E6B7897CA /* ABI36_0_0YGNode.h */,
+				A56D736B0CDEA13250ACC141B2666864 /* ABI36_0_0YGNodePrint.cpp */,
+				1E0B6A17FC520C5CA98CCF7FD0E4F65B /* ABI36_0_0YGNodePrint.h */,
+				D23916F2927805FB6558C7C5BA0C36C0 /* ABI36_0_0YGStyle.cpp */,
+				4B099553D033D13BAC8B511CC64F65F0 /* ABI36_0_0YGStyle.h */,
+				15AD2C2D50978E5A0A7FBC8CEFC3ED26 /* ABI36_0_0YGValue.cpp */,
+				C89191859DA31C89AEF76BD02F36D3DA /* ABI36_0_0YGValue.h */,
+				38779D0D942B9302B844CD5E81BBBC53 /* ABI36_0_0Yoga.cpp */,
+				9EC5B78154A574999F4DF9A5D48B9BA5 /* ABI36_0_0Yoga.h */,
+				4F1AC17966CFD4094C225E474E8922B3 /* ABI36_0_0Yoga-internal.h */,
+				9F895C75AC1A41D0007CD128C4DC8477 /* event */,
+				51FBD4872E3789D769DEF31CE36A8A92 /* internal */,
+				10C6C269E2433E7E1296BDA79303726A /* Pod */,
+				37A4749C21AABA74C299D2BC66D6BE4F /* Support Files */,
+			);
+			name = ABI36_0_0Yoga;
+			path = "../versioned-react-native/ABI36_0_0/ReactNative/ReactCommon/yoga";
+			sourceTree = "<group>";
+		};
+		E8AF8DCEB8B93F5BF2E66CEDE5B74453 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F16469E331B3B1705C6DB921CE77A975 = {
+			isa = PBXGroup;
+			children = (
+				DCC87827F9D6D484B808212F83C3C5EB /* ABI36_0_0Yoga */,
+				E8AF8DCEB8B93F5BF2E66CEDE5B74453 /* Frameworks */,
+				4895E7E01CFD9724C88F1C8CC8EA4FAE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BD649ACBF8EB2AE2C48CAA0FA3F8AA45 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54126A783BA214C17FC9787D90CEFADE /* ABI36_0_0Bitfield.h in Headers */,
+				BBCEE311B34112874BBA2A6CE7CE2914 /* ABI36_0_0CompactValue.h in Headers */,
+				B485E0D7C54C822A9C83A7F1F57BCF48 /* ABI36_0_0event.h in Headers */,
+				71774A1AD456E7A1402F83F54A0A1D67 /* ABI36_0_0experiments-inl.h in Headers */,
+				FFE3AF1D75CF07FD7B28FC768A59E337 /* ABI36_0_0experiments.h in Headers */,
+				56FC1616FFDA98B10E013AA6670E0C6F /* ABI36_0_0log.h in Headers */,
+				B2CA34F6F556D7BE76540AB21742EC2D /* ABI36_0_0Utils.h in Headers */,
+				92FECFEBDF1196B59C03867399A4053B /* ABI36_0_0YGConfig.h in Headers */,
+				F3E4BF29059D66A87712052B18F7CDCA /* ABI36_0_0YGEnums.h in Headers */,
+				7E51857D8A13C15A4060780FE7A5F82D /* ABI36_0_0YGFloatOptional.h in Headers */,
+				364850DE5D95190C5938E3E51F6B6071 /* ABI36_0_0YGLayout.h in Headers */,
+				585388F5C146CA9AF9D83EE5A90E85A8 /* ABI36_0_0YGMacros.h in Headers */,
+				BF0F237FB5654CC8CD77FA1B716915A6 /* ABI36_0_0YGNode.h in Headers */,
+				9AEDE8AB405BBF127C106D378574E4CE /* ABI36_0_0YGNodePrint.h in Headers */,
+				BF6467182138680D3CBA6C0A91E22B28 /* ABI36_0_0YGStyle.h in Headers */,
+				0F464BECE44D71B323328B874DD12836 /* ABI36_0_0YGValue.h in Headers */,
+				41CD4E106DD9A6D7D209343C30706BD9 /* ABI36_0_0Yoga-internal.h in Headers */,
+				C2BD34DB1743A3D84B7DAAE81DC0B503 /* ABI36_0_0Yoga.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		714CA3958A6C51495F7202BF9B7CD1D7 /* ABI36_0_0Yoga */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74A991A92A8692B9516E2D1356BA39BD /* Build configuration list for PBXNativeTarget "ABI36_0_0Yoga" */;
+			buildPhases = (
+				BD649ACBF8EB2AE2C48CAA0FA3F8AA45 /* Headers */,
+				F67100FFA70E96447356AFA310A0E792 /* Sources */,
+				16F84AEF0272AA6E572BC606D81B505A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ABI36_0_0Yoga;
+			productName = ABI36_0_0Yoga;
+			productReference = 9EC2AB2FF1F50E1D4CEE3AD67FDF8B93 /* libABI36_0_0Yoga.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96BEDCE2228337D7149374D94E654A18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = D2876D3FECCB91E7297F7B45F3D7F969 /* Build configuration list for PBXProject "ABI36_0_0Yoga" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F16469E331B3B1705C6DB921CE77A975;
+			productRefGroup = 4895E7E01CFD9724C88F1C8CC8EA4FAE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				714CA3958A6C51495F7202BF9B7CD1D7 /* ABI36_0_0Yoga */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F67100FFA70E96447356AFA310A0E792 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCE25395B46CC4DB11A611BDF88E4A59 /* ABI36_0_0event.cpp in Sources */,
+				3E7C36A052CA58376BAB53BC7F314931 /* ABI36_0_0experiments.cpp in Sources */,
+				58111E5426A9E3E0B5EEA6AA8E557E1A /* ABI36_0_0log.cpp in Sources */,
+				0267398BE85EEA6D214AC4152E4790A9 /* ABI36_0_0Utils.cpp in Sources */,
+				A99E920AD77466F219C619A4DD5EC960 /* ABI36_0_0YGConfig.cpp in Sources */,
+				60D04998939EF90468C34D3FB654F314 /* ABI36_0_0YGEnums.cpp in Sources */,
+				EE0DEAEE16971F3521FEC034C59E8C4C /* ABI36_0_0YGLayout.cpp in Sources */,
+				F9E1116174BD8E7CEF4F13AED586812E /* ABI36_0_0YGNode.cpp in Sources */,
+				DF22194D9E405059EE147F24EF10B640 /* ABI36_0_0YGNodePrint.cpp in Sources */,
+				B2EC728BA3D1B92A0ACCEBBAEE7013E0 /* ABI36_0_0YGStyle.cpp in Sources */,
+				6A1A6173E6827822499FB85053C3D50F /* ABI36_0_0YGValue.cpp in Sources */,
+				F747613F99C661F55E3F1A40B9AD1061 /* ABI36_0_0Yoga-dummy.m in Sources */,
+				67630B2800F12F7E4B623A2ACA96A381 /* ABI36_0_0Yoga.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0163500B1114C7CFDAFB27EB53021F13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D5DD80F6D669F5E5E4513CE946CB670 /* ABI36_0_0Yoga.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0Yoga/ABI36_0_0Yoga-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0yoga;
+				PRODUCT_NAME = ABI36_0_0Yoga;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E1F2396603CA40E9456A145B5AFDA28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		20FFCB41C40DD8941DB1146078CA6DC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		78A04BF23AC9110984C6F6FEE13BBD51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D5DD80F6D669F5E5E4513CE946CB670 /* ABI36_0_0Yoga.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI36_0_0Yoga/ABI36_0_0Yoga-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI36_0_0yoga;
+				PRODUCT_NAME = ABI36_0_0Yoga;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74A991A92A8692B9516E2D1356BA39BD /* Build configuration list for PBXNativeTarget "ABI36_0_0Yoga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78A04BF23AC9110984C6F6FEE13BBD51 /* Debug */,
+				0163500B1114C7CFDAFB27EB53021F13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2876D3FECCB91E7297F7B45F3D7F969 /* Build configuration list for PBXProject "ABI36_0_0Yoga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E1F2396603CA40E9456A145B5AFDA28 /* Debug */,
+				20FFCB41C40DD8941DB1146078CA6DC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96BEDCE2228337D7149374D94E654A18 /* Project object */;
+}

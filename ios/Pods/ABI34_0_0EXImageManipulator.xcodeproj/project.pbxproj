@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		635D70E999BA4CCB4C9DCCAC27F174EA /* ABI34_0_0EXImageManipulator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 73765AA69847F5DA4B48F7B497A87317 /* ABI34_0_0EXImageManipulator-dummy.m */; };
+		B15BDDC2229F58EA97C2001DC1B34EC4 /* ABI34_0_0EXImageManipulatorModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 5416DFE0FF2A887BE79A67509BDAB1BB /* ABI34_0_0EXImageManipulatorModule.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B4791E067D79EC01C4EE7DA15520C7B2 /* ABI34_0_0EXImageManipulatorModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 94F4D980FC6C63B8B876D4403FC4D7FA /* ABI34_0_0EXImageManipulatorModule.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03153A4BEFC1CA481E8C685E1FD33A8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6A5DAA73FF49133DEC072DDE74E4D62 /* ABI34_0_0UMFileSystemInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E26994241AB52F69EBF9D3BA6347516D;
+			remoteInfo = ABI34_0_0UMFileSystemInterface;
+		};
+		92F49B38DCA34066F4FF201A42FE1072 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2623741BB1A74CE55C96DA05461A5CD /* ABI34_0_0UMImageLoaderInterface.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CEE7DA9F8732A18628FB1B11EA5EA14;
+			remoteInfo = ABI34_0_0UMImageLoaderInterface;
+		};
+		EF73CA1B5F6C07FF5C03CFECB0828FDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9C5382DD2FE06D27AF09EA41999C7E2 /* ABI34_0_0UMCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A4E2311DB0CE13AB2665D794B59FB23A;
+			remoteInfo = ABI34_0_0UMCore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C26A8218C30BA4ED1B2616BE2C2B772 /* ABI34_0_0EXImageManipulator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ABI34_0_0EXImageManipulator.xcconfig; sourceTree = "<group>"; };
+		4440568E53681970FAF21AD76A6359A5 /* ABI34_0_0EXImageManipulator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ABI34_0_0EXImageManipulator-prefix.pch"; sourceTree = "<group>"; };
+		5416DFE0FF2A887BE79A67509BDAB1BB /* ABI34_0_0EXImageManipulatorModule.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ABI34_0_0EXImageManipulatorModule.m; path = ABI34_0_0EXImageManipulator/ABI34_0_0EXImageManipulatorModule.m; sourceTree = "<group>"; };
+		73765AA69847F5DA4B48F7B497A87317 /* ABI34_0_0EXImageManipulator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ABI34_0_0EXImageManipulator-dummy.m"; sourceTree = "<group>"; };
+		89D871129760DBB1D59ECB7C13805153 /* libABI34_0_0EXImageManipulator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libABI34_0_0EXImageManipulator.a; path = libABI34_0_0EXImageManipulator.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F4D980FC6C63B8B876D4403FC4D7FA /* ABI34_0_0EXImageManipulatorModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ABI34_0_0EXImageManipulatorModule.h; path = ABI34_0_0EXImageManipulator/ABI34_0_0EXImageManipulatorModule.h; sourceTree = "<group>"; };
+		A6A5DAA73FF49133DEC072DDE74E4D62 /* ABI34_0_0UMFileSystemInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMFileSystemInterface; path = ABI34_0_0UMFileSystemInterface.xcodeproj; sourceTree = "<group>"; };
+		C9C5382DD2FE06D27AF09EA41999C7E2 /* ABI34_0_0UMCore */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMCore; path = ABI34_0_0UMCore.xcodeproj; sourceTree = "<group>"; };
+		D2623741BB1A74CE55C96DA05461A5CD /* ABI34_0_0UMImageLoaderInterface */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABI34_0_0UMImageLoaderInterface; path = ABI34_0_0UMImageLoaderInterface.xcodeproj; sourceTree = "<group>"; };
+		E66928520896DD86B46947E2225996AD /* ABI34_0_0EXImageManipulator.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ABI34_0_0EXImageManipulator.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7359A0F4BD779F34281BBD31A46AD81B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0080C1B06A7CC297A6EEA37E75CBB1DD = {
+			isa = PBXGroup;
+			children = (
+				5C2466C900AF380FCF8EEE4EC559AE65 /* ABI34_0_0EXImageManipulator */,
+				DEE9DC1B725E0CB87C9AEA0522CBB501 /* Dependencies */,
+				C9D6A6C01EDA9B6EB8CDB3AE6C0E6577 /* Frameworks */,
+				B74DCD365856325FDC207631D8E9E35E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		33070E9AAD9EE53E8EE56A050C5BC85C /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				E66928520896DD86B46947E2225996AD /* ABI34_0_0EXImageManipulator.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		5514F8D52216B196A07147E3813C16BB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C26A8218C30BA4ED1B2616BE2C2B772 /* ABI34_0_0EXImageManipulator.xcconfig */,
+				73765AA69847F5DA4B48F7B497A87317 /* ABI34_0_0EXImageManipulator-dummy.m */,
+				4440568E53681970FAF21AD76A6359A5 /* ABI34_0_0EXImageManipulator-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../../../Pods/Target Support Files/ABI34_0_0EXImageManipulator";
+			sourceTree = "<group>";
+		};
+		5C2466C900AF380FCF8EEE4EC559AE65 /* ABI34_0_0EXImageManipulator */ = {
+			isa = PBXGroup;
+			children = (
+				94F4D980FC6C63B8B876D4403FC4D7FA /* ABI34_0_0EXImageManipulatorModule.h */,
+				5416DFE0FF2A887BE79A67509BDAB1BB /* ABI34_0_0EXImageManipulatorModule.m */,
+				33070E9AAD9EE53E8EE56A050C5BC85C /* Pod */,
+				5514F8D52216B196A07147E3813C16BB /* Support Files */,
+			);
+			name = ABI34_0_0EXImageManipulator;
+			path = "../versioned-react-native/ABI34_0_0/EXImageManipulator";
+			sourceTree = "<group>";
+		};
+		B74DCD365856325FDC207631D8E9E35E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89D871129760DBB1D59ECB7C13805153 /* libABI34_0_0EXImageManipulator.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9D6A6C01EDA9B6EB8CDB3AE6C0E6577 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEE9DC1B725E0CB87C9AEA0522CBB501 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				C9C5382DD2FE06D27AF09EA41999C7E2 /* ABI34_0_0UMCore */,
+				A6A5DAA73FF49133DEC072DDE74E4D62 /* ABI34_0_0UMFileSystemInterface */,
+				D2623741BB1A74CE55C96DA05461A5CD /* ABI34_0_0UMImageLoaderInterface */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A0A0BDA23C2B99F8FB6311DFEAA858CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4791E067D79EC01C4EE7DA15520C7B2 /* ABI34_0_0EXImageManipulatorModule.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A9D3B6E46C117E57BB5A8B64792990F0 /* ABI34_0_0EXImageManipulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE7712D150730985AA2800A92AFE954F /* Build configuration list for PBXNativeTarget "ABI34_0_0EXImageManipulator" */;
+			buildPhases = (
+				A0A0BDA23C2B99F8FB6311DFEAA858CB /* Headers */,
+				249489DFBCF4EB154D6F92DE58817969 /* Sources */,
+				7359A0F4BD779F34281BBD31A46AD81B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01F90315B67672C6B6396DDE06E788D1 /* PBXTargetDependency */,
+				978A228159CCEADFDB44E6F415C6FE7B /* PBXTargetDependency */,
+				36260C1F9D764ECA6EF867228FC78ADA /* PBXTargetDependency */,
+			);
+			name = ABI34_0_0EXImageManipulator;
+			productName = ABI34_0_0EXImageManipulator;
+			productReference = 89D871129760DBB1D59ECB7C13805153 /* libABI34_0_0EXImageManipulator.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFE4AED18F27EA69CEFD11CEEE962388 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 2647270AA4145070D6131892D74EA9B0 /* Build configuration list for PBXProject "ABI34_0_0EXImageManipulator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0080C1B06A7CC297A6EEA37E75CBB1DD;
+			productRefGroup = B74DCD365856325FDC207631D8E9E35E /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProjectRef = C9C5382DD2FE06D27AF09EA41999C7E2 /* ABI34_0_0UMCore */;
+				},
+				{
+					ProjectRef = A6A5DAA73FF49133DEC072DDE74E4D62 /* ABI34_0_0UMFileSystemInterface */;
+				},
+				{
+					ProjectRef = D2623741BB1A74CE55C96DA05461A5CD /* ABI34_0_0UMImageLoaderInterface */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				A9D3B6E46C117E57BB5A8B64792990F0 /* ABI34_0_0EXImageManipulator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		249489DFBCF4EB154D6F92DE58817969 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635D70E999BA4CCB4C9DCCAC27F174EA /* ABI34_0_0EXImageManipulator-dummy.m in Sources */,
+				B15BDDC2229F58EA97C2001DC1B34EC4 /* ABI34_0_0EXImageManipulatorModule.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01F90315B67672C6B6396DDE06E788D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMCore;
+			targetProxy = EF73CA1B5F6C07FF5C03CFECB0828FDE /* PBXContainerItemProxy */;
+		};
+		36260C1F9D764ECA6EF867228FC78ADA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMImageLoaderInterface;
+			targetProxy = 92F49B38DCA34066F4FF201A42FE1072 /* PBXContainerItemProxy */;
+		};
+		978A228159CCEADFDB44E6F415C6FE7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ABI34_0_0UMFileSystemInterface;
+			targetProxy = 03153A4BEFC1CA481E8C685E1FD33A8F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12CD95F639704278C0FD975C6C6460B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C26A8218C30BA4ED1B2616BE2C2B772 /* ABI34_0_0EXImageManipulator.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI34_0_0EXImageManipulator/ABI34_0_0EXImageManipulator-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI34_0_0EXImageManipulator;
+				PRODUCT_NAME = ABI34_0_0EXImageManipulator;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C90FF1A95523C09AE3F9110E7AF8EFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		69ADF9EFCC4B0E0EFCE2C2B8400D7DE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C26A8218C30BA4ED1B2616BE2C2B772 /* ABI34_0_0EXImageManipulator.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/ABI34_0_0EXImageManipulator/ABI34_0_0EXImageManipulator-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = ABI34_0_0EXImageManipulator;
+				PRODUCT_NAME = ABI34_0_0EXImageManipulator;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAF5DCD869FA51DAAAE571D9631BE98E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2647270AA4145070D6131892D74EA9B0 /* Build configuration list for PBXProject "ABI34_0_0EXImageManipulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAF5DCD869FA51DAAAE571D9631BE98E /* Debug */,
+				5C90FF1A95523C09AE3F9110E7AF8EFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE7712D150730985AA2800A92AFE954F /* Build configuration list for PBXNativeTarget "ABI34_0_0EXImageManipulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69ADF9EFCC4B0E0EFCE2C2B8400D7DE1 /* Debug */,
+				12CD95F639704278C0FD975C6C6460B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFE4AED18F27EA69CEFD11CEEE962388 /* Project object */;
+}
