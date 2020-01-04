@@ -130,7 +130,9 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
 - (void)_copyEmbeddedAssets
 {
   EXUpdatesAppLoaderEmbedded *embeddedAppLoader = [[EXUpdatesAppLoaderEmbedded alloc] init];
-  [embeddedAppLoader loadUpdateFromEmbeddedManifest];
+  if ([_selectionPolicy shouldLoadNewUpdate:embeddedAppLoader.embeddedManifest withLaunchedUpdate:[_launcher launchableUpdateWithSelectionPolicy:_selectionPolicy]]) {
+    [embeddedAppLoader loadUpdateFromEmbeddedManifest];
+  }
 }
 
 - (void)_sendEventToBridgeWithType:(NSString *)eventType body:(NSDictionary *)body

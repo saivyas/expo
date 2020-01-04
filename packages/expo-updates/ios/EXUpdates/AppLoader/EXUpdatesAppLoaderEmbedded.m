@@ -8,22 +8,35 @@ NS_ASSUME_NONNULL_BEGIN
 static NSString * const kEXUpdatesEmbeddedManifestName = @"shell-app-manifest";
 static NSString * const kEXUpdatesEmbeddedManifestType = @"json";
 
+@interface EXUpdatesAppLoaderEmbedded ()
+
+@property (nonatomic, strong, readwrite) EXUpdatesUpdate * _Nullable embeddedManifest;
+
+@end
+
 @implementation EXUpdatesAppLoaderEmbedded
+
+- (EXUpdatesUpdate * _Nullable)embeddedManifest
+{
+  if (!_embeddedManifest) {
+    NSString *path = [[NSBundle mainBundle] pathForResource:kEXUpdatesEmbeddedManifestName ofType:kEXUpdatesEmbeddedManifestType];
+    NSData *manifestData = [NSData dataWithContentsOfFile:path];
+    
+    NSError *err;
+    id manifest = [NSJSONSerialization JSONObjectWithData:manifestData options:kNilOptions error:&err];
+    if (!manifest) {
+      NSLog(@"Could not read embedded manifest: %@", [err localizedDescription]);
+    } else {
+      NSAssert([manifest isKindOfClass:[NSDictionary class]], @"embedded manifest should be a valid JSON file");
+      _embeddedManifest = [EXUpdatesUpdate updateWithManagedManifest:(NSDictionary *)manifest];
+    }
+  }
+  return _embeddedManifest;
+}
 
 - (void)loadUpdateFromEmbeddedManifest
 {
-  NSString *path = [[NSBundle mainBundle] pathForResource:kEXUpdatesEmbeddedManifestName ofType:kEXUpdatesEmbeddedManifestType];
-  NSData *manifestData = [NSData dataWithContentsOfFile:path];
-  
-  NSError *err;
-  id manifest = [NSJSONSerialization JSONObjectWithData:manifestData options:kNilOptions error:&err];
-  if (!manifest) {
-    NSLog(@"Could not read embedded manifest: %@", [err localizedDescription]);
-  } else {
-    NSAssert([manifest isKindOfClass:[NSDictionary class]], @"embedded manifest should be a valid JSON file");
-    EXUpdatesUpdate *embeddedManifest = [EXUpdatesUpdate updateWithManagedManifest:(NSDictionary *)manifest];
-    [self startLoadingFromManifest:embeddedManifest];
-  }
+  [self startLoadingFromManifest:self.embeddedManifest];
 }
 
 - (void)downloadAsset:(EXUpdatesAsset *)asset

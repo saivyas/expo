@@ -6,6 +6,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EXUpdatesAppLoaderEmbedded : EXUpdatesAppLoader
 
+@property (nonatomic, strong, readonly) EXUpdatesUpdate * _Nullable embeddedManifest;
+
 - (void)loadUpdateFromEmbeddedManifest;
 
 @end

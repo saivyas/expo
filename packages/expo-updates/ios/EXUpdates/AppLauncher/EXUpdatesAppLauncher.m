@@ -9,6 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EXUpdatesAppLauncher ()
 
 @property (nonatomic, strong, readwrite) EXUpdatesUpdate * _Nullable launchedUpdate;
+@property (nonatomic, strong, readwrite) EXUpdatesUpdate * _Nullable launchableUpdate;
 
 @end
 
@@ -16,15 +17,23 @@ static NSString * const kEXUpdatesAppLauncherErrorDomain = @"AppLauncher";
 
 @implementation EXUpdatesAppLauncher
 
+- (EXUpdatesUpdate *)launchableUpdateWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy
+{
+  if (!_launchableUpdate) {
+    EXUpdatesDatabase *database = [EXUpdatesAppController sharedInstance].database;
+    NSArray<EXUpdatesUpdate *>* launchableUpdates = [database launchableUpdates];
+    _launchableUpdate = [selectionPolicy launchableUpdateFromUpdates:launchableUpdates];
+    if (!_launchableUpdate) {
+      [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesAppLauncherErrorDomain description:@"No runnable update found" info:nil isFatal:YES];
+    }
+  }
+  return _launchableUpdate;
+}
+
 - (EXUpdatesUpdate *)launchUpdateWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy
 {
   if (!_launchedUpdate) {
-    EXUpdatesDatabase *database = [EXUpdatesAppController sharedInstance].database;
-    NSArray<EXUpdatesUpdate *>* launchableUpdates = [database launchableUpdates];
-    _launchedUpdate = [selectionPolicy launchableUpdateFromUpdates:launchableUpdates];
-    if (!_launchedUpdate) {
-      [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesAppLauncherErrorDomain description:@"No runnable update found" info:nil isFatal:YES];
-    }
+    _launchedUpdate = [self launchableUpdateWithSelectionPolicy:selectionPolicy];
   }
   return _launchedUpdate;
 }
