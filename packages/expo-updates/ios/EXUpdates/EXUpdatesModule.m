@@ -36,6 +36,7 @@ UM_EXPORT_MODULE(ExpoUpdates);
   } else {
     return @{
       @"manifest": launchedUpdate.rawManifest,
+      // TODO: make this the correct format
       @"localAssets": [controller.database assetsForUpdateId:launchedUpdate.updateId]
     };
   }

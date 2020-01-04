@@ -10,6 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+static NSString * const kEXUpdatesEventName = @"Expo.nativeUpdatesEvent";
+static NSString * const kEXUpdatesUpdateAvailableEventName = @"updateAvailable";
+static NSString * const kEXUpdatesNoUpdateAvailableEventName = @"noUpdateAvailable";
+static NSString * const kEXUpdatesErrorEventName = @"error";
+
 @interface EXUpdatesAppController ()
 
 @property (nonatomic, readwrite, strong) EXUpdatesAppLauncher *launcher;
@@ -128,6 +133,17 @@ NS_ASSUME_NONNULL_BEGIN
   [embeddedAppLoader loadUpdateFromEmbeddedManifest];
 }
 
+- (void)_sendEventToBridgeWithType:(NSString *)eventType body:(NSDictionary *)body
+{
+  if (_bridge) {
+    NSMutableDictionary *mutableBody = [body mutableCopy];
+    mutableBody[@"type"] = eventType;
+    [_bridge enqueueJSCall:@"RCTDeviceEventEmitter.emit" args:@[kEXUpdatesEventName, mutableBody]];
+  } else {
+    NSLog(@"EXUpdatesAppController: Could not emit %@ event. Did you set the bridge property on the controller singleton?", eventType);
+  }
+}
+
 # pragma mark - EXUpdatesAppLoaderDelegate
 
 - (BOOL)appLoader:(EXUpdatesAppLoader *)appLoader shouldStartLoadingUpdate:(EXUpdatesUpdate *)update
@@ -139,14 +155,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)appLoader:(EXUpdatesAppLoader *)appLoader didFinishLoadingUpdate:(EXUpdatesUpdate * _Nullable)update
 {
-  // maybe do something?
-  NSLog(@"update with UUID %@ finished loading", [update.updateId UUIDString]);
+  if (update) {
+    NSLog(@"update with UUID %@ finished loading", [update.updateId UUIDString]);
+    [self _sendEventToBridgeWithType:kEXUpdatesUpdateAvailableEventName
+                                body:@{@"manifest": update.rawManifest}];
+  } else {
+    NSLog(@"No update available");
+    [self _sendEventToBridgeWithType:kEXUpdatesNoUpdateAvailableEventName body:@{}];
+  }
 }
 
 - (void)appLoader:(EXUpdatesAppLoader *)appLoader didFailWithError:(NSError *)error
 {
-  // probably do something
-  NSLog(@"update failed to load: %@", [error localizedDescription]);
+  NSLog(@"update failed to load: %@", error.localizedDescription);
+  [self _sendEventToBridgeWithType:kEXUpdatesErrorEventName body:@{@"message": error.localizedDescription}];
 }
 
 @end
