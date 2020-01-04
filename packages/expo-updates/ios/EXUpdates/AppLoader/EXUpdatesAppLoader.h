@@ -1,13 +1,15 @@
 //  Copyright © 2019 650 Industries. All rights reserved.
 
+#import <EXUpdates/EXUpdatesUpdate.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class EXUpdatesAppLoader;
 
 @protocol EXUpdatesAppLoaderDelegate <NSObject>
 
-- (void)appLoader:(EXUpdatesAppLoader *)appLoader didStartLoadingUpdateWithMetadata:(NSDictionary * _Nullable)metadata;
-- (void)appLoader:(EXUpdatesAppLoader *)appLoader didFinishLoadingUpdateWithId:(NSUUID *)updateId;
+- (BOOL)appLoader:(EXUpdatesAppLoader *)appLoader shouldStartLoadingUpdate:(EXUpdatesUpdate *)update;
+- (void)appLoader:(EXUpdatesAppLoader *)appLoader didFinishLoadingUpdate:(EXUpdatesUpdate * _Nullable)update;
 - (void)appLoader:(EXUpdatesAppLoader *)appLoader didFailWithError:(NSError *)error;
 
 @end

@@ -3,6 +3,8 @@
 #import <EXUpdates/EXUpdatesAppLauncher.h>
 #import <EXUpdates/EXUpdatesAppLoader.h>
 #import <EXUpdates/EXUpdatesDatabase.h>
+#import <EXUpdates/EXUpdatesSelectionPolicy.h>
+#import <React/RCTBridge.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -10,11 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) EXUpdatesAppLauncher *launcher;
 @property (nonatomic, readonly) EXUpdatesDatabase *database;
+@property (nonatomic, readonly) EXUpdatesSelectionPolicy *selectionPolicy;
+@property (nonatomic, readwrite, weak) RCTBridge *bridge;
+
+@property (nonatomic, readonly, assign) BOOL isEnabled;
 
 + (instancetype)sharedInstance;
 
 - (void)start;
-
+- (BOOL)reloadBridge;
 - (NSURL * _Nullable)launchAssetUrl;
 - (NSURL *)updatesDirectory;
 

@@ -1,16 +1,9 @@
 //  Copyright © 2019 650 Industries. All rights reserved.
 
 #import <EXUpdates/EXUpdatesAsset.h>
-#import <EXUpdates/EXUpdatesManifest.h>
+#import <EXUpdates/EXUpdatesUpdate.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
-typedef NS_ENUM(NSInteger, EXUpdatesDatabaseStatus) {
-  EXUpdatesDatabaseStatusFailed = 0,
-  EXUpdatesDatabaseStatusReady = 1,
-  EXUpdatesDatabaseStatusPending = 2,
-  EXUpdatesDatabaseStatusUnused = 3
-};
 
 typedef NS_ENUM(NSInteger, EXUpdatesDatabaseHashType) {
   EXUpdatesDatabaseHashTypeSha1 = 0
@@ -23,16 +16,18 @@ typedef NS_ENUM(NSInteger, EXUpdatesDatabaseHashType) {
 - (void)openDatabase;
 - (void)closeDatabase;
 
-- (void)addUpdateWithManifest:(EXUpdatesManifest *)manifest;
-- (void)addAssets:(NSArray<EXUpdatesAsset *>*)assets
-   toUpdateWithId:(NSUUID *)updateId;
+- (void)addUpdate:(EXUpdatesUpdate *)update;
+- (void)addNewAssets:(NSArray<EXUpdatesAsset *>*)assets toUpdateWithId:(NSUUID *)updateId;
+- (BOOL)addExistingAsset:(EXUpdatesAsset *)asset toUpdateWithId:(NSUUID *)updateId;
+- (void)markUpdateReadyWithId:(NSUUID *)updateId;
 
 - (void)markUpdatesForDeletion;
 - (NSArray<NSDictionary *>*)markAssetsForDeletion;
 - (void)deleteAssetsWithIds:(NSArray<NSNumber *>*)assetIds;
 - (void)deleteUnusedUpdates;
 
-- (NSArray<NSDictionary *>*)launchableUpdates;
+- (NSArray<EXUpdatesUpdate *>*)launchableUpdates;
+- (EXUpdatesUpdate * _Nullable)updateWithId:(NSUUID *)updateId;
 - (NSURL * _Nullable)launchAssetUrlWithUpdateId:(NSUUID *)updateId;
 - (NSArray<NSDictionary *>*)assetsForUpdateId:(NSUUID *)updateId;
 

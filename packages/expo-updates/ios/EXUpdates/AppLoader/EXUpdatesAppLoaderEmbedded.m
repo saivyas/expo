@@ -21,8 +21,8 @@ static NSString * const kEXUpdatesEmbeddedManifestType = @"json";
     NSLog(@"Could not read embedded manifest: %@", [err localizedDescription]);
   } else {
     NSAssert([manifest isKindOfClass:[NSDictionary class]], @"embedded manifest should be a valid JSON file");
-    self.manifest = [EXUpdatesManifest manifestWithManagedManifest:(NSDictionary *)manifest];
-    [self startLoadingFromManifest];
+    EXUpdatesUpdate *embeddedManifest = [EXUpdatesUpdate updateWithManagedManifest:(NSDictionary *)manifest];
+    [self startLoadingFromManifest:embeddedManifest];
   }
 }
 
@@ -30,15 +30,18 @@ static NSString * const kEXUpdatesEmbeddedManifestType = @"json";
 {
   NSURL *updatesDirectory = [EXUpdatesAppController sharedInstance].updatesDirectory;
   NSURL *destinationUrl = [updatesDirectory URLByAppendingPathComponent:asset.filename];
-
-  NSAssert(asset.nsBundleFilename, @"asset nsBundleFilename must be nonnull");
-  NSString *bundlePath = [[NSBundle mainBundle] pathForResource:asset.nsBundleFilename ofType:asset.type];
-
-  NSError *err;
-  if ([[NSFileManager defaultManager] copyItemAtPath:bundlePath toPath:[destinationUrl path] error:&err]) {
-    [self handleAssetDownloadWithData:[NSData dataWithContentsOfFile:bundlePath] response:nil asset:asset];
+  if ([[NSFileManager defaultManager] fileExistsAtPath:[destinationUrl path]]) {
+    [self handleAssetDownloadAlreadyExists:asset];
   } else {
-    [self handleAssetDownloadWithError:err asset:asset];
+    NSAssert(asset.nsBundleFilename, @"embedded asset nsBundleFilename must be nonnull");
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:asset.nsBundleFilename ofType:asset.type];
+
+    NSError *err;
+    if ([[NSFileManager defaultManager] copyItemAtPath:bundlePath toPath:[destinationUrl path] error:&err]) {
+      [self handleAssetDownloadWithData:[NSData dataWithContentsOfFile:bundlePath] response:nil asset:asset];
+    } else {
+      [self handleAssetDownloadWithError:err asset:asset];
+    }
   }
 }
 

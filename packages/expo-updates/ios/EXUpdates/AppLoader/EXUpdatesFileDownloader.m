@@ -1,6 +1,7 @@
 //  Copyright © 2019 650 Industries. All rights reserved.
 
 #import <EXUpdates/EXUpdatesConfig.h>
+#import <EXUpdates/EXUpdatesCrypto.h>
 #import <EXUpdates/EXUpdatesFileDownloader.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -66,6 +67,7 @@ NSTimeInterval const kEXUpdatesDefaultTimeoutInterval = 60;
 
   __weak typeof(self) weakSelf = self;
   NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    // TODO: strong self thing
     if (!error && [response isKindOfClass:[NSHTTPURLResponse class]]) {
       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
       if (httpResponse.statusCode != 200) {
@@ -82,6 +84,46 @@ NSTimeInterval const kEXUpdatesDefaultTimeoutInterval = 60;
     }
   }];
   [task resume];
+}
+
+- (void)downloadManifestFromURL:(NSURL *)url
+                   successBlock:(EXUpdatesFileDownloaderManifestSuccessBlock)successBlock
+                     errorBlock:(EXUpdatesFileDownloaderErrorBlock)errorBlock
+{
+  // TODO: figure out caching thing
+  [self downloadDataFromURL:url successBlock:^(NSData * data, NSURLResponse * response) {
+    NSError *err;
+    id manifest = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&err];
+    NSAssert(!err && manifest && [manifest isKindOfClass:[NSDictionary class]], @"manifest should be a valid JSON object");
+
+    id innerManifestString = manifest[@"manifestString"];
+    id signature = manifest[@"signature"];
+    if (innerManifestString && signature) {
+      NSAssert([innerManifestString isKindOfClass:[NSString class]], @"manifestString should be a string");
+      NSAssert([signature isKindOfClass:[NSString class]], @"signature should be a string");
+      [EXUpdatesCrypto verifySignatureWithData:(NSString *)innerManifestString
+                                     signature:(NSString *)signature
+                                  successBlock:^(BOOL isValid) {
+                                                  if (isValid) {
+                                                    NSError *err;
+                                                    id innerManifest = [NSJSONSerialization JSONObjectWithData:[(NSString *)innerManifestString dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&err];
+                                                    NSAssert(!err && innerManifest && [innerManifest isKindOfClass:[NSDictionary class]], @"manifest should be a valid JSON object");
+                                                    EXUpdatesUpdate *update = [EXUpdatesUpdate updateWithManagedManifest:(NSDictionary *)innerManifest];
+                                                    successBlock(update);
+                                                  } else {
+                                                    NSError *error = [NSError errorWithDomain:kEXUpdatesFileDownloaderErrorDomain code:-1 userInfo:@{NSLocalizedDescriptionKey: @"Manifest verification failed"}];
+                                                    errorBlock(error, response);
+                                                  }
+                                                }
+                                    errorBlock:^(NSError * _Nonnull error) {
+                                                  errorBlock(error, response);
+                                                }
+      ];
+    } else {
+      EXUpdatesUpdate *update = [EXUpdatesUpdate updateWithManagedManifest:(NSDictionary *)manifest];
+      successBlock(update);
+    }
+  } errorBlock:errorBlock];
 }
 
 - (void)_setHTTPHeaderFields:(NSMutableURLRequest *)request

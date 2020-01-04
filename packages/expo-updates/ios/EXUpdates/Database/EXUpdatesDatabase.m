@@ -82,10 +82,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 
 - (void)_initializeDatabase
 {
-  if (!_db) {
-    [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Missing database handle" info:nil isFatal:YES];
-    return;
-  }
+  NSAssert(_db, @"Missing database handle");
 
   NSString * const createTableStmts = @"\
    CREATE TABLE \"updates\" (\
@@ -126,34 +123,23 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 
 # pragma mark - insert and update
 
-- (void)addUpdateWithManifest:(EXUpdatesManifest *)manifest
+- (void)addUpdate:(EXUpdatesUpdate *)update
 {
-  if (!_db) {
-    [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Missing database handle" info:nil isFatal:YES];
-    return;
-  }
-
   NSString * const sql = @"INSERT INTO \"updates\" (\"id\", \"commit_time\", \"binary_versions\", \"metadata\", \"status\" , \"keep\")\
   VALUES (?1, ?2, ?3, ?4, ?5, 1);";
 
   [self _executeSql:sql
            withArgs:@[
-                      manifest.updateId,
-                      @([manifest.commitTime timeIntervalSince1970] * 1000),
-                      manifest.binaryVersions,
-                      manifest.metadata ?: [NSNull null],
-                      @(EXUpdatesDatabaseStatusPending)
+                      update.updateId,
+                      @([update.commitTime timeIntervalSince1970] * 1000),
+                      update.binaryVersions,
+                      update.metadata ?: [NSNull null],
+                      @(EXUpdatesUpdateStatusPending)
                       ]];
 }
 
-- (void)addAssets:(NSArray<EXUpdatesAsset *>*)assets
-   toUpdateWithId:(NSUUID *)updateId
+- (void)addNewAssets:(NSArray<EXUpdatesAsset *>*)assets toUpdateWithId:(NSUUID *)updateId
 {
-  if (!_db) {
-    [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Missing database handle" info:nil isFatal:YES];
-    return;
-  }
-
   sqlite3_exec(_db, "BEGIN;", NULL, NULL, NULL);
 
   for (EXUpdatesAsset *asset in assets) {
@@ -179,22 +165,51 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 
     // statements must stay in precisely this order for last_insert_rowid() to work correctly
     if (asset.isLaunchAsset) {
-      NSString * const updateSql = @"UPDATE updates SET launch_asset_id = last_insert_rowid(), status = ?1 WHERE id = ?2;";
-      [self _executeSql:updateSql
-               withArgs:@[
-                          @(EXUpdatesDatabaseStatusReady),
-                          updateId
-                          ]];
+      NSString * const updateSql = @"UPDATE updates SET launch_asset_id = last_insert_rowid() WHERE id = ?1;";
+      [self _executeSql:updateSql withArgs:@[updateId]];
     }
 
     NSString * const updateInsertSql = @"INSERT INTO updates_assets (\"update_id\", \"asset_id\") VALUES (?1, last_insert_rowid());";
-    [self _executeSql:updateInsertSql
-             withArgs:@[
-                        updateId
-                        ]];
+    [self _executeSql:updateInsertSql withArgs:@[updateId]];
   }
 
   sqlite3_exec(_db, "COMMIT;", NULL, NULL, NULL);
+}
+
+- (BOOL)addExistingAsset:(EXUpdatesAsset *)asset toUpdateWithId:(NSUUID *)updateId
+{
+  BOOL success;
+
+  sqlite3_exec(_db, "BEGIN;", NULL, NULL, NULL);
+  
+  NSString * const assetSelectSql = @"SELECT id FROM assets WHERE url = ?1 LIMIT 1;";
+  NSArray<NSDictionary *>* rows = [self _executeSql:assetSelectSql withArgs:@[asset.url]];
+  if (!rows || !rows[0]) {
+    success = NO;
+  } else {
+    NSNumber *assetId = rows[0][@"id"];
+    NSString * const insertSql = @"INSERT INTO updates_assets (\"update_id\", \"asset_id\") VALUES (?1, ?2);";
+    [self _executeSql:insertSql withArgs:@[updateId, assetId]];
+    if (asset.isLaunchAsset) {
+      NSString * const updateSql = @"UPDATE updates SET launch_asset_id = ?1 WHERE id = ?2;";
+      [self _executeSql:updateSql withArgs:@[assetId, updateId]];
+    }
+    success = YES;
+  }
+
+  sqlite3_exec(_db, "COMMIT;", NULL, NULL, NULL);
+  
+  return success;
+}
+
+- (void)markUpdateReadyWithId:(NSUUID *)updateId
+{
+  NSString * const updateSql = @"UPDATE updates SET status = ?1 WHERE id = ?2;";
+  [self _executeSql:updateSql
+           withArgs:@[
+                      @(EXUpdatesUpdateStatusReady),
+                      updateId
+                      ]];
 }
 
 - (void)markUpdatesForDeletion
@@ -205,7 +220,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
   NSAssert(launchedUpdateId, @"launchedUpdateId should be nonnull");
 
   NSString *sql = [NSString stringWithFormat:@"UPDATE updates SET keep = 1 WHERE id = ?1;\
-                   UPDATE updates SET keep = 0, status = %li WHERE commit_time < (SELECT commit_time FROM updates WHERE id = ?1);", (long)EXUpdatesDatabaseStatusUnused];
+                   UPDATE updates SET keep = 0, status = %li WHERE commit_time < (SELECT commit_time FROM updates WHERE id = ?1);", (long)EXUpdatesUpdateStatusUnused];
 
   [self _executeSql:sql withArgs:@[launchedUpdateId]];
 }
@@ -258,27 +273,37 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 
 # pragma mark - select
 
-- (NSArray<NSDictionary *>*)launchableUpdates
+- (NSArray<EXUpdatesUpdate *>*)launchableUpdates
 {
-  if (!_db) {
-    [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Missing database handle" info:nil isFatal:YES];
-    return @[];
-  }
-
   NSString *sql = [NSString stringWithFormat:@"SELECT *\
   FROM updates\
-  WHERE status = %li;", (long)EXUpdatesDatabaseStatusReady];
+  WHERE status = %li;", (long)EXUpdatesUpdateStatusReady];
 
-  return [self _executeSql:sql withArgs:nil];
+  NSArray<NSDictionary *>* rows = [self _executeSql:sql withArgs:nil];
+  
+  NSMutableArray<EXUpdatesUpdate *>*launchableUpdates = [NSMutableArray new];
+  for (NSDictionary *row in rows) {
+    [launchableUpdates addObject:[self _updateWithRow:row]];
+  }
+  return launchableUpdates;
+}
+
+- (EXUpdatesUpdate * _Nullable)updateWithId:(NSUUID *)updateId
+{
+  NSString * const sql = @"SELECT *\
+  FROM updates\
+  WHERE updates.id = ?1;";
+
+  NSArray<NSDictionary *>* rows = [self _executeSql:sql withArgs:@[updateId]];
+  if (!rows || !rows[0]) {
+    return nil;
+  } else {
+    return [self _updateWithRow:rows[0]];
+  }
 }
 
 - (NSURL * _Nullable)launchAssetUrlWithUpdateId:(NSUUID *)updateId
 {
-  if (!_db) {
-    [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Missing database handle" info:nil isFatal:YES];
-    return nil;
-  }
-
   NSString * const sql = @"SELECT relative_path\
   FROM updates\
   INNER JOIN assets ON updates.launch_asset_id = assets.id\
@@ -298,11 +323,6 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 
 - (NSArray<NSDictionary *>*)assetsForUpdateId:(NSUUID *)updateId
 {
-  if (!_db) {
-    [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Missing database handle" info:nil isFatal:YES];
-    return @[];
-  }
-
   NSString * const sql = @"SELECT relative_path, hash_content\
   FROM assets\
   INNER JOIN updates_assets ON updates_assets.asset_id = assets.id\
@@ -328,6 +348,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 
 - (NSArray<NSDictionary *>* _Nullable)_executeSql:(NSString *)sql withArgs:(NSArray * _Nullable)args
 {
+  NSAssert(_db, @"Missing database handle");
   sqlite3_stmt *stmt;
   if (sqlite3_prepare_v2(_db, [sql UTF8String], -1, &stmt, NULL) != SQLITE_OK) {
     [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Bad SQLite statement" info:nil isFatal:NO];
@@ -450,6 +471,20 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
   int extendedCode = sqlite3_extended_errcode(db);
   NSString *message = [NSString stringWithUTF8String:sqlite3_errmsg(db)];
   return [NSString stringWithFormat:@"Error code %i: %@ (extended error code %i)", code, message, extendedCode];
+}
+
+- (EXUpdatesUpdate *)_updateWithRow:(NSDictionary *)row
+{
+  NSError *error;
+  id metadata = [NSJSONSerialization JSONObjectWithData:[(NSString *)row[@"metadata"] dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&error];
+  NSAssert(!error && metadata && [metadata isKindOfClass:[NSDictionary class]], @"Update metadata should be a valid JSON object");
+  EXUpdatesUpdate *update = [EXUpdatesUpdate updateWithId:row[@"id"]
+                                               commitTime:[NSDate dateWithTimeIntervalSince1970:[(NSNumber *)row[@"commitTime"] doubleValue] / 1000]
+                                           binaryVersions:row[@"binaryVersions"]
+                                                 metadata:metadata
+                                                   status:(EXUpdatesUpdateStatus)[(NSNumber *)row[@"status"] integerValue]
+                                                     keep:[(NSNumber *)row[@"keep"] boolValue]];
+  return update;
 }
 
 @end

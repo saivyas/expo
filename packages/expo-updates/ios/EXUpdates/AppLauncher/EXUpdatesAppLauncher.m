@@ -3,13 +3,12 @@
 #import <EXUpdates/EXUpdatesAppController.h>
 #import <EXUpdates/EXUpdatesAppLauncher.h>
 #import <EXUpdates/EXUpdatesDatabase.h>
-#import <EXUpdates/EXUpdatesSelectionPolicy.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EXUpdatesAppLauncher ()
 
-@property (nonatomic, strong) NSDictionary *launchedUpdate;
+@property (nonatomic, strong, readwrite) EXUpdatesUpdate * _Nullable launchedUpdate;
 
 @end
 
@@ -17,12 +16,12 @@ static NSString * const kEXUpdatesAppLauncherErrorDomain = @"AppLauncher";
 
 @implementation EXUpdatesAppLauncher
 
-- (NSDictionary *)launchUpdate
+- (EXUpdatesUpdate *)launchUpdateWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy
 {
   if (!_launchedUpdate) {
     EXUpdatesDatabase *database = [EXUpdatesAppController sharedInstance].database;
-    NSArray<NSDictionary *>* launchableUpdates = [database launchableUpdates];
-    _launchedUpdate = [EXUpdatesSelectionPolicy runnableUpdateFromUpdates:launchableUpdates];
+    NSArray<EXUpdatesUpdate *>* launchableUpdates = [database launchableUpdates];
+    _launchedUpdate = [selectionPolicy launchableUpdateFromUpdates:launchableUpdates];
     if (!_launchedUpdate) {
       [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesAppLauncherErrorDomain description:@"No runnable update found" info:nil isFatal:YES];
     }
@@ -30,12 +29,13 @@ static NSString * const kEXUpdatesAppLauncherErrorDomain = @"AppLauncher";
   return _launchedUpdate;
 }
 
+// TODO: get rid of this
 - (NSUUID * _Nullable)launchedUpdateId
 {
   if (!_launchedUpdate) {
-    [self launchedUpdate];
+    return nil;
   }
-  return _launchedUpdate[@"id"];
+  return _launchedUpdate.updateId;
 }
 
 @end

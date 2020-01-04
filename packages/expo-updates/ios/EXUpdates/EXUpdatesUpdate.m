@@ -1,6 +1,8 @@
 //  Copyright © 2019 650 Industries. All rights reserved.
 
-#import <EXUpdates/EXUpdatesManifest.h>
+#import <EXUpdates/EXUpdatesAppController.h>
+#import <EXUpdates/EXUpdatesDatabase.h>
+#import <EXUpdates/EXUpdatesUpdate.h>
 #import <EXUpdates/EXUpdatesUtils.h>
 #import <React/RCTConvert.h>
 
@@ -8,12 +10,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 static NSString * const kEXUpdatesEmbeddedBundleFilename = @"shell-app.bundle";
 
-@interface EXUpdatesManifest ()
+@interface EXUpdatesUpdate ()
 
 @property (nonatomic, strong, readwrite) NSUUID *updateId;
 @property (nonatomic, strong, readwrite) NSDate *commitTime;
 @property (nonatomic, strong, readwrite) NSString *binaryVersions;
-@property (nonatomic, strong, readwrite) NSDictionary *metadata;
+@property (nonatomic, strong, readwrite) NSDictionary * _Nullable metadata;
+@property (nonatomic, assign, readwrite) EXUpdatesUpdateStatus status;
+@property (nonatomic, assign, readwrite) BOOL keep;
 @property (nonatomic, strong, readwrite) NSURL *bundleUrl;
 @property (nonatomic, strong, readwrite) NSArray<EXUpdatesAsset *>*assets;
 
@@ -21,7 +25,7 @@ static NSString * const kEXUpdatesEmbeddedBundleFilename = @"shell-app.bundle";
 
 @end
 
-@implementation EXUpdatesManifest
+@implementation EXUpdatesUpdate
 
 - (instancetype)_initWithRawManifest:(NSDictionary *)manifest
 {
@@ -31,9 +35,27 @@ static NSString * const kEXUpdatesEmbeddedBundleFilename = @"shell-app.bundle";
   return self;
 }
 
-+ (instancetype)manifestWithBareManifest:(NSDictionary *)bareManifest
++ (instancetype)updateWithId:(NSUUID *)updateId
+    commitTime:(NSDate *)commitTime
+binaryVersions:(NSString *)binaryVersions
+      metadata:(NSDictionary * _Nullable)metadata
+        status:(EXUpdatesUpdateStatus)status
+          keep:(BOOL)keep
 {
-  EXUpdatesManifest *manifest = [[self alloc] _initWithRawManifest:bareManifest];
+  // for now, we store the entire managed manifest in the metadata field
+  EXUpdatesUpdate *update = [[self alloc] _initWithRawManifest:metadata];
+  update.updateId = updateId;
+  update.commitTime = commitTime;
+  update.binaryVersions = binaryVersions;
+  update.metadata = metadata;
+  update.status = status;
+  update.keep = keep;
+  return update;
+}
+
++ (instancetype)updateWithBareManifest:(NSDictionary *)bareManifest
+{
+  EXUpdatesUpdate *update = [[self alloc] _initWithRawManifest:bareManifest];
 
   id updateId = bareManifest[@"id"];
   id commitTime = bareManifest[@"commitTime"];
@@ -89,19 +111,23 @@ static NSString * const kEXUpdatesEmbeddedBundleFilename = @"shell-app.bundle";
     [processedAssets addObject:asset];
   }
 
-  manifest.updateId = uuid;
-  manifest.commitTime = [NSDate dateWithTimeIntervalSince1970:[(NSNumber *)commitTime doubleValue] / 1000];
-  manifest.binaryVersions = (NSString *)binaryVersions;
-  manifest.metadata = (NSDictionary *)metadata;
-  manifest.bundleUrl = bundleUrl;
-  manifest.assets = processedAssets;
+  update.updateId = uuid;
+  update.commitTime = [NSDate dateWithTimeIntervalSince1970:[(NSNumber *)commitTime doubleValue] / 1000];
+  update.binaryVersions = (NSString *)binaryVersions;
+  if (metadata) {
+    update.metadata = (NSDictionary *)metadata;
+  }
+  update.status = EXUpdatesUpdateStatusPending;
+  update.keep = YES;
+  update.bundleUrl = bundleUrl;
+  update.assets = processedAssets;
 
-  return manifest;
+  return update;
 }
 
-+ (instancetype)manifestWithManagedManifest:(NSDictionary *)managedManifest
++ (instancetype)updateWithManagedManifest:(NSDictionary *)managedManifest
 {
-  EXUpdatesManifest *manifest = [[self alloc] _initWithRawManifest:managedManifest];
+  EXUpdatesUpdate *update = [[self alloc] _initWithRawManifest:managedManifest];
 
   id updateId = managedManifest[@"releaseId"];
   id commitTime = managedManifest[@"commitTime"];
@@ -113,12 +139,12 @@ static NSString * const kEXUpdatesEmbeddedBundleFilename = @"shell-app.bundle";
   if (binaryVersions && [binaryVersions isKindOfClass:[NSDictionary class]]) {
     id binaryVersionsIos = ((NSDictionary *)binaryVersions)[@"ios"];
     NSAssert([binaryVersionsIos isKindOfClass:[NSString class]], @"binaryVersions['ios'] should be a string");
-    manifest.binaryVersions = (NSString *)binaryVersionsIos;
+    update.binaryVersions = (NSString *)binaryVersionsIos;
   } else if (binaryVersions && [binaryVersions isKindOfClass:[NSString class]]) {
-    manifest.binaryVersions = (NSString *)binaryVersions;
+    update.binaryVersions = (NSString *)binaryVersions;
   } else {
     NSAssert([sdkVersion isKindOfClass:[NSString class]], @"sdkVersion should be a string");
-    manifest.binaryVersions = (NSString *)sdkVersion;
+    update.binaryVersions = (NSString *)sdkVersion;
   }
 
   NSAssert([updateId isKindOfClass:[NSString class]], @"update ID should be a string");
@@ -164,18 +190,35 @@ static NSString * const kEXUpdatesEmbeddedBundleFilename = @"shell-app.bundle";
     [processedAssets addObject:asset];
   }
 
-  manifest.updateId = uuid;
-  manifest.commitTime = [RCTConvert NSDate:commitTime];
-  manifest.metadata = managedManifest;
-  manifest.bundleUrl = bundleUrl;
-  manifest.assets = processedAssets;
+  update.updateId = uuid;
+  update.commitTime = [RCTConvert NSDate:commitTime];
+  update.metadata = managedManifest;
+  update.status = EXUpdatesUpdateStatusPending;
+  update.keep = YES;
+  update.bundleUrl = bundleUrl;
+  update.assets = processedAssets;
 
-  return manifest;
+  return update;
 }
 
 + (NSURL *)bundledAssetBaseUrl
 {
   return [NSURL URLWithString:@"https://d1wp6m56sqw74a.cloudfront.net/~assets/"];
+}
+
+- (NSURL *)bundleUrl
+{
+  if (!_bundleUrl) {
+    EXUpdatesDatabase *db = [EXUpdatesAppController sharedInstance].database;
+    _bundleUrl = [db launchAssetUrlWithUpdateId:_updateId];
+  }
+  return _bundleUrl;
+}
+
+- (NSArray<EXUpdatesAsset *>*)assets
+{
+  // TODO: select from db if nil
+  return _assets;
 }
 
 @end
