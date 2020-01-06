@@ -8,6 +8,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readwrite, strong) NSURL *remoteUrl;
 @property (nonatomic, readwrite, strong) NSString *releaseChannel;
+@property (nonatomic, readwrite, strong) NSNumber *launchWaitMs;
+@property (nonatomic, readwrite, assign) EXUpdatesCheckAutomaticallyConfig checkOnLaunch;
 
 @end
 
@@ -52,6 +54,26 @@ static NSString * const kEXUpdatesDefaultReleaseChannelName = @"default";
     _releaseChannel = (NSString *)releaseChannel;
   } else {
     _releaseChannel = kEXUpdatesDefaultReleaseChannelName;
+  }
+
+  id launchWaitMs = config[@"launchWaitMs"];
+  if (launchWaitMs && [launchWaitMs isKindOfClass:[NSNumber class]]) {
+    _launchWaitMs = (NSNumber *)launchWaitMs;
+  } else {
+    _launchWaitMs = @(0);
+  }
+
+  id checkOnLaunch = config[@"checkOnLaunch"];
+  if (checkOnLaunch && [checkOnLaunch isKindOfClass:[NSString class]]) {
+    if ([@"NEVER" isEqualToString:(NSString *)checkOnLaunch]) {
+      _checkOnLaunch = EXUpdatesCheckAutomaticallyConfigNever;
+    } else if ([@"WIFI_ONLY" isEqualToString:(NSString *)checkOnLaunch]) {
+      _checkOnLaunch = EXUpdatesCheckAutomaticallyConfigWifiOnly;
+    } else {
+      _checkOnLaunch = EXUpdatesCheckAutomaticallyConfigAlways;
+    }
+  } else {
+    _checkOnLaunch = EXUpdatesCheckAutomaticallyConfigAlways;
   }
 }
 
