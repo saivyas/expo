@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, EXUpdatesDatabaseHashType) {
 
 @property (nonatomic, readonly) NSLock *lock;
 
-- (void)openDatabase;
+- (BOOL)openDatabaseWithError:(NSError **)error;
 - (void)closeDatabase;
 
 - (void)addUpdate:(EXUpdatesUpdate *)update;

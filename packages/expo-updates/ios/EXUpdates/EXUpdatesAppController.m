@@ -115,16 +115,6 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
   return _updatesDirectory;
 }
 
-- (void)handleErrorWithDomain:(NSString *)errorDomain
-                  description:(NSString *)description
-                         info:(NSDictionary * _Nullable)info
-                      isFatal:(BOOL)isFatal
-{
-  // do something!!!!
-  NSLog(@"EXUpdates error: %@", description);
-  NSLog(@"%@", [NSThread callStackSymbols]);
-}
-
 # pragma mark - internal
 
 - (void)_copyEmbeddedAssets

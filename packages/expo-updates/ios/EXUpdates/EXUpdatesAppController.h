@@ -24,11 +24,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSURL * _Nullable)launchAssetUrl;
 - (NSURL *)updatesDirectory;
 
-- (void)handleErrorWithDomain:(NSString *)errorDomain
-                  description:(NSString *)description
-                         info:(NSDictionary * _Nullable)info
-                      isFatal:(BOOL)isFatal;
-
 @end
 
 NS_ASSUME_NONNULL_END

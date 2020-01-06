@@ -29,7 +29,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
   return self;
 }
 
-- (void)openDatabase
+- (BOOL)openDatabaseWithError:(NSError **)error
 {
   sqlite3 *db;
   NSURL *dbUrl = [[EXUpdatesAppController sharedInstance].updatesDirectory URLByAppendingPathComponent:kEXUpdatesDatabaseFilename];
@@ -47,26 +47,36 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
       if ([[NSFileManager defaultManager] moveItemAtURL:dbUrl toURL:destinationUrl error:&err]) {
         NSLog(@"Moved corrupt SQLite db to %@", archivedDbFilename);
         if (sqlite3_open([[dbUrl absoluteString] UTF8String], &db) != SQLITE_OK) {
-          NSString *errorMessage = [self _errorMessageFromSqlite:db];
-          [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Could not open existing or create new database" info:@{ NSLocalizedDescriptionKey: errorMessage } isFatal:YES];
-          return;
+          if (error != NULL) {
+            NSString *errorMessage = [self _errorMessageFromSqlite:db];
+            *error = [NSError errorWithDomain:kEXUpdatesDatabaseErrorDomain code:-1 userInfo:@{ NSLocalizedDescriptionKey: errorMessage }];
+          }
+          return NO;
         }
         shouldInitializeDatabase = YES;
       } else {
-        NSLog(@"Could not move existing corrupt database: %@", [err localizedDescription]);
-        [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Could not move existing corrupt database" info:@{ NSUnderlyingErrorKey: err } isFatal:YES];
-        return;
+        NSString *description = [NSString stringWithFormat:@"Could not move existing corrupt database: %@", [err localizedDescription]];
+        if (error != NULL) {
+          *error = [NSError errorWithDomain:kEXUpdatesDatabaseErrorDomain
+                                       code:-1
+                                   userInfo:@{ NSLocalizedDescriptionKey: description, NSUnderlyingErrorKey: err }];
+        }
+        return NO;
       }
     } else {
-      // we encountered some other error opening the database
-      // do something -- maybe fall back to embedded assets?
+      if (error != NULL) {
+        NSString *errorMessage = [self _errorMessageFromSqlite:db];
+        *error = [NSError errorWithDomain:kEXUpdatesDatabaseErrorDomain code:-1 userInfo:@{ NSLocalizedDescriptionKey: errorMessage }];
+      }
+      return NO;
     }
   }
   _db = db;
 
   if (shouldInitializeDatabase) {
-    [self _initializeDatabase];
+    return [self _initializeDatabase:error];
   }
+  return YES;
 }
 
 - (void)closeDatabase
@@ -80,7 +90,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
   [self closeDatabase];
 }
 
-- (void)_initializeDatabase
+- (BOOL)_initializeDatabase:(NSError **)error
 {
   NSAssert(_db, @"Missing database handle");
 
@@ -116,9 +126,14 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 
   char *errMsg;
   if (sqlite3_exec(_db, [createTableStmts UTF8String], NULL, NULL, &errMsg) != SQLITE_OK) {
-    [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Could not initialize database tables" info:@{ @"message": [NSString stringWithUTF8String:errMsg] } isFatal:YES];
+    if (error != NULL) {
+      NSString *description = [NSString stringWithFormat:@"Could not initialize database tables: %@", [NSString stringWithUTF8String:errMsg]];
+      *error = [NSError errorWithDomain:kEXUpdatesDatabaseErrorDomain code:-1 userInfo:@{ NSLocalizedDescriptionKey: description }];
+    }
     sqlite3_free(errMsg);
+    return NO;
   };
+  return YES;
 }
 
 # pragma mark - insert and update
@@ -351,7 +366,8 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
   NSAssert(_db, @"Missing database handle");
   sqlite3_stmt *stmt;
   if (sqlite3_prepare_v2(_db, [sql UTF8String], -1, &stmt, NULL) != SQLITE_OK) {
-    [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Bad SQLite statement" info:nil isFatal:NO];
+    NSString *message = [NSString stringWithFormat:@"Could not prepare SQLite statement: %@", [self _errorMessageFromSqlite:_db]];
+    NSAssert(NO, message);
     return nil;
   }
   if (args) {
@@ -400,7 +416,8 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
   sqlite3_finalize(stmt);
 
   if (errorMessage) {
-    [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:errorMessage info:nil isFatal:NO];
+    // TODO: handle this
+    NSLog(@"Error executing SQLite statement: %@", [self _errorMessageFromSqlite:_db]);
     return nil;
   }
 
@@ -433,24 +450,28 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
       uuid_t bytes;
       [((NSUUID *)obj) getUUIDBytes:bytes];
       if (sqlite3_bind_blob(stmt, (int)idx + 1, bytes, 16, SQLITE_TRANSIENT) != SQLITE_OK) {
-        [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Could not bind UUID to SQLite statement" info:nil isFatal:NO];
+        // TODO: handle this
+        NSLog(@"Error executing SQLite statement: %@", [self _errorMessageFromSqlite:_db]);
         *stop = YES;
       }
     } else if ([obj isKindOfClass:[NSNumber class]]) {
       if (sqlite3_bind_int64(stmt, (int)idx + 1, [((NSNumber *)obj) longLongValue]) != SQLITE_OK) {
-        [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Could not bind number to SQLite statement" info:nil isFatal:NO];
+        // TODO: handle this
+        NSLog(@"Error executing SQLite statement: %@", [self _errorMessageFromSqlite:_db]);
         *stop = YES;
       }
     } else if ([obj isKindOfClass:[NSDictionary class]]) {
       NSError *error;
       NSData *jsonData = [NSJSONSerialization dataWithJSONObject:(NSDictionary *)obj options:kNilOptions error:&error];
       if (!error && sqlite3_bind_text(stmt, (int)idx + 1, jsonData.bytes, (int)jsonData.length, SQLITE_TRANSIENT) != SQLITE_OK) {
-        [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Could not bind JSON data to SQLite statement" info:nil isFatal:NO];
+        // TODO: handle this
+        NSLog(@"Error executing SQLite statement: %@", [self _errorMessageFromSqlite:_db]);
         *stop = YES;
       }
     } else if ([obj isKindOfClass:[NSNull class]]) {
       if (sqlite3_bind_null(stmt, (int)idx + 1) != SQLITE_OK) {
-        [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Could not bind null arg to SQLite statement" info:nil isFatal:NO];
+        // TODO: handle this
+        NSLog(@"Error executing SQLite statement: %@", [self _errorMessageFromSqlite:_db]);
         *stop = YES;
       }
     } else {
@@ -458,7 +479,8 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
       NSString *string = [obj isKindOfClass:[NSString class]] ? (NSString *)obj : [obj description];
       NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
       if (sqlite3_bind_text(stmt, (int)idx + 1, data.bytes, (int)data.length, SQLITE_TRANSIENT) != SQLITE_OK) {
-        [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesDatabaseErrorDomain description:@"Could not bind string to SQLite statement" info:nil isFatal:NO];
+        // TODO: handle this
+        NSLog(@"Error executing SQLite statement: %@", [self _errorMessageFromSqlite:_db]);
         *stop = YES;
       }
     }
