@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray<EXUpdatesAsset *>* finishedAssets;
 @property (nonatomic, strong) NSMutableArray<EXUpdatesAsset *>* existingAssets;
 
+@property (nonatomic, strong) NSLock *arrayLock;
+
 @end
 
 static NSString * const kEXUpdatesAppLoaderErrorDomain = @"EXUpdatesAppLoader";
@@ -37,6 +39,7 @@ static NSString * const kEXUpdatesAppLoaderErrorDomain = @"EXUpdatesAppLoader";
     _assetQueue = [NSMutableArray new];
     _erroredAssets = [NSMutableArray new];
     _finishedAssets = [NSMutableArray new];
+    _arrayLock = [[NSLock alloc] init];
   }
   return self;
 }
@@ -93,26 +96,31 @@ static NSString * const kEXUpdatesAppLoaderErrorDomain = @"EXUpdatesAppLoader";
 
 - (void)handleAssetDownloadAlreadyExists:(EXUpdatesAsset *)asset
 {
+  [_arrayLock lock];
   [self->_assetQueue removeObject:asset];
   [self->_existingAssets addObject:asset];
   if (![self->_assetQueue count]) {
     [self _finish];
   }
+  [_arrayLock unlock];
 }
 
 - (void)handleAssetDownloadWithError:(NSError *)error asset:(EXUpdatesAsset *)asset
 {
   // TODO: retry. for now log an error
   NSLog(@"error downloading file: %@: %@", [asset.url absoluteString], [error localizedDescription]);
+  [_arrayLock lock];
   [self->_assetQueue removeObject:asset];
   [self->_erroredAssets addObject:asset];
   if (![self->_assetQueue count]) {
     [self _finish];
   }
+  [_arrayLock unlock];
 }
 
 - (void)handleAssetDownloadWithData:(NSData *)data response:(NSURLResponse * _Nullable)response asset:(EXUpdatesAsset *)asset
 {
+  [_arrayLock lock];
   [self->_assetQueue removeObject:asset];
 
   asset.data = data;
@@ -123,6 +131,7 @@ static NSString * const kEXUpdatesAppLoaderErrorDomain = @"EXUpdatesAppLoader";
   if (![self->_assetQueue count]) {
     [self _finish];
   }
+  [_arrayLock unlock];
 }
 
 # pragma mark - internal
