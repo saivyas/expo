@@ -162,12 +162,24 @@ static NSString * const kEXUpdatesAppLoaderErrorDomain = @"EXUpdatesAppLoader";
 
 - (void)_lockDatabase
 {
-  [[EXUpdatesAppController sharedInstance].database.lock lock];
+  if ([NSThread isMainThread]) {
+    [[EXUpdatesAppController sharedInstance].database.lock lock];
+  } else {
+    dispatch_sync(dispatch_get_main_queue(), ^{
+      [[EXUpdatesAppController sharedInstance].database.lock lock];
+    });
+  }
 }
 
 - (void)_unlockDatabase
 {
-  [[EXUpdatesAppController sharedInstance].database.lock unlock];
+  if ([NSThread isMainThread]) {
+    [[EXUpdatesAppController sharedInstance].database.lock unlock];
+  } else {
+    dispatch_sync(dispatch_get_main_queue(), ^{
+      [[EXUpdatesAppController sharedInstance].database.lock unlock];
+    });
+  }
 }
 
 @end
