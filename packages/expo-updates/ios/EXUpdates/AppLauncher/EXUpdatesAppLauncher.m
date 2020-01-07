@@ -17,24 +17,23 @@ static NSString * const kEXUpdatesAppLauncherErrorDomain = @"AppLauncher";
 
 @implementation EXUpdatesAppLauncher
 
-- (EXUpdatesUpdate *)launchableUpdateWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy
+- (EXUpdatesUpdate * _Nullable)launchableUpdateWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy
 {
   if (!_launchableUpdate) {
     EXUpdatesDatabase *database = [EXUpdatesAppController sharedInstance].database;
     NSArray<EXUpdatesUpdate *>* launchableUpdates = [database launchableUpdates];
     _launchableUpdate = [selectionPolicy launchableUpdateFromUpdates:launchableUpdates];
-    if (!_launchableUpdate) {
-      [[EXUpdatesAppController sharedInstance] handleErrorWithDomain:kEXUpdatesAppLauncherErrorDomain description:@"No runnable update found" info:nil isFatal:YES];
-    }
   }
   return _launchableUpdate;
 }
 
-- (EXUpdatesUpdate *)launchUpdateWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy
+- (EXUpdatesUpdate * _Nullable)launchUpdateWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy
 {
   if (!_launchedUpdate) {
     _launchedUpdate = [self launchableUpdateWithSelectionPolicy:selectionPolicy];
   }
+  
+  // askdjfa;sdfj;asdjf;alsdjfsad ensure assets exist!!!!!
   return _launchedUpdate;
 }
 

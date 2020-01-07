@@ -9,8 +9,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) EXUpdatesUpdate * _Nullable launchedUpdate;
 
-- (EXUpdatesUpdate *)launchableUpdateWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy;
-- (EXUpdatesUpdate *)launchUpdateWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy;
+- (EXUpdatesUpdate * _Nullable)launchableUpdateWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy;
+- (EXUpdatesUpdate * _Nullable)launchUpdateWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy;
 - (NSUUID * _Nullable)launchedUpdateId;
 
 @end
