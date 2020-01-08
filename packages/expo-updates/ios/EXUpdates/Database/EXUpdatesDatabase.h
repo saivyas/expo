@@ -22,11 +22,12 @@ typedef NS_ENUM(NSInteger, EXUpdatesDatabaseHashType) {
 - (void)updateAsset:(EXUpdatesAsset *)asset;
 - (void)markUpdateReadyWithId:(NSUUID *)updateId;
 
-- (void)markUpdatesForDeletion;
-- (NSArray<NSDictionary *>*)markAssetsForDeletion;
+- (void)markUpdateForDeletionWithId:(NSUUID *)updateId;
+- (NSArray<NSDictionary *>*)markUnusedAssetsForDeletion;
 - (void)deleteAssetsWithIds:(NSArray<NSNumber *>*)assetIds;
 - (void)deleteUnusedUpdates;
 
+- (NSArray<EXUpdatesUpdate *>*)allUpdates;
 - (NSArray<EXUpdatesUpdate *>*)launchableUpdates;
 - (EXUpdatesUpdate * _Nullable)updateWithId:(NSUUID *)updateId;
 - (EXUpdatesAsset * _Nullable)launchAssetWithUpdateId:(NSUUID *)updateId;

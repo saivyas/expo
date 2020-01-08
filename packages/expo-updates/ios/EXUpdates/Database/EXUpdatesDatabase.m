@@ -240,7 +240,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 
 - (void)markUpdateReadyWithId:(NSUUID *)updateId
 {
-  NSString * const updateSql = @"UPDATE updates SET status = ?1 WHERE id = ?2;";
+  NSString * const updateSql = @"UPDATE updates SET status = ?1, keep = 1 WHERE id = ?2;";
   [self _executeSql:updateSql
            withArgs:@[
                       @(EXUpdatesUpdateStatusReady),
@@ -248,20 +248,13 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
                       ]];
 }
 
-- (void)markUpdatesForDeletion
+- (void)markUpdateForDeletionWithId:(NSUUID *)updateId
 {
-  // mark currently running update as keep: true
-  // and mark all updates with earlier commitTimes as keep: false, status unavailable
-  NSUUID *launchedUpdateId = [EXUpdatesAppController sharedInstance].launcher.launchedUpdateId;
-  NSAssert(launchedUpdateId, @"launchedUpdateId should be nonnull");
-
-  NSString *sql = [NSString stringWithFormat:@"UPDATE updates SET keep = 1 WHERE id = ?1;\
-                   UPDATE updates SET keep = 0, status = %li WHERE commit_time < (SELECT commit_time FROM updates WHERE id = ?1);", (long)EXUpdatesUpdateStatusUnused];
-
-  [self _executeSql:sql withArgs:@[launchedUpdateId]];
+  NSString *sql = [NSString stringWithFormat:@"UPDATE updates SET keep = 0, status = %li WHERE id = ?1;", (long)EXUpdatesUpdateStatusUnused];
+  [self _executeSql:sql withArgs:@[updateId]];
 }
 
-- (NSArray<NSDictionary *>*)markAssetsForDeletion
+- (NSArray<NSDictionary *>*)markUnusedAssetsForDeletion
 {
   // the simplest way to mark the assets we want to delete
   // is to mark all assets for deletion, then go back and unmark
@@ -308,6 +301,18 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 }
 
 # pragma mark - select
+
+- (NSArray<EXUpdatesUpdate *>*)allUpdates
+{
+  NSString * const sql = @"SELECT * FROM updates;";
+  NSArray<NSDictionary *>* rows = [self _executeSql:sql withArgs:nil];
+
+  NSMutableArray<EXUpdatesUpdate *>*launchableUpdates = [NSMutableArray new];
+  for (NSDictionary *row in rows) {
+    [launchableUpdates addObject:[self _updateWithRow:row]];
+  }
+  return launchableUpdates;
+}
 
 - (NSArray<EXUpdatesUpdate *>*)launchableUpdates
 {

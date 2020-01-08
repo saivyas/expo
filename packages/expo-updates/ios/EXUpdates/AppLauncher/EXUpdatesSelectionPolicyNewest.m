@@ -6,7 +6,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation EXUpdatesSelectionPolicyNewest
 
-- (EXUpdatesUpdate * _Nullable)launchableUpdateFromUpdates:(NSArray<EXUpdatesUpdate *>*)updates
+- (EXUpdatesUpdate * _Nullable)launchableUpdateWithUpdates:(NSArray<EXUpdatesUpdate *>*)updates
 {
   EXUpdatesUpdate *runnableUpdate;
   NSDate *runnableUpdateCommitTime;
@@ -22,6 +22,21 @@ NS_ASSUME_NONNULL_BEGIN
     }
   }
   return runnableUpdate;
+}
+
+- (NSArray<EXUpdatesUpdate *>*)updatesToDeleteWithLaunchedUpdate:(EXUpdatesUpdate *)launchedUpdate updates:(NSArray<EXUpdatesUpdate *>*)updates
+{
+  if (!launchedUpdate) {
+    return @[];
+  }
+
+  NSMutableArray<EXUpdatesUpdate *>*updatesToDelete = [NSMutableArray new];
+  for (EXUpdatesUpdate *update in updates) {
+    if ([launchedUpdate.commitTime compare:update.commitTime] == NSOrderedDescending) {
+      [updatesToDelete addObject:update];
+    }
+  }
+  return updatesToDelete;
 }
 
 - (BOOL)shouldLoadNewUpdate:(EXUpdatesUpdate * _Nullable)newUpdate withLaunchedUpdate:(EXUpdatesUpdate * _Nullable)launchedUpdate

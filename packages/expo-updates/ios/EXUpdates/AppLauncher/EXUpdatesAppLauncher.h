@@ -23,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)launchUpdateWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy;
 
 - (EXUpdatesUpdate * _Nullable)launchableUpdateWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy;
-- (NSUUID * _Nullable)launchedUpdateId;
 
 @end
 

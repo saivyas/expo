@@ -6,7 +6,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EXUpdatesSelectionPolicy : NSObject
 
-- (EXUpdatesUpdate * _Nullable)launchableUpdateFromUpdates:(NSArray<EXUpdatesUpdate *>*)updates;
+- (EXUpdatesUpdate * _Nullable)launchableUpdateWithUpdates:(NSArray<EXUpdatesUpdate *>*)updates;
+- (NSArray<EXUpdatesUpdate *>*)updatesToDeleteWithLaunchedUpdate:(EXUpdatesUpdate *)launchedUpdate updates:(NSArray<EXUpdatesUpdate *>*)updates;
 - (BOOL)shouldLoadNewUpdate:(EXUpdatesUpdate * _Nullable)newUpdate withLaunchedUpdate:(EXUpdatesUpdate * _Nullable)launchedUpdate;
 
 @end

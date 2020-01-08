@@ -8,7 +8,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation EXUpdatesReaper
 
-- (void)reapUnusedUpdates
++ (void)reapUnusedUpdatesWithSelectionPolicy:(EXUpdatesSelectionPolicy *)selectionPolicy
+                              launchedUpdate:(EXUpdatesUpdate *)launchedUpdate
 {
   EXUpdatesDatabase *database = [EXUpdatesAppController sharedInstance].database;
   [database.lock lock];
@@ -16,8 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
   NSURL *updatesDirectory = [EXUpdatesAppController sharedInstance].updatesDirectory;
 
   NSDate *beginMarkForDeletion = [NSDate date];
-  [database markUpdatesForDeletion];
-  NSArray<NSDictionary *>* assetsForDeletion = [database markAssetsForDeletion];
+  [database markUpdateReadyWithId:launchedUpdate.updateId];
+  NSArray<EXUpdatesUpdate *>*updatesToDelete = [selectionPolicy updatesToDeleteWithLaunchedUpdate:launchedUpdate updates:[database allUpdates]];
+  for (EXUpdatesUpdate *update in updatesToDelete) {
+    [database markUpdateForDeletionWithId:update.updateId];
+  }
+  NSArray<NSDictionary *>* assetsForDeletion = [database markUnusedAssetsForDeletion];
   NSLog(@"Marked updates and assets for deletion in %f ms", [beginMarkForDeletion timeIntervalSinceNow] * -1000);
 
   NSMutableArray<NSNumber *>* deletedAssets = [NSMutableArray new];

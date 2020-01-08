@@ -42,7 +42,7 @@ static NSString * const kEXUpdatesAppLauncherErrorDomain = @"AppLauncher";
   if (!_launchableUpdate) {
     EXUpdatesDatabase *database = [EXUpdatesAppController sharedInstance].database;
     NSArray<EXUpdatesUpdate *>* launchableUpdates = [database launchableUpdates];
-    _launchableUpdate = [selectionPolicy launchableUpdateFromUpdates:launchableUpdates];
+    _launchableUpdate = [selectionPolicy launchableUpdateWithUpdates:launchableUpdates];
   }
   return _launchableUpdate;
 }
@@ -117,15 +117,6 @@ static NSString * const kEXUpdatesAppLauncherErrorDomain = @"AppLauncher";
   }
 
   return assetFileExists;
-}
-
-// TODO: get rid of this
-- (NSUUID * _Nullable)launchedUpdateId
-{
-  if (!_launchedUpdate) {
-    return nil;
-  }
-  return _launchedUpdate.updateId;
 }
 
 - (EXUpdatesFileDownloader *)downloader
