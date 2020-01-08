@@ -11,9 +11,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readwrite, strong) NSNumber *launchWaitMs;
 @property (nonatomic, readwrite, assign) EXUpdatesCheckAutomaticallyConfig checkOnLaunch;
 
+@property (nonatomic, readwrite, strong) NSString * _Nullable sdkVersion;
+@property (nonatomic, readwrite, strong) NSString * _Nullable runtimeVersion;
+
 @end
 
-static NSString * const kEXUpdatesConfigPlistName = @"expo-updates";
+static NSString * const kEXUpdatesConfigPlistName = @"expo-config";
 static NSString * const kEXUpdatesDefaultReleaseChannelName = @"default";
 
 @implementation EXUpdatesConfig
@@ -75,6 +78,18 @@ static NSString * const kEXUpdatesDefaultReleaseChannelName = @"default";
   } else {
     _checkOnLaunch = EXUpdatesCheckAutomaticallyConfigAlways;
   }
+
+  id sdkVersion = config[@"sdkVersion"];
+  if (sdkVersion && [sdkVersion isKindOfClass:[NSString class]]) {
+    _sdkVersion = (NSString *)sdkVersion;
+  }
+
+  id runtimeVersion = config[@"runtimeVersion"];
+  if (runtimeVersion && [runtimeVersion isKindOfClass:[NSString class]]) {
+    _runtimeVersion = (NSString *)runtimeVersion;
+  }
+
+  NSAssert(_sdkVersion || _runtimeVersion, @"One of sdkVersion or runtimeVersion must be defined in expo-config.plist");
 }
 
 @end

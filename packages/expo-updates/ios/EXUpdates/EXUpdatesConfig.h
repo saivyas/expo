@@ -15,6 +15,9 @@ typedef NS_ENUM(NSInteger, EXUpdatesCheckAutomaticallyConfig) {
 @property (nonatomic, readonly) NSNumber *launchWaitMs;
 @property (nonatomic, readonly) EXUpdatesCheckAutomaticallyConfig checkOnLaunch;
 
+@property (nonatomic, readonly) NSString * _Nullable sdkVersion;
+@property (nonatomic, readonly) NSString * _Nullable runtimeVersion;
+
 + (instancetype)sharedInstance;
 
 @end
