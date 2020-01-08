@@ -21,7 +21,8 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
 @property (nonatomic, readwrite, strong) EXUpdatesDatabase *database;
 @property (nonatomic, readwrite, strong) EXUpdatesSelectionPolicy *selectionPolicy;
 
-@property (nonatomic, readonly, strong) EXUpdatesAppLoaderRemote *remoteAppLoader;
+@property (nonatomic, readwrite, strong) EXUpdatesAppLoaderEmbedded *embeddedAppLoader;
+@property (nonatomic, readwrite, strong) EXUpdatesAppLoaderRemote *remoteAppLoader;
 
 @property (nonatomic, strong) NSURL *updatesDirectory;
 
@@ -49,6 +50,7 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
     _launcher = [[EXUpdatesAppLauncher alloc] init];
     _database = [[EXUpdatesDatabase alloc] init];
     _selectionPolicy = [[EXUpdatesSelectionPolicy alloc] init];
+    _embeddedAppLoader = [[EXUpdatesAppLoaderEmbedded alloc] init];
     _isEnabled = NO;
   }
   return self;
@@ -119,9 +121,8 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
 
 - (void)_copyEmbeddedAssets
 {
-  EXUpdatesAppLoaderEmbedded *embeddedAppLoader = [[EXUpdatesAppLoaderEmbedded alloc] init];
-  if ([_selectionPolicy shouldLoadNewUpdate:embeddedAppLoader.embeddedManifest withLaunchedUpdate:[_launcher launchableUpdateWithSelectionPolicy:_selectionPolicy]]) {
-    [embeddedAppLoader loadUpdateFromEmbeddedManifest];
+  if ([_selectionPolicy shouldLoadNewUpdate:_embeddedAppLoader.embeddedManifest withLaunchedUpdate:[_launcher launchableUpdateWithSelectionPolicy:_selectionPolicy]]) {
+    [_embeddedAppLoader loadUpdateFromEmbeddedManifest];
   }
 }
 

@@ -217,6 +217,27 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
   return success;
 }
 
+- (void)updateAsset:(EXUpdatesAsset *)asset
+{
+  NSAssert(asset.downloadTime, @"asset downloadTime should be nonnull");
+  NSAssert(asset.filename, @"asset filename should be nonnull");
+  NSAssert(asset.atomicHash, @"asset atomicHash should be nonnull");
+  NSAssert(asset.contentHash, @"asset contentHash should be nonnull");
+
+  NSString * const assetUpdateSql = @"UPDATE \"assets\" SET \"headers\" = ?2, \"type\" = ?3, \"metadata\" = ?4, \"download_time\" = ?5, \"relative_path\" = ?6, \"hash_atomic\" = ?7, \"hash_content\" = ?8 WHERE \"url\" = ?1;";
+  [self _executeSql:assetUpdateSql
+           withArgs:@[
+                      [asset.url absoluteString],
+                      asset.headers ?: [NSNull null],
+                      asset.type,
+                      asset.metadata ?: [NSNull null],
+                      [NSNumber numberWithDouble:[asset.downloadTime timeIntervalSince1970]],
+                      asset.filename,
+                      asset.atomicHash,
+                      asset.contentHash
+                      ]];
+}
+
 - (void)markUpdateReadyWithId:(NSUUID *)updateId
 {
   NSString * const updateSql = @"UPDATE updates SET status = ?1 WHERE id = ?2;";
@@ -317,7 +338,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
   }
 }
 
-- (NSURL * _Nullable)launchAssetUrlWithUpdateId:(NSUUID *)updateId
+- (EXUpdatesAsset * _Nullable)launchAssetWithUpdateId:(NSUUID *)updateId
 {
   NSString * const sql = @"SELECT relative_path\
   FROM updates\
@@ -331,12 +352,16 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
     if ([rows count] > 1) {
       NSLog(@"returned multiple updates with the same ID in launchAssetUrlWithUpdateId");
     }
-    NSString *path = rows[0][@"relative_path"];
-    return [NSURL URLWithString:path relativeToURL:[EXUpdatesAppController sharedInstance].updatesDirectory];
+    NSDictionary *row = rows[0];
+    EXUpdatesAsset *asset = [[EXUpdatesAsset alloc] initWithUrl:row[@"url"] type:row[@"type"]];
+    asset.filename = row[@"relative_path"];
+    asset.metadata = row[@"metadata"];
+    asset.isLaunchAsset = YES;
+    return asset;
   }
 }
 
-- (NSArray<NSDictionary *>*)assetsForUpdateId:(NSUUID *)updateId
+- (NSArray<EXUpdatesAsset *>*)assetsWithUpdateId:(NSUUID *)updateId
 {
   NSString * const sql = @"SELECT relative_path, hash_content\
   FROM assets\
@@ -346,14 +371,13 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 
   NSArray<NSDictionary *>*rows = [self _executeSql:sql withArgs:@[updateId]];
 
-  NSMutableArray *assets = [NSMutableArray arrayWithCapacity:rows.count];
+  NSMutableArray<EXUpdatesAsset *>*assets = [NSMutableArray arrayWithCapacity:rows.count];
 
   for (NSDictionary *row in rows) {
-    NSURL *localUri = [NSURL URLWithString:row[@"relative_path"] relativeToURL:[EXUpdatesAppController sharedInstance].updatesDirectory];
-    [assets addObject:@{
-                        @"localUri": [localUri absoluteString],
-                        @"hash": row[@"hash_content"]
-                        }];
+    EXUpdatesAsset *asset = [[EXUpdatesAsset alloc] initWithUrl:row[@"url"] type:row[@"type"]];
+    asset.filename = row[@"relative_path"];
+    asset.metadata = row[@"metadata"];
+    [assets addObject:asset];
   }
 
   return assets;

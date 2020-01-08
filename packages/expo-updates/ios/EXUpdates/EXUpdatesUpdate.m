@@ -210,7 +210,7 @@ binaryVersions:(NSString *)binaryVersions
 {
   if (!_bundleUrl) {
     EXUpdatesDatabase *db = [EXUpdatesAppController sharedInstance].database;
-    _bundleUrl = [db launchAssetUrlWithUpdateId:_updateId];
+    _bundleUrl = [db launchAssetWithUpdateId:_updateId].url;
   }
   return _bundleUrl;
 }

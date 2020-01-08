@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger, EXUpdatesDatabaseHashType) {
 - (void)addUpdate:(EXUpdatesUpdate *)update;
 - (void)addNewAssets:(NSArray<EXUpdatesAsset *>*)assets toUpdateWithId:(NSUUID *)updateId;
 - (BOOL)addExistingAsset:(EXUpdatesAsset *)asset toUpdateWithId:(NSUUID *)updateId;
+- (void)updateAsset:(EXUpdatesAsset *)asset;
 - (void)markUpdateReadyWithId:(NSUUID *)updateId;
 
 - (void)markUpdatesForDeletion;
@@ -28,8 +29,8 @@ typedef NS_ENUM(NSInteger, EXUpdatesDatabaseHashType) {
 
 - (NSArray<EXUpdatesUpdate *>*)launchableUpdates;
 - (EXUpdatesUpdate * _Nullable)updateWithId:(NSUUID *)updateId;
-- (NSURL * _Nullable)launchAssetUrlWithUpdateId:(NSUUID *)updateId;
-- (NSArray<NSDictionary *>*)assetsForUpdateId:(NSUUID *)updateId;
+- (EXUpdatesAsset * _Nullable)launchAssetWithUpdateId:(NSUUID *)updateId;
+- (NSArray<EXUpdatesAsset *>*)assetsWithUpdateId:(NSUUID *)updateId;
 
 @end
 
