@@ -340,7 +340,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 
 - (EXUpdatesAsset * _Nullable)launchAssetWithUpdateId:(NSUUID *)updateId
 {
-  NSString * const sql = @"SELECT relative_path\
+  NSString * const sql = @"SELECT url, type, relative_path, metadata\
   FROM updates\
   INNER JOIN assets ON updates.launch_asset_id = assets.id\
   WHERE updates.id = ?1;";
@@ -363,7 +363,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 
 - (NSArray<EXUpdatesAsset *>*)assetsWithUpdateId:(NSUUID *)updateId
 {
-  NSString * const sql = @"SELECT relative_path, hash_content\
+  NSString * const sql = @"SELECT asset_id, url, type, relative_path, metadata, launch_asset_id\
   FROM assets\
   INNER JOIN updates_assets ON updates_assets.asset_id = assets.id\
   INNER JOIN updates ON updates_assets.update_id = updates.id\
@@ -377,6 +377,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
     EXUpdatesAsset *asset = [[EXUpdatesAsset alloc] initWithUrl:row[@"url"] type:row[@"type"]];
     asset.filename = row[@"relative_path"];
     asset.metadata = row[@"metadata"];
+    asset.isLaunchAsset = [(NSNumber *)row[@"launch_asset_id"] isEqualToNumber:(NSNumber *)row[@"asset_id"]];
     [assets addObject:asset];
   }
 

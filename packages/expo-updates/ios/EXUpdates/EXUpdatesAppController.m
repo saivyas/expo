@@ -1,12 +1,12 @@
 //  Copyright © 2019 650 Industries. All rights reserved.
 
-#import <UIKit/UIKit.h>
-
 #import <EXUpdates/EXUpdatesConfig.h>
 #import <EXUpdates/EXUpdatesAppController.h>
 #import <EXUpdates/EXUpdatesAppLoaderEmbedded.h>
 #import <EXUpdates/EXUpdatesAppLoaderRemote.h>
 #import <EXUpdates/EXUpdatesSelectionPolicyNewest.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <arpa/inet.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,13 +20,17 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
 @property (nonatomic, readwrite, strong) EXUpdatesAppLauncher *launcher;
 @property (nonatomic, readwrite, strong) EXUpdatesDatabase *database;
 @property (nonatomic, readwrite, strong) EXUpdatesSelectionPolicy *selectionPolicy;
-
 @property (nonatomic, readwrite, strong) EXUpdatesAppLoaderEmbedded *embeddedAppLoader;
 @property (nonatomic, readwrite, strong) EXUpdatesAppLoaderRemote *remoteAppLoader;
 
-@property (nonatomic, strong) NSURL *updatesDirectory;
-
+@property (nonatomic, readwrite, strong) NSURL *updatesDirectory;
 @property (nonatomic, readwrite, assign) BOOL isEnabled;
+
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSCondition *launchCondition;
+@property (nonatomic, assign) BOOL isReadyToLaunch;
+@property (nonatomic, assign) BOOL isTimeoutFinished;
+@property (nonatomic, assign) BOOL hasLaunched;
 
 @end
 
@@ -50,8 +54,12 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
     _launcher = [[EXUpdatesAppLauncher alloc] init];
     _database = [[EXUpdatesDatabase alloc] init];
     _selectionPolicy = [[EXUpdatesSelectionPolicy alloc] init];
+    _remoteAppLoader = [[EXUpdatesAppLoaderRemote alloc] init];
     _embeddedAppLoader = [[EXUpdatesAppLoaderEmbedded alloc] init];
     _isEnabled = NO;
+    _isReadyToLaunch = NO;
+    _isTimeoutFinished = NO;
+    _hasLaunched = NO;
   }
   return self;
 }
@@ -59,13 +67,22 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
 - (void)start
 {
   _isEnabled = YES;
-  [_database openDatabase];
-  [self _copyEmbeddedAssets];
-  [_launcher launchUpdateWithSelectionPolicy:_selectionPolicy];
+  [_database openDatabaseWithError:nil];
+  _launchCondition = [[NSCondition alloc] init];
 
-  _remoteAppLoader = [[EXUpdatesAppLoaderRemote alloc] init];
-  _remoteAppLoader.delegate = self;
-  [_remoteAppLoader loadUpdateFromUrl:[EXUpdatesConfig sharedInstance].remoteUrl];
+  NSNumber *launchWaitMs = [EXUpdatesConfig sharedInstance].launchWaitMs;
+  if ([launchWaitMs isEqualToNumber:@(0)]) {
+    _isTimeoutFinished = YES;
+  } else {
+    NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:[launchWaitMs doubleValue] / 1000];
+    _timer = [[NSTimer alloc] initWithFireDate:fireDate interval:0 target:self selector:@selector(_timerDidFire) userInfo:nil repeats:NO];
+    [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
+  }
+
+  [self _copyEmbeddedAssets];
+
+  _launcher.delegate = self;
+  [_launcher launchUpdateWithSelectionPolicy:_selectionPolicy];
 }
 
 - (BOOL)reloadBridge
@@ -81,12 +98,11 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
 
 - (NSURL * _Nullable)launchAssetUrl
 {
-  NSUUID *launchedUpdateId = [_launcher launchedUpdateId];
-  if (launchedUpdateId) {
-    return [_database launchAssetUrlWithUpdateId:[_launcher launchedUpdateId]];
-  } else {
-    return nil;
+  while (!_isReadyToLaunch || !_isTimeoutFinished) {
+    [_launchCondition wait];
   }
+  _hasLaunched = YES;
+  return _launcher.launchAssetUrl ?: nil;
 }
 
 - (NSURL *)updatesDirectory
@@ -119,6 +135,12 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
 
 # pragma mark - internal
 
+- (void)_timerDidFire
+{
+  _isTimeoutFinished = YES;
+  [_launchCondition signal];
+}
+
 - (void)_copyEmbeddedAssets
 {
   if ([_selectionPolicy shouldLoadNewUpdate:_embeddedAppLoader.embeddedManifest withLaunchedUpdate:[_launcher launchableUpdateWithSelectionPolicy:_selectionPolicy]]) {
@@ -137,6 +159,34 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
   }
 }
 
+- (BOOL)_shouldCheckForUpdate
+{
+  if (_hasLaunched) {
+    return NO;
+  }
+
+  EXUpdatesConfig *config = [EXUpdatesConfig sharedInstance];
+  switch (config.checkOnLaunch) {
+    case EXUpdatesCheckAutomaticallyConfigNever:
+      return NO;
+    case EXUpdatesCheckAutomaticallyConfigWifiOnly: {
+      struct sockaddr_in zeroAddress;
+      bzero(&zeroAddress, sizeof(zeroAddress));
+      zeroAddress.sin_len = sizeof(zeroAddress);
+      zeroAddress.sin_family = AF_INET;
+
+      SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, (const struct sockaddr *) &zeroAddress);
+      SCNetworkReachabilityFlags flags;
+      SCNetworkReachabilityGetFlags(reachability, &flags);
+
+      return (flags & kSCNetworkReachabilityFlagsIsWWAN) == 0;
+    }
+    case EXUpdatesCheckAutomaticallyConfigAlways:
+    default:
+      return YES;
+  }
+}
+
 # pragma mark - EXUpdatesAppLoaderDelegate
 
 - (BOOL)appLoader:(EXUpdatesAppLoader *)appLoader shouldStartLoadingUpdate:(EXUpdatesUpdate *)update
@@ -149,9 +199,17 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
 - (void)appLoader:(EXUpdatesAppLoader *)appLoader didFinishLoadingUpdate:(EXUpdatesUpdate * _Nullable)update
 {
   if (update) {
-    NSLog(@"update with UUID %@ finished loading", [update.updateId UUIDString]);
-    [self _sendEventToBridgeWithType:kEXUpdatesUpdateAvailableEventName
-                                body:@{@"manifest": update.rawManifest}];
+    if (!_hasLaunched) {
+      if (_timer) {
+        [_timer invalidate];
+      }
+      _isTimeoutFinished = YES;
+      EXUpdatesAppLauncher *newLauncher = [[EXUpdatesAppLauncher alloc] init];
+      [newLauncher launchUpdateWithSelectionPolicy:_selectionPolicy];
+    } else {
+      [self _sendEventToBridgeWithType:kEXUpdatesUpdateAvailableEventName
+                                  body:@{@"manifest": update.rawManifest}];
+    }
   } else {
     NSLog(@"No update available");
     [self _sendEventToBridgeWithType:kEXUpdatesNoUpdateAvailableEventName body:@{}];
@@ -162,6 +220,20 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
 {
   NSLog(@"update failed to load: %@", error.localizedDescription);
   [self _sendEventToBridgeWithType:kEXUpdatesErrorEventName body:@{@"message": error.localizedDescription}];
+}
+
+# pragma mark - EXUpdatesAppLauncherDelegate
+
+- (void)appLauncher:(EXUpdatesAppLauncher *)appLauncher didFinishWithSuccess:(BOOL)success
+{
+  _isReadyToLaunch = YES;
+  _launcher = appLauncher;
+  [_launchCondition signal];
+
+  if ([self _shouldCheckForUpdate]) {
+    _remoteAppLoader.delegate = self;
+    [_remoteAppLoader loadUpdateFromUrl:[EXUpdatesConfig sharedInstance].remoteUrl];
+  }
 }
 
 @end

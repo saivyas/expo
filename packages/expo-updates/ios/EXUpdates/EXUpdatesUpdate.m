@@ -217,7 +217,10 @@ binaryVersions:(NSString *)binaryVersions
 
 - (NSArray<EXUpdatesAsset *>*)assets
 {
-  // TODO: select from db if nil
+  if (!_assets) {
+    EXUpdatesDatabase *db = [EXUpdatesAppController sharedInstance].database;
+    _assets = [db assetsWithUpdateId:_updateId];
+  }
   return _assets;
 }
 

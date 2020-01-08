@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EXUpdatesAppController : NSObject <EXUpdatesAppLoaderDelegate>
+@interface EXUpdatesAppController : NSObject <EXUpdatesAppLoaderDelegate, EXUpdatesAppLauncherDelegate>
 
 @property (nonatomic, readonly) EXUpdatesAppLauncher *launcher;
 @property (nonatomic, readonly) EXUpdatesDatabase *database;
@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) EXUpdatesAppLoaderEmbedded *embeddedAppLoader;
 @property (nonatomic, readwrite, weak) RCTBridge *bridge;
 
+@property (nonatomic, readonly) NSURL *updatesDirectory;
 @property (nonatomic, readonly, assign) BOOL isEnabled;
 
 + (instancetype)sharedInstance;
@@ -24,7 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)start;
 - (BOOL)reloadBridge;
 - (NSURL * _Nullable)launchAssetUrl;
-- (NSURL *)updatesDirectory;
 
 @end
 
