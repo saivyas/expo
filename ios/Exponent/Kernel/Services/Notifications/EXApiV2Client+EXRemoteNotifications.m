@@ -15,7 +15,7 @@
     @"deviceToken": deviceToken.apnsTokenString,
     @"type": @"apns",
   }];
-  if ([EXProvisioningProfile mainProvisioningProfile].development) {
+  if ([EXExpoKitProvisioningProfile mainProvisioningProfile].development) {
     arguments[@"development"] = @YES;
   }
   
@@ -39,7 +39,7 @@
     @"deviceToken": deviceToken.apnsTokenString,
     @"type": @"apns",
   }];
-  if ([EXProvisioningProfile mainProvisioningProfile].development) {
+  if ([EXExpoKitProvisioningProfile mainProvisioningProfile].development) {
     arguments[@"development"] = @YES;
   }
   

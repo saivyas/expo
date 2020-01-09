@@ -98,7 +98,7 @@ NSTimeInterval const EXFileDownloaderDefaultTimeoutInterval = 60;
     clientEnvironment = @"EXPO_SIMULATOR";
 #endif
   }
-  NSString * clientReleaseType= [EXProvisioningProfile clientReleaseTypeToString:[EXProvisioningProfile clientReleaseType]];
+  NSString * clientReleaseType= [EXExpoKitProvisioningProfile clientReleaseTypeToString:[EXExpoKitProvisioningProfile clientReleaseType]];
   
   [request setValue:releaseChannel forHTTPHeaderField:@"Expo-Release-Channel"];
   [request setValue:@"true" forHTTPHeaderField:@"Expo-JSON-Error"];

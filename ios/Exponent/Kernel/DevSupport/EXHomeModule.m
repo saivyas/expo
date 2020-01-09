@@ -41,7 +41,7 @@
 - (NSDictionary *)constantsToExport
 {
   return @{ @"sdkVersions": _sdkVersions,
-            @"IOSClientReleaseType": [EXProvisioningProfile clientReleaseTypeToString: [EXProvisioningProfile clientReleaseType]] };
+            @"IOSClientReleaseType": [EXExpoKitProvisioningProfile clientReleaseTypeToString: [EXExpoKitProvisioningProfile clientReleaseType]] };
 }
 
 #pragma mark - RCTEventEmitter methods
