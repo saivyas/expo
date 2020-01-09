@@ -4,6 +4,7 @@
 #import <EXUpdates/EXUpdatesAppController.h>
 #import <EXUpdates/EXUpdatesAppLoaderEmbedded.h>
 #import <EXUpdates/EXUpdatesAppLoaderRemote.h>
+#import <EXUpdates/EXUpdatesReaper.h>
 #import <EXUpdates/EXUpdatesSelectionPolicyNewest.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <arpa/inet.h>
@@ -209,10 +210,14 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
     } else {
       [self _sendEventToBridgeWithType:kEXUpdatesUpdateAvailableEventName
                                   body:@{@"manifest": update.rawManifest}];
+      [EXUpdatesReaper reapUnusedUpdatesWithSelectionPolicy:_selectionPolicy
+                                             launchedUpdate:_launcher.launchedUpdate];
     }
   } else {
     NSLog(@"No update available");
     [self _sendEventToBridgeWithType:kEXUpdatesNoUpdateAvailableEventName body:@{}];
+    [EXUpdatesReaper reapUnusedUpdatesWithSelectionPolicy:_selectionPolicy
+                                           launchedUpdate:_launcher.launchedUpdate];
   }
 }
 
@@ -226,13 +231,20 @@ static NSString * const kEXUpdatesErrorEventName = @"error";
 
 - (void)appLauncher:(EXUpdatesAppLauncher *)appLauncher didFinishWithSuccess:(BOOL)success
 {
-  _isReadyToLaunch = YES;
-  _launcher = appLauncher;
-  [_launchCondition signal];
+  if (success) {
+    _isReadyToLaunch = YES;
+    _launcher = appLauncher;
+    [_launchCondition signal];
 
-  if ([self _shouldCheckForUpdate]) {
-    _remoteAppLoader.delegate = self;
-    [_remoteAppLoader loadUpdateFromUrl:[EXUpdatesConfig sharedInstance].remoteUrl];
+    if ([self _shouldCheckForUpdate]) {
+      _remoteAppLoader.delegate = self;
+      [_remoteAppLoader loadUpdateFromUrl:[EXUpdatesConfig sharedInstance].remoteUrl];
+    } else {
+      [EXUpdatesReaper reapUnusedUpdatesWithSelectionPolicy:_selectionPolicy
+                                             launchedUpdate:_launcher.launchedUpdate];
+    }
+  } else {
+    // TODO: emergency launch
   }
 }
 
