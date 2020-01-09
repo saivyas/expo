@@ -38,7 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
   [_downloader downloadManifestFromURL:url successBlock:^(EXUpdatesUpdate * _Nonnull update) {
     [self startLoadingFromManifest:update];
   } errorBlock:^(NSError * _Nonnull error, NSURLResponse * _Nonnull response) {
-    // TODO: handle error
+    if (self.delegate) {
+      [self.delegate appLoader:self didFailWithError:error];
+    }
   }];
 }
 
