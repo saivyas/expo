@@ -6,7 +6,6 @@
 @interface EXUpdatesAsset ()
 
 @property (nonatomic, readwrite, strong) NSString *contentHash;
-@property (nonatomic, readwrite, strong) NSString *atomicHash;
 @property (nonatomic, readwrite, strong) NSDictionary *headers;
 
 @end
@@ -29,24 +28,6 @@
     }
   }
   return _contentHash;
-}
-
-- (NSString *)atomicHash {
-  if (!_atomicHash) {
-    if (_data) {
-      NSError *err;
-      NSDictionary *metadata = _metadata;
-      if (!metadata) {
-        metadata = @{};
-      }
-      NSData *metadataJson = [NSJSONSerialization dataWithJSONObject:metadata options:kNilOptions error:&err];
-      NSAssert (!err, @"asset metadata should be a valid object");
-      NSString *stringToHash = [NSString stringWithFormat:@"%@-%@-%@",
-                                _type, [[NSString alloc] initWithData:metadataJson encoding:NSUTF8StringEncoding], self.contentHash];
-      _atomicHash = [EXUpdatesUtils sha1WithData:[stringToHash dataUsingEncoding:NSUTF8StringEncoding]];
-    }
-  }
-  return _atomicHash;
 }
 
 - (NSDictionary *)headers {

@@ -23,7 +23,6 @@
  * properties EXUpdatesAsset can derive on its own
  */
 @property (nonatomic, readonly) NSString * _Nullable contentHash;
-@property (nonatomic, readonly) NSString * _Nullable atomicHash;
 @property (nonatomic, readonly) NSDictionary * _Nullable headers;
 
 - (instancetype _Nonnull)initWithUrl:(NSURL * _Nonnull)url type:(NSString * _Nonnull)type;

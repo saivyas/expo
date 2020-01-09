@@ -95,6 +95,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
   NSAssert(_db, @"Missing database handle");
 
   NSString * const createTableStmts = @"\
+   PRAGMA foreign_keys = ON;\
    CREATE TABLE \"updates\" (\
    \"id\"  BLOB UNIQUE,\
    \"commit_time\"  INTEGER NOT NULL UNIQUE,\
@@ -103,25 +104,28 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
    \"metadata\"  TEXT,\
    \"status\"  INTEGER NOT NULL,\
    \"keep\"  INTEGER NOT NULL,\
-   PRIMARY KEY(\"id\")\
+   PRIMARY KEY(\"id\"),\
+   FOREIGN KEY(\"launch_asset_id\") REFERENCES \"assets\"(\"id\") ON DELETE CASCADE\
    );\
    CREATE TABLE \"assets\" (\
    \"id\"  INTEGER PRIMARY KEY AUTOINCREMENT,\
-   \"url\"  TEXT NOT NULL,\
+   \"url\"  TEXT NOT NULL UNIQUE,\
    \"headers\"  TEXT,\
    \"type\"  TEXT NOT NULL,\
    \"metadata\"  TEXT,\
    \"download_time\"  INTEGER NOT NULL,\
    \"relative_path\"  TEXT NOT NULL,\
-   \"hash_atomic\"  BLOB NOT NULL,\
-   \"hash_content\"  BLOB NOT NULL,\
+   \"hash\"  BLOB NOT NULL,\
    \"hash_type\"  INTEGER NOT NULL,\
    \"marked_for_deletion\"  INTEGER NOT NULL\
    );\
-  CREATE TABLE \"updates_assets\" (\
+   CREATE TABLE \"updates_assets\" (\
    \"update_id\"  BLOB NOT NULL,\
-   \"asset_id\" INTEGER NOT NULL\
+   \"asset_id\" INTEGER NOT NULL,\
+   FOREIGN KEY(\"update_id\") REFERENCES \"updates\"(\"id\"),\
+   FOREIGN KEY(\"asset_id\") REFERENCES \"assets\"(\"id\")\
    );\
+   CREATE INDEX \"index_updates_launch_asset_id\" ON \"updates\" (\"launch_asset_id\");\
    ";
 
   char *errMsg;
@@ -160,11 +164,10 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
   for (EXUpdatesAsset *asset in assets) {
     NSAssert(asset.downloadTime, @"asset downloadTime should be nonnull");
     NSAssert(asset.filename, @"asset filename should be nonnull");
-    NSAssert(asset.atomicHash, @"asset atomicHash should be nonnull");
     NSAssert(asset.contentHash, @"asset contentHash should be nonnull");
 
-    NSString * const assetInsertSql = @"INSERT INTO \"assets\" (\"url\", \"headers\", \"type\", \"metadata\", \"download_time\", \"relative_path\", \"hash_atomic\", \"hash_content\" , \"hash_type\", \"marked_for_deletion\")\
-    VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, 0);";
+    NSString * const assetInsertSql = @"INSERT OR REPLACE INTO \"assets\" (\"url\", \"headers\", \"type\", \"metadata\", \"download_time\", \"relative_path\", \"hash_content\", \"hash_type\", \"marked_for_deletion\")\
+    VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, 0);";
     [self _executeSql:assetInsertSql
              withArgs:@[
                         [asset.url absoluteString],
@@ -173,7 +176,6 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
                         asset.metadata ?: [NSNull null],
                         [NSNumber numberWithDouble:[asset.downloadTime timeIntervalSince1970]],
                         asset.filename,
-                        asset.atomicHash,
                         asset.contentHash,
                         @(EXUpdatesDatabaseHashTypeSha1)
                         ]];
@@ -184,7 +186,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
       [self _executeSql:updateSql withArgs:@[updateId]];
     }
 
-    NSString * const updateInsertSql = @"INSERT INTO updates_assets (\"update_id\", \"asset_id\") VALUES (?1, last_insert_rowid());";
+    NSString * const updateInsertSql = @"INSERT OR REPLACE INTO updates_assets (\"update_id\", \"asset_id\") VALUES (?1, last_insert_rowid());";
     [self _executeSql:updateInsertSql withArgs:@[updateId]];
   }
 
@@ -203,7 +205,7 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
     success = NO;
   } else {
     NSNumber *assetId = rows[0][@"id"];
-    NSString * const insertSql = @"INSERT INTO updates_assets (\"update_id\", \"asset_id\") VALUES (?1, ?2);";
+    NSString * const insertSql = @"INSERT OR REPLACE INTO updates_assets (\"update_id\", \"asset_id\") VALUES (?1, ?2);";
     [self _executeSql:insertSql withArgs:@[updateId, assetId]];
     if (asset.isLaunchAsset) {
       NSString * const updateSql = @"UPDATE updates SET launch_asset_id = ?1 WHERE id = ?2;";
@@ -221,10 +223,9 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
 {
   NSAssert(asset.downloadTime, @"asset downloadTime should be nonnull");
   NSAssert(asset.filename, @"asset filename should be nonnull");
-  NSAssert(asset.atomicHash, @"asset atomicHash should be nonnull");
   NSAssert(asset.contentHash, @"asset contentHash should be nonnull");
 
-  NSString * const assetUpdateSql = @"UPDATE \"assets\" SET \"headers\" = ?2, \"type\" = ?3, \"metadata\" = ?4, \"download_time\" = ?5, \"relative_path\" = ?6, \"hash_atomic\" = ?7, \"hash_content\" = ?8 WHERE \"url\" = ?1;";
+  NSString * const assetUpdateSql = @"UPDATE \"assets\" SET \"headers\" = ?2, \"type\" = ?3, \"metadata\" = ?4, \"download_time\" = ?5, \"relative_path\" = ?6, \"hash\" = ?7 WHERE \"url\" = ?1;";
   [self _executeSql:assetUpdateSql
            withArgs:@[
                       [asset.url absoluteString],
@@ -233,7 +234,6 @@ static NSString * const kEXUpdatesDatabaseFilename = @"updates.db";
                       asset.metadata ?: [NSNull null],
                       [NSNumber numberWithDouble:[asset.downloadTime timeIntervalSince1970]],
                       asset.filename,
-                      asset.atomicHash,
                       asset.contentHash
                       ]];
 }
