@@ -55,43 +55,15 @@ NSTimeInterval const kEXUpdatesDefaultTimeoutInterval = 60;
   } errorBlock:errorBlock];
 }
 
-- (void)downloadDataFromURL:(NSURL *)url
-               successBlock:(EXUpdatesFileDownloaderSuccessBlock)successBlock
-                 errorBlock:(EXUpdatesFileDownloaderErrorBlock)errorBlock
-{
-  // pass any custom cache policy onto this specific request
-  NSURLRequestCachePolicy cachePolicy = _sessionConfiguration ? _sessionConfiguration.requestCachePolicy : NSURLRequestUseProtocolCachePolicy;
-
-  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:cachePolicy timeoutInterval:kEXUpdatesDefaultTimeoutInterval];
-  [self _setHTTPHeaderFields:request];
-
-  __weak typeof(self) weakSelf = self;
-  NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-    // TODO: strong self thing
-    if (!error && [response isKindOfClass:[NSHTTPURLResponse class]]) {
-      NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-      if (httpResponse.statusCode != 200) {
-        NSStringEncoding encoding = [weakSelf _encodingFromResponse:response];
-        NSString *body = [[NSString alloc] initWithData:data encoding:encoding];
-        error = [weakSelf _errorFromResponse:httpResponse body:body];
-      }
-    }
-
-    if (error) {
-      errorBlock(error, response);
-    } else {
-      successBlock(data, response);
-    }
-  }];
-  [task resume];
-}
-
 - (void)downloadManifestFromURL:(NSURL *)url
                    successBlock:(EXUpdatesFileDownloaderManifestSuccessBlock)successBlock
                      errorBlock:(EXUpdatesFileDownloaderErrorBlock)errorBlock
 {
-  // TODO: figure out caching thing
-  [self downloadDataFromURL:url successBlock:^(NSData * data, NSURLResponse * response) {
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
+                                                         cachePolicy:NSURLRequestReloadIgnoringCacheData
+                                                     timeoutInterval:kEXUpdatesDefaultTimeoutInterval];
+  [self _setManifestHTTPHeaderFields:request];
+  [self _downloadDataWithRequest:request successBlock:^(NSData * data, NSURLResponse * response) {
     NSError *err;
     id manifest = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&err];
     NSAssert(!err && manifest && [manifest isKindOfClass:[NSDictionary class]], @"manifest should be a valid JSON object");
@@ -126,17 +98,62 @@ NSTimeInterval const kEXUpdatesDefaultTimeoutInterval = 60;
   } errorBlock:errorBlock];
 }
 
+- (void)downloadDataFromURL:(NSURL *)url
+               successBlock:(EXUpdatesFileDownloaderSuccessBlock)successBlock
+                 errorBlock:(EXUpdatesFileDownloaderErrorBlock)errorBlock
+{
+  // pass any custom cache policy onto this specific request
+  NSURLRequestCachePolicy cachePolicy = _sessionConfiguration ? _sessionConfiguration.requestCachePolicy : NSURLRequestUseProtocolCachePolicy;
+
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:cachePolicy timeoutInterval:kEXUpdatesDefaultTimeoutInterval];
+  [self _setHTTPHeaderFields:request];
+
+  [self _downloadDataWithRequest:request successBlock:successBlock errorBlock:errorBlock];
+}
+
+- (void)_downloadDataWithRequest:(NSURLRequest *)request
+                    successBlock:(EXUpdatesFileDownloaderSuccessBlock)successBlock
+                      errorBlock:(EXUpdatesFileDownloaderErrorBlock)errorBlock
+{
+  NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    if (!error && [response isKindOfClass:[NSHTTPURLResponse class]]) {
+      NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+      if (httpResponse.statusCode != 200) {
+        NSStringEncoding encoding = [self _encodingFromResponse:response];
+        NSString *body = [[NSString alloc] initWithData:data encoding:encoding];
+        error = [self _errorFromResponse:httpResponse body:body];
+      }
+    }
+
+    if (error) {
+      errorBlock(error, response);
+    } else {
+      successBlock(data, response);
+    }
+  }];
+  [task resume];
+}
+
 - (void)_setHTTPHeaderFields:(NSMutableURLRequest *)request
 {
-  // TODO(eric): add more fields here
   [request setValue:@"ios" forHTTPHeaderField:@"Expo-Platform"];
+  [request setValue:@"1" forHTTPHeaderField:@"Expo-Api-Version"];
+  [request setValue:@"STANDALONE" forHTTPHeaderField:@"Expo-Client-Environment"];
+}
 
-  NSString *binaryVersion = NSBundle.mainBundle.infoDictionary[@"CFBundleShortVersionString"];
-  [request setValue:binaryVersion forHTTPHeaderField:@"Expo-Binary-Version"];
+- (void)_setManifestHTTPHeaderFields:(NSMutableURLRequest *)request
+{
+  [self _setHTTPHeaderFields:request];
+  [request setValue:@"application/expo+json,application/json" forHTTPHeaderField:@"Accept"];
+  [request setValue:@"true" forHTTPHeaderField:@"Expo-JSON-Error"];
+  [request setValue:@"true" forHTTPHeaderField:@"Expo-Accept-Signature"];
+  [request setValue:[EXUpdatesConfig sharedInstance].releaseChannel forHTTPHeaderField:@"Expo-Release-Channel"];
 
-  NSString *releaseChannel = [EXUpdatesConfig sharedInstance].releaseChannel;
-  if (releaseChannel) {
-    [request setValue:releaseChannel forHTTPHeaderField:@"Expo-Release-Channel"];
+  NSString *runtimeVersion = [EXUpdatesConfig sharedInstance].runtimeVersion;
+  if (runtimeVersion) {
+    [request setValue:runtimeVersion forHTTPHeaderField:@"Expo-Runtime-Version"];
+  } else {
+    [request setValue:[EXUpdatesConfig sharedInstance].sdkVersion forHTTPHeaderField:@"Expo-SDK-Version"];
   }
 }
 
