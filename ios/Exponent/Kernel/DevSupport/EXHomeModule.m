@@ -4,7 +4,7 @@
 #import "EXHomeModule.h"
 #import "EXSession.h"
 #import "EXUnversioned.h"
-#import "EXProvisioningProfile.h"
+#import "EXExpoKitProvisioningProfile.h"
 
 #import <React/RCTEventDispatcher.h>
 

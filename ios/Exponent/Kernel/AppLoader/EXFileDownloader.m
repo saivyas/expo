@@ -6,7 +6,7 @@
 #import "EXSession.h"
 #import "EXVersions.h"
 #import "EXKernelUtil.h"
-#import "EXProvisioningProfile.h"
+#import "EXExpoKitProvisioningProfile.h"
 
 #import <React/RCTUtils.h>
 

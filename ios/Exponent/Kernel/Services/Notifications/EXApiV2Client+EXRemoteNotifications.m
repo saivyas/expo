@@ -2,7 +2,7 @@
 
 #import "EXApiV2Client+EXRemoteNotifications.h"
 #import "EXKernel.h"
-#import "EXProvisioningProfile.h"
+#import "EXExpoKitProvisioningProfile.h"
 #import "NSData+EXRemoteNotifications.h"
 
 @implementation EXApiV2Client (EXRemoteNotifications)
