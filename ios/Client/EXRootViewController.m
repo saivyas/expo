@@ -111,6 +111,11 @@ NS_ASSUME_NONNULL_BEGIN
   }
 }
 
+- (BOOL)isMenuVisible
+{
+  return _isMenuVisible;
+}
+
 - (void)showQRReader
 {
   [self moveHomeToVisible];
@@ -260,52 +265,74 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)_animateMenuToVisible:(BOOL)visible completion:(void (^ _Nullable)(void))completion
 {
-  _isAnimatingMenu = YES;
-  __weak typeof(self) weakSelf = self;
+  _isAnimatingMenu = NO;
+
   if (visible) {
     [_menuViewController willMoveToParentViewController:self];
-    
+
     if (_menuWindow == nil) {
       _menuWindow = [[EXMenuWindow alloc] init];
     }
-    
+
     [_menuWindow setFrame:self.view.frame];
     [_menuWindow addSubview:_menuViewController.view];
     [_menuWindow makeKeyAndVisible];
-    
-    _menuViewController.view.alpha = 0.0f;
-    _menuViewController.view.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
-    [UIView animateWithDuration:0.1f animations:^{
-      self.menuViewController.view.alpha = 1.0f;
-      self.menuViewController.view.transform = CGAffineTransformIdentity;
-    } completion:^(BOOL finished) {
-      __strong typeof(weakSelf) strongSelf = weakSelf;
-      if (strongSelf) {
-        strongSelf.isAnimatingMenu = NO;
-        [strongSelf.menuViewController didMoveToParentViewController:self];
-        if (completion) {
-          completion();
-        }
-      }
-    }];
+    [_menuViewController didMoveToParentViewController:self];
   } else {
-    _menuViewController.view.alpha = 1.0f;
-    [UIView animateWithDuration:0.1f animations:^{
-      self.menuViewController.view.alpha = 0.0f;
-    } completion:^(BOOL finished) {
-      __strong typeof(weakSelf) strongSelf = weakSelf;
-      if (strongSelf) {
-        strongSelf.isAnimatingMenu = NO;
-        [strongSelf.menuViewController willMoveToParentViewController:nil];
-        [strongSelf.menuViewController.view removeFromSuperview];
-        [strongSelf.menuViewController didMoveToParentViewController:nil];
-        strongSelf.menuWindow = nil;
-        if (completion) {
-          completion();
-        }
-      }
-    }];
+    [_menuViewController willMoveToParentViewController:nil];
+    [_menuViewController.view removeFromSuperview];
+    [_menuViewController didMoveToParentViewController:nil];
+    _menuWindow = nil;
   }
+  if (completion) {
+    completion();
+  }
+//  _isAnimatingMenu = YES;
+//  __weak typeof(self) weakSelf = self;
+//  if (visible) {
+//    [_menuViewController willMoveToParentViewController:self];
+//
+//    if (_menuWindow == nil) {
+//      _menuWindow = [[EXMenuWindow alloc] init];
+//    }
+//
+//    [_menuWindow setFrame:self.view.frame];
+//    [_menuWindow addSubview:_menuViewController.view];
+//    [_menuWindow makeKeyAndVisible];
+//
+//    _menuViewController.view.alpha = 0.0f;
+//    _menuViewController.view.transform = CGAffineTransformMakeScale(1.1f, 1.1f);
+//    [UIView animateWithDuration:0.1f animations:^{
+//      self.menuViewController.view.alpha = 1.0f;
+//      self.menuViewController.view.transform = CGAffineTransformIdentity;
+//    } completion:^(BOOL finished) {
+//      __strong typeof(weakSelf) strongSelf = weakSelf;
+//      if (strongSelf) {
+//        strongSelf.isAnimatingMenu = NO;
+//        [strongSelf.menuViewController didMoveToParentViewController:self];
+//        if (completion) {
+//          completion();
+//        }
+//      }
+//    }];
+//  } else {
+//    _menuViewController.view.alpha = 1.0f;
+//    [UIView animateWithDuration:0.1f animations:^{
+//      self.menuViewController.view.alpha = 0.0f;
+//    } completion:^(BOOL finished) {
+//      __strong typeof(weakSelf) strongSelf = weakSelf;
+//      if (strongSelf) {
+//        strongSelf.isAnimatingMenu = NO;
+//        [strongSelf.menuViewController willMoveToParentViewController:nil];
+//        [strongSelf.menuViewController.view removeFromSuperview];
+//        [strongSelf.menuViewController didMoveToParentViewController:nil];
+//        strongSelf.menuWindow = nil;
+//        if (completion) {
+//          completion();
+//        }
+//      }
+//    }];
+//  }
 }
 
 - (EXHomeAppManager *)_getHomeAppManager

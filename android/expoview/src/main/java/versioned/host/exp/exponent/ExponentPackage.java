@@ -27,6 +27,7 @@ import java.util.Set;
 
 import host.exp.exponent.ExponentManifest;
 import host.exp.exponent.analytics.EXL;
+import host.exp.exponent.devmenu.DevMenuModule;
 import host.exp.exponent.kernel.ExperienceId;
 // WHEN_VERSIONING_REMOVE_FROM_HERE
 import host.exp.exponent.kernel.ExponentKernelModuleProvider;
@@ -58,7 +59,6 @@ import versioned.host.exp.exponent.modules.api.netinfo.NetInfoModule;
 import versioned.host.exp.exponent.modules.api.notifications.NotificationsModule;
 import versioned.host.exp.exponent.modules.api.reanimated.ReanimatedModule;
 import versioned.host.exp.exponent.modules.api.safeareacontext.SafeAreaContextPackage;
-import versioned.host.exp.exponent.modules.api.safeareacontext.SafeAreaViewManager;
 import versioned.host.exp.exponent.modules.api.screens.RNScreensPackage;
 import versioned.host.exp.exponent.modules.api.viewshot.RNViewShotModule;
 import versioned.host.exp.exponent.modules.internal.ExponentAsyncStorageModule;
@@ -166,6 +166,9 @@ public class ExponentPackage implements ReactPackage {
       // WHEN_VERSIONING_REMOVE_FROM_HERE
       nativeModules.add((NativeModule) ExponentKernelModuleProvider.newInstance(reactContext));
       // WHEN_VERSIONING_REMOVE_TO_HERE
+    } else {
+      // We need DevMenuModule only in non-kernel apps.
+      nativeModules.add(new DevMenuModule(reactContext, mExperienceProperties, mManifest));
     }
 
     if (isVerified) {

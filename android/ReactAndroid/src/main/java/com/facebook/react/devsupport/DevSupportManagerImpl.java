@@ -526,7 +526,7 @@ public class DevSupportManagerImpl implements DevSupportManager, PackagerCommand
                 mDevOptionsDialog = null;
             }
         }).create();
-        mDevOptionsDialog.show();
+//        mDevOptionsDialog.show();
     }
 
     /** Starts of stops the sampling profiler */

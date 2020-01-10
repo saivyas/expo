@@ -383,7 +383,7 @@ public class Kernel extends KernelInterface {
     }
   }
 
-  private void openHomeActivity() {
+  public void openHomeActivity() {
     ActivityManager manager = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
     for (ActivityManager.AppTask task : manager.getAppTasks()) {
       Intent baseIntent = task.getTaskInfo().baseIntent;
@@ -1120,12 +1120,5 @@ public class Kernel extends KernelInterface {
         ShortcutManagerCompat.requestPinShortcut(mContext, pinShortcutInfo, null);
       }
     });
-  }
-
-  private void goToHome() {
-    Intent startMain = new Intent(Intent.ACTION_MAIN);
-    startMain.addCategory(Intent.CATEGORY_HOME);
-    startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    mContext.startActivity(startMain);
   }
 }

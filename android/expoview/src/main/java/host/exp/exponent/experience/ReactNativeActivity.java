@@ -49,6 +49,7 @@ import host.exp.exponent.LoadingView;
 import host.exp.exponent.RNObject;
 import host.exp.exponent.analytics.Analytics;
 import host.exp.exponent.analytics.EXL;
+import host.exp.exponent.devmenu.DevMenuManager;
 import host.exp.exponent.di.NativeModuleDepsProvider;
 import host.exp.exponent.kernel.ExperienceId;
 import host.exp.exponent.kernel.ExponentError;
@@ -184,9 +185,13 @@ public abstract class ReactNativeActivity extends AppCompatActivity implements c
     addView(view);
   }
 
-  protected void addView(final View view) {
+  public void addView(final View view) {
     removeViewFromParent(view);
     mContainer.addView(view);
+  }
+
+  public boolean hasView(final View view) {
+    return view.getParent() == mContainer;
   }
 
   protected void removeViewFromParent(final View view) {
@@ -286,11 +291,7 @@ public abstract class ReactNativeActivity extends AppCompatActivity implements c
   @Override
   public boolean onKeyUp(int keyCode, KeyEvent event) {
     if (mReactInstanceManager != null && mReactInstanceManager.isNotNull() && !mIsCrashed) {
-      if (keyCode == KeyEvent.KEYCODE_MENU) {
-        mReactInstanceManager.call("showDevOptionsDialog");
-        return true;
-      }
-      RNObject devSupportManager = mReactInstanceManager.callRecursive("getDevSupportManager");
+      RNObject devSupportManager = getDevSupportManager();
       if (devSupportManager != null && (boolean) devSupportManager.call("getDevSupportEnabled")) {
         boolean didDoubleTapR = Assertions.assertNotNull(mDoubleTapReloadRecognizer)
             .didDoubleTapR(keyCode, getCurrentFocus());
@@ -349,9 +350,7 @@ public abstract class ReactNativeActivity extends AppCompatActivity implements c
   protected void onDestroy() {
     super.onDestroy();
 
-    if (mReactInstanceManager != null && mReactInstanceManager.isNotNull() && !mIsCrashed) {
-      mReactInstanceManager.call("destroy");
-    }
+    destroyReactInstanceManager();
 
     mHandler.removeCallbacksAndMessages(null);
     mLoadingHandler.removeCallbacksAndMessages(null);
@@ -374,6 +373,12 @@ public abstract class ReactNativeActivity extends AppCompatActivity implements c
 
   public boolean isDebugModeEnabled() {
     return ExponentManifest.isDebugModeEnabled(mManifest);
+  }
+
+  protected void destroyReactInstanceManager() {
+    if (mReactInstanceManager != null && mReactInstanceManager.isNotNull() && !mIsCrashed) {
+      mReactInstanceManager.call("destroy");
+    }
   }
 
   protected void waitForDrawOverOtherAppPermission(String jsBundlePath) {
@@ -692,6 +697,10 @@ public abstract class ReactNativeActivity extends AppCompatActivity implements c
     } else {
       return PackageManager.PERMISSION_DENIED;
     }
+  }
+
+  public RNObject getDevSupportManager() {
+    return mReactInstanceManager.callRecursive("getDevSupportManager");
   }
 
   // deprecated in favor of Expo.Linking.makeUrl

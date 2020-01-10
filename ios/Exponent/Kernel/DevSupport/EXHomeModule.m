@@ -78,6 +78,18 @@
   [self sendEventWithName:qualifiedEventName body:qualifiedEventBody];
 }
 
+- (void)requestToCloseDevMenu
+{
+  __weak typeof(self) weakSelf = self;
+  void (^close)(id) = ^(id arg){
+    __strong typeof(weakSelf) strongSelf = weakSelf;
+    if (strongSelf->_delegate) {
+      [strongSelf->_delegate homeModuleDidSelectCloseMenu:strongSelf];
+    }
+  };
+  [self dispatchJSEvent:@"requestToCloseDevMenu" body:nil onSuccess:close onFailure:close];
+}
+
 /**
  *  Duplicates Linking.openURL but does not validate that this is an exponent URL;
  *  in other words, we just take your word for it and never hand it off to iOS.
@@ -126,7 +138,7 @@ RCT_EXPORT_METHOD(setIsLegacyMenuBehaviorEnabledAsync:(BOOL)isEnabled)
   }
 }
 
-RCT_REMAP_METHOD(getDevMenuItemsToShow,
+RCT_REMAP_METHOD(getDevMenuItemsToShowAsync,
                  getDevMenuItemsToShowWithResolver:(RCTPromiseResolveBlock)resolve
                  reject:(RCTPromiseRejectBlock)reject)
 {
@@ -138,28 +150,28 @@ RCT_REMAP_METHOD(getDevMenuItemsToShow,
   }
 }
 
-RCT_EXPORT_METHOD(selectDevMenuItemWithKey:(NSString *)key)
+RCT_EXPORT_METHOD(selectDevMenuItemWithKeyAsync:(NSString *)key)
 {
   if (_delegate) {
     [_delegate homeModule:self didSelectDevMenuItemWithKey:key];
   }
 }
 
-RCT_EXPORT_METHOD(selectRefresh)
+RCT_EXPORT_METHOD(reloadAppAsync)
 {
   if (_delegate) {
     [_delegate homeModuleDidSelectRefresh:self];
   }
 }
 
-RCT_EXPORT_METHOD(selectCloseMenu)
+RCT_EXPORT_METHOD(closeDevMenuAsync)
 {
   if (_delegate) {
     [_delegate homeModuleDidSelectCloseMenu:self];
   }
 }
 
-RCT_EXPORT_METHOD(selectGoToHome)
+RCT_EXPORT_METHOD(goToHomeAsync)
 {
   if (_delegate) {
     [_delegate homeModuleDidSelectGoToHome:self];

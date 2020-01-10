@@ -69,14 +69,6 @@ export async function setLegacyMenuBehaviorEnabledAsync(enabled: boolean): Promi
   await NativeKernel.setIsLegacyMenuBehaviorEnabledAsync(enabled);
 }
 
-export async function isNuxFinishedAsync(): Promise<boolean> {
-  return await NativeKernel.getIsNuxFinishedAsync();
-}
-
-export async function setNuxFinishedAsync(finished: boolean): Promise<void> {
-  await NativeKernel.setIsNuxFinishedAsync(finished);
-}
-
 export type KernelSession = {
   sessionSecret: string;
 };

@@ -3,6 +3,7 @@
 package host.exp.exponent.modules;
 
 import android.app.Activity;
+
 import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.Arguments;
@@ -25,6 +26,7 @@ import javax.inject.Inject;
 
 import host.exp.exponent.Constants;
 import host.exp.exponent.analytics.EXL;
+import host.exp.exponent.devmenu.DevMenuManager;
 import host.exp.exponent.di.NativeModuleDepsProvider;
 import host.exp.exponent.experience.ErrorActivity;
 import host.exp.exponent.experience.ExperienceActivity;
@@ -49,6 +51,9 @@ public class ExponentKernelModule extends ReactContextBaseJavaModule implements 
 
   @Inject
   ExponentNetwork mExponentNetwork;
+
+  @Inject
+  DevMenuManager mDevMenuManager;
 
   private static Map<String, ExponentKernelModuleProvider.KernelEventCallback> sKernelEventCallbacks = new HashMap<>();
 
@@ -203,4 +208,57 @@ public class ExponentKernelModule extends ReactContextBaseJavaModule implements 
     }
     promise.resolve(true);
   }
+
+  //region DevMenu
+
+  @ReactMethod
+  public void doesCurrentTaskEnableDevtools(Promise promise) {
+    promise.resolve(true);
+  }
+
+  @ReactMethod
+  public void getDevMenuItemsToShow(Promise promise) {
+    WritableMap devMenuItems = Arguments.createMap();
+    promise.resolve(devMenuItems);
+  }
+
+  @ReactMethod
+  public void getIsNuxFinishedAsync(Promise promise) {
+    promise.resolve(true);
+  }
+
+  @ReactMethod
+  public void closeDevMenuAsync(Promise promise) {
+    mDevMenuManager.hideInCurrentActivity();
+    promise.resolve(true);
+  }
+
+  @ReactMethod
+  public void getDevMenuItemsToShowAsync(Promise promise) {
+    WritableMap devMenuItems = mDevMenuManager.getMenuItems();
+    promise.resolve(devMenuItems);
+  }
+
+  @ReactMethod
+  public void selectDevMenuItemWithKeyAsync(String itemKey, Promise promise) {
+    mDevMenuManager.hideInCurrentActivity();
+    mDevMenuManager.selectItemWithKey(itemKey);
+    promise.resolve(true);
+  }
+
+  @ReactMethod
+  public void reloadAppAsync(Promise promise) {
+    mDevMenuManager.hideInCurrentActivity();
+    mDevMenuManager.selectItemWithKey("dev-reload");
+    promise.resolve(true);
+  }
+
+  @ReactMethod
+  public void goToHomeAsync(Promise promise) {
+    mDevMenuManager.hideInCurrentActivity();
+    mKernel.openHomeActivity();
+    promise.resolve(true);
+  }
+
+  //endregion DevMenu
 }

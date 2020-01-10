@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 import com.facebook.proguard.annotations.DoNotStrip;
+import com.facebook.react.bridge.ReactApplicationContext;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
@@ -18,6 +19,7 @@ import javax.inject.Inject;
 import host.exp.exponent.ExpoHandler;
 import host.exp.exponent.ExponentManifest;
 import host.exp.exponent.analytics.EXL;
+import host.exp.exponent.devmenu.DevMenuManager;
 import host.exp.exponent.kernel.Crypto;
 import host.exp.exponent.kernel.services.ExpoKernelServiceRegistry;
 import host.exp.exponent.network.ExponentNetwork;
@@ -58,6 +60,10 @@ public class NativeModuleDepsProvider {
   @Inject
   @DoNotStrip
   ExpoKernelServiceRegistry mKernelServiceRegistry;
+
+  @Inject
+  @DoNotStrip
+  DevMenuManager mDevMenuManager;
 
   private Map<Class, Object> mClassesToInjectedObjects = new HashMap<>();
 
